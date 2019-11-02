@@ -42,9 +42,9 @@
 							<h2>{{ profileSkills['title'] }}</h2>
 
 							<div class="ik-logo">
-								<span class="cd-tooltip" *ngFor="let logo of profileSkills['logos']">
-									<img [src]="'assets/svg/expertise/' + logo['id'] + '.svg'" [alt]="logo['name']"/>
-									<span class="cd-arrow cd-bottom">{{ logo['name'] }}</span>
+								<span class="cd-tooltip" *ngFor="let icon of profileSkills['icons']">
+									<img [src]="'assets/svg/expertise/' + icon['id'] + '.svg'" [alt]="icon['name']"/>
+									<span class="cd-arrow cd-bottom">{{ icon['name'] }}</span>
 								</span>
 							</div>
 

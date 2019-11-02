@@ -1,6 +1,6 @@
 const profileSkills = {
 	title: 'Skills',
-	logos: [
+	icons: [
 		{
 			id: 'javascript',
 			name: 'JavaScript'
