@@ -9,9 +9,9 @@
 				</div>
 				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
 					<ul class="cd-list-items cd-remove-bullets">
-						<li><a href="user-profile.html">Profile</a></li>
-						<li><a href="#">Projects</a></li>
-						<li><a href="#">Blog</a></li>
+						<li *ngFor="let item of navList">
+							<a [href]="item.link">{{ item.name }}</a>
+						</li>
 					</ul>
 				</div>
 			</div>
