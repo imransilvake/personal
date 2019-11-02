@@ -1,0 +1,248 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"ham": {
+			"root": "",
+			"sourceRoot": "src",
+			"projectType": "application",
+			"prefix": "app",
+			"schematics": {
+				"@schematics/angular:component": {
+					"styleext": "scss",
+					"spec": false
+				},
+				"@schematics/angular:module": {
+					"spec": false
+				},
+				"@schematics/angular:service": {
+					"spec": false
+				},
+				"@schematics/angular:pipe": {
+					"spec": false
+				},
+				"@schematics/angular:directive": {
+					"spec": false
+				}
+			},
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/ham",
+						"index": "src/index.html",
+						"main": "src/main.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "src/tsconfig.app.json",
+						"assets": [
+							"src/favicon.ico",
+							"src/assets/svg",
+							"src/assets/images"
+						],
+						"styles": [
+							"src/styles.scss"
+						],
+						"stylePreprocessorOptions": {
+							"includePaths": [
+								"src/assets/scss/"
+							]
+						},
+						"scripts": []
+					},
+					"configurations": {
+						"stag": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.stag.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true
+						},
+						"next": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.next.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true
+						},
+						"prod": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true
+						},
+						"prod-en": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"outputPath": "dist/ik-en/",
+							"baseHref": "/en/",
+							"i18nFile": "src/locale/translation.en-US.xlf",
+							"i18nFormat": "xlf",
+							"i18nLocale": "en-US",
+							"i18nMissingTranslation": "error"
+						},
+						"prod-de": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"outputPath": "dist/ik-de/",
+							"baseHref": "/de/",
+							"i18nFile": "src/locale/translation.de.xlf",
+							"i18nFormat": "xlf",
+							"i18nLocale": "de",
+							"i18nMissingTranslation": "error"
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "ham:build"
+					},
+					"configurations": {
+						"stag": {
+							"browserTarget": "ham:build:stag"
+						},
+						"next": {
+							"browserTarget": "ham:build:next"
+						},
+						"prod": {
+							"browserTarget": "ham:build:prod"
+						},
+						"prod-en": {
+							"browserTarget": "ham:build:prod-en"
+						},
+						"prod-de": {
+							"browserTarget": "ham:build:prod-de"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "ham:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "src/test.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "src/tsconfig.spec.json",
+						"karmaConfig": "src/karma.conf.js",
+						"styles": [
+							"src/styles.scss"
+						],
+						"scripts": [],
+						"assets": [
+							"src/favicon.ico",
+							"src/assets"
+						]
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"src/tsconfig.app.json",
+							"src/tsconfig.spec.json"
+						],
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				}
+			}
+		},
+		"ik-e2e": {
+			"root": "e2e/",
+			"projectType": "application",
+			"architect": {
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "e2e/protractor.conf.js",
+						"devServerTarget": "ham:serve"
+					},
+					"configurations": {
+						"stag": {
+							"devServerTarget": "ham:serve:stag"
+						},
+						"next": {
+							"devServerTarget": "ham:serve:next"
+						},
+						"prod": {
+							"devServerTarget": "ham:serve:prod"
+						}
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": "e2e/tsconfig.e2e.json",
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				}
+			}
+		}
+	},
+	"defaultProject": "ham"
+}

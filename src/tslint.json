@@ -1,0 +1,30 @@
+{
+    "extends": "../tslint.json",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "kebab-case"
+        ],
+		"max-line-length": [
+			true,
+			200
+		],
+		"member-ordering": [
+			true,
+			{
+				"order": [
+					"public-static-field",
+					"protected-static-field",
+					"public-static-method",
+					"protected-static-method"
+				]
+			}
+		]
+	}
+}
