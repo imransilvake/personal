@@ -1,0 +1,23 @@
+@import 'main';
+
+footer {
+	background-color: cd-palette($cd-background, 2002);
+
+	.cd-container {
+		.cd-row {
+			padding: 10px 0;
+
+			.cd-col {
+				h5 {
+					color: cd-palette($cd-color, 1000);
+					font-weight: cd-fontWeight(300);
+
+					.ik-icon {
+						color: cd-palette($cd-color, 1010);
+						font-size: cd-fontSize(s15);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+@import 'main';
+
+header {
+	.cd-top {
+		background-color: cd-palette($cd-background, 2002);
+		padding: 15px 0;
+
+		.cd-col {
+			margin: 0;
+
+			a {
+				text-transform: uppercase;
+			}
+
+			&:last-child {
+				.cd-list-items {
+					margin: 0;
+
+					li {
+						display: inline-block;
+
+						a {
+							padding: 0 10px;
+						}
+
+						&:first-child {
+							a {
+								padding-left: 0;
+							}
+						}
+
+						&:last-child {
+							a {
+								padding-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// media
+	@include cd-media(desktop, mini) {
+		.cd-top {
+			.cd-col {
+				text-align: center;
+			}
+		}
+	}
+}

@@ -1,6 +1,9 @@
 // angular
 import { Component } from '@angular/core';
 
+// app
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
 	selector: 'app-footer',
 	templateUrl: './footer.component.html',
@@ -8,4 +11,5 @@ import { Component } from '@angular/core';
 })
 
 export class FooterComponent {
+	public faIcon = faHeart;
 }

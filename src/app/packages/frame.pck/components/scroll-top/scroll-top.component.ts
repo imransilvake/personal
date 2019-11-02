@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 // app
 import { ScrollTopService } from '../../../utilities.pck/accessories.mod/services/scroll-top.service';
-import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
 	selector: 'app-scroll-top',
@@ -14,7 +14,7 @@ import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
 })
 
 export class ScrollTopComponent implements OnInit, OnDestroy {
-	public faIcon = faArrowAltCircleUp
+	public faIcon = faArrowAltCircleUp;
 	public showScroll = false;
 	public scrollDuration = 300;
 

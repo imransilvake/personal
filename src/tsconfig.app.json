@@ -8,9 +8,5 @@
 				"node_modules/core-js/proposals/reflect-metadata"
 			]
 		}
-	},
-	"exclude": [
-		"src/test.ts",
-		"**/*.spec.ts"
-	]
+	}
 }

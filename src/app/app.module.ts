@@ -11,7 +11,7 @@ import { FrameModule } from './packages/frame.pck/frame.module';
 import { APP_ROUTES } from './app-routing';
 import { WidgetsModule } from './shared/widgets/widgets.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeComponent } from "./packages/modules.pck/home.component";
+import { HomeComponent } from './packages/modules.pck/home.component';
 
 // i18n using polyfills
 // provided by webpack
