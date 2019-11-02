@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 // app
-import navList from 'src/assets/data/nav-list';
+import navList from 'src/assets/data/home/nav-list';
 
 @Component({
 	selector: 'app-header',

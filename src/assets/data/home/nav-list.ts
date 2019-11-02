@@ -1,5 +1,5 @@
 // app
-import { ROUTING } from '../../environments/environment';
+import { ROUTING } from '../../../environments/environment';
 
 const navList = [
 	{

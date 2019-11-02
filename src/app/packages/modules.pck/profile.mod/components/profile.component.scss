@@ -103,6 +103,7 @@
 
 									span {
 										margin-bottom: 15px;
+										margin-right: 3px;
 
 										img {
 											border: 1px solid cd-palette($cd-border, 3003);
@@ -357,9 +358,11 @@
 	.cd-common-tag {
 		border: 1px solid cd-palette($cd-border, 3003);
 		border-radius: 1px;
+		display: inline-block;
 		font-weight: cd-fontWeight(300);
 		line-height: cd-lineHeight(2);
-		padding: 3px 5px;
+		margin: 0 3px 3px 0;
+		padding: 0 5px;
 	}
 
 	.cd-common-sub-headline {
