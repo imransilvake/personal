@@ -1,7 +1,7 @@
 @import 'main';
 
 header {
-	.cd-top {
+	.ik-top {
 		background-color: cd-palette($cd-background, 2002);
 		padding: 15px 0;
 
@@ -9,7 +9,7 @@ header {
 			margin: 0;
 
 			&:last-child {
-				.cd-list-items {
+				.ik-list-items {
 					margin: 0;
 
 					li {
@@ -38,7 +38,7 @@ header {
 
 	// media
 	@include cd-media(desktop, mini) {
-		.cd-top {
+		.ik-top {
 			.cd-col {
 				text-align: center;
 			}
