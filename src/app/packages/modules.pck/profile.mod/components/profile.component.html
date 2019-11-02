@@ -21,27 +21,11 @@
 			<div class="cd-container">
 				<div class="cd-row">
 					<div class="cd-col">
-						<h2>Summary</h2>
-						<p>
-							I am a frontend developer, creative thinker and an enthusiastic, self-motivated individual
-							with a
-							passion for learning. Building state-of-the-art, easy to use, user-friendly websites and
-							applications
-							is truly a passion of mine. I actively seek out new technologies and stay up-to-date on
-							industry trends
-							and advancements.
-						</p>
+						<h2>{{ profileSummary['title'] }}</h2>
+						<p>{{ profileSummary['bio'] }}</p>
 						<div class="ik-tags">
-							<h6>Current Focus</h6>
-							<span>JavaScript</span>
-							<span>TypeScript</span>
-							<span>Angular</span>
-							<span>React</span>
-							<span>SCSS</span>
-							<span>HTML</span>
-							<span>Responsive Designs</span>
-							<span>Materialize</span>
-							<span>Bootstrap</span>
+							<h6>{{ profileSummary['focus']['title'] }}</h6>
+							<span *ngFor="let skill of profileSummary['focus']['skills']">{{ skill }}</span>
 						</div>
 					</div>
 				</div>
@@ -55,110 +39,20 @@
 					<!-- Skills -->
 					<div class="cd-col cd-col-pm-t-5 cd-col-pm-d-4 ik-quick-wrapper">
 						<div class="ik-skills">
-							<h2>Skills</h2>
+							<h2>{{ profileSkills['title'] }}</h2>
 
 							<div class="ik-logo">
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/javascript.svg" alt="JavaScript"/>
-									<span class="cd-arrow cd-bottom">JavaScript</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/typescript.svg" alt="TypeScript"/>
-									<span class="cd-arrow cd-bottom">TypeScript</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/react.svg" alt="React"/>
-									<span class="cd-arrow cd-bottom">React</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/angular.svg" alt="Angular"/>
-									<span class="cd-arrow cd-bottom">Angular</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/node.svg" alt="NodeJs"/>
-									<span class="cd-arrow cd-bottom">NodeJs</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/npm.svg" alt="NPM"/>
-									<span class="cd-arrow cd-bottom">NPM</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/rxjs.svg" alt="RxJS"/>
-									<span class="cd-arrow cd-bottom">RxJS</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/sass.svg" alt="SASS"/>
-									<span class="cd-arrow cd-bottom">SASS</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/bootstrap.svg" alt="Bootstrap"/>
-									<span class="cd-arrow cd-bottom">Bootstrap</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/html5.svg" alt="HTML5"/>
-									<span class="cd-arrow cd-bottom">HTML5</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/css3.svg" alt="CSS3"/>
-									<span class="cd-arrow cd-bottom">CSS3</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/git.svg" alt="Git"/>
-									<span class="cd-arrow cd-bottom">Git</span>
-								</span>
-
-								<span class="cd-tooltip">
-									<img src="assets/svg/expertise/webstorm.svg" alt="WebStorm"/>
-									<span class="cd-arrow cd-bottom">WebStorm</span>
+								<span class="cd-tooltip" *ngFor="let logo of profileSkills['logos']">
+									<img [src]="'assets/svg/expertise/' + logo['id'] + '.svg'" [alt]="logo['name']"/>
+									<span class="cd-arrow cd-bottom">{{ logo['name'] }}</span>
 								</span>
 							</div>
 
-							<div class="ik-tags">
-								<span>NodeJs</span>
-								<span>JavaScript</span>
-								<span>TypeScript</span>
-								<span>Angular</span>
-								<span>React</span>
-								<span>RxJS</span>
-								<span>MongoDB</span>
-								<span>HTML5</span>
-								<span>SCSS</span>
-								<span>Responsive Designs</span>
-								<span>Bootstrap</span>
-								<span>Foundation</span>
-								<span>Materialize</span>
-								<span>PostCSS</span>
-								<span>Google Maps</span>
-								<span>Automated Testing: Protractor</span>
-								<span>Selenium WebDriver</span>
-								<span>Page Object Pattern</span>
-								<span>npm</span>
-								<span>Git</span>
-								<span>PHP</span>
-								<span>Laravel</span>
-								<span>jQuery</span>
-								<span>Ajax</span>
-								<span>Oxid</span>
-								<span>Oracle</span>
-								<span>MySQL</span>
-								<span>WordPress</span>
-								<span>Magento</span>
-								<span>JIRA</span>
-								<span>Confluence</span>
-								<span>Mac</span>
-								<span>Linux</span>
-								<span>WebStorm</span>
+							<div class="ik-tags" *ngFor="let skill of profileSkills['skills']">
+								<h6>{{ skill['title'] }}</h6>
+								<ng-container *ngFor="let item of skill['items']">
+									<span>{{ item }}</span>
+								</ng-container>
 							</div>
 						</div>
 					</div>

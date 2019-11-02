@@ -114,6 +114,11 @@
 								}
 
 								.ik-tags {
+									h6 {
+										font-weight: cd-fontWeight(600);
+										margin: 5px 0;
+									}
+
 									span {
 										@extend .ik-common-tag;
 										background-color: cd-palette($cd-background, 2002);
