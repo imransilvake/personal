@@ -1,6 +1,6 @@
 @import 'main';
 
-.cd-up-wrapper {
+.ik-profile {
 	header {
 		background-color: cd-palette($cd-background, 2001);
 
@@ -11,7 +11,7 @@
 				padding: 25px 0;
 
 				.cd-col {
-					.cd-profile-logo {
+					.ik-profile-logo {
 						bottom: -50px;
 						position: absolute;
 						right: 30px;
@@ -43,7 +43,7 @@
 			.cd-container {
 				> .cd-row {
 					.cd-col {
-						.cd-profile-logo {
+						.ik-profile-logo {
 							margin-bottom: 10px;
 							position: static;
 
@@ -62,7 +62,7 @@
 	section {
 		position: relative;
 
-		.cd-summary {
+		.ik-summary {
 			background-color: cd-palette($cd-background, 2002);
 
 			.cd-container {
@@ -74,13 +74,13 @@
 							margin-top: 12px;
 						}
 
-						.cd-tags {
+						.ik-tags {
 							h6 {
 								margin: 20px 0 10px;
 							}
 
 							span {
-								@extend .cd-common-tag;
+								@extend .ik-common-tag;
 								background-color: cd-palette($cd-background, 2001);
 								color: cd-palette($cd-color, 1008);
 							}
@@ -90,15 +90,15 @@
 			}
 		}
 
-		.cd-content {
+		.ik-content {
 			.cd-container {
 				.cd-row {
 					margin: 30px 0;
 
 					.cd-col {
-						&.cd-quick-wrapper {
-							.cd-skills {
-								.cd-logo {
+						&.ik-quick-wrapper {
+							.ik-skills {
+								.ik-logo {
 									margin-top: 15px;
 
 									span {
@@ -113,9 +113,9 @@
 									}
 								}
 
-								.cd-tags {
+								.ik-tags {
 									span {
-										@extend .cd-common-tag;
+										@extend .ik-common-tag;
 										background-color: cd-palette($cd-background, 2002);
 										color: cd-palette($cd-color, 1006);
 									}
@@ -123,21 +123,21 @@
 							}
 						}
 
-						&.cd-background-wrapper {
-							.cd-education {
+						&.ik-background-wrapper {
+							.ik-education {
 								h6 {
-									@extend .cd-common-sub-headline;
+									@extend .ik-common-sub-headline;
 								}
 
-								.cd-list-wrapper {
+								.ik-list-wrapper {
 									ul {
-										@extend .cd-common-ul;
+										@extend .ik-common-ul;
 
 										li {
 											align-items: center;
 											display: flex;
 
-											.cd-left {
+											.ik-left {
 												float: left;
 
 												img {
@@ -147,7 +147,7 @@
 												}
 											}
 
-											.cd-right {
+											.ik-right {
 												margin-left: 20px;
 
 												p {
@@ -163,16 +163,16 @@
 								}
 							}
 
-							.cd-experience {
+							.ik-experience {
 								h6 {
-									@extend .cd-common-sub-headline;
+									@extend .ik-common-sub-headline;
 								}
 
-								.cd-list-wrapper {
+								.ik-list-wrapper {
 									position: relative;
 
 									ul {
-										@extend .cd-common-ul;
+										@extend .ik-common-ul;
 
 										&::before {
 											border-left: 1px solid cd-palette($cd-border, 3004);
@@ -187,10 +187,10 @@
 											align-items: center;
 											display: flex;
 
-											.cd-left {
+											.ik-left {
 												float: left;
 
-												.cd-number {
+												.ik-number {
 													background-color: cd-palette($cd-background, 2001);
 													border-radius: 50%;
 													box-shadow: 0 0 5px 0 cd-palette($cd-shadow, 4004);
@@ -200,14 +200,14 @@
 													text-align: center;
 													width: 46px;
 
-													&.cd-current {
+													&.ik-current {
 														background-color: cd-palette($cd-background, 2017);
 														color: cd-palette($cd-color, 1001);
 													}
 												}
 											}
 
-											.cd-right {
+											.ik-right {
 												margin-left: 20px;
 
 												p {
@@ -223,28 +223,28 @@
 								}
 							}
 
-							.cd-languages {
+							.ik-languages {
 								h6 {
-									@extend .cd-common-sub-headline;
+									@extend .ik-common-sub-headline;
 								}
 
-								.cd-tags {
+								.ik-tags {
 									margin: 30px 0 0;
 
 									span {
-										@extend .cd-common-tag;
+										@extend .ik-common-tag;
 										background-color: cd-palette($cd-background, 2002);
 										color: cd-palette($cd-color, 1006);
 									}
 								}
 							}
 
-							.cd-interest {
-								.cd-tags {
+							.ik-interest {
+								.ik-tags {
 									margin: 30px 0 0;
 
 									span {
-										@extend .cd-common-tag;
+										@extend .ik-common-tag;
 										background-color: cd-palette($cd-background, 2002);
 										color: cd-palette($cd-color, 1006);
 									}
@@ -260,8 +260,8 @@
 				.cd-container {
 					.cd-row {
 						.cd-col {
-							&.cd-background-wrapper {
-								.cd-education {
+							&.ik-background-wrapper {
+								.ik-education {
 									margin-top: 30px;
 								}
 							}
@@ -274,18 +274,18 @@
 				.cd-container {
 					> .cd-row {
 						.cd-col {
-							&.cd-background-wrapper {
-								.cd-education {
-									.cd-list-wrapper {
+							&.ik-background-wrapper {
+								.ik-education {
+									.ik-list-wrapper {
 										ul {
 											li {
 												display: block;
 
-												.cd-left {
+												.ik-left {
 													float: none;
 												}
 
-												.cd-right {
+												.ik-right {
 													margin: 10px 0 0;
 												}
 											}
@@ -293,8 +293,8 @@
 									}
 								}
 
-								.cd-experience {
-									.cd-list-wrapper {
+								.ik-experience {
+									.ik-list-wrapper {
 										ul {
 											&::before {
 												content: none;
@@ -303,11 +303,11 @@
 											li {
 												display: block;
 
-												.cd-left {
+												.ik-left {
 													float: none;
 												}
 
-												.cd-right {
+												.ik-right {
 													margin: 10px 0 0;
 												}
 											}
@@ -321,7 +321,7 @@
 			}
 		}
 
-		.cd-social {
+		.ik-social {
 			.cd-container {
 				.cd-row {
 					.cd-col {
@@ -355,7 +355,7 @@
 	}
 
 	// Common
-	.cd-common-tag {
+	.ik-common-tag {
 		border: 1px solid cd-palette($cd-border, 3003);
 		border-radius: 1px;
 		display: inline-block;
@@ -365,14 +365,14 @@
 		padding: 0 5px;
 	}
 
-	.cd-common-sub-headline {
+	.ik-common-sub-headline {
 		border-left: 3px solid cd-palette($cd-border, 3009);
 		font-weight: cd-fontWeight(300);
 		margin-top: 5px;
 		padding-left: 5px;
 	}
 
-	.cd-common-ul {
+	.ik-common-ul {
 		margin: 30px 0 0;
 	}
 }
