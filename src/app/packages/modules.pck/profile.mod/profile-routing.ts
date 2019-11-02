@@ -8,11 +8,6 @@ import { ProfileComponent } from './components/profile.component';
 export const PROFILE_ROUTES: Routes = [
 	{
 		path: '',
-		children: [
-			{
-				path: 'overview',
-				component: ProfileComponent
-			}
-		]
+		component: ProfileComponent
 	}
 ];
