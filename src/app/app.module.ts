@@ -23,7 +23,6 @@ declare const require;
 		BrowserModule,
 		BrowserAnimationsModule,
 		RouterModule.forRoot(APP_ROUTES, {
-			useHash: true,
 			onSameUrlNavigation: 'reload'
 		}),
 
