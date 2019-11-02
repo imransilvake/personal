@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class AppVersionService {
-	public version = '0.0.0';
+	public version = '1.0.0';
 
 	/**
 	 * get app version
 	 */
-	get appVersion() {
+	get getAppVersion() {
 		return this.version;
 	}
 }

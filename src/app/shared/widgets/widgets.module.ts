@@ -2,8 +2,6 @@
 import { NgModule } from '@angular/core';
 
 // app
-import { DividerComponent } from './divider/divider.component';
-import { BadgeComponent } from './badge/badge.component';
 import { SharedModule } from '../shared.module';
 import { ReadMoreComponent } from './read-more/read-more.component';
 
@@ -12,13 +10,9 @@ import { ReadMoreComponent } from './read-more/read-more.component';
 		SharedModule
 	],
 	declarations: [
-		DividerComponent,
-		BadgeComponent,
 		ReadMoreComponent
 	],
 	exports: [
-		DividerComponent,
-		BadgeComponent,
 		ReadMoreComponent
 	]
 })
