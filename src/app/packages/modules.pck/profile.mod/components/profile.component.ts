@@ -1,11 +1,14 @@
 // angular
 import { Component } from '@angular/core';
+
 // app
 import * as moment from 'moment';
 import profileSummary from '../../../../../assets/data/profile/summery';
 import profileSkills from '../../../../../assets/data/profile/skills';
 import profileEducation from '../../../../../assets/data/profile/education';
 import profileExperience from '../../../../../assets/data/profile/experience';
+import profileLanguage from '../../../../../assets/data/profile/language';
+import profileInterest from '../../../../../assets/data/profile/interest';
 
 @Component({
 	selector: 'app-profile',
@@ -18,6 +21,8 @@ export class ProfileComponent {
 	public profileSkills = profileSkills;
 	public profileEducation = profileEducation;
 	public profileExperience = profileExperience;
+	public profileLanguage = profileLanguage;
+	public profileInterest = profileInterest;
 
 	/**
 	 * get time period

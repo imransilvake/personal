@@ -221,6 +221,15 @@
 
 												p {
 													font-weight: cd-fontWeight(300);
+
+													.ik-on {
+														background-color: cd-palette($cd-background, 2010);
+														border-radius: 3px;
+														color: cd-palette($cd-color, 1001);
+														font-size: 12px;
+														padding: 2px 4px;
+														vertical-align: text-bottom;
+													}
 												}
 											}
 

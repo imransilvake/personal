@@ -23,6 +23,7 @@
 					<div class="cd-col">
 						<h2>{{ profileSummary['title'] }}</h2>
 						<p>{{ profileSummary['bio'] }}</p>
+
 						<div class="ik-tags">
 							<h6>{{ profileSummary['focus']['title'] }}</h6>
 							<span *ngFor="let skill of profileSummary['focus']['skills']">{{ skill }}</span>
@@ -116,7 +117,13 @@
 										</div>
 										<div class="ik-right">
 											<h5>{{ exp['designation'] }}</h5>
-											<p>{{ exp['company'] }}, {{ getTP(exp['period']) }}</p>
+											<p>
+												{{ exp['company'] }}, {{ getTP(exp['period']) }}
+												<ng-container *ngIf="exp['period'].length === 1">
+													<span> - </span>
+													<span class="ik-on">current</span>
+												</ng-container>
+											</p>
 										</div>
 									</li>
 								</ul>
@@ -127,13 +134,13 @@
 
 						<!-- Languages -->
 						<div class="ik-languages">
-							<h2>Languages</h2>
-							<h6>Learning Deutsch A2</h6>
+							<h2>{{ profileLanguage['title'] }}</h2>
+							<h6>{{ profileLanguage['subTitle'] }}</h6>
 
 							<div class="ik-tags">
-								<span>Urdu/Hindi</span>
-								<span>English</span>
-								<span>Deutsch</span>
+								<span *ngFor="let item of profileLanguage['list']">
+									{{ item }}
+								</span>
 							</div>
 						</div>
 
@@ -141,16 +148,12 @@
 
 						<!-- Interest -->
 						<div class="ik-interest">
-							<h2>Interest</h2>
+							<h2>{{ profileInterest['title'] }}</h2>
 
 							<div class="ik-tags">
-								<span>Anime</span>
-								<span>Travel</span>
-								<span>Photography</span>
-								<span>Music</span>
-								<span>Arts</span>
-								<span>Books</span>
-								<span>Coding</span>
+								<span *ngFor="let item of profileInterest['list']">
+									{{ item }}
+								</span>
 							</div>
 						</div>
 					</div>
