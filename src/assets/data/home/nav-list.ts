@@ -3,10 +3,6 @@ import { ROUTING } from '../../../environments/environment';
 
 const navList = [
 	{
-		name: 'Home',
-		link: `/${ROUTING.pages.home}`
-	},
-	{
 		name: 'Profile',
 		link: `/${ROUTING.pages.profile}`
 	},

@@ -61,38 +61,23 @@
 					<div class="cd-col cd-col-pm-t-7 cd-col-pm-d-8 ik-background-wrapper">
 						<!-- Education -->
 						<div class="ik-education">
-							<h2>Education</h2>
-							<h6>MS Graduate</h6>
+							<h2>{{ profileEducation['title'] }}</h2>
+							<h6>{{ profileEducation['subTitle'] }}</h6>
 
 							<div class="ik-list-wrapper">
 								<ul class="ik-remove-bullets">
-									<li>
+									<li *ngFor="let education of profileEducation['education']">
 										<div class="ik-left">
 											<div class="ik-logo cd-tooltip">
-												<img src="assets/svg/universities/bonn.svg" alt="BONN University"/>
-												<span class="cd-arrow cd-bottom">
-													BONN University
-												</span>
+												<img
+														[src]="'assets/svg/universities/' + education['logo'] + '.svg'"
+														[alt]="education['name']"/>
+												<span class="cd-arrow cd-bottom">{{ education['name'] }}</span>
 											</div>
 										</div>
 										<div class="ik-right">
-											<h5>MS in Computer Science</h5>
-											<p>IT, Informatics, 2015 - 2017, Germany</p>
-										</div>
-									</li>
-									<li>
-										<div class="ik-left">
-											<div class="ik-logo cd-tooltip">
-												<img src="assets/svg/universities/comsats.svg"
-													 alt="COMSATS University"/>
-												<span class="cd-arrow cd-bottom">
-													COMSATS University
-												</span>
-											</div>
-										</div>
-										<div class="ik-right">
-											<h5>Bachelors in Computer Science</h5>
-											<p>IT, Informatics, 2010 - 2014, Pakistan</p>
+											<h5>{{ education['degree'] }}</h5>
+											<p>{{ education['info'] }}</p>
 										</div>
 									</li>
 								</ul>
@@ -103,65 +88,35 @@
 
 						<!-- Experience -->
 						<div class="ik-experience">
-							<h2>Experience</h2>
-							<h6>Frontend Developer at TourismusSuite</h6>
+							<h2>{{ profileExperience['title'] }}</h2>
+							<h6>{{ profileExperience['subTitle'] }}</h6>
 
 							<div class="ik-list-wrapper">
 								<ul class="ik-remove-bullets">
-									<li>
+									<li *ngFor="let exp of profileExperience['experience']">
 										<div class="ik-left">
 											<div class="cd-tooltip">
-												<p class="ik-number ik-current">1Y</p>
+												<p class="ik-number"
+												   [class.ik-current]="exp['period'].length === 1"
+												   [class.ik-year]="getTD(exp['period'])[0] > 0">
+													{{
+                                                    getTD(exp['period'])[0] > 0 ?
+                                                        getTD(exp['period'])[0] + 'Y ' + getTD(exp['period'])[1] + 'M' :
+                                                        getTD(exp['period'])[1] + 'M'
+													}}
+												</p>
 												<span class="cd-arrow cd-bottom">
-													1 Year
+													{{
+                                                    getTD(exp['period'])[0] > 0 ?
+                                                        getTD(exp['period'])[0] + ' Years and ' + getTD(exp['period'])[1] + ' Months' :
+                                                        getTD(exp['period'])[1] + ' Months'
+													}}
 												</span>
 											</div>
 										</div>
 										<div class="ik-right">
-											<h5>Frontend JavaScript Developer</h5>
-											<p>TourismusSuite, June 2016 - Current</p>
-										</div>
-									</li>
-									<li>
-										<div class="ik-left">
-											<div class="cd-tooltip">
-												<p class="ik-number">6M</p>
-												<span class="cd-arrow cd-bottom">
-													6 Months
-												</span>
-											</div>
-										</div>
-										<div class="ik-right">
-											<h5>PHP Developer</h5>
-											<p>Denkwerk, December 2015 - May 2016</p>
-										</div>
-									</li>
-									<li>
-										<div class="ik-left">
-											<div class="cd-tooltip">
-												<p class="ik-number">4M</p>
-												<span class="cd-arrow cd-bottom">
-													4 Months
-												</span>
-											</div>
-										</div>
-										<div class="ik-right">
-											<h5>PHP/WordPress Developer</h5>
-											<p>Gotechsol, June 2015 - September 2015</p>
-										</div>
-									</li>
-									<li>
-										<div class="ik-left">
-											<div class="cd-tooltip">
-												<p class="ik-number">9M</p>
-												<span class="cd-arrow cd-bottom">
-													9 Months
-												</span>
-											</div>
-										</div>
-										<div class="ik-right">
-											<h5>WordPress Developer</h5>
-											<p>Aspire Solution, September 2014 - May 2015</p>
+											<h5>{{ exp['designation'] }}</h5>
+											<p>{{ exp['company'] }}, {{ getTP(exp['period']) }}</p>
 										</div>
 									</li>
 								</ul>

@@ -209,6 +209,10 @@
 														background-color: cd-palette($cd-background, 2017);
 														color: cd-palette($cd-color, 1001);
 													}
+
+													&.ik-year {
+														font-size: cd-fontSize(s13);
+													}
 												}
 											}
 

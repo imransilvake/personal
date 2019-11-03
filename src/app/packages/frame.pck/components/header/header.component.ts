@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 
 // app
+import { ROUTING } from '../../../../../environments/environment';
 import navList from 'src/assets/data/home/nav-list';
 
 @Component({
@@ -11,5 +12,6 @@ import navList from 'src/assets/data/home/nav-list';
 })
 
 export class HeaderComponent {
+	public routing = ROUTING;
 	public navList = navList;
 }

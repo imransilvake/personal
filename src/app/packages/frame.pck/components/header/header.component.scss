@@ -3,14 +3,24 @@
 header {
 	.ik-top {
 		background-color: cd-palette($cd-background, 2002);
-		padding: 15px 0;
+		padding: 10px 0;
 
 		.cd-col {
 			margin: 0;
 
+			&:first-child {
+				a {
+					display: block;
+
+					img {
+						width: 66px;
+					}
+				}
+			}
+
 			&:last-child {
 				.ik-list-items {
-					margin: 0;
+					margin: 4px 0 0;
 
 					li {
 						display: inline-block;
