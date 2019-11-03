@@ -325,38 +325,6 @@
 				}
 			}
 		}
-
-		.ik-social {
-			.cd-container {
-				.cd-row {
-					.cd-col {
-						background-color: cd-palette($cd-background, 2001);
-						box-shadow: 0 4px 8px 0 cd-palette($cd-shadow, 4000, .2);
-						left: 0;
-						padding: 5px;
-						position: fixed;
-						top: 130px;
-
-						a {
-							display: block;
-
-							img {
-								width: 20px;
-							}
-
-							&:not(:last-child) {
-								margin-bottom: 10px;
-							}
-						}
-
-						// media
-						@include cd-media(desktop, tablet) {
-							padding: 5px 3px;
-						}
-					}
-				}
-			}
-		}
 	}
 
 	// Common

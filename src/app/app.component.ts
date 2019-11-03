@@ -12,6 +12,9 @@ import { Component } from '@angular/core';
 
 		<!-- Footer -->
 		<app-footer></app-footer>
+		
+		<!-- Social -->
+		<app-social-links></app-social-links>
 	`,
 })
 

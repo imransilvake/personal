@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 import { WidgetsModule } from '../../shared/widgets/widgets.module';
+import { SocialLinksComponent } from './components/social-links/social-links.component';
 
 @NgModule({
 	imports: [
@@ -18,12 +19,14 @@ import { WidgetsModule } from '../../shared/widgets/widgets.module';
 		E404Component,
 		HeaderComponent,
 		FooterComponent,
-		ScrollTopComponent
+		ScrollTopComponent,
+		SocialLinksComponent
 	],
 	exports: [
 		HeaderComponent,
 		FooterComponent,
-		ScrollTopComponent
+		ScrollTopComponent,
+		SocialLinksComponent
 	]
 })
 
