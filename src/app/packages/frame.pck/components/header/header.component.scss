@@ -17,6 +17,10 @@ header {
 
 						a {
 							padding: 0 10px;
+
+							&.ik-active {
+								color: cd-palette($cd-color, 1016);
+							}
 						}
 
 						&:first-child {

@@ -10,7 +10,10 @@
 				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
 					<ul class="ik-list-items ik-remove-bullets">
 						<li *ngFor="let item of navList">
-							<a [href]="item.link">{{ item.name }}</a>
+							<a [routerLink]="item.link"
+							   [routerLinkActive]="['ik-active']">
+								{{ item.name }}
+							</a>
 						</li>
 					</ul>
 				</div>
