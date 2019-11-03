@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 // app
 import * as moment from 'moment';
+import profileIntro from '../../../../../assets/data/profile/intro';
 import profileSummary from '../../../../../assets/data/profile/summery';
 import profileSkills from '../../../../../assets/data/profile/skills';
 import profileEducation from '../../../../../assets/data/profile/education';
@@ -17,6 +18,7 @@ import profileInterest from '../../../../../assets/data/profile/interest';
 })
 
 export class ProfileComponent {
+	public profileIntro = profileIntro;
 	public profileSummary = profileSummary;
 	public profileSkills = profileSkills;
 	public profileEducation = profileEducation;

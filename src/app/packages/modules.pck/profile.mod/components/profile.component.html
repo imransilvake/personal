@@ -5,10 +5,10 @@
 			<div class="cd-row cd-center-align">
 				<div class="cd-col">
 					<div class="ik-profile-logo">
-						<img src="assets/images/png/profile/user.png" alt="Imran Khan"/>
+						<img [src]="'assets/images/png/profile/' + profileIntro['photo'] + '.png'" [alt]="profileIntro['name']"/>
 					</div>
-					<h1>Imran Khan</h1>
-					<h5>JavaScript Frontend Developer</h5>
+					<h1>{{ profileIntro['name'] }}</h1>
+					<h5>{{ profileIntro['title'] }}</h5>
 				</div>
 			</div>
 		</div>
