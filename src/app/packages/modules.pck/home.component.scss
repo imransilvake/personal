@@ -12,11 +12,16 @@
 		h1 {
 			font-weight: cd-fontWeight(600);
 			margin-top: -5px;
+			text-decoration: underline;
 
 			.ik-icon {
 				color: cd-palette($cd-color, 1010);
 				font-size: cd-fontSize(s18);
 				margin-left: 5px;
+
+				&:last-child {
+					color: cd-palette($cd-color, 1012);
+				}
 			}
 		}
 
