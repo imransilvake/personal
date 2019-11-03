@@ -3,10 +3,14 @@
 header {
 	.ik-top {
 		background-color: cd-palette($cd-background, 2002);
+		border-bottom: 1px solid cd-palette($cd-border, 3004);
+		box-shadow: 1px 0 2px cd-palette($cd-shadow, 4004);
 		padding: 10px 0;
+		position: relative;
 
 		.cd-col {
 			margin: 0;
+			padding: 0;
 
 			&:first-child {
 				a {

@@ -1,5 +1,5 @@
 const profileIntro = {
-	name: 'Imnran Khan',
+	name: 'Imran Khan',
 	title: 'JavaScript Frontend Developer',
 	photo: 'user'
 };

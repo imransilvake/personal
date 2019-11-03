@@ -1,0 +1,39 @@
+@import 'main';
+
+.ik-home {
+	.ik-block {
+		background-attachment: fixed;
+		background-color: cd-palette($cd-background, 2003, .3);
+		background-repeat: repeat;
+		background-size: 14rem;
+		padding: 150px 0 200px;
+		position: relative;
+
+		h1 {
+			font-weight: cd-fontWeight(600);
+			margin-top: -5px;
+
+			.ik-icon {
+				color: cd-palette($cd-color, 1010);
+				font-size: cd-fontSize(s18);
+				margin-left: 5px;
+			}
+		}
+
+		&::after {
+			background: linear-gradient(180deg, transparent, transparent 70%, cd-palette($cd-background, 2001));
+			bottom: 0;
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+
+	// media
+	@include cd-media(desktop, smartphone) {
+		.ik-block {
+			padding: 100px 0 150px;
+		}
+	}
+}
