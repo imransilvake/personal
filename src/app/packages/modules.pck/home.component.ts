@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 // app
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
 	selector: 'app-home',
@@ -12,5 +12,5 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 export class HomeComponent {
 	public overlayBG = 'url(assets/images/space-pattern.png)';
-	public faIcon = faHeart;
+	public faIcon = [faHeart, faEye];
 }

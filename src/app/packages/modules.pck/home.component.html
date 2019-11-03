@@ -1,13 +1,14 @@
 <div class="ik-home">
 	<!-- Header -->
-	<header class="ik-block" [ngStyle]="{'background-image': overlayBG}">
+	<header [ngStyle]="{'background-image': overlayBG}">
 		<div class="cd-container-fluid">
 			<div class="cd-container">
-				<h1>
+				<h2>
 					Greetings
-					<fa-icon class="ik-icon" [icon]="faIcon"></fa-icon>
-					<fa-icon class="ik-icon" [icon]="faIcon"></fa-icon>
-				</h1>
+					<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+					<fa-icon class="ik-icon ik-red" [icon]="faIcon[0]"></fa-icon>
+					<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+				</h2>
 				<h5>It is my personal website to share some beautiful contents with an amazing world!</h5>
 			</div>
 		</div>
@@ -15,9 +16,85 @@
 
 	<!-- Content -->
 	<section>
-		<div class="cd-container-fluid ik-recent">
-			<div class="cd-container">
+		<div class="ik-content">
+			<div class="ik-title">
+				<div class="cd-container-fluid">
+					<div class="cd-container">
+						<h5>Recent Projects</h5>
+					</div>
+				</div>
+			</div>
 
+			<div class="cd-container-fluid ik-block-wrapper">
+				<div class="cd-container">
+					<div class="ik-block">
+						<div class="cd-row ik-block-list">
+							<div class="cd-col cd-col-pd-m-6 cd-col-pd-s-4 cd-col-pd-t-3 cd-col-pm-d-3">
+								<div class="ik-preview">
+									<img src="assets/images/png/profile/user.png" alt="post"/>
+									<div class="ik-detail">
+										<div class="ik-icon-wrapper">
+											<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+											<span>400</span>
+										</div>
+										<div class="ik-icon-wrapper">
+											<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+											<span>400</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="cd-col cd-col-pd-m-6 cd-col-pd-s-4 cd-col-pd-t-3 cd-col-pm-d-3">
+								<div class="ik-preview">
+									<img src="assets/images/png/profile/user.png" alt="post"/>
+									<div class="ik-detail">
+										<div class="ik-icon-wrapper">
+											<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+											<span>400</span>
+										</div>
+										<div class="ik-icon-wrapper">
+											<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+											<span>400</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="cd-col cd-col-pd-m-6 cd-col-pd-s-4 cd-col-pd-t-3 cd-col-pm-d-3">
+								<div class="ik-preview">
+									<img src="assets/images/png/profile/user.png" alt="post"/>
+									<div class="ik-detail">
+										<div class="ik-icon-wrapper">
+											<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+											<span>400</span>
+										</div>
+										<div class="ik-icon-wrapper">
+											<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+											<span>400</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="cd-col cd-col-pd-m-6 cd-col-pd-s-4 cd-col-pd-t-3 cd-col-pm-d-3">
+								<div class="ik-preview">
+									<img src="assets/images/png/profile/user.png" alt="post"/>
+									<div class="ik-detail">
+										<div class="ik-icon-wrapper">
+											<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+											<span>400</span>
+										</div>
+										<div class="ik-icon-wrapper">
+											<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+											<span>400</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

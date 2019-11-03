@@ -1,7 +1,9 @@
 @import 'main';
 
 footer {
-	background-color: cd-palette($cd-background, 2002);
+	background-color: cd-palette($cd-background, 2001);
+	border-top: 1px solid cd-palette($cd-border, 3004);
+	box-shadow: 0 -2px 3px -2px cd-palette($cd-shadow, 4004);
 
 	.cd-container {
 		.cd-row {
