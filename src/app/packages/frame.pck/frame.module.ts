@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 import { WidgetsModule } from '../../shared/widgets/widgets.module';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
+import { NoticeBlockComponent } from './components/notice-block/notice-block.component';
 
 @NgModule({
 	imports: [
@@ -20,13 +21,15 @@ import { SocialLinksComponent } from './components/social-links/social-links.com
 		HeaderComponent,
 		FooterComponent,
 		ScrollTopComponent,
-		SocialLinksComponent
+		SocialLinksComponent,
+		NoticeBlockComponent
 	],
 	exports: [
 		HeaderComponent,
 		FooterComponent,
 		ScrollTopComponent,
-		SocialLinksComponent
+		SocialLinksComponent,
+		NoticeBlockComponent
 	]
 })
 

@@ -1,0 +1,23 @@
+@import 'main';
+
+.ik-notice-block {
+	background-color: cd-palette($cd-background, 2002);
+	padding: 10px;
+
+	.cd-row {
+		.cd-col {
+			padding: 0;
+			text-align: center;
+
+			.ik-icon {
+				color: cd-palette($cd-color, 1011);
+				margin-right: 5px;
+			}
+
+			span {
+				color: cd-palette($cd-color, 1010);
+				font-weight: cd-fontWeight(600);
+			}
+		}
+	}
+}

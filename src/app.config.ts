@@ -3,6 +3,9 @@ export const AppOptions = {
 	languages: {
 		en: 'en',
 		de: 'de'
+	},
+	intervals: {
+		notice: [0, 5000]
 	}
 };
 
