@@ -5,7 +5,7 @@
 			<div class="cd-row cd-center-align">
 				<div class="cd-col">
 					<div class="ik-profile-logo">
-						<img [src]="'assets/images/png/profile/' + profileIntro['photo'] + '.png'"
+						<img [src]="'assets/images/profile/' + profileIntro['photo'] + '.png'"
 							 [alt]="profileIntro['name']"/>
 					</div>
 					<h1>{{ profileIntro['name'] }}</h1>
@@ -45,7 +45,7 @@
 
 							<div class="ik-logo">
 								<span class="cd-tooltip" *ngFor="let icon of profileSkills['icons']">
-									<img [src]="'assets/svg/expertise/' + icon['id'] + '.svg'" [alt]="icon['name']"/>
+									<img [src]="'assets/svg/profile/expertise/' + icon['id'] + '.svg'" [alt]="icon['name']"/>
 									<span class="cd-arrow cd-bottom">{{ icon['name'] }}</span>
 								</span>
 							</div>
@@ -71,7 +71,7 @@
 									<li *ngFor="let education of profileEducation['education']">
 										<div class="ik-left">
 											<div class="ik-logo cd-tooltip">
-												<img [src]="'assets/svg/universities/' + education['logo'] + '.svg'"
+												<img [src]="'assets/svg/profile/universities/' + education['logo'] + '.svg'"
 													 [alt]="education['name']"/>
 												<span class="cd-arrow cd-bottom">{{ education['name'] }}</span>
 											</div>

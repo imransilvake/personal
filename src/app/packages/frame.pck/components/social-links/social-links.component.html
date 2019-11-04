@@ -4,7 +4,7 @@
 			<div class="cd-col">
 				<ng-container *ngFor="let item of socialLinks">
 					<a [href]="item['link']" target="_blank" class="cd-tooltip">
-						<img [src]="'assets/svg/social/' + item['icon'] + '.svg'" [alt]="item['name']"/>
+						<img [src]="'assets/svg/profile/social/' + item['icon'] + '.svg'" [alt]="item['name']"/>
 						<span class="cd-arrow cd-right">{{ item['name'] }}</span>
 					</a>
 				</ng-container>

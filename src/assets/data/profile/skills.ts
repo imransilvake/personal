@@ -18,6 +18,10 @@ const profileSkills = {
 			name: 'Angular'
 		},
 		{
+			id: 'nativescript',
+			name: 'NativeScript'
+		},
+		{
 			id: 'node',
 			name: 'NodeJs'
 		},
@@ -56,20 +60,20 @@ const profileSkills = {
 	],
 	skills: [
 		{
-			title: 'Styling / Frameworks',
-			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Designs']
+			title: 'Programming Language',
+			items: ['JavaScript', 'TypeScript', 'PHP']
 		},
 		{
 			title: 'Frameworks',
 			items: ['Angular', 'NativeScript', 'React']
 		},
 		{
-			title: 'Programming Language',
-			items: ['JavaScript', 'TypeScript', 'PHP']
+			title: 'Layout',
+			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Designs']
 		},
 		{
 			title: 'Libraries',
-			items: ['RxJs', 'moment']
+			items: ['RxJs', 'MomentJs']
 		},
 		{
 			title: 'Store',
