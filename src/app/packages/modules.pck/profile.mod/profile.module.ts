@@ -8,7 +8,6 @@ import { WidgetsModule } from '../../../shared/widgets/widgets.module';
 import { SharedModule } from '../../../shared/shared.module';
 import { FrameModule } from '../../frame.pck/frame.module';
 import { ProfileComponent } from './components/profile.component';
-import { ProfileService } from './services/profile.service';
 
 @NgModule({
 	imports: [
@@ -19,9 +18,6 @@ import { ProfileService } from './services/profile.service';
 	],
 	declarations: [
 		ProfileComponent
-	],
-	providers: [
-		ProfileService
 	]
 })
 

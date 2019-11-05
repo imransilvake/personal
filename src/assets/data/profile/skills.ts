@@ -69,7 +69,7 @@ const profileSkills = {
 		},
 		{
 			title: 'Layout',
-			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Designs']
+			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Layout and Design', 'Cross-Browser Compatibility']
 		},
 		{
 			title: 'Libraries',

@@ -41,7 +41,7 @@ export class ProfileComponent {
 	public getTD(period) {
 		const start = moment(period[0], 'MM-YYYY');
 		const end = period.length === 1 ? moment() : moment(period[1], 'MM-YYYY');
-		const total = Math.round(moment(end).diff(start, 'months', true));
+		const total = Math.round(moment(end).diff(start, 'months')) + 1;
 
 		const months = total % 12;
 		const years = Math.floor(total / 12);

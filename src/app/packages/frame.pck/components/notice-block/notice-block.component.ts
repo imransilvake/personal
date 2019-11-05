@@ -14,7 +14,8 @@ import { AppOptions } from '../../../../../app.config';
 })
 
 export class NoticeBlockComponent implements OnInit {
-	public randomBlock = noticeBlock[Math.floor(Math.random() * noticeBlock.length)];
+	public filteredNoticeBlock = noticeBlock.filter(x => x.show);
+	public randomBlock = {};
 	public interval = new Subject();
 
 	ngOnInit() {
@@ -27,7 +28,9 @@ export class NoticeBlockComponent implements OnInit {
 				))
 			)
 			.subscribe(() => {
-				this.randomBlock = noticeBlock[Math.floor(Math.random() * noticeBlock.length)];
+				this.randomBlock = this.filteredNoticeBlock[Math.floor(
+					Math.random() * this.filteredNoticeBlock.length
+				)];
 			});
 	}
 }
