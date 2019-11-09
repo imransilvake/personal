@@ -5,7 +5,7 @@ import { startWith, switchMap, takeUntil } from 'rxjs/operators';
 
 // app
 import { AppOptions } from '../../../../../app.config';
-import { faSmileWink } from '@fortawesome/free-solid-svg-icons';
+import { faExpand, faSmileWink } from '@fortawesome/free-solid-svg-icons';
 import photography from '../../../../../assets/data/photography/gallery';
 
 declare const lightGallery: any;
@@ -19,7 +19,7 @@ declare const lightGallery: any;
 export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('gallerySelector', { static: false }) gallerySelector?: ElementRef;
 
-	public faIcon = [faSmileWink];
+	public faIcon = [faSmileWink, faExpand];
 	public photography = photography;
 	public randomBlock = {};
 	public interval = new Subject();

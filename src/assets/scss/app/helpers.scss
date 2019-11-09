@@ -31,3 +31,11 @@
 	display: block;
 	width: 100%;
 }
+
+// bg loader
+.bg-loader {
+	background-color: cd-palette($cd-background, 2001);
+	background-image: url('/assets/svg/pre-loaders/01.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+}

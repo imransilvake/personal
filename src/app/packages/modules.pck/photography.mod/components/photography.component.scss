@@ -12,22 +12,24 @@
 				width: 100%;
 			}
 
-			h2 {
+			.ik-text {
+				background-color: cd-palette($cd-background, 2000, .65);
+				border-radius: 2px;
 				color: cd-palette($cd-color, 1001);
 				font-weight: cd-fontWeight(600);
 				position: absolute;
+			}
+
+			h5 {
+				padding: 1px 10px;
 				right: 10px;
-				top: 0;
+				top: 10px;
 			}
 
 			h6 {
-				background-color: cd-palette($cd-background, 2000, .65);
-				border-radius: 2px;
 				bottom: 10px;
-				color: cd-palette($cd-color, 1001);
 				left: 10px;
 				padding: 1px 6px;
-				position: absolute;
 			}
 		}
 	}
@@ -57,8 +59,11 @@
 						position: relative;
 
 						img {
+							background-color: cd-palette($cd-background, 2001);
 							display: block;
 							max-height: 250px;
+							object-fit: cover;
+							width: 100%;
 						}
 
 						h6 {
@@ -74,9 +79,20 @@
 							top: 0;
 						}
 
+						.ik-icon {
+							color: cd-palette($cd-color, 1000);
+							left: 10px;
+							position: absolute;
+							top: 8px;
+						}
+
 						&:hover {
 							h6 {
 								display: flex;
+							}
+
+							.ik-icon {
+								color: cd-palette($cd-color, 1001);
 							}
 
 							&::before {
@@ -146,13 +162,6 @@
 				.cd-row {
 					.cd-col {
 						margin-bottom: 15px;
-
-						.ik-photo {
-							img {
-								object-fit: cover;
-								width: 100%;
-							}
-						}
 
 						&:nth-child(2n + 1) {
 							padding-right: 15px;
