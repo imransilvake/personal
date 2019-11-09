@@ -42,6 +42,16 @@
 				.cd-col {
 					margin-bottom: 30px;
 
+					.ik-excerpt {
+						text-align: center;
+
+						.ik-icon {
+							color: cd-palette($cd-color, 1008);
+							font-size: cd-fontSize(s24);
+							margin-left: 5px;
+						}
+					}
+
 					.ik-photo {
 						cursor: pointer;
 						position: relative;

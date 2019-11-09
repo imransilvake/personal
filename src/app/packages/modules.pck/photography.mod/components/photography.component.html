@@ -14,8 +14,17 @@
 	<div class="ik-content">
 		<div class="cd-container-fluid">
 			<div class="cd-container">
+				<div class="cd-row">
+					<div class="cd-col">
+						<h2 class="ik-excerpt ik-font-sacramento">
+							{{ photography['excerpt'] }}
+							<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+						</h2>
+					</div>
+				</div>
+
 				<div class="cd-row" #gallerySelector>
-					<ng-container *ngFor="let item of gallery">
+					<ng-container *ngFor="let item of photography['gallery']">
 						<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4"
 							 [attr.data-src]="'assets/images/photography/' + item['photo']">
 							<div class="ik-photo">

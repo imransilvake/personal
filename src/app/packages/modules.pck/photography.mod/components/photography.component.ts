@@ -4,8 +4,9 @@ import { Subject, timer } from 'rxjs';
 import { startWith, switchMap, takeUntil } from 'rxjs/operators';
 
 // app
-import gallery from '../../../../../assets/data/photography/gallery';
 import { AppOptions } from '../../../../../app.config';
+import { faSmileWink } from '@fortawesome/free-solid-svg-icons';
+import photography from '../../../../../assets/data/photography/gallery';
 
 declare const lightGallery: any;
 
@@ -18,7 +19,8 @@ declare const lightGallery: any;
 export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('gallerySelector', { static: false }) gallerySelector?: ElementRef;
 
-	public gallery = gallery;
+	public faIcon = [faSmileWink];
+	public photography = photography;
 	public randomBlock = {};
 	public interval = new Subject();
 	public counter = 10;
@@ -37,8 +39,8 @@ export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
 			.pipe(takeUntil(this._ngUnSubscribe))
 			.subscribe(() => {
 				this.counter = 10;
-				this.randomBlock = this.gallery[Math.floor(
-					Math.random() * this.gallery.length
+				this.randomBlock = this.photography['gallery'][Math.floor(
+					Math.random() * this.photography['gallery'].length
 				)];
 			});
 
