@@ -12,6 +12,14 @@
 				width: 100%;
 			}
 
+			h2 {
+				color: cd-palette($cd-color, 1001);
+				font-weight: cd-fontWeight(600);
+				position: absolute;
+				right: 10px;
+				top: 0;
+			}
+
 			h6 {
 				background-color: cd-palette($cd-background, 2000, .65);
 				border-radius: 2px;

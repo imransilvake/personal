@@ -17,6 +17,7 @@ export class PhotographyComponent implements OnInit, OnDestroy {
 	public gallery = gallery;
 	public randomBlock = {};
 	public interval = new Subject();
+	public counter = 10;
 
 	private _ngUnSubscribe: Subject<void> = new Subject<void>();
 
@@ -31,10 +32,14 @@ export class PhotographyComponent implements OnInit, OnDestroy {
 			)
 			.pipe(takeUntil(this._ngUnSubscribe))
 			.subscribe(() => {
+				this.counter = 10;
 				this.randomBlock = this.gallery[Math.floor(
 					Math.random() * this.gallery.length
 				)];
 			});
+
+		// set 1 second interval
+		setInterval(() => this.counter -= 1, 1000);
 	}
 
 	ngOnDestroy() {

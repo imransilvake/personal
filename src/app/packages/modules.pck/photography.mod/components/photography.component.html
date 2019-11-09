@@ -2,6 +2,7 @@
 	<!-- Header -->
 	<div class="ik-header">
 		<div class="ik-photo">
+			<h2>{{ counter }}</h2>
 			<img *ngIf="randomBlock && !!randomBlock['photo']"
 				 [src]="'assets/images/photography/' + randomBlock['photo']"
 				 [alt]="randomBlock['title']"/>
