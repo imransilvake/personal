@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 // app
 import { ROUTING } from '../../../../../environments/environment';
-import navList from 'src/assets/data/home/nav-list';
+import navList from 'src/assets/data/other/nav-list';
 
 @Component({
 	selector: 'app-header',

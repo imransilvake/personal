@@ -1,3 +1,12 @@
+// fonts
+.ik-font-sacramento {
+	font-family: cd-fontFamily(sacramento, $cd-fonts-list);
+}
+
+.ik-font-poiret {
+	font-family: cd-fontFamily(poiret, $cd-fonts-list);
+}
+
 // text ellipses
 .ik-ellipses {
 	overflow: hidden;

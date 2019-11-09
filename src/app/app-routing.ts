@@ -20,6 +20,10 @@ const ROUTES: Routes = [
 		path: ROUTING.pages.profile,
 		loadChildren: () => import('./packages/modules.pck/profile.mod/profile.module').then(m => m.ProfileModule)
 	},
+	{
+		path: ROUTING.pages.photography,
+		loadChildren: () => import('./packages/modules.pck/photography.mod/photography.module').then(m => m.PhotographyModule)
+	},
 	/*
 	{
 		path: 'projects',

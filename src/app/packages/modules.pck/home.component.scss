@@ -3,89 +3,62 @@
 .ik-home {
 	header {
 		background-attachment: fixed;
-		background-color: cd-palette($cd-background, 2003, .3);
+		// background-color: cd-palette($cd-background, 2003, .3);
 		background-repeat: repeat;
 		background-size: 14rem;
 		padding: 150px 0 200px;
 		position: relative;
 
-		h2 {
-			color: cd-palette($cd-color, 1010);
-			font-weight: cd-fontWeight(600);
-			margin-top: -5px;
+		.ik-badges {
+			position: absolute;
+			top: 5px;
+			left: 0;
+			right: 0;
+			text-align: center;
 
-			.ik-icon {
+			span {
+				background-color: cd-palette($cd-background, 2001);
+				border-radius: 2px;
+				box-shadow: 1px 1px 1px cd-palette($cd-shadow, 4004);
 				color: cd-palette($cd-color, 1010);
-				font-size: cd-fontSize(s18);
-				margin-left: 5px;
-
-				&.ik-red {
-					color: cd-palette($cd-color, 1012);
-				}
+				margin-right: 5px;
+				padding: 2px 6px;
+				text-align: center;
 			}
 		}
 
-		h5 {
-			color: cd-palette($cd-color, 1009);
+		.ik-content {
+			h1 {
+				color: cd-palette($cd-color, 1010);
+				font-weight: cd-fontWeight(600);
+				margin-top: -5px;
+
+				.ik-icon {
+					color: cd-palette($cd-color, 1010);
+					font-size: cd-fontSize(s18);
+					margin-left: 5px;
+
+					&.ik-red {
+						color: cd-palette($cd-color, 1012);
+					}
+				}
+			}
+
+			h4 {
+				color: cd-palette($cd-color, 1009);
+				font-weight: cd-fontWeight(600);
+			}
 		}
 
 		&::after {
-			background: linear-gradient(180deg, transparent, transparent 70%, cd-palette($cd-background, 2002));
+			background: linear-gradient(180deg, transparent, transparent 70%, cd-palette($cd-background, 2002, .5));
 			bottom: 0;
-			// content: '';
+			content: '';
 			position: absolute;
 			top: 0;
 			width: 100%;
 		}
 	}
-
-	.ik-content {
-		.ik-title {
-			padding: 10px;
-		}
-
-		.ik-block-wrapper {
-			background-color: cd-palette($cd-background, 2002);
-			padding: 30px 0;
-
-			.cd-container {
-				padding: 0;
-
-				.ik-block {
-					.ik-block-list {
-						.ik-preview {
-							background-color: cd-palette($cd-background, 2001);
-							border-bottom: 1px solid cd-palette($cd-border, 3004);
-							box-shadow: 1px 0 2px cd-palette($cd-shadow, 4004);
-							padding: 10px 10px 0;
-						}
-
-						.ik-detail {
-							display: flex;
-							justify-content: flex-end;
-							padding: 5px;
-
-							.ik-icon-wrapper {
-								margin-left: 10px;
-
-								span {
-									color: cd-palette($cd-color, 1006, .8);
-									font-size: cd-fontSize(s14);
-									margin-left: 2px;
-								}
-
-								.ik-icon {
-									color: cd-palette($cd-color, 1006, .8);
-									font-size: cd-fontSize(s14);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
 
 	// media
 	@include cd-media(desktop, smartphone) {

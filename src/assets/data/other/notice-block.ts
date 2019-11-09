@@ -10,7 +10,7 @@ const noticeBlock = [
 	},
 	{
 		icon: faEnvelopeOpen,
-		text: 'You can contact me for any queries',
+		text: 'You can contact me for queries at:',
 		email: 'imransilvake@gmail.com',
 		show: true
 	}

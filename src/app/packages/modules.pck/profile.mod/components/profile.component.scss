@@ -37,26 +37,6 @@
 				}
 			}
 		}
-
-		// media
-		@include cd-media(desktop, smartphone) {
-			.cd-container {
-				> .cd-row {
-					.cd-col {
-						.ik-profile-logo {
-							margin-bottom: 10px;
-							position: static;
-
-							img {
-								box-shadow: none;
-								margin: auto;
-								width: 140px;
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 
 	section {
@@ -91,10 +71,11 @@
 		}
 
 		.ik-content {
+			background-color: cd-palette($cd-background, 2001);
+			padding: 30px 0;
+
 			.cd-container {
 				.cd-row {
-					margin: 30px 0;
-
 					.cd-col {
 						&.ik-quick-wrapper {
 							.ik-skills {
@@ -272,9 +253,54 @@
 					}
 				}
 			}
+		}
+	}
 
-			// media
-			@include cd-media(desktop, smartphone) {
+	// Common
+	.ik-common-tag {
+		border: 1px solid cd-palette($cd-border, 3003);
+		border-radius: 1px;
+		display: inline-block;
+		font-weight: cd-fontWeight(300);
+		line-height: cd-lineHeight(2);
+		margin: 0 3px 3px 0;
+		padding: 0 5px;
+	}
+
+	.ik-common-sub-headline {
+		border-left: 3px solid cd-palette($cd-border, 3009);
+		font-weight: cd-fontWeight(300);
+		margin-top: 5px;
+		padding-left: 5px;
+	}
+
+	.ik-common-ul {
+		margin: 30px 0 0;
+	}
+
+	// media
+	@include cd-media(desktop, smartphone) {
+		header {
+			.cd-container {
+				> .cd-row {
+					.cd-col {
+						.ik-profile-logo {
+							margin-bottom: 10px;
+							position: static;
+
+							img {
+								box-shadow: none;
+								margin: auto;
+								width: 140px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		section {
+			.ik-content {
 				.cd-container {
 					.cd-row {
 						.cd-col {
@@ -287,8 +313,12 @@
 					}
 				}
 			}
+		}
+	}
 
-			@include cd-media(desktop, mini) {
+	@include cd-media(desktop, mini) {
+		section {
+			.ik-content {
 				.cd-container {
 					> .cd-row {
 						.cd-col {
@@ -338,27 +368,5 @@
 				}
 			}
 		}
-	}
-
-	// Common
-	.ik-common-tag {
-		border: 1px solid cd-palette($cd-border, 3003);
-		border-radius: 1px;
-		display: inline-block;
-		font-weight: cd-fontWeight(300);
-		line-height: cd-lineHeight(2);
-		margin: 0 3px 3px 0;
-		padding: 0 5px;
-	}
-
-	.ik-common-sub-headline {
-		border-left: 3px solid cd-palette($cd-border, 3009);
-		font-weight: cd-fontWeight(300);
-		margin-top: 5px;
-		padding-left: 5px;
-	}
-
-	.ik-common-ul {
-		margin: 30px 0 0;
 	}
 }
