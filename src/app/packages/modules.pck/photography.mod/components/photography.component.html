@@ -1,53 +1,27 @@
 <div class="ik-photography">
-	<div class="cd-container-fluid">
-		<div class="cd-container">
-			<div class="cd-row">
-				<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-					<div class="ik-photo">
-						<img [src]="'assets/images/photography/01.jpg'" [alt]="'photo'"/>
-					</div>
-				</div>
+	<!-- Header -->
+	<div class="ik-header">
+		<div class="ik-photo">
+			<img *ngIf="randomBlock && !!randomBlock['photo']"
+				 [src]="'assets/images/photography/' + randomBlock['photo']"
+				 [alt]="randomBlock['title']"/>
+			<h6>{{ randomBlock['title'] }}</h6>
+		</div>
+	</div>
 
-				<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-					<div class="ik-photo">
-						<img [src]="'assets/images/photography/02.jpg'" [alt]="'photo'"/>
-					</div>
-				</div>
-
-				<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-					<div class="ik-photo">
-						<img [src]="'assets/images/photography/03.jpg'" [alt]="'photo'"/>
-					</div>
-				</div>
-
-				<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-					<div class="ik-photo">
-						<img [src]="'assets/images/photography/04.jpg'" [alt]="'photo'"/>
-					</div>
-				</div>
-
-				<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-					<div class="ik-photo">
-						<img [src]="'assets/images/photography/05.jpg'" [alt]="'photo'"/>
-					</div>
-				</div>
-
-				<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-					<div class="ik-photo">
-						<img [src]="'assets/images/photography/07.jpg'" [alt]="'photo'"/>
-					</div>
-				</div>
-
-				<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-					<div class="ik-photo">
-						<img [src]="'assets/images/photography/08.jpg'" [alt]="'photo'"/>
-					</div>
-				</div>
-
-				<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-					<div class="ik-photo">
-						<img class="ik-photo" [src]="'assets/images/photography/01.jpg'" [alt]="'photo'"/>
-					</div>
+	<!-- Gallery -->
+	<div class="ik-content">
+		<div class="cd-container-fluid">
+			<div class="cd-container">
+				<div class="cd-row">
+					<ng-container *ngFor="let item of gallery">
+						<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
+							<div class="ik-photo">
+								<img [src]="'assets/images/photography/' + item['photo']" [alt]="item['title']"/>
+								<h6>{{ item['title'] }}</h6>
+							</div>
+						</div>
+					</ng-container>
 				</div>
 			</div>
 		</div>

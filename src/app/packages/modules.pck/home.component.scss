@@ -10,11 +10,11 @@
 		position: relative;
 
 		.ik-badges {
-			position: absolute;
-			top: 5px;
 			left: 0;
+			position: absolute;
 			right: 0;
 			text-align: center;
+			top: 5px;
 
 			span {
 				background-color: cd-palette($cd-background, 2001);

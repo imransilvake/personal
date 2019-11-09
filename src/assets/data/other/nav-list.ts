@@ -10,10 +10,12 @@ const navList = [
 		name: 'Projects',
 		link: `/${ROUTING.pages.projects}`
 	},
+	/*
 	{
 		name: 'Blog',
 		link: `/${ROUTING.pages.blog}`
 	},
+	*/
 	{
 		name: 'Photography',
 		link: `/${ROUTING.pages.photography}`
