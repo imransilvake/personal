@@ -1,5 +1,5 @@
 // angular
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subject, timer } from 'rxjs';
 import { startWith, switchMap, takeUntil } from 'rxjs/operators';
 
@@ -7,13 +7,17 @@ import { startWith, switchMap, takeUntil } from 'rxjs/operators';
 import gallery from '../../../../../assets/data/photography/gallery';
 import { AppOptions } from '../../../../../app.config';
 
+declare const lightGallery: any;
+
 @Component({
 	selector: 'app-photography',
 	templateUrl: './photography.component.html',
 	styleUrls: ['./photography.component.scss']
 })
 
-export class PhotographyComponent implements OnInit, OnDestroy {
+export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
+	@ViewChild('gallerySelector', { static: false }) gallerySelector?: ElementRef;
+
 	public gallery = gallery;
 	public randomBlock = {};
 	public interval = new Subject();
@@ -40,6 +44,13 @@ export class PhotographyComponent implements OnInit, OnDestroy {
 
 		// set 1 second interval
 		setInterval(() => this.counter -= 1, 1000);
+	}
+
+	ngAfterViewInit() {
+		// initialize light gallery
+		if (!!this.gallerySelector) {
+			lightGallery(this.gallerySelector.nativeElement);
+		}
 	}
 
 	ngOnDestroy() {
