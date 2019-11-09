@@ -53,7 +53,7 @@
 		&::after {
 			background: linear-gradient(180deg, transparent, transparent 70%, cd-palette($cd-background, 2002, .5));
 			bottom: 0;
-			content: '';
+			// content: '';
 			position: absolute;
 			top: 0;
 			width: 100%;
