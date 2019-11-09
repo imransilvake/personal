@@ -3,11 +3,11 @@
 .ik-photography {
 	.ik-header {
 		.ik-photo {
-			height: 450px;
+			height: 500px;
 			position: relative;
 
 			img {
-				max-height: 450px;
+				height: 500px;
 				object-fit: cover;
 				width: 100%;
 			}
@@ -102,7 +102,7 @@
 				height: 350px;
 
 				img {
-					max-height: 350px;
+					height: 350px;
 				}
 			}
 		}
@@ -129,6 +129,16 @@
 	}
 
 	@include cd-media(desktop, mini) {
+		.ik-header {
+			.ik-photo {
+				height: 250px;
+
+				img {
+					height: 250px;
+				}
+			}
+		}
+
 		.ik-content {
 			margin-top: 15px;
 
