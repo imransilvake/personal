@@ -24,10 +24,11 @@ $ghost-right-eye: cd-palette($cd-background, 2010);
 				width: 100px;
 
 				.ik-ghost-eyes {
-					left: 15px;
+					height: 12px;
+					left: 50%;
 					position: absolute;
-					top: 40px;
-					width: 70px;
+					top: 50%;
+					transform: translate(-50%, -50%);
 
 					.ik-left {
 						background-color: $ghost-left-eye;

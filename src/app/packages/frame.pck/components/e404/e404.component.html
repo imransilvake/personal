@@ -2,18 +2,18 @@
 	<!-- Ghost -->
 	<div class="ik-box">
 		<div class="ik-ghost">
-			<div class="symbol"></div>
-			<div class="symbol"></div>
-			<div class="symbol"></div>
-			<div class="symbol"></div>
-			<div class="symbol"></div>
-			<div class="symbol"></div>
-
 			<div class="ik-ghost-container">
-				<div class="ik-ghost-eyes">
+				<!-- Eyes -->
+				<div class="ik-ghost-eyes" [ngStyle]="{
+				'left': x,
+				'top': y,
+				'transform': 'translate(-' + x + ',-' + y + ')'
+				}">
 					<div class="ik-left"></div>
 					<div class="ik-right"></div>
 				</div>
+
+				<!-- Bottom -->
 				<div class="ik-ghost-bottom">
 					<div></div>
 					<div></div>

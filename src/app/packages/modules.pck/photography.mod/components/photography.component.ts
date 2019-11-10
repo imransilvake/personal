@@ -17,7 +17,7 @@ declare const lightGallery: any;
 })
 
 export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
-	@ViewChild('gallerySelector', { static: false }) gallerySelector?: ElementRef;
+	@ViewChild('gallerySelector', { static: false }) gallerySelector: ElementRef;
 
 	public faIcon = [faSmileWink, faExpand];
 	public photography = photography;
