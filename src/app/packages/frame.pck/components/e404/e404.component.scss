@@ -42,8 +42,8 @@ $ghost-right-eye: cd-palette($cd-background, 2010);
 						background-color: $ghost-right-eye;
 						border-radius: 50%;
 						height: 12px;
-						right: 10px;
 						position: absolute;
+						right: 10px;
 						width: 12px;
 					}
 				}
@@ -89,8 +89,8 @@ $ghost-right-eye: cd-palette($cd-background, 2010);
 	}
 
 	.ik-description {
-		text-align: center;
 		margin-bottom: 50px;
+		text-align: center;
 
 		h1 {
 			color: cd-palette($cd-color, 1010);
