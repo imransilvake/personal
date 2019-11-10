@@ -1,9 +1,103 @@
-.ik-404 {
-	.cd-container {
-		text-align: center;
+@import 'main';
 
-		img {
-			width: 750px;
+// variables
+$ghost-box: cd-palette($cd-background, 2002);
+$ghost: cd-palette($cd-background, 2004);
+$ghost-left-eye: cd-palette($cd-background, 2010);
+$ghost-right-eye: cd-palette($cd-background, 2010);
+
+.ik-404 {
+	padding: 0 20px;
+
+	.ik-box {
+		background-color: $ghost-box;
+		padding: 50px 0;
+
+		.ik-ghost {
+			.ik-ghost-container {
+				animation: up_and_down 3s ease-in-out infinite;
+				background-color: $ghost;
+				border-radius: 100px 100px 0 0;
+				height: 100px;
+				margin: 0 auto;
+				position: relative;
+				width: 100px;
+
+				.ik-ghost-eyes {
+					left: 15px;
+					position: absolute;
+					top: 40px;
+					width: 70px;
+
+					.ik-left {
+						background-color: $ghost-left-eye;
+						border-radius: 50%;
+						height: 12px;
+						left: 10px;
+						position: absolute;
+						width: 12px;
+					}
+
+					.ik-right {
+						background-color: $ghost-right-eye;
+						border-radius: 50%;
+						height: 12px;
+						right: 10px;
+						position: absolute;
+						width: 12px;
+					}
+				}
+
+				.ik-ghost-bottom {
+					display: flex;
+					left: 0;
+					position: absolute;
+					right: 0;
+					top: 100%;
+
+					div {
+						background-color: $ghost;
+						border-radius: 50%;
+						flex-grow: 1;
+						height: 20px;
+						position: relative;
+						top: -10px;
+
+						&:nth-child(2n) {
+							background-color: transparent;
+							border-top: 15px solid $ghost-box;
+							top: -12px;
+						}
+					}
+				}
+			}
+
+			// keyframes
+			@keyframes up_and_down {
+				0% { transform: translateY(5px); }
+				50% { transform: translateY(15px); }
+				100% { transform: translateY(5px); }
+			}
+
+			@keyframes shine {
+				0% { opacity: .2; }
+				25% { opacity: .1; }
+				50% { opacity: .2; }
+				100% { opacity: .2; }
+			}
+		}
+	}
+
+	.ik-description {
+		text-align: center;
+		margin-bottom: 50px;
+
+		h1 {
+			color: cd-palette($cd-color, 1010);
+		}
+
+		p {
+			color: cd-palette($cd-color, 1008);
 		}
 	}
 }
