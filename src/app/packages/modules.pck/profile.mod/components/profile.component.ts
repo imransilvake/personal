@@ -10,6 +10,7 @@ import profileEducation from '../../../../../assets/data/profile/education';
 import profileExperience from '../../../../../assets/data/profile/experience';
 import profileLanguage from '../../../../../assets/data/profile/language';
 import profileInterest from '../../../../../assets/data/profile/interest';
+import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
 
 @Component({
 	selector: 'app-profile',
@@ -30,8 +31,8 @@ export class ProfileComponent {
 	 * get time period
 	 */
 	public getTP(period) {
-		const start = moment(period[0], 'MM-YYYY').format('MMM YYYY');
-		const end = period.length === 1 ? '' : moment(period[1], 'MM-YYYY').format('MMM YYYY');
+		const start = HelperService.getDate(period[0], 'MMM YYYY');
+		const end = period.length === 1 ? '' : HelperService.getDate(period[1], 'MMM YYYY');
 		return end ? `${start} - ${end}` : start;
 	}
 
@@ -39,12 +40,18 @@ export class ProfileComponent {
 	 * get time difference
 	 */
 	public getTD(period) {
-		const start = moment(period[0], 'MM-YYYY');
-		const end = period.length === 1 ? moment() : moment(period[1], 'MM-YYYY');
-		const total = Math.round(moment(end).diff(start, 'months')) + 1;
+		// dates
+		const start = HelperService.getDate(period[0], 'MMM YYYY');
+		const end = period.length === 1 ? moment() : HelperService.getDate(period[1], 'MMM YYYY');
 
+		// difference
+		const diff = moment(end).add(1, 'month').diff(start, 'months');
+		const total = Math.round(diff);
+
+		// month, year
 		const months = total % 12;
 		const years = Math.floor(total / 12);
+
 		return [years, months];
 	}
 }

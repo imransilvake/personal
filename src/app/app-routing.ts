@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 
 // app
 import { ROUTING } from '../environments/environment';
-import { E404Component } from './packages/frame.pck/components/pages/e404.component';
+import { E404Component } from './packages/frame.pck/components/e404/e404.component';
 import { HomeComponent } from './packages/modules.pck/home.component';
 
 const ROUTES: Routes = [

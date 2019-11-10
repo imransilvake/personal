@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 // app
 import { SharedModule } from '../../shared/shared.module';
-import { E404Component } from './components/pages/e404.component';
+import { E404Component } from './components/e404/e404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';

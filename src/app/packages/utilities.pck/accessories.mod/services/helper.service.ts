@@ -31,6 +31,13 @@ export class HelperService {
 	}
 
 	/**
+	 * detect: mouse-move
+	 */
+	public static detectMouseMove() {
+		return fromEvent(window, 'mousemove');
+	}
+
+	/**
 	 * detect: full-screen
 	 */
 	public static detectFullScreen() {
@@ -43,32 +50,44 @@ export class HelperService {
 	}
 
 	/**
-	 * open document in full-screen
+	 * open full-screen mode
 	 */
 	public static showFullScreen() {
-		// request
 		const elem = document.documentElement;
-		const methodToBeInvoked =
-			elem.requestFullscreen ||
-			elem.webkitRequestFullScreen ||
-			elem.mozRequestFullScreen ||
-			elem.msRequestFullscreen;
-
-		// invoke
-		if (methodToBeInvoked) {
-			methodToBeInvoked.call(elem);
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		} else if (elem.mozRequestFullScreen) { /* Firefox */
+			elem.mozRequestFullScreen();
+		} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+			elem.webkitRequestFullscreen();
+		} else if (elem.msRequestFullscreen) { /* IE/Edge */
+			elem.msRequestFullscreen();
 		}
 	}
 
 	/**
-	 * multilingual date
+	 * exit full-screen mode
+	 */
+	public exitFullScreen() {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+		} else if (document.msExitFullscreen) {
+			document.msExitFullscreen();
+		}
+	}
+
+	/**
+	 * fetch date in human readable format
 	 *
-	 * @param lang
 	 * @param date
 	 * @param dateFormat
 	 */
-	public static getDate(lang: string, date: any, dateFormat?: string) {
+	public static getDate(date: any, dateFormat?: string) {
 		const format = dateFormat ? dateFormat : 'DD. MMMM YYYY';
-		return moment(date).locale(lang).format(format);
+		return moment(date, 'DD-MM-YYYY').format(format);
 	}
 }

@@ -5,22 +5,22 @@ const profileExperience = {
 		{
 			designation: 'Frontend Developer',
 			company: 'TourismusSuite',
-			period: ['06-2016']
+			period: ['01-06-2016']
 		},
 		{
 			designation: 'PHP Developer',
 			company: 'Denkwerk',
-			period: ['12-2015', '05-2016']
+			period: ['01-12-2015', '31-05-2016']
 		},
 		{
 			designation: 'PHP / WordPress Developer',
 			company: 'Gotechsol',
-			period: ['06-2015', '09-2015']
+			period: ['01-06-2015', '30-09-2015']
 		},
 		{
 			designation: 'WordPress Developer',
 			company: 'Aspire Solution',
-			period: ['09-2014', '05-2015']
+			period: ['01-09-2014', '31-05-2015']
 		}
 	]
 };

@@ -13,11 +13,31 @@ header {
 			padding: 0;
 
 			&:first-child {
-				a {
+				.ik-block {
 					display: inline-block;
+					position: relative;
 
-					img {
-						width: 66px;
+					a {
+						img {
+							width: 66px;
+						}
+					}
+
+					ul {
+						background-color: cd-palette($cd-background, 2002);
+						left: 100%;
+						list-style: none;
+						margin-left: 10px;
+						padding: 1px 10px;
+						position: absolute;
+						top: -5px;
+
+						li {
+							.ik-icon {
+								color: cd-palette($cd-color, 1010);
+								cursor: pointer;
+							}
+						}
 					}
 				}
 			}
