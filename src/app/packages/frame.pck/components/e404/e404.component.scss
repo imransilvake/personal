@@ -29,6 +29,7 @@ $ghost-right-eye: cd-palette($cd-background, 2010);
 					position: absolute;
 					top: 50%;
 					transform: translate(-50%, -50%);
+					width: 65px;
 
 					.ik-left {
 						background-color: $ghost-left-eye;
