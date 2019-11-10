@@ -15,8 +15,8 @@ import { HelperService } from '../../../utilities.pck/accessories.mod/services/h
 
 export class E404Component implements OnInit, OnDestroy {
 	public page404 = page404;
-	public x;
-	public y;
+	public x = '50%';
+	public y = '50%';
 
 	private _ngUnSubscribe: Subject<void> = new Subject<void>();
 
