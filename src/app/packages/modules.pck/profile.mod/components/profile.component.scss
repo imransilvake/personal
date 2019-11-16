@@ -111,10 +111,6 @@
 
 						&.ik-background-wrapper {
 							.ik-education {
-								h6 {
-									@extend .ik-common-sub-headline;
-								}
-
 								.ik-list-wrapper {
 									ul {
 										@extend .ik-common-ul;
@@ -150,10 +146,6 @@
 							}
 
 							.ik-experience {
-								h6 {
-									@extend .ik-common-sub-headline;
-								}
-
 								.ik-list-wrapper {
 									position: relative;
 
@@ -223,10 +215,6 @@
 							}
 
 							.ik-languages {
-								h6 {
-									@extend .ik-common-sub-headline;
-								}
-
 								.ik-tags {
 									margin: 30px 0 0;
 
@@ -265,13 +253,6 @@
 		line-height: cd-lineHeight(2);
 		margin: 0 3px 3px 0;
 		padding: 0 5px;
-	}
-
-	.ik-common-sub-headline {
-		border-left: 3px solid cd-palette($cd-border, 3009);
-		font-weight: cd-fontWeight(300);
-		margin-top: 5px;
-		padding-left: 5px;
 	}
 
 	.ik-common-ul {

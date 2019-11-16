@@ -9,7 +9,7 @@
 							 [alt]="profileIntro['name']"/>
 					</div>
 					<h1>{{ profileIntro['name'] }}</h1>
-					<h5>{{ profileIntro['title'] }}</h5>
+					<h5 class="ik-font-poiret">{{ profileIntro['title'] }}</h5>
 				</div>
 			</div>
 		</div>
@@ -121,7 +121,7 @@
 												{{ exp['company'] }}, {{ getTP(exp['period']) }}
 												<ng-container *ngIf="exp['period'].length === 1">
 													<span> - </span>
-													<span class="ik-on">current</span>
+													<span class="ik-on">present</span>
 												</ng-container>
 											</p>
 										</div>
