@@ -24,11 +24,11 @@ const ROUTES: Routes = [
 		path: ROUTING.pages.photography,
 		loadChildren: () => import('./packages/modules.pck/photography.mod/photography.module').then(m => m.PhotographyModule)
 	},
-	/*
 	{
-		path: 'projects',
-		components: ProjectsComponent
+		path: ROUTING.pages.projects,
+		loadChildren: () => import('./packages/modules.pck/projects.mod/projects.module').then(m => m.ProjectsModule)
 	},
+	/*
 	{
 		path: 'news',
 		components: NewsComponent

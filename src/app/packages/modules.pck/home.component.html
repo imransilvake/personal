@@ -7,13 +7,17 @@
 					<span *ngFor="let badge of homeIntro['badges']">{{ badge }}</span>
 				</div>
 				<div class="ik-content">
-					<h1 class="ik-font-sacramento">
-						{{ homeIntro['title'] }}
-						<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
-						<fa-icon class="ik-icon ik-red" [icon]="faIcon[0]"></fa-icon>
-						<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
-					</h1>
-					<h4 class="ik-font-poiret">{{ homeIntro['desc'] }}</h4>
+					<div class="cd-row">
+						<div class="cd-col">
+							<h1 class="ik-font-sacramento">
+								{{ homeIntro['title'] }}
+								<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+								<fa-icon class="ik-icon ik-red" [icon]="faIcon[0]"></fa-icon>
+								<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+							</h1>
+							<h4 class="ik-font-poiret">{{ homeIntro['desc'] }}</h4>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
