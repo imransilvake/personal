@@ -16,9 +16,9 @@
 	</header>
 
 	<!-- Content -->
-	<section>
+	<div>
 		<!-- Summary -->
-		<div class="cd-container-fluid ik-summary">
+		<section class="cd-container-fluid ik-summary">
 			<div class="cd-container">
 				<div class="cd-row">
 					<div class="cd-col">
@@ -32,14 +32,14 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
 		<!-- Content -->
 		<div class="cd-container-fluid ik-content">
 			<div class="cd-container">
 				<div class="cd-row">
 					<!-- Skills -->
-					<div class="cd-col cd-col-pm-t-5 cd-col-pm-d-4 ik-quick-wrapper">
+					<section class="cd-col cd-col-pm-t-5 cd-col-pm-d-4 ik-quick-wrapper">
 						<div class="ik-skills">
 							<h2>{{ profileSkills['title'] }}</h2>
 
@@ -57,12 +57,12 @@
 								</ng-container>
 							</div>
 						</div>
-					</div>
+					</section>
 
 					<!-- Education, Experience, Languages and Interest -->
 					<div class="cd-col cd-col-pm-t-7 cd-col-pm-d-8 ik-background-wrapper">
 						<!-- Education -->
-						<div class="ik-education">
+						<section class="ik-education">
 							<h2>{{ profileEducation['title'] }}</h2>
 							<h6>{{ profileEducation['subTitle'] }}</h6>
 
@@ -83,12 +83,12 @@
 									</li>
 								</ul>
 							</div>
-						</div>
+						</section>
 
 						<hr>
 
 						<!-- Experience -->
-						<div class="ik-experience">
+						<section class="ik-experience">
 							<h2>{{ profileExperience['title'] }}</h2>
 							<h6>{{ profileExperience['subTitle'] }}</h6>
 
@@ -128,12 +128,12 @@
 									</li>
 								</ul>
 							</div>
-						</div>
+						</section>
 
 						<hr>
 
 						<!-- Languages -->
-						<div class="ik-languages">
+						<section class="ik-languages">
 							<h2>{{ profileLanguage['title'] }}</h2>
 							<h6>{{ profileLanguage['subTitle'] }}</h6>
 
@@ -142,12 +142,12 @@
 									{{ item }}
 								</span>
 							</div>
-						</div>
+						</section>
 
 						<hr>
 
 						<!-- Interest -->
-						<div class="ik-interest">
+						<section class="ik-interest">
 							<h2>{{ profileInterest['title'] }}</h2>
 
 							<div class="ik-tags">
@@ -155,10 +155,10 @@
 									{{ item }}
 								</span>
 							</div>
-						</div>
+						</section>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 </div>

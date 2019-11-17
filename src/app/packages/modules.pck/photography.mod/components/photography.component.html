@@ -1,6 +1,6 @@
 <div class="ik-photography">
 	<!-- Header -->
-	<div class="ik-header">
+	<section class="ik-header">
 		<div class="ik-photo">
 			<img class="bg-loader"
 				 *ngIf="randomBlock && !!randomBlock['photo']"
@@ -9,22 +9,24 @@
 			<h6 class="ik-text ik-counter">{{ counter }}</h6>
 			<h6 class="ik-text ik-title">{{ randomBlock['title'] }}</h6>
 		</div>
-	</div>
+	</section>
 
-	<!-- Gallery -->
+	<!-- Content -->
 	<div class="ik-content">
 		<div class="cd-container-fluid">
 			<div class="cd-container">
-				<div class="cd-row">
+				<!-- Excerpt -->
+				<section class="cd-row">
 					<div class="cd-col">
 						<h2 class="ik-excerpt ik-font-sacramento">
 							{{ photography['excerpt'] }}
 							<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
 						</h2>
 					</div>
-				</div>
+				</section>
 
-				<div class="cd-row" #gallerySelector>
+				<!-- Gallery -->
+				<section class="cd-row" #gallerySelector>
 					<ng-container *ngFor="let item of photography['gallery']">
 						<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4"
 							 [attr.data-src]="'assets/images/photography/' + item['photo']">
@@ -42,7 +44,7 @@
 							</div>
 						</div>
 					</ng-container>
-				</div>
+				</section>
 			</div>
 		</div>
 	</div>
