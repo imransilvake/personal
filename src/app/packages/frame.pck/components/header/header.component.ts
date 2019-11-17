@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 
 // app
 import { ROUTING } from '../../../../../environments/environment';
-import { faCompress, faExpand } from '@fortawesome/free-solid-svg-icons';
+import { faCompress, faExpand, faTint } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
 import navList from 'src/assets/data/other/nav-list';
 
@@ -18,7 +18,7 @@ declare const document: any;
 })
 
 export class HeaderComponent implements OnInit, OnDestroy {
-	public faIcons = [faExpand, faCompress];
+	public faIcons = [faExpand, faCompress, faTint];
 	public routing = ROUTING;
 	public navList = navList;
 	public fullscreen = false;

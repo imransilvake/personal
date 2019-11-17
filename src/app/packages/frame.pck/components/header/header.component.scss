@@ -24,6 +24,7 @@ header {
 
 					ul {
 						background-color: cd-palette($cd-background, 2002);
+						display: flex;
 						left: 100%;
 						list-style: none;
 						margin-left: 10px;
@@ -32,8 +33,11 @@ header {
 						top: -5px;
 
 						li {
+							&:not(:only-child):not(:last-child) {
+								margin-right: 10px;
+							}
+
 							.ik-icon {
-								color: cd-palette($cd-color, 1010);
 								cursor: pointer;
 							}
 						}
