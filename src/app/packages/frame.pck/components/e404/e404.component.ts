@@ -33,16 +33,22 @@ export class E404Component implements OnInit, OnDestroy {
 				const y = event['pageY'] * 100 / window.innerHeight;
 
 				// left: x > 20
-				// right: x > 80
+				// right: x < 80
 				if (x > 20 && x < 80) {
 					this.x = `${x}%`;
 				}
 
 				// top: y > 30
-				// bottom: y > 60
+				// bottom: y < 60
 				if (y > 30 && y < 60) {
 					this.y = `${y}%`;
 				}
+
+				// outside of view scope
+				this.x = (x <= 20) ? `21%` : this.x;
+				this.x = (x >= 80) ? `79%` : this.x;
+				this.y = (y <= 30) ? `31%` : this.y;
+				this.y = (y >= 60) ? `59%` : this.y;
 			});
 	}
 

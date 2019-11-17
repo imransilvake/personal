@@ -29,10 +29,15 @@
 						<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4"
 							 [attr.data-src]="'assets/images/photography/' + item['photo']">
 							<div class="ik-photo">
+								<!-- Cover -->
 								<img class="bg-loader"
 									 [src]="'assets/images/photography/' + item['photo']"
 									 [alt]="item['title']"/>
+
+								<!-- Icon -->
 								<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+
+								<!-- Title -->
 								<h6>{{ item['title'] }}</h6>
 							</div>
 						</div>
