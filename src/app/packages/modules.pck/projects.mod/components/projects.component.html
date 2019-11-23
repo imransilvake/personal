@@ -32,40 +32,59 @@
 								<p class="ik-badge">{{ item['badge'] }}</p>
 
 								<!-- Title -->
-								<h6>{{ item['title'] }}</h6>
+								<h6 class="ik-title">{{ item['title'] }}</h6>
+
+								<!-- Info -->
+								<div class="ik-info" *ngIf="infoBlockIndex === idx && item['detail']">
+									<!-- Excerpt -->
+									<ng-container *ngIf="item['detail']['excerpt']">
+										<h6>{{ item['detail']['excerpt']['label'] }}</h6>
+										<p>{{ item['detail']['excerpt']['text'] }}</p>
+									</ng-container>
+
+									<!-- Tech -->
+									<ng-container *ngIf="item['detail']['tech']">
+										<h6>{{ item['detail']['tech']['label'] }}</h6>
+										<p>{{ item['detail']['tech']['text'].join(', ') }}</p>
+									</ng-container>
+								</div>
 							</div>
 							<div class="ik-detail">
 								<!-- Actions -->
 								<div class="ik-actions">
 									<div class="ik-left">
-										<fa-icon *ngIf="!item['actions']['lock']"
-												 (click)="onClickDownloadProject(item['actions']['github'])"
+										<fa-icon (click)="!item['actions']['lock'] && onClickDownloadProject(item['actions']['github'])"
 												 class="ik-icon"
-												 [icon]="faIcon[1]">
+												 [class.ik-download]="!item['actions']['lock']"
+												 [icon]="!item['actions']['lock'] ? faIcon[1] : faIcon[2]">
 										</fa-icon>
-										<fa-icon *ngIf="item['actions']['lock']"
-												 class="ik-icon"
-												 [icon]="faIcon[2]"></fa-icon>
 									</div>
 
 									<div class="ik-right">
-										<fa-icon (click)="onClickToggleInfoBlock(idx)"
+										<!-- Info -->
+										<fa-icon *ngIf="!!(item['detail'] && item['detail']['excerpt'])"
+												 (click)="onClickToggleInfoBlock(idx)"
 												 class="ik-icon"
-												 [icon]="faIcon[3]"></fa-icon>
+												 [icon]="infoBlockIndex !== idx ? faIcon[3] : faIcon[6]"></fa-icon>
+
+										<!-- Github -->
 										<fa-icon *ngIf="!!item['actions']['github']"
 												 (click)="onClickOpenGithub(item['actions']['github'])"
 												 class="ik-icon"
 												 [icon]="faIcon[4]">
 										</fa-icon>
+
+										<!-- Gallery -->
 										<fa-icon *ngIf="!!item['actions']['gallery']"
 												 class="ik-icon"
 												 [icon]="faIcon[5]"></fa-icon>
-									</div>
-								</div>
 
-								<!-- Information -->
-								<div class="ik-info" *ngIf="infoBlockIndex === idx">
-									Information Box (toggle)
+										<!-- Website -->
+										<fa-icon *ngIf="!!item['actions']['website']"
+												 (click)="onClickOpenWebsite(item['actions']['website'])"
+												 class="ik-icon"
+												 [icon]="faIcon[7]"></fa-icon>
+									</div>
 								</div>
 							</div>
 						</div>

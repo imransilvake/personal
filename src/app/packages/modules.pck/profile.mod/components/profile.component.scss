@@ -39,7 +39,7 @@
 		}
 	}
 
-	section {
+	.ik-content {
 		position: relative;
 
 		.ik-summary {
@@ -70,7 +70,7 @@
 			}
 		}
 
-		.ik-content {
+		.ik-detail {
 			background-color: cd-palette($cd-background, 2001);
 			padding: 30px 0;
 
@@ -279,8 +279,8 @@
 			}
 		}
 
-		section {
-			.ik-content {
+		.ik-content {
+			.ik-detail {
 				.cd-container {
 					.cd-row {
 						.cd-col {
@@ -297,8 +297,8 @@
 	}
 
 	@include cd-media(desktop, mini) {
-		section {
-			.ik-content {
+		.ik-content {
+			.ik-detail {
 				.cd-container {
 					> .cd-row {
 						.cd-col {

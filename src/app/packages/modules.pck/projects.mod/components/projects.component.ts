@@ -2,7 +2,11 @@
 import { Component } from '@angular/core';
 
 // app
-import { faCode, faDownload, faImages, faInfo, faLock } from '@fortawesome/free-solid-svg-icons';
+import {
+	faCode, faDownload, faExternalLinkSquareAlt,
+	faImages, faInfoCircle,
+	faLock, faTimesCircle
+} from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import projects from '../../../../../assets/data/projects/project';
 
@@ -14,7 +18,7 @@ import projects from '../../../../../assets/data/projects/project';
 
 export class ProjectsComponent {
 	public projects = projects;
-	public faIcon = [faCode, faDownload, faLock, faInfo, faGithub, faImages];
+	public faIcon = [faCode, faDownload, faLock, faInfoCircle, faGithub, faImages, faTimesCircle, faExternalLinkSquareAlt];
 	public infoBlockIndex = -1;
 
 	/**
@@ -46,5 +50,14 @@ export class ProjectsComponent {
 	 */
 	public onClickOpenGithub(link) {
 		window.open(`${this.projects['githubProfile']}${link}`, '_blank');
+	}
+
+	/**
+	 * open website external link
+	 *
+	 * @param link
+	 */
+	public onClickOpenWebsite(link) {
+		window.open(link, '_blank');
 	}
 }
