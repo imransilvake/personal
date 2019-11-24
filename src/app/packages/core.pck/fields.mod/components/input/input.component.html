@@ -1,0 +1,64 @@
+<div class="ham-input-field" *ngIf="control">
+	<!-- Label -->
+	<label *ngIf="showLabel" [htmlFor]="inputId">{{labelName}}</label>
+
+	<!-- Info & Input -->
+	<div
+		class="ham-input-wrapper"
+		[class.ham-invalid]="control.invalid && control.touched"
+		[class.ham-focused]="inputFocused">
+		<!-- Input -->
+		<div class="ham-input">
+			<input
+				matInput
+				[formControl]="control"
+				[id]="inputId"
+				[name]="inputName"
+				[type]="hidePassword ? 'password' : inputType"
+				[value]="control.value"
+				[placeholder]="inputPlaceHolder"
+				[autocomplete]="autocomplete"
+				[maxLength]="maxLength"
+				[class.ham-space]="control.value"
+				(focus)="inputFocused=true"
+				(focusout)="inputFocused=false">
+
+			<!-- Close Icon -->
+			<fa-icon
+				*ngIf="control.value && !control.disabled"
+				class="ham-icon ham-close"
+				(click)="control.setValue('')"
+				[icon]="faIcon[2]">
+			</fa-icon>
+
+			<!-- Password Icon -->
+			<fa-icon
+				*ngIf="showPassword && control.value"
+				class="ham-icon ham-eye"
+				(click)="hidePassword = !hidePassword"
+				[icon]="hidePassword ? faIcon[0] : faIcon[1]">
+			</fa-icon>
+		</div>
+	</div>
+
+	<!-- Error -->
+	<mat-error *ngIf="control.invalid && control.touched">
+		<ng-container [ngSwitch]="control.errors | FirstKey">
+			<p *ngSwitchCase="'required'" i18n="@@Fields_Input_Error_Required">
+				Required field
+			</p>
+			<p *ngSwitchCase="'minlength'" i18n="@@Fields_Input_Error_MinLength">
+				It must have at least {{control.errors.minlength.requiredLength}} characters long
+			</p>
+			<p *ngSwitchCase="'maxlength'" i18n="@@Fields_Input_Error_MaxLength">
+				It must have at most {{control.errors.maxlength.requiredLength}} characters long
+			</p>
+			<p i18n="@@Fields_Input_Error_Default" *ngSwitchDefault>
+				Unknown error occurred
+			</p>
+		</ng-container>
+	</mat-error>
+
+	<!-- Hint -->
+	<mat-hint *ngIf="showHint && hintText">{{hintText}}</mat-hint>
+</div>

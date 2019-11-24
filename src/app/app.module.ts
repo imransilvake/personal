@@ -10,8 +10,8 @@ import { AppComponent } from './app.component';
 import { FrameModule } from './packages/frame.pck/frame.module';
 import { APP_ROUTES } from './app-routing';
 import { WidgetsModule } from './shared/widgets/widgets.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './packages/modules.pck/home.component';
+import { SharedModule } from './shared/shared.module';
 
 // i18n using polyfills
 // provided by webpack
@@ -26,8 +26,8 @@ declare const require;
 			onSameUrlNavigation: 'reload'
 		}),
 
-		// vendors
-		FontAwesomeModule,
+		// shared
+		SharedModule,
 
 		// core
 		FrameModule,

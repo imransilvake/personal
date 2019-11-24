@@ -1,0 +1,88 @@
+@import 'main';
+
+.ham-input-field {
+	label {
+		color: cd-palette($cd-color, 1000);
+		display: block;
+		font-size: cd-fontSize(s13);
+		margin-bottom: 5px;
+	}
+
+	.ham-input-wrapper {
+		&.ham-invalid {
+			border: 1px solid cd-palette($cd-border, 3007);
+		}
+
+		.ham-input {
+			direction: ltr;
+			position: relative;
+			width: 100%;
+
+			input {
+				background-color: cd-palette($cd-background, 2002);
+				border: none;
+				border-radius: 2px;
+				box-shadow: inset 0 2px 3px rgba(0, 0, 0, .03);
+				color: cd-palette($cd-color, 1000);
+				cursor: pointer;
+				font-size: cd-fontSize(s14);
+				margin: 0;
+				outline: 0;
+				padding: 12px;
+				width: 100%;
+
+				&.ham-space {
+					padding-right: 26px;
+				}
+
+				&:disabled {
+					cursor: default;
+					opacity: .5;
+				}
+
+				&::placeholder {
+					color: cd-palette($cd-color, 1006);
+					opacity: 1;
+				}
+			}
+
+			// icon: password show
+			.ham-icon {
+				color: cd-palette($cd-color, 1000);
+				cursor: pointer;
+				position: absolute;
+				right: 8px;
+				top: 10px;
+
+				&.ham-eye {
+					right: 30px;
+				}
+
+				&.mat-icon {
+					font-size: cd-fontSize(s19);
+					height: 20px;
+					width: 20px;
+				}
+			}
+		}
+	}
+
+	// error
+	.mat-error {
+		p {
+			background-color: cd-palette($cd-background, 2009);
+			color: cd-palette($cd-color, 1001);
+			font-size: cd-fontSize(s12);
+			margin-top: 0;
+			padding: 2px 6px;
+		}
+	}
+
+	// hint
+	.mat-hint {
+		color: cd-palette($cd-color, 1004);
+		display: block;
+		font-size: cd-fontSize(s12);
+		margin-top: 4px;
+	}
+}

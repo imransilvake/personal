@@ -1,5 +1,8 @@
 // angular
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 // app
 import {
@@ -16,10 +19,46 @@ import projects from '../../../../../assets/data/projects/project';
 	styleUrls: ['./projects.component.scss']
 })
 
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit, OnDestroy {
 	public projects = projects;
 	public faIcon = [faCode, faDownload, faLock, faInfoCircle, faGithub, faImages, faTimesCircle, faExternalLinkSquareAlt];
 	public infoBlockIndex = -1;
+	public formFields;
+
+	private _ngUnSubscribe: Subject<void> = new Subject<void>();
+
+	constructor() {
+		// form group
+		this.formFields = new FormGroup({
+			search: new FormControl('')
+		})
+	}
+
+	ngOnInit() {
+		// listen: search
+		this.search.valueChanges
+			.pipe(takeUntil(this._ngUnSubscribe))
+			.subscribe(text => {
+				const result = projects['projects']
+					.filter(
+						x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
+					);
+				this.projects = !text ? projects : { ...projects, projects: result };
+			});
+	}
+
+	ngOnDestroy() {
+		// remove subscriptions
+		this._ngUnSubscribe.next();
+		this._ngUnSubscribe.complete();
+	}
+
+	/**
+	 * getters
+	 */
+	get search() {
+		return this.formFields.get('search');
+	}
 
 	/**
 	 * download project from github
