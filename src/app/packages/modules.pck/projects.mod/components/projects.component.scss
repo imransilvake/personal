@@ -14,8 +14,43 @@
 						border-bottom: 1px solid cd-palette($cd-border, 3003);
 						padding: 10px;
 
-						.ik-search {
-							max-width: 200px;
+						&:first-child {
+							.ik-search {
+								max-width: 200px;
+							}
+						}
+
+						&:last-child {
+							text-align: right;
+
+							ul {
+								list-style: none;
+								margin-top: 10px;
+
+								li {
+									display: inline-block;
+									margin-right: 15px;
+									padding: 0 6px;
+
+									&:last-child {
+										margin-right: 0;
+									}
+
+									h6 {
+										color: cd-palette($cd-color, 1006);
+										cursor: pointer;
+									}
+
+									&.ik-active {
+										background-color: cd-palette($cd-background, 2002);
+										border-radius: 5px;
+
+										h6 {
+											color: cd-palette($cd-color, 1016);
+										}
+									}
+								}
+							}
 						}
 					}
 				}

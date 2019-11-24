@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 // app
-import { faEye, faEyeSlash, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
 	selector: 'app-input',
@@ -12,8 +12,6 @@ import { faEye, faEyeSlash, faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 
 export class InputComponent implements OnInit {
-	public faIcon = [faEye, faEyeSlash, faTimes];
-
 	@Input() control = new FormControl();
 
 	@Input() showLabel = false;
@@ -25,14 +23,19 @@ export class InputComponent implements OnInit {
 	@Input() inputPlaceHolder;
 	@Input() autocomplete = 'off';
 
-	@Input() showPassword = false;
-	@Input() hidePassword = false;
+	@Input() showIconLeft = false;
+	@Input() iconLeft;
 
 	@Input() showHint = false;
 	@Input() hintText;
 
 	@Input() inputFocused = false;
 	@Input() maxLength = 100;
+
+	@Input() showPassword = false;
+	@Input() hidePassword = false;
+
+	public faIcon = [faEye, faEyeSlash, faTimes, faSearch];
 
 	ngOnInit() {
 		// case: show password on click

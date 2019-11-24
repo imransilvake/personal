@@ -14,9 +14,12 @@
 
 				<!-- Search & Filters -->
 				<section class="cd-row ik-search-filter">
+					<!-- Search -->
 					<div class="cd-col cd-col-pm-t-6 cd-col-pm-d-6">
 						<div class="ik-search">
 							<app-input
+									[showIconLeft]="true"
+									[iconLeft]="faIcon[8]"
 									[inputId]="'ik-search'"
 									[inputName]="'search'"
 									[inputPlaceHolder]="'Search'"
@@ -24,7 +27,17 @@
 							</app-input>
 						</div>
 					</div>
+
+					<!-- Filters -->
 					<div class="cd-col cd-col-pm-t-6 cd-col-pm-d-6">
+						<ul>
+							<ng-container *ngFor="let pFilter of projects['filters']">
+								<li [class.ik-active]="pFilter.id === filter.value.id"
+								(click)="onClickChangeFilter(pFilter)">
+									<h6>{{ pFilter.text }}</h6>
+								</li>
+							</ng-container>
+						</ul>
 					</div>
 				</section>
 

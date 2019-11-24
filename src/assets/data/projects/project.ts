@@ -1,8 +1,31 @@
 const projects = {
 	excerpt: 'Coding is fun',
 	githubProfile: 'https://github.com/imransilvake/',
+	filters: [
+		{
+			id: 'all',
+			text: 'All'
+		},
+		{
+			id: 'scss',
+			text: 'SCSS'
+		},
+		{
+			id: 'angular',
+			text: 'Angular'
+		},
+		{
+			id: 'react',
+			text: 'React'
+		},
+		{
+			id: 'php',
+			text: 'PHP'
+		}
+	],
 	projects: [
 		{
+			filter: 'scss',
 			title: 'SCSS Framework',
 			class: 'ik-scss',
 			badge: 'SCSS',
@@ -22,6 +45,7 @@ const projects = {
 			}
 		},
 		{
+			filter: 'angular',
 			title: 'Hotel App Manager',
 			class: 'ik-js',
 			badge: 'Angular',
@@ -41,6 +65,7 @@ const projects = {
 			}
 		},
 		{
+			filter: 'angular',
 			title: 'Rabt Portal',
 			class: 'ik-js',
 			badge: 'Angular',
@@ -60,6 +85,7 @@ const projects = {
 			}
 		},
 		{
+			filter: 'react',
 			title: 'Slack App Clone',
 			class: 'ik-js',
 			badge: 'React',
@@ -80,6 +106,7 @@ const projects = {
 			}
 		},
 		{
+			filter: 'react',
 			title: 'Takeaway Challenge',
 			class: 'ik-js',
 			badge: 'React',
@@ -101,6 +128,7 @@ const projects = {
 			}
 		},
 		{
+			filter: 'react',
 			title: 'Tic-Tac-Toe',
 			class: 'ik-js',
 			badge: 'React',
@@ -121,6 +149,7 @@ const projects = {
 			}
 		},
 		{
+			filter: 'php',
 			title: 'Multisite Image Slider',
 			class: 'ik-php',
 			badge: 'PHP',

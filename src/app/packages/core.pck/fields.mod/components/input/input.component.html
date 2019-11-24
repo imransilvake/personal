@@ -2,41 +2,42 @@
 	<!-- Label -->
 	<label *ngIf="showLabel" [htmlFor]="inputId">{{labelName}}</label>
 
-	<!-- Info & Input -->
-	<div
-		class="ham-input-wrapper"
-		[class.ham-invalid]="control.invalid && control.touched"
-		[class.ham-focused]="inputFocused">
+	<!-- Input & Icons -->
+	<div class="ham-input-wrapper"
+		 [class.ham-invalid]="control.invalid && control.touched"
+		 [class.ham-focused]="inputFocused">
 		<!-- Input -->
 		<div class="ham-input">
-			<input
-				matInput
-				[formControl]="control"
-				[id]="inputId"
-				[name]="inputName"
-				[type]="hidePassword ? 'password' : inputType"
-				[value]="control.value"
-				[placeholder]="inputPlaceHolder"
-				[autocomplete]="autocomplete"
-				[maxLength]="maxLength"
-				[class.ham-space]="control.value"
-				(focus)="inputFocused=true"
-				(focusout)="inputFocused=false">
+			<!-- Left Icon -->
+			<fa-icon class="ham-icon ham-left" [icon]="iconLeft"></fa-icon>
+
+			<!-- Input -->
+			<input matInput
+				   [formControl]="control"
+				   [id]="inputId"
+				   [name]="inputName"
+				   [type]="hidePassword ? 'password' : inputType"
+				   [value]="control.value"
+				   [placeholder]="inputPlaceHolder"
+				   [autocomplete]="autocomplete"
+				   [maxLength]="maxLength"
+				   [class.ham-space-left]="showIconLeft"
+				   [class.ham-space-right]="control.value"
+				   (focus)="inputFocused=true"
+				   (focusout)="inputFocused=false">
 
 			<!-- Close Icon -->
-			<fa-icon
-				*ngIf="control.value && !control.disabled"
-				class="ham-icon ham-close"
-				(click)="control.setValue('')"
-				[icon]="faIcon[2]">
+			<fa-icon *ngIf="control.value && !control.disabled"
+					 class="ham-icon ham-right"
+					 (click)="control.setValue('')"
+					 [icon]="faIcon[2]">
 			</fa-icon>
 
 			<!-- Password Icon -->
-			<fa-icon
-				*ngIf="showPassword && control.value"
-				class="ham-icon ham-eye"
-				(click)="hidePassword = !hidePassword"
-				[icon]="hidePassword ? faIcon[0] : faIcon[1]">
+			<fa-icon *ngIf="showPassword && control.value"
+					 class="ham-icon ham-right"
+					 (click)="hidePassword = !hidePassword"
+					 [icon]="hidePassword ? faIcon[0] : faIcon[1]">
 			</fa-icon>
 		</div>
 	</div>

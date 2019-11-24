@@ -8,7 +8,7 @@ import { takeUntil } from 'rxjs/operators';
 import {
 	faCode, faDownload, faExternalLinkSquareAlt,
 	faImages, faInfoCircle,
-	faLock, faTimesCircle
+	faLock, faSearch, faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import projects from '../../../../../assets/data/projects/project';
@@ -21,7 +21,10 @@ import projects from '../../../../../assets/data/projects/project';
 
 export class ProjectsComponent implements OnInit, OnDestroy {
 	public projects = projects;
-	public faIcon = [faCode, faDownload, faLock, faInfoCircle, faGithub, faImages, faTimesCircle, faExternalLinkSquareAlt];
+	public faIcon = [
+		faCode, faDownload, faLock, faInfoCircle, faGithub,
+		faImages, faTimesCircle, faExternalLinkSquareAlt, faSearch
+	];
 	public infoBlockIndex = -1;
 	public formFields;
 
@@ -30,8 +33,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	constructor() {
 		// form group
 		this.formFields = new FormGroup({
-			search: new FormControl('')
-		})
+			search: new FormControl(''),
+			filter: new FormControl('')
+		});
+
+		// set filter all by default
+		this.filter.setValue(this.projects['filters'][0]);
 	}
 
 	ngOnInit() {
@@ -39,11 +46,20 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		this.search.valueChanges
 			.pipe(takeUntil(this._ngUnSubscribe))
 			.subscribe(text => {
-				const result = projects['projects']
-					.filter(
-						x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
-					);
-				this.projects = !text ? projects : { ...projects, projects: result };
+				let result;
+				if (this.filter.value.id === 'all') {
+					result = projects['projects']
+						.filter(x =>
+							x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
+						);
+				} else {
+					result = projects['projects']
+						.filter(x =>
+							x.filter === this.filter.value.id &&
+							x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
+						);
+				}
+				this.projects = { ...projects, projects: result };
 			});
 	}
 
@@ -58,6 +74,31 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	 */
 	get search() {
 		return this.formFields.get('search');
+	}
+
+	get filter() {
+		return this.formFields.get('filter');
+	}
+
+	/**
+	 * set selected filter
+	 *
+	 * @param filter
+	 */
+	public onClickChangeFilter(filter) {
+		// clear search
+		this.search.setValue('');
+
+		// update filter
+		this.filter.setValue(filter);
+
+		// update data
+		if (filter && filter.id !== 'all') {
+			const result = projects['projects'].filter(x => x.filter === filter.id);
+			this.projects = { ...projects, projects: result };
+		} else {
+			this.projects = projects;
+		}
 	}
 
 	/**
