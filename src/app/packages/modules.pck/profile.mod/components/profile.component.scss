@@ -2,7 +2,7 @@
 
 .ik-profile {
 	header {
-		background-color: cd-palette($cd-background, 2001);
+		background-color: var(--bg2);
 
 		.cd-container {
 			position: relative;
@@ -19,18 +19,18 @@
 
 						img {
 							border-radius: 50%;
-							box-shadow: 0 4px 8px 0 cd-palette($cd-shadow, 4000, .3);
+							box-shadow: 0 4px 8px 0 var(--o2);
 							display: block;
 							width: 100px;
 						}
 					}
 
 					h1 {
-						color: cd-palette($cd-color, 1000);
+						color: var(--tc1);
 					}
 
 					h5 {
-						color: cd-palette($cd-color, 1000);
+						color: var(--tc1);
 						font-weight: cd-fontWeight(300);
 						margin-top: -5px;
 					}
@@ -43,26 +43,32 @@
 		position: relative;
 
 		.ik-summary {
-			background-color: cd-palette($cd-background, 2002);
+			background-color: var(--bg3);
 
 			.cd-container {
 				.cd-row {
 					padding: 30px 0;
 
 					.cd-col {
+						h2 {
+							color: var(--tc2);
+						}
+
 						p {
+							color: var(--tc2);
 							margin-top: 12px;
 						}
 
 						.ik-tags {
 							h6 {
+								color: var(--tc2);
 								margin: 20px 0 10px;
 							}
 
 							span {
 								@extend .ik-common-tag;
-								background-color: cd-palette($cd-background, 2001);
-								color: cd-palette($cd-color, 1008);
+								background-color: var(--bg2);
+								color: var(--c7);
 							}
 						}
 					}
@@ -71,7 +77,7 @@
 		}
 
 		.ik-detail {
-			background-color: cd-palette($cd-background, 2001);
+			background-color: var(--bg2);
 			padding: 30px 0;
 
 			.cd-container {
@@ -79,6 +85,10 @@
 					.cd-col {
 						&.ik-quick-wrapper {
 							.ik-skills {
+								h2 {
+									color: var(--tc2);
+								}
+
 								.ik-logo {
 									margin-top: 15px;
 
@@ -87,7 +97,7 @@
 										margin-right: 3px;
 
 										img {
-											border: 1px solid cd-palette($cd-border, 3003);
+											border: 1px solid var(--tc3);
 											height: 50px;
 											padding: 2px;
 										}
@@ -102,8 +112,7 @@
 
 									span {
 										@extend .ik-common-tag;
-										background-color: cd-palette($cd-background, 2002);
-										color: cd-palette($cd-color, 1006);
+										@extend .ik-common-tag-color;
 									}
 								}
 							}
@@ -111,6 +120,14 @@
 
 						&.ik-background-wrapper {
 							.ik-education {
+								h2 {
+									color: var(--tc2);
+								}
+
+								h6 {
+									color: var(--tc2);
+								}
+
 								.ik-list-wrapper {
 									ul {
 										@extend .ik-common-ul;
@@ -123,7 +140,7 @@
 												float: left;
 
 												img {
-													border: 1px solid cd-palette($cd-border, 3003);
+													border: 1px solid var(--tc3);
 													padding: 2px;
 													width: 46px;
 												}
@@ -132,7 +149,12 @@
 											.ik-right {
 												margin-left: 20px;
 
+												h5 {
+													color: var(--tc2);
+												}
+
 												p {
+													color: var(--tc2);
 													font-weight: cd-fontWeight(300);
 												}
 											}
@@ -146,6 +168,14 @@
 							}
 
 							.ik-experience {
+								h2 {
+									color: var(--tc2);
+								}
+
+								h6 {
+									color: var(--tc2);
+								}
+
 								.ik-list-wrapper {
 									position: relative;
 
@@ -153,7 +183,7 @@
 										@extend .ik-common-ul;
 
 										&::before {
-											border-left: 1px solid cd-palette($cd-border, 3004);
+											border-left: 1px solid var(--c3);
 											bottom: 0;
 											content: '';
 											left: 22px;
@@ -169,18 +199,18 @@
 												float: left;
 
 												.ik-number {
-													background-color: cd-palette($cd-background, 2001);
+													background-color: var(--c2);
 													border-radius: 50%;
-													box-shadow: 0 0 5px 0 cd-palette($cd-shadow, 4004);
-													color: cd-palette($cd-color, 1017);
+													box-shadow: 0 0 5px 0 var(--o2);
+													color: var(--c12);
 													height: 46px;
 													padding-top: 13px;
 													text-align: center;
 													width: 46px;
 
 													&.ik-current {
-														background-color: cd-palette($cd-background, 2017);
-														color: cd-palette($cd-color, 1001);
+														background-color: var(--c12);
+														color: var(--c2);
 													}
 
 													&.ik-year {
@@ -192,13 +222,18 @@
 											.ik-right {
 												margin-left: 20px;
 
+												h5 {
+													color: var(--tc2);
+												}
+
 												p {
+													color: var(--tc2);
 													font-weight: cd-fontWeight(300);
 
 													.ik-on {
-														background-color: cd-palette($cd-background, 2010);
+														background-color: var(--c9);
 														border-radius: 3px;
-														color: cd-palette($cd-color, 1001);
+														color: var(--c2);
 														font-size: cd-fontSize(s12);
 														padding: 2px 4px;
 														vertical-align: text-bottom;
@@ -220,8 +255,7 @@
 
 									span {
 										@extend .ik-common-tag;
-										background-color: cd-palette($cd-background, 2002);
-										color: cd-palette($cd-color, 1006);
+										@extend .ik-common-tag-color;
 									}
 								}
 							}
@@ -232,8 +266,7 @@
 
 									span {
 										@extend .ik-common-tag;
-										background-color: cd-palette($cd-background, 2002);
-										color: cd-palette($cd-color, 1006);
+										@extend .ik-common-tag-color;
 									}
 								}
 							}
@@ -252,6 +285,11 @@
 		line-height: cd-lineHeight(2);
 		margin: 0 3px 3px 0;
 		padding: 0 5px;
+	}
+
+	.ik-common-tag-color {
+		background-color: var(--bg3);
+		color: var(--c7);
 	}
 
 	.ik-common-ul {

@@ -7,10 +7,10 @@
 	z-index: cd-zIndex(float);
 
 	a {
-		background-color: cd-palette($cd-background, 2003);
+		background-color: var(--c5);
 		border-radius: 5px;
-		box-shadow: 1px 1px 15px cd-palette($cd-shadow, 4000, .4);
-		color: cd-palette($cd-color, 1001);
+		box-shadow: 1px 1px 15px var(--o4);
+		color: var(--c2);
 		cursor: pointer;
 		display: block;
 		height: 36px;

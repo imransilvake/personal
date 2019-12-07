@@ -1,7 +1,7 @@
 @import 'main';
 
 .ik-notice-block {
-	background-color: cd-palette($cd-background, 2002);
+	background-color: var(--bg3);
 	padding: 10px;
 
 	.cd-row {
@@ -10,12 +10,12 @@
 			text-align: center;
 
 			.ik-icon {
-				color: cd-palette($cd-color, 1011);
+				color: var(--c11);
 				margin-right: 5px;
 			}
 
 			span {
-				color: cd-palette($cd-color, 1010);
+				color: var(--c9);
 				font-weight: cd-fontWeight(600);
 			}
 		}

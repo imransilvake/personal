@@ -16,10 +16,10 @@
 			top: 5px;
 
 			span {
-				background-color: cd-palette($cd-background, 2001);
+				background-color: var(--bg1);
 				border-radius: 2px;
-				box-shadow: 1px 1px 1px cd-palette($cd-shadow, 4004);
-				color: cd-palette($cd-color, 1010);
+				box-shadow: 1px 1px 1px var(--tc3);
+				color: var(--c9);
 				margin-right: 5px;
 				padding: 2px 6px;
 				text-align: center;
@@ -28,23 +28,23 @@
 
 		.ik-content {
 			h1 {
-				color: cd-palette($cd-color, 1010);
+				color: var(--c9);
 				font-weight: cd-fontWeight(600);
 				margin-top: -5px;
 
 				.ik-icon {
-					color: cd-palette($cd-color, 1010);
+					color: var(--c9);
 					font-size: cd-fontSize(s18);
 					margin-left: 5px;
 
 					&.ik-red {
-						color: cd-palette($cd-color, 1012);
+						color: var(--c13);
 					}
 				}
 			}
 
 			h4 {
-				color: cd-palette($cd-color, 1009);
+				color: var(--tc2);
 				font-weight: cd-fontWeight(600);
 			}
 		}

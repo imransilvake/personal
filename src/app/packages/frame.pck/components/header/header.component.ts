@@ -4,10 +4,12 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 // app
+import navList from 'src/assets/data/other/nav-list';
 import { ROUTING } from '../../../../../environments/environment';
 import { faCompress, faExpand, faTint } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
-import navList from 'src/assets/data/other/nav-list';
+import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
+import { FrameService } from '../../services/frame.service';
 
 declare const document: any;
 
@@ -25,10 +27,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	private _ngUnSubscribe: Subject<void> = new Subject<void>();
 
-	constructor(private _helperService: HelperService) {
+	constructor(
+		private _helperService: HelperService,
+		private _storageService: StorageService,
+		private _frameService: FrameService
+	) {
 	}
 
 	ngOnInit() {
+		// init theme
+		this.onClickThemeToggle(true);
+
+		// detect full-screen
 		HelperService.detectFullScreen()
 			.pipe(takeUntil(this._ngUnSubscribe))
 			.subscribe(() => {
@@ -60,5 +70,27 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	public onClickExitFullScreen() {
 		this._helperService.exitFullScreen();
 		this.fullscreen = false;
+	}
+
+	/**
+	 * toggle theme mode: dark / light
+	 *
+	 * @param init
+	 */
+	public onClickThemeToggle(init?: boolean) {
+		// fetch theme from local storage (if any)
+		const theme = this._storageService.get('theme');
+		const reverse = (theme === 'light') ? 'dark' : 'light';
+		const value = init ? theme : reverse;
+
+		// add data attribute to body
+		const body = document.getElementsByTagName('body')[0];
+		body.setAttribute('data-theme', value);
+
+		// update to local storage
+		this._storageService.put('theme', value);
+
+		// broadcast signal
+		this._frameService.themeModeChange.next(value);
 	}
 }

@@ -1,9 +1,9 @@
 @import 'main';
 
 footer {
-	background-color: cd-palette($cd-background, 2001);
-	border-top: 1px solid cd-palette($cd-border, 3004);
-	box-shadow: 0 -2px 3px -2px cd-palette($cd-shadow, 4004);
+	background-color: var(--bg2);
+	border-top: 1px solid var(--tc3);
+	box-shadow: 0 -2px 3px -2px var(--tc3);
 
 	.cd-container {
 		.cd-row {
@@ -11,16 +11,16 @@ footer {
 
 			.cd-col {
 				h5 {
-					color: cd-palette($cd-color, 1000);
+					color: var(--tc1);
 					font-weight: cd-fontWeight(300);
 
 					.ik-icon {
-						color: cd-palette($cd-color, 1010);
+						color: var(--c9);
 						font-size: cd-fontSize(s15);
 					}
 
 					.ik-version {
-						color: cd-palette($cd-color, 1006);
+						color: var(--c7);
 						font-size: cd-fontSize(s12);
 						vertical-align: middle;
 					}

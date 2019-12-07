@@ -1,10 +1,14 @@
 body, html {
-	background-color: cd-palette($cd-background, 2002);
+	background-color: var(--bg4);
 	font-family: cd-fontFamily(roboto, $cd-fonts-list);
 
 	a {
 		&:visited {
-			color: cd-palette($cd-color, 1013);
+			color: var(--c8);
 		}
+	}
+
+	hr {
+		border-top-color: var(--tc3);
 	}
 }

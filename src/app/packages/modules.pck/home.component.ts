@@ -2,8 +2,8 @@
 import { Component } from '@angular/core';
 
 // app
-import { faEye, faHeart } from '@fortawesome/free-solid-svg-icons';
 import homeIntro from '../../../assets/data/home/intro';
+import { faEye, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
 	selector: 'app-home',

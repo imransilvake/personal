@@ -10,20 +10,6 @@ declare const document: any;
 @Injectable({ providedIn: 'root' })
 export class HelperService {
 	/**
-	 * detect view: app or desktop
-	 */
-	static get isDesktopView() {
-		return window && window.innerWidth >= 768;
-	}
-
-	/**
-	 * detect: window resize
-	 */
-	public static detectWindowResize() {
-		return fromEvent(window, 'resize');
-	}
-
-	/**
 	 * detect: scroll
 	 */
 	public static detectScroll() {

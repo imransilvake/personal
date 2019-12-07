@@ -10,8 +10,8 @@
 					margin: 0 15px;
 
 					.cd-col {
-						background-color: cd-palette($cd-background, 2001);
-						border-bottom: 1px solid cd-palette($cd-border, 3003);
+						background-color: var(--bg1);
+						border-bottom: 1px solid var(--tc4);
 						padding: 10px;
 
 						&:first-child {
@@ -37,17 +37,13 @@
 									}
 
 									h6 {
-										color: cd-palette($cd-color, 1006);
+										color: var(--c7);
 										cursor: pointer;
 									}
 
 									&.ik-active {
-										background-color: cd-palette($cd-background, 2002);
-										border-radius: 2px;
-										box-shadow: inset 0 2px 3px rgba(0, 0, 0, .03);
-
 										h6 {
-											color: cd-palette($cd-color, 1016);
+											color: var(--c10);
 										}
 									}
 								}
@@ -62,12 +58,12 @@
 					&.ik-excerpt {
 						text-align: center;
 
+						h1 {
+							color: var(--c7);
+						}
+
 						h2 {
-							.ik-icon {
-								color: cd-palette($cd-color, 1008);
-								font-size: cd-fontSize(s24);
-								margin-left: 5px;
-							}
+							color: var(--c7);
 						}
 					}
 
@@ -75,24 +71,24 @@
 						position: relative;
 
 						&.ik-color {
-							background-color: cd-palette($cd-background, 2010);
+							background-color: var(--c9);
 							height: 200px;
 
 							&.ik-scss {
-								background-color: cd-palette($cd-background, 2018);
+								background-color: var(--c14);
 							}
 
 							&.ik-js {
-								background-color: cd-palette($cd-background, 2019);
+								background-color: var(--c15);
 							}
 
 							&.ik-php {
-								background-color: cd-palette($cd-background, 2017);
+								background-color: var(--c12);
 							}
 						}
 
 						img {
-							background-color: cd-palette($cd-background, 2001);
+							background-color: var(--c2);
 							display: block;
 							max-height: 200px;
 							object-fit: cover;
@@ -102,7 +98,7 @@
 						.ik-title {
 							align-items: center;
 							bottom: 0;
-							color: cd-palette($cd-color, 1001);
+							color: var(--c2);
 							display: flex;
 							font-weight: cd-fontWeight(600);
 							justify-content: center;
@@ -113,8 +109,8 @@
 						}
 
 						.ik-badge {
-							background-color: cd-palette($cd-background, 2001);
-							color: cd-palette($cd-color, 1000);
+							background-color: var(--c2);
+							color: var(--c1);
 							left: 0;
 							padding: 0 5px;
 							position: absolute;
@@ -122,10 +118,10 @@
 						}
 
 						.ik-info {
-							background-color: cd-palette($cd-background, 2001);
-							border-bottom: 1px solid cd-palette($cd-border, 3002);
+							background-color: var(--c2);
+							border-bottom: 1px solid var(--c5);
 							bottom: 0;
-							color: cd-palette($cd-color, 1000);
+							color: var(--c1);
 							height: 200px;
 							left: 0;
 							overflow-y: auto;
@@ -139,15 +135,15 @@
 							}
 
 							p {
-								color: cd-palette($cd-color, 1007);
+								color: var(--c7);
 								margin: -2px 0 5px;
 							}
 						}
 					}
 
 					.ik-detail {
-						background-color: cd-palette($cd-background, 2001);
-						border-bottom: 1px solid cd-palette($cd-border, 3003);
+						background-color: var(--c2);
+						border-bottom: 1px solid var(--c5);
 						padding: 5px 10px;
 
 						.ik-actions {

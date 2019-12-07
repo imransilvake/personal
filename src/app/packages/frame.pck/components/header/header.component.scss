@@ -2,9 +2,9 @@
 
 header {
 	.ik-top {
-		background-color: cd-palette($cd-background, 2001);
-		border-bottom: 1px solid cd-palette($cd-border, 3004);
-		box-shadow: 1px 0 2px cd-palette($cd-shadow, 4004);
+		background-color: var(--bg2);
+		border-bottom: 1px solid var(--tc3);
+		box-shadow: 1px 0 2px var(--tc3);
 		padding: 10px 0;
 		position: relative;
 
@@ -23,7 +23,6 @@ header {
 					}
 
 					ul {
-						background-color: cd-palette($cd-background, 2002);
 						display: flex;
 						left: 100%;
 						list-style: none;
@@ -38,6 +37,7 @@ header {
 							}
 
 							.ik-icon {
+								color: var(--tc1);
 								cursor: pointer;
 							}
 						}
@@ -56,7 +56,7 @@ header {
 							padding: 0 10px;
 
 							&.ik-active {
-								color: cd-palette($cd-color, 1016);
+								color: var(--c10);
 							}
 						}
 

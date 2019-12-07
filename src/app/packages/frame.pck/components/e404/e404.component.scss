@@ -1,19 +1,18 @@
 @import 'main';
 
-// variables
-$ghost-box: cd-palette($cd-background, 2002);
-$ghost: cd-palette($cd-background, 2004);
-$ghost-left-eye: cd-palette($cd-background, 2010);
-$ghost-right-eye: cd-palette($cd-background, 2010);
-
 .ik-404 {
+	background-color: var(--bg2);
 	padding: 0 20px;
 
 	.ik-box {
-		background-color: $ghost-box;
 		padding: 50px 0;
 
 		.ik-ghost {
+			$ghost-box: var(--tc4);
+			$ghost: var(--c3);
+			$ghost-left-eye: var(--c9);
+			$ghost-right-eye: var(--c9);
+
 			.ik-ghost-container {
 				animation: up_and_down 3s ease-in-out infinite;
 				background-color: $ghost;
@@ -91,15 +90,15 @@ $ghost-right-eye: cd-palette($cd-background, 2010);
 	}
 
 	.ik-description {
-		margin-bottom: 50px;
+		padding-bottom: 50px;
 		text-align: center;
 
 		h1 {
-			color: cd-palette($cd-color, 1010);
+			color: var(--c9);
 		}
 
 		p {
-			color: cd-palette($cd-color, 1008);
+			color: var(--c7);
 		}
 	}
 }
