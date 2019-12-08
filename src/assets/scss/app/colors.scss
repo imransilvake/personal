@@ -19,26 +19,31 @@
 	--o5: rgba(0, 0, 0, .65);
 }
 
-[data-theme="light"] {
-	--bg1: #ffffff;
-	--bg2: #ffffff;
-	--bg3: #f8f8f8;
-	--bg4: #f8f8f8;
+$color1: #ffffff;
+$color2: #f8f8f8;
+$color3: #292929;
+$color4: #000000;
+$color5: #6a6c6d;
+$color6: #dddddd;
 
-	--tc1: #333333;
-	--tc2: #333333;
-	--tc3: #dddddd;
-	--tc4: #ffffff;
+[data-theme='light'] {
+	--bg1: #{$color1};
+	--bg2: #{$color1};
+	--bg3: #{$color2};
+	--bg4: #{$color2};
+	--tc1: #{$color3};
+	--tc2: #{$color3};
+	--tc3: #{$color6};
+	--tc4: #{$color1};
 }
 
-[data-theme="dark"] {
-	--bg1: #292929;
-	--bg2: #000000;
-	--bg3: #292929;
-	--bg4: #000000;
-
-	--tc1: #ffffff;
-	--tc2: #6a6c6d;
-	--tc3: #333333;
-	--tc4: #000000;
+[data-theme='dark'] {
+	--bg1: #{$color3};
+	--bg2: #{$color4};
+	--bg3: #{$color3};
+	--bg4: #{$color4};
+	--tc1: #{$color1};
+	--tc2: #{$color5};
+	--tc3: #{$color3};
+	--tc4: #{$color4};
 }

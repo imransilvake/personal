@@ -30,7 +30,7 @@
 		"property-no-unknown": true,
 		"property-no-vendor-prefix": true,
 
-		"selector-max-attribute": 0,
+		"selector-max-attribute": 1,
 		"selector-max-id": 0,
 		"selector-no-vendor-prefix": true,
 
