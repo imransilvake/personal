@@ -106,6 +106,7 @@
 
 								.ik-tags {
 									h6 {
+										color: var(--tc2);
 										font-weight: cd-fontWeight(600);
 										margin: 5px 0;
 									}
@@ -183,12 +184,12 @@
 										@extend .ik-common-ul;
 
 										&::before {
-											border-left: 1px solid var(--c3);
-											bottom: 0;
+											border-left: 1px solid var(--tc3);
+											bottom: 5px;
 											content: '';
 											left: 22px;
 											position: absolute;
-											top: 0;
+											top: 5px;
 										}
 
 										li {
@@ -250,6 +251,14 @@
 							}
 
 							.ik-languages {
+								h2 {
+									color: var(--tc2);
+								}
+
+								h6 {
+									color: var(--tc2);
+								}
+
 								.ik-tags {
 									margin: 30px 0 0;
 
@@ -261,6 +270,10 @@
 							}
 
 							.ik-interest {
+								h2 {
+									color: var(--tc2);
+								}
+
 								.ik-tags {
 									margin: 30px 0 0;
 

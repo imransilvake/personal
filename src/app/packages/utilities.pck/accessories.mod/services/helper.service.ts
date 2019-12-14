@@ -73,7 +73,7 @@ export class HelperService {
 	 * @param dateFormat
 	 */
 	public static getDate(date: any, dateFormat?: string) {
-		const format = dateFormat ? dateFormat : 'DD. MMMM YYYY';
-		return moment(date, 'DD-MM-YYYY').format(format);
+		const format = dateFormat ? dateFormat : 'MMMM YYYY';
+		return moment(date, 'MM-YYYY').format(format);
 	}
 }

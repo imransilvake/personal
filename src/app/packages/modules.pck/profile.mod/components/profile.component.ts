@@ -31,8 +31,8 @@ export class ProfileComponent {
 	 * get time period
 	 */
 	public getTP(period) {
-		const start = HelperService.getDate(period[0], 'MMM YYYY');
-		const end = period.length === 1 ? '' : HelperService.getDate(period[1], 'MMM YYYY');
+		const start = HelperService.getDate(period[0]);
+		const end = period.length === 1 ? '' : HelperService.getDate(period[1]);
 		return end ? `${start} - ${end}` : start;
 	}
 
@@ -41,11 +41,13 @@ export class ProfileComponent {
 	 */
 	public getTD(period) {
 		// dates
-		const start = HelperService.getDate(period[0], 'MMM YYYY');
-		const end = period.length === 1 ? moment() : HelperService.getDate(period[1], 'MMM YYYY');
+		const start = HelperService.getDate(period[0]);
+		const end = period.length === 1 ? moment() : HelperService.getDate(period[1]);
+		const startM = moment(start, 'MMMM-YYYY');
+		const endM = moment(end, 'MMMM-YYYY');
 
 		// difference
-		const diff = moment(end).add(1, 'month').diff(start, 'months');
+		const diff = endM.add('1', 'month').diff(startM, 'months');
 		const total = Math.round(diff);
 
 		// month, year

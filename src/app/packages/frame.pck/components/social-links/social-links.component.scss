@@ -22,8 +22,8 @@
 					.ik-icon {
 						color: var(--tc1);
 						display: block;
-						font-size: 20px;
-						line-height: 0;
+						font-size: cd-fontSize(s20);
+						line-height: cd-lineHeight(1.1);
 					}
 
 					&:not(:last-child) {
