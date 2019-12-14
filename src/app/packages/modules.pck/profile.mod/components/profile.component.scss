@@ -185,11 +185,11 @@
 
 										&::before {
 											border-left: 1px solid var(--tc3);
-											bottom: 5px;
+											bottom: 10%;
 											content: '';
 											left: 22px;
 											position: absolute;
-											top: 5px;
+											top: 10%;
 										}
 
 										li {
@@ -357,28 +357,6 @@
 								.ik-education {
 									.ik-list-wrapper {
 										ul {
-											li {
-												display: block;
-
-												.ik-left {
-													float: none;
-												}
-
-												.ik-right {
-													margin: 10px 0 0;
-												}
-											}
-										}
-									}
-								}
-
-								.ik-experience {
-									.ik-list-wrapper {
-										ul {
-											&::before {
-												content: none;
-											}
-
 											li {
 												display: block;
 
