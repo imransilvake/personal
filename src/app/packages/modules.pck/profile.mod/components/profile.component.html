@@ -100,18 +100,10 @@
 												<p class="ik-number"
 												   [class.ik-current]="exp['period'].length === 1"
 												   [class.ik-year]="getTD(exp['period'])[0] > 0">
-													{{
-                                                    getTD(exp['period'])[0] > 0 ?
-                                                        getTD(exp['period'])[0] + 'Y ' + getTD(exp['period'])[1] + 'M' :
-                                                        getTD(exp['period'])[1] + 'M'
-													}}
+													{{ getDisplayPeriod(getTD(exp['period'])) }}
 												</p>
 												<span class="cd-arrow cd-bottom">
-													{{
-                                                    getTD(exp['period'])[0] > 0 ?
-                                                        getTD(exp['period'])[0] + ' Years and ' + getTD(exp['period'])[1] + ' Months' :
-                                                        getTD(exp['period'])[1] + ' Months'
-													}}
+													{{ getDisplayPeriod(getTD(exp['period'])) }}
 												</span>
 											</div>
 										</div>

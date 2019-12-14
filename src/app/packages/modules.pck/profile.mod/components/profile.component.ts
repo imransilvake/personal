@@ -56,4 +56,21 @@ export class ProfileComponent {
 
 		return [years, months];
 	}
+
+	/**
+	 * get display period
+	 *
+	 * @param period
+	 */
+	public getDisplayPeriod(period) {
+		const year = period[0];
+		const month = period[1];
+		if (year > 0 && month > 0) {
+			return `${year}Y ${month}M`;
+		} else if (year > 0 && month === 0) {
+			return `${year}Y`;
+		} else {
+			return `${month}M`;
+		}
+	}
 }
