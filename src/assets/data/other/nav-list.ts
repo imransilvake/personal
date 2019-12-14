@@ -13,7 +13,7 @@ const navList = [
 	/*
 	{
 		name: 'Blog',
-		link: `/${ROUTING.e404.blog}`
+		link: `/${ROUTING.pages.blog}`
 	},
 	*/
 	{
