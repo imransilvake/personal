@@ -27,7 +27,7 @@ const profileSkills = {
 		},
 		{
 			id: 'npm',
-			name: 'NPM Package Manager'
+			name: 'NPM'
 		},
 		{
 			id: 'rxjs',

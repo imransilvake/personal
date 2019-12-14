@@ -4,18 +4,26 @@
 	.cd-container {
 		.cd-row {
 			.cd-col {
-				background-color: var(--c2);
+				background-color: var(--bg1);
 				bottom: 60px;
-				box-shadow: 0 4px 8px 0 var(--o3);
+				box-shadow: 0 4px 8px 0 var(--o1);
 				left: 0;
 				padding: 5px;
 				position: fixed;
 
 				a {
 					display: block;
+					text-align: center;
 
 					img {
 						width: 20px;
+					}
+
+					.ik-icon {
+						color: var(--tc1);
+						display: block;
+						font-size: 20px;
+						line-height: 0;
 					}
 
 					&:not(:last-child) {
