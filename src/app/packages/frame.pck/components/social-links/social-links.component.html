@@ -3,12 +3,15 @@
 		<div class="cd-row">
 			<div class="cd-col">
 				<ng-container *ngFor="let item of socialLinks">
-					<a [href]="item['link']" target="_blank" class="cd-tooltip">
-						<fa-icon *ngIf="item['type'] === 'icon'"
+					<a [href]="item['link']"
+					   class="cd-tooltip"
+					   [class.ik-bg]="item['extra']['bg']"
+					   target="_blank">
+						<fa-icon *ngIf="item['extra']['type'] === 'icon'"
 								 class="ik-icon"
 								 [icon]="item['icon']">
 						</fa-icon>
-						<img *ngIf="item['type'] === 'img'"
+						<img *ngIf="item['extra']['type'] === 'img'"
 							 [src]="'assets/svg/profile/social/' + item['icon'] + '.svg'"
 							 [alt]="item['name']"/>
 						<span class="cd-arrow cd-right">{{ item['name'] }}</span>

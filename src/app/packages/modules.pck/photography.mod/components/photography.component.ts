@@ -1,12 +1,13 @@
 // angular
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subject, timer } from 'rxjs';
-import { startWith, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, startWith, switchMap, takeUntil } from 'rxjs/operators';
+import { NavigationEnd, Router } from '@angular/router';
 
 // app
+import photography from '../../../../../assets/data/photography/gallery';
 import { AppOptions } from '../../../../../app.config';
 import { faExpand, faSmileWink } from '@fortawesome/free-solid-svg-icons';
-import photography from '../../../../../assets/data/photography/gallery';
 
 declare const lightGallery: any;
 
@@ -20,12 +21,22 @@ export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('gallerySelector', { static: false }) gallerySelector: ElementRef;
 
 	public faIcon = [faSmileWink, faExpand];
-	public photography = photography;
+	public photography = {};
 	public randomBlock = {};
 	public interval = new Subject();
 	public counter = 10;
 
 	private _ngUnSubscribe: Subject<void> = new Subject<void>();
+
+	constructor(private _router: Router) {
+		// listen: router event
+		this._router.events
+			.pipe(
+				takeUntil(this._ngUnSubscribe),
+				filter(event => event instanceof NavigationEnd)
+			)
+			.subscribe(() => this.photography = photography);
+	}
 
 	ngOnInit() {
 		this.interval

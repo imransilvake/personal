@@ -2,7 +2,7 @@
 	<!-- Header -->
 	<section class="ik-header">
 		<div class="ik-photo">
-			<img class="bg-loader"
+			<img class="ik-bg-loader"
 				 *ngIf="randomBlock && !!randomBlock['photo']"
 				 [src]="'assets/images/photography/' + randomBlock['photo']"
 				 [alt]="randomBlock['title']"/>
@@ -32,7 +32,7 @@
 							 [attr.data-src]="'assets/images/photography/' + item['photo']">
 							<div class="ik-photo">
 								<!-- Cover -->
-								<img class="bg-loader"
+								<img class="ik-bg-loader"
 									 [src]="'assets/images/photography/' + item['photo']"
 									 [alt]="item['title']"/>
 

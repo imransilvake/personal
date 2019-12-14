@@ -2,6 +2,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 // app
 import navList from 'src/assets/data/other/nav-list';
@@ -28,6 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	private _ngUnSubscribe: Subject<void> = new Subject<void>();
 
 	constructor(
+		private _router: Router,
 		private _helperService: HelperService,
 		private _storageService: StorageService,
 		private _frameService: FrameService
@@ -79,7 +81,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	 */
 	public onClickThemeToggle(init?: boolean) {
 		// fetch theme from local storage (if any)
-		const theme = this._storageService.get('theme');
+		const theme = this._storageService.get('theme') || 'light';
 		const reverse = (theme === 'light') ? 'dark' : 'light';
 		const value = init ? theme : reverse;
 

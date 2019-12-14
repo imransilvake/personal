@@ -22,9 +22,7 @@ declare const require;
 		// angular
 		BrowserModule,
 		BrowserAnimationsModule,
-		RouterModule.forRoot(APP_ROUTES, {
-			onSameUrlNavigation: 'reload'
-		}),
+		RouterModule.forRoot(APP_ROUTES),
 
 		// shared
 		SharedModule,

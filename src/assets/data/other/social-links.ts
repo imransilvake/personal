@@ -6,19 +6,28 @@ const socialLinks = [
 		name: 'Github',
 		icon: faGithub,
 		link: 'https://github.com/imransilvake',
-		type: 'icon'
+		extra: {
+			type: 'icon',
+			bg: false
+		}
 	},
 	{
 		name: 'Linkedin',
 		icon: 'linkedin',
 		link: 'https://www.linkedin.com/in/imransilvake/',
-		type: 'img'
+		extra: {
+			type: 'img',
+			bg: true
+		}
 	},
 	{
 		name: 'Xing',
 		icon: 'xing',
 		link: 'https://www.xing.com/profile/Imran_Khan137',
-		type: 'img'
+		extra: {
+			type: 'img',
+			bg: false
+		}
 	}
 ];
 
