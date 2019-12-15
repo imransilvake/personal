@@ -9,7 +9,7 @@
 			.cd-row {
 				&.ik-search-filter {
 					background-color: var(--bg1);
-					border-bottom: 1px solid var(--tc4);
+					border-bottom: 1px solid var(--tc3);
 					margin: 0 15px 30px;
 
 					.cd-col {
@@ -46,7 +46,7 @@
 									}
 
 									h6 {
-										color: var(--c5);
+										color: var(--c4);
 										cursor: pointer;
 									}
 
@@ -68,11 +68,11 @@
 						text-align: center;
 
 						h1 {
-							color: var(--c5);
+							color: var(--c4);
 						}
 
 						h2 {
-							color: var(--c5);
+							color: var(--c4);
 						}
 					}
 
@@ -88,7 +88,7 @@
 							}
 
 							&.ik-js {
-								background-color: var(--c12);
+								background-color: var(--c5);
 							}
 
 							&.ik-php {
@@ -128,7 +128,7 @@
 
 						.ik-info {
 							background-color: var(--c2);
-							border-bottom: 1px solid var(--c4);
+							border-bottom: 1px solid var(--c3);
 							bottom: 0;
 							color: var(--c1);
 							height: 200px;
@@ -144,7 +144,7 @@
 							}
 
 							p {
-								color: var(--c5);
+								color: var(--c4);
 								margin: -2px 0 5px;
 							}
 						}
@@ -152,7 +152,7 @@
 
 					.ik-detail {
 						background-color: var(--c2);
-						border-bottom: 1px solid var(--c4);
+						border-bottom: 1px solid var(--c3);
 						padding: 5px 10px;
 
 						.ik-actions {
@@ -180,7 +180,7 @@
 					}
 
 					.ik-empty {
-						color: var(--c5);
+						color: var(--c4);
 					}
 				}
 			}

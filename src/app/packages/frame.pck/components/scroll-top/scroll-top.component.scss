@@ -1,25 +1,32 @@
 @import 'main';
 
 .ik-scroll-top {
-	bottom: 25px;
+	bottom: 20px;
 	position: fixed;
-	right: 25px;
+	right: 20px;
 	z-index: cd-zIndex(float);
 
 	a {
+		align-items: center;
 		background-color: var(--c4);
 		border-radius: 5px;
-		box-shadow: 1px 1px 15px var(--o2);
+		box-shadow: 1px 1px 2px var(--o1);
 		color: var(--c2);
 		cursor: pointer;
-		display: block;
+		display: flex;
 		height: 36px;
-		opacity: .9;
+		justify-content: center;
 		padding: 3px;
 		width: 36px;
 
 		&:hover {
 			opacity: 1;
+		}
+
+		.ik-icon {
+			font-size: cd-fontSize(s22);
+			height: 22px;
+			line-height: cd-lineHeight(1.1);
 		}
 	}
 }

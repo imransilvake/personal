@@ -1,5 +1,6 @@
 // angular
 import { Component } from '@angular/core';
+import { ScrollTopService } from './packages/utilities.pck/accessories.mod/services/scroll-top.service';
 
 @Component({
 	selector: 'app-root',
@@ -18,8 +19,15 @@ import { Component } from '@angular/core';
 
 		<!-- Social -->
 		<app-social-links></app-social-links>
+		
+		<!-- Scroll Top -->
+		<app-scroll-top></app-scroll-top>
 	`,
 })
 
 export class AppComponent {
+	constructor(private _scrollTopService: ScrollTopService) {
+		// init scroll top
+		this._scrollTopService.scrollTopListener();
+	}
 }
