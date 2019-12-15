@@ -8,20 +8,24 @@
 		.cd-container {
 			.cd-row {
 				&.ik-search-filter {
-					margin: 0 15px;
+					background-color: var(--bg1);
+					border-bottom: 1px solid var(--tc4);
+					margin: 0 15px 30px;
 
 					.cd-col {
-						background-color: var(--bg1);
-						border-bottom: 1px solid var(--tc4);
-						padding: 10px;
+						padding: 10px 0;
+						margin-bottom: 0;
 
 						&:first-child {
+							padding-left: 15px;
+
 							.ik-search {
 								max-width: 200px;
 							}
 						}
 
 						&:last-child {
+							padding-right: 15px;
 							text-align: right;
 
 							ul {
@@ -30,8 +34,12 @@
 
 								li {
 									display: inline-block;
-									margin-right: 15px;
-									padding: 2px 6px;
+									margin: 0 10px;
+									padding: 2px 0;
+
+									&:first-child {
+										margin-left: 0;
+									}
 
 									&:last-child {
 										margin-right: 0;
@@ -189,7 +197,7 @@
 					&.ik-search-filter {
 						.cd-col {
 							&:first-child {
-								margin-bottom: 0;
+								padding: 10px 10px 0;
 
 								.ik-search {
 									margin: 0 auto;
@@ -197,6 +205,7 @@
 							}
 
 							&:last-child {
+								padding: 10px;
 								text-align: center;
 							}
 						}
