@@ -10,8 +10,8 @@
 		.ik-ghost {
 			$ghost-box: var(--tc4);
 			$ghost: var(--c3);
-			$ghost-left-eye: var(--c9);
-			$ghost-right-eye: var(--c9);
+			$ghost-left-eye: var(--c7);
+			$ghost-right-eye: var(--c7);
 
 			.ik-ghost-container {
 				animation: up_and_down 3s ease-in-out infinite;
@@ -94,11 +94,11 @@
 		text-align: center;
 
 		h1 {
-			color: var(--c9);
+			color: var(--c7);
 		}
 
 		p {
-			color: var(--c7);
+			color: var(--c5);
 		}
 	}
 }

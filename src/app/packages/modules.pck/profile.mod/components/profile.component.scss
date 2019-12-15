@@ -68,7 +68,7 @@
 							span {
 								@extend .ik-common-tag;
 								background-color: var(--bg2);
-								color: var(--c7);
+								color: var(--c5);
 							}
 						}
 					}
@@ -203,14 +203,14 @@
 													background-color: var(--c2);
 													border-radius: 50%;
 													box-shadow: 0 0 5px 0 var(--o1);
-													color: var(--c12);
+													color: var(--c10);
 													height: 46px;
 													padding-top: 13px;
 													text-align: center;
 													width: 46px;
 
 													&.ik-current {
-														background-color: var(--c12);
+														background-color: var(--c10);
 														color: var(--c2);
 													}
 
@@ -232,7 +232,7 @@
 													font-weight: cd-fontWeight(300);
 
 													.ik-on {
-														background-color: var(--c9);
+														background-color: var(--c7);
 														border-radius: 3px;
 														color: var(--c2);
 														font-size: cd-fontSize(s12);
@@ -302,7 +302,7 @@
 
 	.ik-common-tag-color {
 		background-color: var(--bg3);
-		color: var(--c7);
+		color: var(--c5);
 	}
 
 	.ik-common-ul {

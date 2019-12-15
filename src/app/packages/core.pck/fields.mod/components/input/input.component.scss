@@ -10,7 +10,7 @@
 
 	.ham-input-wrapper {
 		&.ham-invalid {
-			border: 1px solid var(--c9);
+			border: 1px solid var(--c7);
 		}
 
 		.ham-input {
@@ -45,14 +45,14 @@
 				}
 
 				&::placeholder {
-					color: var(--c7);
+					color: var(--c5);
 					opacity: 1;
 				}
 			}
 
 			// icon
 			.ham-icon {
-				color: var(--c7);
+				color: var(--c5);
 				cursor: pointer;
 				position: absolute;
 				top: 10px;
@@ -73,7 +73,7 @@
 	// error
 	.mat-error {
 		p {
-			background-color: var(--c9);
+			background-color: var(--c7);
 			color: var(--c2);
 			font-size: cd-fontSize(s12);
 			margin-top: 0;

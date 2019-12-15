@@ -20,7 +20,7 @@
 				background-color: var(--bg1);
 				border-bottom: 1px solid var(--tc3);
 				border-radius: 2px;
-				color: var(--c9);
+				color: var(--c7);
 				margin-right: 5px;
 				padding: 2px 6px;
 				text-align: center;
@@ -29,17 +29,17 @@
 
 		.ik-content {
 			h1 {
-				color: var(--c9);
+				color: var(--c7);
 				font-weight: cd-fontWeight(600);
 				margin-top: -5px;
 
 				.ik-icon {
-					color: var(--c9);
+					color: var(--c7);
 					font-size: cd-fontSize(s18);
 					margin-left: 5px;
 
 					&.ik-red {
-						color: var(--c13);
+						color: var(--c12);
 					}
 				}
 			}

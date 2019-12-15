@@ -46,13 +46,13 @@
 									}
 
 									h6 {
-										color: var(--c7);
+										color: var(--c5);
 										cursor: pointer;
 									}
 
 									&.ik-active {
 										h6 {
-											color: var(--c10);
+											color: var(--c8);
 										}
 									}
 								}
@@ -68,11 +68,11 @@
 						text-align: center;
 
 						h1 {
-							color: var(--c7);
+							color: var(--c5);
 						}
 
 						h2 {
-							color: var(--c7);
+							color: var(--c5);
 						}
 					}
 
@@ -80,19 +80,19 @@
 						position: relative;
 
 						&.ik-color {
-							background-color: var(--c9);
+							background-color: var(--c7);
 							height: 200px;
 
 							&.ik-scss {
-								background-color: var(--c14);
+								background-color: var(--c11);
 							}
 
 							&.ik-js {
-								background-color: var(--c15);
+								background-color: var(--c12);
 							}
 
 							&.ik-php {
-								background-color: var(--c12);
+								background-color: var(--c10);
 							}
 						}
 
@@ -128,7 +128,7 @@
 
 						.ik-info {
 							background-color: var(--c2);
-							border-bottom: 1px solid var(--c5);
+							border-bottom: 1px solid var(--c4);
 							bottom: 0;
 							color: var(--c1);
 							height: 200px;
@@ -144,7 +144,7 @@
 							}
 
 							p {
-								color: var(--c7);
+								color: var(--c5);
 								margin: -2px 0 5px;
 							}
 						}
@@ -152,7 +152,7 @@
 
 					.ik-detail {
 						background-color: var(--c2);
-						border-bottom: 1px solid var(--c5);
+						border-bottom: 1px solid var(--c4);
 						padding: 5px 10px;
 
 						.ik-actions {
@@ -180,7 +180,7 @@
 					}
 
 					.ik-empty {
-						color: var(--c7);
+						color: var(--c5);
 					}
 				}
 			}
