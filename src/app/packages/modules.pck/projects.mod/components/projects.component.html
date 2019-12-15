@@ -3,15 +3,19 @@
 		<div class="cd-container">
 			<!-- Code Block -->
 			<section class="cd-row ik-code-block">
-				<div class="cd-col">
-					<div class="ik-top">
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
+				<div class="ik-code">
+					<div class="cd-col">
+						<div class="ik-top">
+							<div class="ik-circle"></div>
+							<div class="ik-circle"></div>
+							<div class="ik-circle"></div>
+						</div>
 
-					<div class="ik-content">
-						Hello
+						<div class="ik-content">
+							<ng-container *ngFor="let line of projects['codeBlock']">
+								<p [innerHTML]="line"></p>
+							</ng-container>
+						</div>
 					</div>
 				</div>
 			</section>

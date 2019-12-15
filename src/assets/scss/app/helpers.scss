@@ -7,30 +7,18 @@
 	font-family: cd-fontFamily(poiret, $cd-fonts-list);
 }
 
-// text ellipses
-.ik-ellipses {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-// block 01
-.ik-block-one {
-	background-color: var(--c3);
-	padding: 15px;
-}
-
 // margins
 .ik-margin-top-10 { margin-top: 10px; }
 .ik-margin-top-20 { margin-top: 20px; }
 .ik-margin-bottom-10 { margin-bottom: 10px; }
 .ik-margin-bottom-20 { margin-bottom: 20px; }
+.ik-margin-left-10 { margin-left: 10px; }
+.ik-margin-left-20 { margin-left: 20px; }
 
-// clear fix
-.ik-clear-fix {
-	display: block;
-	width: 100%;
-}
+// colors
+.ik-green { color: var(--c8); }
+.ik-orange { color: var(--c9); }
+.ik-pink { color: var(--c11); }
 
 // bg loader
 .ik-bg-loader {

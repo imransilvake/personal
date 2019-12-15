@@ -5,6 +5,57 @@
 	padding-top: 30px;
 
 	.cd-row {
+		&.ik-code-block {
+			display: block;
+			margin: 0 15px 30px;
+
+			.ik-code {
+				background-color: var(--bg1);
+				border-bottom: 1px solid var(--tc3);
+				border-radius: 5px;
+				max-width: 300px;
+				margin: 0 auto;
+				padding: 10px 15px;
+
+				.cd-col {
+					padding: 0;
+
+					.ik-top {
+						margin-bottom: 15px;
+
+						.ik-circle {
+							border-radius: 50%;
+							display: inline-block;
+							height: 12px;
+							width: 12px;
+
+							&:not(:first-child) {
+								margin-left: 10px;
+							}
+
+							&:nth-of-type(1) {
+								background-color: var(--c7);
+							}
+
+							&:nth-of-type(2) {
+								background-color: var(--c9);
+							}
+
+							&:nth-of-type(3) {
+								background-color: var(--c8);
+							}
+						}
+					}
+
+					.ik-content {
+						p {
+							color: var(--c4);
+						}
+					}
+				}
+			}
+		}
+
 		&.ik-search-filter {
 			background-color: var(--bg1);
 			border-bottom: 1px solid var(--tc3);
@@ -178,6 +229,10 @@
 		padding-top: 20px;
 
 		.cd-row {
+			&.ik-code-block {
+				margin-bottom: 20px;
+			}
+
 			&.ik-search-filter {
 				margin-bottom: 20px;
 
@@ -217,6 +272,10 @@
 		padding-top: 15px;
 
 		.cd-row {
+			&.ik-code-block {
+				margin-bottom: 15px;
+			}
+
 			&.ik-search-filter {
 				margin-bottom: 15px;
 			}

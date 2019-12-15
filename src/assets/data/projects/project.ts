@@ -1,5 +1,18 @@
 const projects = {
 	excerpt: 'Coding is fun',
+	codeBlock: [
+		'<span class="ik-orange">const</span> cup = <span class="ik-orange">new</span> Cup(),',
+		'coffee = <span class="ik-orange">new</span> Coffee(),',
+		'ingredients = {',
+		'<span class="ik-margin-left-20">milk: <span class="ik-pink">true</span>,</span>',
+		'<span class="ik-margin-left-20">sugar: <span class="ik-pink">true</span></span>',
+		'};</p>',
+		'<p class="ik-margin-top-20"></p>',
+		'<span class="ik-orange">if</span> (cup.<span class="ik-green">empty</span>)',
+		'<span class="ik-margin-left-20">cup.<span class="ik-green">fill</span>(coffee, ingredients);</span>',
+		'<span class="ik-orange">else</span>',
+		'<span class="ik-margin-left-20">cup.<span class="ik-green">drink</span>();</span>'
+	],
 	githubProfile: 'https://github.com/imransilvake/',
 	filters: [
 		{
