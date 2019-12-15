@@ -1,60 +1,61 @@
 @import 'main';
 
 .ik-home {
-	header {
-		background-color: var(--bg4);
-		background-position-y: bottom;
-		background-repeat: repeat;
-		background-size: cover;
-		padding: 150px 0 200px;
-		position: relative;
+	background-color: var(--bg4);
+	background-position-y: bottom;
+	background-repeat: repeat;
+	background-size: cover;
+	padding: 150px 0 200px;
+	position: relative;
 
-		.ik-badges {
-			left: 0;
-			position: absolute;
-			right: 0;
-			text-align: center;
-			top: 5px;
-
-			span {
-				background-color: var(--bg1);
-				border-bottom: 1px solid var(--tc3);
-				border-radius: 2px;
-				color: var(--c7);
-				margin-right: 5px;
-				padding: 2px 6px;
+	.cd-row {
+		.cd-col {
+			&.ik-badges {
+				left: 0;
+				position: absolute;
+				right: 0;
 				text-align: center;
-			}
-		}
+				top: 5px;
 
-		.ik-content {
-			h1 {
-				color: var(--c7);
-				font-weight: cd-fontWeight(600);
-				margin-top: -5px;
-
-				.ik-icon {
+				span {
+					background-color: var(--bg1);
+					border-bottom: 1px solid var(--tc3);
+					border-radius: 2px;
 					color: var(--c7);
-					font-size: cd-fontSize(s18);
-					margin-left: 5px;
-
-					&.ik-red {
-						color: var(--c5);
-					}
+					display: inline-block;
+					margin-right: 5px;
+					padding: 2px 6px;
+					text-align: center;
 				}
 			}
 
-			h4 {
-				color: var(--tc2);
-				font-weight: cd-fontWeight(600);
+			&.ik-content {
+				h1 {
+					color: var(--c7);
+					font-weight: cd-fontWeight(600);
+					margin-top: -5px;
+
+					.ik-icon {
+						color: var(--c7);
+						font-size: cd-fontSize(s18);
+						margin-left: 5px;
+
+						&.ik-red {
+							color: var(--c5);
+						}
+					}
+				}
+
+				h4 {
+					color: var(--tc2);
+					font-weight: cd-fontWeight(600);
+				}
 			}
 		}
 	}
 
 	// media
 	@include cd-media(desktop, smartphone) {
-		header {
-			padding: 100px 0 150px;
-		}
+		padding: 100px 0 150px;
 	}
 }

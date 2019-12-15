@@ -1,12 +1,12 @@
 @import 'main';
 
 header {
-	.ik-top {
-		background-color: var(--bg2);
-		border-bottom: 1px solid var(--tc3);
-		padding: 10px 0;
-		position: relative;
+	background-color: var(--bg2);
+	border-bottom: 1px solid var(--tc3);
+	padding: 10px 0;
+	position: relative;
 
+	.cd-row {
 		.cd-col {
 			margin: 0;
 
@@ -80,7 +80,7 @@ header {
 
 	// media
 	@include cd-media(desktop, mini) {
-		.ik-top {
+		.cd-row {
 			.cd-col {
 				text-align: center;
 			}

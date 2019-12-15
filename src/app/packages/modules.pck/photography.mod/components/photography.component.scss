@@ -3,43 +3,43 @@
 .ik-photography {
 	background-color: var(--bg4);
 
-	.ik-header {
-		.ik-photo {
-			height: 500px;
-			position: relative;
-
-			img {
+	.cd-container-fluid {
+		.ik-slider-photo {
+			.ik-photo {
 				height: 500px;
-				object-fit: cover;
-				width: 100%;
-			}
+				position: relative;
 
-			.ik-text {
-				background-color: var(--o3);
-				border-radius: 2px;
-				color: var(--c2);
-				font-weight: cd-fontWeight(600);
-				position: absolute;
-
-				&.ik-counter {
-					padding: 1px 10px;
-					right: 10px;
-					top: 10px;
+				img {
+					height: 500px;
+					object-fit: cover;
+					width: 100%;
 				}
 
-				&.ik-title {
-					bottom: 10px;
-					left: 10px;
-					padding: 1px 6px;
+				.ik-text {
+					background-color: var(--o3);
+					border-radius: 2px;
+					color: var(--c2);
+					font-weight: cd-fontWeight(600);
+					position: absolute;
+
+					&.ik-counter {
+						padding: 1px 10px;
+						right: 10px;
+						top: 10px;
+					}
+
+					&.ik-title {
+						bottom: 10px;
+						left: 10px;
+						padding: 1px 6px;
+					}
 				}
 			}
 		}
-	}
-
-	.ik-content {
-		margin-top: 30px;
 
 		.cd-container {
+			margin-top: 30px;
+
 			.cd-row {
 				.cd-col {
 					margin-bottom: 30px;
@@ -114,20 +114,20 @@
 
 	// media
 	@include cd-media(desktop, smartphone) {
-		.ik-header {
-			.ik-photo {
-				height: 350px;
-
-				img {
+		.cd-container-fluid {
+			.ik-slider-photo {
+				.ik-photo {
 					height: 350px;
+
+					img {
+						height: 350px;
+					}
 				}
 			}
-		}
-
-		.ik-content {
-			margin-top: 20px;
 
 			.cd-container {
+				margin-top: 20px;
+
 				.cd-row {
 					.cd-col {
 						margin-bottom: 20px;
@@ -146,20 +146,20 @@
 	}
 
 	@include cd-media(desktop, mini) {
-		.ik-header {
-			.ik-photo {
-				height: 250px;
-
-				img {
+		.cd-container-fluid {
+			.ik-slider-photo {
+				.ik-photo {
 					height: 250px;
+
+					img {
+						height: 250px;
+					}
 				}
 			}
-		}
-
-		.ik-content {
-			margin-top: 15px;
 
 			.cd-container {
+				margin-top: 15px;
+
 				.cd-row {
 					.cd-col {
 						margin-bottom: 15px;

@@ -19,7 +19,7 @@ import { ScrollTopService } from './packages/utilities.pck/accessories.mod/servi
 
 		<!-- Social -->
 		<app-social-links></app-social-links>
-		
+
 		<!-- Scroll Top -->
 		<app-scroll-top></app-scroll-top>
 	`,

@@ -4,25 +4,23 @@ footer {
 	background-color: var(--bg2);
 	border-top: 1px solid var(--tc3);
 
-	.cd-container {
-		.cd-row {
-			padding: 10px 0;
+	.cd-row {
+		padding: 10px 0;
 
-			.cd-col {
-				h5 {
-					color: var(--tc1);
-					font-weight: cd-fontWeight(300);
+		.cd-col {
+			h5 {
+				color: var(--tc1);
+				font-weight: cd-fontWeight(300);
 
-					.ik-icon {
-						color: var(--c7);
-						font-size: cd-fontSize(s15);
-					}
+				.ik-icon {
+					color: var(--c7);
+					font-size: cd-fontSize(s15);
+				}
 
-					.ik-version {
-						color: var(--c4);
-						font-size: cd-fontSize(s12);
-						vertical-align: middle;
-					}
+				.ik-version {
+					color: var(--c4);
+					font-size: cd-fontSize(s12);
+					vertical-align: middle;
 				}
 			}
 		}

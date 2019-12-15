@@ -1,7 +1,8 @@
 <header>
-	<div class="cd-container-fluid ik-top">
+	<div class="cd-container-fluid">
 		<div class="cd-container">
-			<div class="cd-row">
+			<section class="cd-row">
+				<!-- Logo -->
 				<div class="cd-col cd-col-pm-s-4">
 					<div class="ik-block">
 						<a [routerLink]="['/' + routing.pages.home]">
@@ -23,6 +24,8 @@
 						</ul>
 					</div>
 				</div>
+
+				<!-- Nav List -->
 				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
 					<ul class="ik-list-items ik-remove-bullets">
 						<li *ngFor="let item of navList">
@@ -33,7 +36,7 @@
 						</li>
 					</ul>
 				</div>
-			</div>
+			</section>
 		</div>
 	</div>
 </header>

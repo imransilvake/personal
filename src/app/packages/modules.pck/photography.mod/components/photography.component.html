@@ -1,51 +1,49 @@
 <div class="ik-photography">
-	<!-- Header -->
-	<section class="ik-header">
-		<div class="ik-photo">
-			<img class="ik-bg-loader"
-				 *ngIf="randomBlock && !!randomBlock['photo']"
-				 [src]="'assets/images/photography/' + randomBlock['photo']"
-				 [alt]="randomBlock['title']"/>
-			<h6 class="ik-text ik-counter">{{ counter }}</h6>
-			<h6 class="ik-text ik-title">{{ randomBlock['title'] }}</h6>
-		</div>
-	</section>
-
-	<!-- Content -->
-	<div class="ik-content">
-		<div class="cd-container-fluid">
-			<div class="cd-container">
-				<!-- Excerpt -->
-				<section class="cd-row">
-					<div class="cd-col">
-						<h2 class="ik-excerpt ik-font-sacramento">
-							{{ photography['excerpt'] }}
-							<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
-						</h2>
-					</div>
-				</section>
-
-				<!-- Gallery -->
-				<section class="cd-row" #gallerySelector>
-					<ng-container *ngFor="let item of photography['gallery']">
-						<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4"
-							 [attr.data-src]="'assets/images/photography/' + item['photo']">
-							<div class="ik-photo">
-								<!-- Cover -->
-								<img class="ik-bg-loader"
-									 [src]="'assets/images/photography/' + item['photo']"
-									 [alt]="item['title']"/>
-
-								<!-- Icon -->
-								<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
-
-								<!-- Title -->
-								<h6>{{ item['title'] }}</h6>
-							</div>
-						</div>
-					</ng-container>
-				</section>
+	<div class="cd-container-fluid">
+		<!-- Slider Photo -->
+		<section class="ik-slider-photo">
+			<div class="ik-photo">
+				<img class="ik-bg-loader"
+					 *ngIf="randomBlock && !!randomBlock['photo']"
+					 [src]="'assets/images/photography/' + randomBlock['photo']"
+					 [alt]="randomBlock['title']"/>
+				<h6 class="ik-text ik-counter">{{ counter }}</h6>
+				<h6 class="ik-text ik-title">{{ randomBlock['title'] }}</h6>
 			</div>
+		</section>
+
+		<!-- Photos List -->
+		<div class="cd-container">
+			<!-- Excerpt -->
+			<section class="cd-row">
+				<div class="cd-col">
+					<h2 class="ik-excerpt ik-font-sacramento">
+						{{ photography['excerpt'] }}
+						<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+					</h2>
+				</div>
+			</section>
+
+			<!-- Gallery -->
+			<section class="cd-row" #gallerySelector>
+				<ng-container *ngFor="let item of photography['gallery']">
+					<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4"
+						 [attr.data-src]="'assets/images/photography/' + item['photo']">
+						<div class="ik-photo">
+							<!-- Cover -->
+							<img class="ik-bg-loader"
+								 [src]="'assets/images/photography/' + item['photo']"
+								 [alt]="item['title']"/>
+
+							<!-- Icon -->
+							<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+
+							<!-- Title -->
+							<h6>{{ item['title'] }}</h6>
+						</div>
+					</div>
+				</ng-container>
+			</section>
 		</div>
 	</div>
 </div>

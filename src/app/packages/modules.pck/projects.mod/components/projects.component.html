@@ -1,136 +1,139 @@
 <div class="ik-projects">
-	<div class="ik-content">
-		<div class="cd-container-fluid">
-			<div class="cd-container">
-				<!-- Header -->
-				<section class="cd-row">
-					<div class="cd-col ik-excerpt">
-						<h1 [innerHTML]="'{ }'"></h1>
-						<h2 class="ik-font-sacramento">
-							{{ projects['excerpt'] }}
-						</h2>
-					</div>
-				</section>
-
-				<!-- Search & Filters -->
-				<section class="cd-row ik-search-filter">
-					<!-- Search -->
-					<div class="cd-col cd-col-pm-t-6 cd-col-pm-d-6">
-						<div class="ik-search">
-							<app-input
-									[showIconLeft]="true"
-									[iconLeft]="faIcon[8]"
-									[inputId]="'ik-search'"
-									[inputName]="'search'"
-									[inputPlaceHolder]="'Search'"
-									[control]="search">
-							</app-input>
-						</div>
+	<div class="cd-container-fluid">
+		<div class="cd-container">
+			<!-- Code Block -->
+			<section class="cd-row ik-code-block">
+				<div class="cd-col">
+					<div class="ik-top">
+						<div></div>
+						<div></div>
+						<div></div>
 					</div>
 
-					<!-- Filters -->
-					<div class="cd-col cd-col-pm-t-6 cd-col-pm-d-6">
-						<ul>
-							<ng-container *ngFor="let pFilter of projects['filters']">
-								<li [class.ik-active]="pFilter.id === filter.value.id"
+					<div class="ik-content">
+						Hello
+					</div>
+				</div>
+			</section>
+
+			<!-- Search & Filters -->
+			<section class="cd-row ik-search-filter">
+				<!-- Search -->
+				<div class="cd-col cd-col-pm-t-6 cd-col-pm-d-6">
+					<div class="ik-search">
+						<app-input
+								[showIconLeft]="true"
+								[iconLeft]="faIcon[8]"
+								[inputId]="'ik-search'"
+								[inputName]="'search'"
+								[inputPlaceHolder]="'Search'"
+								[control]="search">
+						</app-input>
+					</div>
+				</div>
+
+				<!-- Filters -->
+				<div class="cd-col cd-col-pm-t-6 cd-col-pm-d-6">
+					<ul>
+						<ng-container *ngFor="let pFilter of projects['filters']">
+							<li [class.ik-active]="pFilter.id === filter.value.id"
 								(click)="onClickChangeFilter(pFilter)">
-									<h6>{{ pFilter.text }}</h6>
-								</li>
-							</ng-container>
-						</ul>
-					</div>
-				</section>
+								<h6>{{ pFilter.text }}</h6>
+							</li>
+						</ng-container>
+					</ul>
+				</div>
+			</section>
 
-				<!-- Projects -->
-				<section class="cd-row">
-					<!-- Data -->
-					<ng-container *ngIf="projects['projects'].length > 0">
-						<ng-container *ngFor="let item of projects['projects']; let idx=index;">
-							<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-								<div class="ik-banner"
-									 [class.ik-color]="!!item['class']"
-									 [ngClass]="{
+			<!-- Projects -->
+			<section class="cd-row ik-projects-list">
+				<!-- Data -->
+				<ng-container *ngIf="projects['projects'].length > 0">
+					<ng-container *ngFor="let item of projects['projects']; let idx=index;">
+						<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
+							<div class="ik-banner"
+								 [class.ik-color]="!!item['class']"
+								 [ngClass]="{
 								'ik-scss': item['class'] === 'ik-scss',
 								'ik-js': item['class'] === 'ik-js',
 								'ik-php': item['class'] === 'ik-php'}">
-									<!-- Cover -->
-									<img class="ik-bg-loader"
-										 *ngIf="!!item['photo']"
-										 [src]="'assets/images/projects/' + item['photo']"
-										 [alt]="item['title']"/>
+								<!-- Cover -->
+								<img class="ik-bg-loader"
+									 *ngIf="!!item['photo']"
+									 [src]="'assets/images/projects/' + item['photo']"
+									 [alt]="item['title']"/>
 
-									<!-- Badge -->
-									<p class="ik-badge">{{ item['badge'] }}</p>
+								<!-- Badge -->
+								<p class="ik-badge">{{ item['badge'] }}</p>
 
-									<!-- Title -->
-									<h6 class="ik-title">{{ item['title'] }}</h6>
+								<!-- Title -->
+								<h6 class="ik-title">{{ item['title'] }}</h6>
 
-									<!-- Info -->
-									<div class="ik-info" *ngIf="infoBlockIndex === idx && item['detail']">
-										<!-- Excerpt -->
-										<ng-container *ngIf="item['detail']['excerpt']">
-											<h6>{{ item['detail']['excerpt']['label'] }}</h6>
-											<p>{{ item['detail']['excerpt']['text'] }}</p>
-										</ng-container>
+								<!-- Info -->
+								<div class="ik-info" *ngIf="infoBlockIndex === idx && item['detail']">
+									<!-- Excerpt -->
+									<ng-container *ngIf="item['detail']['excerpt']">
+										<h6>{{ item['detail']['excerpt']['label'] }}</h6>
+										<p>{{ item['detail']['excerpt']['text'] }}</p>
+									</ng-container>
 
-										<!-- Tech -->
-										<ng-container *ngIf="item['detail']['tech']">
-											<h6>{{ item['detail']['tech']['label'] }}</h6>
-											<p>{{ item['detail']['tech']['text'].join(', ') }}</p>
-										</ng-container>
-									</div>
+									<!-- Tech -->
+									<ng-container *ngIf="item['detail']['tech']">
+										<h6>{{ item['detail']['tech']['label'] }}</h6>
+										<p>{{ item['detail']['tech']['text'].join(', ') }}</p>
+									</ng-container>
 								</div>
-								<div class="ik-detail">
-									<!-- Actions -->
-									<div class="ik-actions">
-										<div class="ik-left">
-											<fa-icon
-													(click)="!item['actions']['lock'] && onClickDownloadProject(item['actions']['github'])"
-													class="ik-icon"
-													[class.ik-download]="!item['actions']['lock']"
-													[icon]="!item['actions']['lock'] ? faIcon[1] : faIcon[2]">
-											</fa-icon>
-										</div>
+							</div>
+							<div class="ik-detail">
+								<!-- Actions -->
+								<div class="ik-actions">
+									<div class="ik-left">
+										<fa-icon
+												(click)="!item['actions']['lock'] && onClickDownloadProject(item['actions']['github'])"
+												class="ik-icon"
+												[class.ik-download]="!item['actions']['lock']"
+												[icon]="!item['actions']['lock'] ? faIcon[1] : faIcon[2]">
+										</fa-icon>
+									</div>
 
-										<div class="ik-right">
-											<!-- Info -->
-											<fa-icon *ngIf="!!(item['detail'] && item['detail']['excerpt'])"
-													 (click)="onClickToggleInfoBlock(idx)"
-													 class="ik-icon"
-													 [icon]="infoBlockIndex !== idx ? faIcon[3] : faIcon[6]"></fa-icon>
+									<div class="ik-right">
+										<!-- Info -->
+										<fa-icon *ngIf="!!(item['detail'] && item['detail']['excerpt'])"
+												 (click)="onClickToggleInfoBlock(idx)"
+												 class="ik-icon"
+												 [icon]="infoBlockIndex !== idx ? faIcon[3] : faIcon[6]"></fa-icon>
 
-											<!-- Github -->
-											<fa-icon *ngIf="!!item['actions']['github']"
-													 (click)="onClickOpenGithub(item['actions']['github'])"
-													 class="ik-icon"
-													 [icon]="faIcon[4]">
-											</fa-icon>
+										<!-- Github -->
+										<fa-icon *ngIf="!!item['actions']['github']"
+												 (click)="onClickOpenGithub(item['actions']['github'])"
+												 class="ik-icon"
+												 [icon]="faIcon[4]">
+										</fa-icon>
 
-											<!-- Gallery -->
-											<fa-icon *ngIf="!!item['actions']['gallery']"
-													 class="ik-icon"
-													 [icon]="faIcon[5]"></fa-icon>
+										<!-- Gallery -->
+										<fa-icon *ngIf="!!item['actions']['gallery']"
+												 class="ik-icon"
+												 [icon]="faIcon[5]"></fa-icon>
 
-											<!-- Website -->
-											<fa-icon *ngIf="!!item['actions']['website']"
-													 (click)="onClickOpenWebsite(item['actions']['website'])"
-													 class="ik-icon"
-													 [icon]="faIcon[7]"></fa-icon>
-										</div>
+										<!-- Website -->
+										<fa-icon *ngIf="!!item['actions']['website']"
+												 (click)="onClickOpenWebsite(item['actions']['website'])"
+												 class="ik-icon"
+												 [icon]="faIcon[7]"></fa-icon>
 									</div>
 								</div>
 							</div>
-						</ng-container>
-					</ng-container>
-
-					<!-- Empty -->
-					<ng-container *ngIf="projects['projects'].length === 0">
-						<div class="cd-col cd-center-align">
-							<h6 class="ik-empty">Empty search result!</h6>
 						</div>
 					</ng-container>
-				</section>
-			</div>
+				</ng-container>
+
+				<!-- Empty -->
+				<ng-container *ngIf="projects['projects'].length === 0">
+					<div class="cd-col cd-center-align">
+						<h6 class="ik-empty">Empty search result!</h6>
+					</div>
+				</ng-container>
+			</section>
 		</div>
 	</div>
 </div>
