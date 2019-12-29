@@ -1,0 +1,17 @@
+<div class="ik-code"
+	 [class.ik-auto]="blockSize === bsType[0]"
+	 [class.ik-fixed]="blockSize === bsType[1]">
+	<div class="cd-col">
+		<div class="ik-top">
+			<div class="ik-circle"></div>
+			<div class="ik-circle"></div>
+			<div class="ik-circle"></div>
+		</div>
+
+		<div class="ik-content">
+			<ng-container *ngFor="let line of codeScript">
+				<p [innerHTML]="line"></p>
+			</ng-container>
+		</div>
+	</div>
+</div>

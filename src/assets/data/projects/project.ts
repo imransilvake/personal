@@ -1,17 +1,53 @@
 const projects = {
-	excerpt: 'Coding is fun',
 	codeBlock: [
-		'<span class="ik-orange">const</span> cup = <span class="ik-orange">new</span> Cup(),',
-		'coffee = <span class="ik-orange">new</span> Coffee(),',
-		'ingredients = {',
-		'<span class="ik-margin-left-20">milk: <span class="ik-pink">true</span>,</span>',
-		'<span class="ik-margin-left-20">sugar: <span class="ik-pink">true</span></span>',
-		'};</p>',
-		'<p class="ik-margin-top-20"></p>',
-		'<span class="ik-orange">if</span> (cup.<span class="ik-green">empty</span>)',
-		'<span class="ik-margin-left-20">cup.<span class="ik-green">fill</span>(coffee, ingredients);</span>',
-		'<span class="ik-orange">else</span>',
-		'<span class="ik-margin-left-20">cup.<span class="ik-green">drink</span>();</span>'
+		{
+			classes: ['ik-orange', 'ik-orange'],
+			text: '<span>const</span> cup = <span>new</span> Cup(),'
+		},
+		{
+			classes: ['ik-orange'],
+			text: 'coffee = <span>new</span> Coffee(),'
+		},
+		{
+			classes: [],
+			text: 'ingredients = {'
+		},
+		{
+			classes: ['ik-pink'],
+			text: 'milk: <span>true</span>,'
+		},
+		{
+			classes: ['ik-pink'],
+			text: 'sugar: <span>true</span>'
+		},
+		{
+			classes: [],
+			text: '};'
+		},
+		{
+			classes: [],
+			text: '<br>'
+		},
+		{
+			classes: ['ik-orange', 'ik-green'],
+			text: '<span>if</span> (cup.<span>empty</span>) {'
+		},
+		{
+			classes: ['ik-green'],
+			text: 'cup.<span>fill</span>(coffee, ingredients);'
+		},
+		{
+			classes: ['ik-orange'],
+			text: '} <span>else</span> {'
+		},
+		{
+			classes: ['ik-green'],
+			text: 'cup.<span>drink</span>();'
+		},
+		{
+			classes: [],
+			text: '}'
+		}
 	],
 	githubProfile: 'https://github.com/imransilvake/',
 	filters: [

@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { FrameModule } from './packages/frame.pck/frame.module';
 import { APP_ROUTES } from './app-routing';
-import { WidgetsModule } from './shared/widgets/widgets.module';
+import { WidgetsModule } from './shared/widgets.mod/widgets.module';
 import { HomeComponent } from './packages/modules.pck/home.component';
 import { SharedModule } from './shared/shared.module';
 
