@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 // app
 import navList from 'src/assets/data/other/nav-list';
 import { ROUTING } from '../../../../../environments/environment';
-import { faCompress, faExpand, faTint } from '@fortawesome/free-solid-svg-icons';
+import { faCompress, faExpand, faTextHeight, faTint } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { FrameService } from '../../services/frame.service';
@@ -21,7 +21,7 @@ declare const document: any;
 })
 
 export class HeaderComponent implements OnInit, OnDestroy {
-	public faIcons = [faExpand, faCompress, faTint];
+	public faIcons = [faExpand, faCompress, faTint, faTextHeight];
 	public routing = ROUTING;
 	public navList = navList;
 	public fullscreen = false;
