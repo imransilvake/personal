@@ -90,7 +90,8 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: 'SCSS-Framework'
+				github: 'SCSS-Framework',
+				website: 'https://www.npmjs.com/package/@imransilvake/scss-framework'
 			}
 		},
 		{
