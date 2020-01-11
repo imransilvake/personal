@@ -39,7 +39,7 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.26",
         "@fortawesome/free-brands-svg-icons": "^5.12.0",
         "@fortawesome/free-solid-svg-icons": "^5.12.0",
-        "@imransilvake/scss-framework": "^2.1.0",
+        "@imransilvake/scss-framework": "^2.2.1",
         "@ngrx/core": "^1.2.0",
         "@ngx-translate/i18n-polyfill": "^1.0.0",
         "core-js": "^3.6.2",

@@ -17,12 +17,12 @@
 				&.ik-bg {
 					background-color: var(--c2);
 					border-radius: 50%;
-					height: 20px;
 					line-height: cd-lineHeight(1.1);
-					width: 20px;
 				}
 
 				img {
+					display: block;
+					margin: 0 auto;
 					width: 20px;
 				}
 

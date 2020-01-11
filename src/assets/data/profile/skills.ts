@@ -65,23 +65,23 @@ const profileSkills = {
 		},
 		{
 			title: 'Frameworks',
-			items: ['Angular', 'NativeScript', 'React']
+			items: ['Angular', 'React', 'NativeScript']
 		},
 		{
-			title: 'Layout',
-			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Layout and Design', 'Cross-Browser Compatibility']
+			title: 'Styles',
+			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Design', 'Cross-Browser Compatibility']
 		},
 		{
 			title: 'Libraries',
 			items: ['RxJs', 'MomentJs']
 		},
 		{
-			title: 'Store',
-			items: ['Realtime Firebase DB', 'MongoDB', 'MySQL']
+			title: 'Database',
+			items: ['Firebase', 'MongoDB', 'MySQL']
 		},
 		{
 			title: 'Others',
-			items: ['npm', 'Yarn', 'Git', 'Jira', 'Confluence', 'Webstorm', 'Visual Code Studio', 'MAC', 'Ubuntu']
+			items: ['npm', 'yarn', 'git', 'jira', 'confluence', 'webstorm', 'VSC', 'Mac OS', 'Ubuntu']
 		}
 	]
 };

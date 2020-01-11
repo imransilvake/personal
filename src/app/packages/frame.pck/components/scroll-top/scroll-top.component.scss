@@ -7,23 +7,11 @@
 	z-index: cd-zIndex(float);
 
 	a {
-		align-items: center;
-		background-color: var(--c4);
-		border-radius: 5px;
-		box-shadow: 1px 1px 2px var(--o1);
-		color: var(--c2);
+		color: var(--tc1);
 		cursor: pointer;
-		display: flex;
-		height: 36px;
-		justify-content: center;
-		padding: 3px;
-		width: 36px;
-
-		&:hover {
-			opacity: 1;
-		}
 
 		.ik-icon {
+			display: block;
 			font-size: cd-fontSize(s22);
 			height: 22px;
 			line-height: cd-lineHeight(1.1);
