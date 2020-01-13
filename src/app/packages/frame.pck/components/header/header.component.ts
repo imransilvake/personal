@@ -10,6 +10,7 @@ import { ROUTING } from '../../../../../environments/environment';
 import { faCompress, faExpand, faTextHeight, faTint } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
+import { LocalStorageItems } from '../../../../../app.config';
 
 declare const document: any;
 
@@ -35,8 +36,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		// init theme
+		// init color mode
 		this.onClickThemeToggle(true);
+
+		// init font size
+		this.onClickFontSizeToggle(true);
 
 		// detect full-screen
 		HelperService.detectFullScreen()
@@ -78,8 +82,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 	 * @param init
 	 */
 	public onClickThemeToggle(init?: boolean) {
-		// fetch theme from local storage (if any)
-		const theme = this._storageService.get('theme') || 'light';
+		// get colorMode from local storage
+		const theme = this._storageService.get(LocalStorageItems.colorMode) || 'light';
 		const reverse = (theme === 'light') ? 'dark' : 'light';
 		const value = init ? theme : reverse;
 
@@ -88,15 +92,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
 		body.setAttribute('data-theme', value);
 
 		// update to local storage
-		this._storageService.put('theme', value);
+		this._storageService.put(LocalStorageItems.colorMode, value);
 	}
 
 	/**
 	 * toggle font size: standard / large
 	 */
-	public onClickFontSizeToggle() {
+	public onClickFontSizeToggle(init?: boolean) {
+		// get fontSize from local storage
+		const fontSize = this._storageService.get(LocalStorageItems.fontSize) || '';
+		const reverse = fontSize ? '' : 'ik-font-large';
+		const value = init ? fontSize : reverse;
+
 		// add data attribute to html
 		const html = document.getElementsByTagName('html')[0];
-		html.setAttribute('class', 'ik-font-large');
+		html.setAttribute('class', value);
+
+		// update to local storage
+		this._storageService.put(LocalStorageItems.fontSize, value);
 	}
 }

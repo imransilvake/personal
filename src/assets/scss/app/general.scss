@@ -1,18 +1,19 @@
 html {
-	background-color: var(--bg2);
-	font-family: cd-fontFamily(roboto, $cd-fonts-list);
-
 	&.ik-font-large {
 		font-size: cd-fontSize(s18);
 	}
 
-	a {
-		&:visited {
-			color: var(--c6);
-		}
-	}
+	body {
+		background-color: var(--bg2);
 
-	hr {
-		border-top-color: var(--tc3);
+		a {
+			&:visited {
+				color: var(--c6);
+			}
+		}
+
+		hr {
+			border-top-color: var(--tc3);
+		}
 	}
 }

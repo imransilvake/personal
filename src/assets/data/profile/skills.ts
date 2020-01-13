@@ -60,7 +60,7 @@ const profileSkills = {
 	],
 	skills: [
 		{
-			title: 'Programming Language',
+			title: 'Programming Languages',
 			items: ['JavaScript', 'TypeScript', 'PHP']
 		},
 		{

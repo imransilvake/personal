@@ -12,10 +12,6 @@ export const AppOptions = {
 
 // local-storage items
 export const LocalStorageItems = {
-	appState: 'ik-local-as'
-};
-
-// session-storage items
-export const SessionStorageItems = {
-	appState: 'ik-session-as'
+	colorMode: 'ik-color-mode',
+	fontSize: 'ik-font-size'
 };
