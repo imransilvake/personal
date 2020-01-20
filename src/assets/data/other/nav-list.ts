@@ -12,8 +12,8 @@ const navList = [
 	},
 	/*
 	{
-		name: 'Blog',
-		link: `/${ROUTING.pages.blog}`
+		name: 'Code Section',
+		link: `/${ROUTING.pages.codeSection}`
 	},
 	*/
 	{

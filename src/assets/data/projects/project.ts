@@ -1,3 +1,6 @@
+// app
+import { AppLinks } from '../../../app.config';
+
 const projects = {
 	codeBlock: [
 		{
@@ -49,7 +52,7 @@ const projects = {
 			text: '}'
 		}
 	],
-	githubProfile: 'https://github.com/imransilvake/',
+	githubProfile: AppLinks.projects.github.profile,
 	filters: [
 		{
 			id: 'all',
@@ -90,8 +93,8 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: 'SCSS-Framework',
-				website: 'https://www.npmjs.com/package/@imransilvake/scss-framework'
+				github: AppLinks.projects.github.list.scss.name,
+				website: AppLinks.projects.github.list.scss.link
 			}
 		},
 		{
@@ -151,7 +154,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: 'Slack-App-Clone',
+				github: AppLinks.projects.github.list.slackClone.name,
 				gallery: []
 			}
 		},
@@ -172,9 +175,9 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: 'Takeaway-Challenge',
+				github: AppLinks.projects.github.list.takeAwayChallenge.name,
 				gallery: [],
-				website: 'https://takeaway-challenge.firebaseapp.com/'
+				website: AppLinks.projects.github.list.takeAwayChallenge.link
 			}
 		},
 		{
@@ -194,7 +197,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: 'Tic-Tac-Toe',
+				github: AppLinks.projects.github.list.ticTacToe.name,
 				gallery: []
 			}
 		},
@@ -215,7 +218,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: 'Multisite-Image-Slider',
+				github: AppLinks.projects.github.list.multiSiteSlider.name,
 				gallery: []
 			}
 		}

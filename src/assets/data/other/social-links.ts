@@ -1,11 +1,12 @@
 // app
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { AppLinks } from '../../../app.config';
 
 const socialLinks = [
 	{
 		name: 'Github',
 		icon: faGithub,
-		link: 'https://github.com/imransilvake',
+		link: AppLinks.social.github,
 		extra: {
 			type: 'icon',
 			bg: false
@@ -14,7 +15,7 @@ const socialLinks = [
 	{
 		name: 'Linkedin',
 		icon: 'linkedin',
-		link: 'https://www.linkedin.com/in/imransilvake/',
+		link: AppLinks.social.linkedin,
 		extra: {
 			type: 'img',
 			bg: true
@@ -23,7 +24,7 @@ const socialLinks = [
 	{
 		name: 'Xing',
 		icon: 'xing',
-		link: 'https://www.xing.com/profile/Imran_Khan137',
+		link: AppLinks.social.xing,
 		extra: {
 			type: 'img',
 			bg: false
