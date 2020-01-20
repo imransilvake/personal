@@ -237,8 +237,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: AppLinks.projects.github.list.ticTacToe.name,
-				gallery: []
+				github: AppLinks.projects.github.list.ticTacToe.name
 			}
 		},
 		{
