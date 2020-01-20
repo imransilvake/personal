@@ -119,6 +119,26 @@ const projects = {
 		},
 		{
 			filter: 'angular',
+			title: 'Hotel Guest App',
+			class: 'ik-js',
+			badge: 'Angular',
+			detail: {
+				excerpt: {
+					label: 'Excerpt',
+					text: 'While on stay in a hotel, guest can clean, send repair messages, view room key number and many other important details in an instant.'
+				},
+				tech: {
+					label: 'Technologies',
+					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
+				}
+			},
+			actions: {
+				lock: true,
+				gallery: []
+			}
+		},
+		{
+			filter: 'angular',
 			title: 'Rabt Portal',
 			class: 'ik-js',
 			badge: 'Angular',
@@ -130,6 +150,26 @@ const projects = {
 				tech: {
 					label: 'Technologies',
 					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
+				}
+			},
+			actions: {
+				lock: true,
+				gallery: []
+			}
+		},
+		{
+			filter: 'angular',
+			title: 'Hotel Staff App',
+			class: 'ik-js',
+			badge: 'Angular, NativeScript',
+			detail: {
+				excerpt: {
+					label: 'Excerpt',
+					text: 'A hotel can view guest repair messages, room clean status and many more features without doing any physical effort.'
+				},
+				tech: {
+					label: 'Technologies',
+					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'NativeScript', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
 			actions: {
