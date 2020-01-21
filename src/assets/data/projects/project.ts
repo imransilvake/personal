@@ -161,7 +161,7 @@ const projects = {
 			filter: 'angular',
 			title: 'Hotel Staff App',
 			class: 'ik-js',
-			badge: 'Angular, NativeScript',
+			badge: 'NativeScript',
 			detail: {
 				excerpt: {
 					label: 'Excerpt',
