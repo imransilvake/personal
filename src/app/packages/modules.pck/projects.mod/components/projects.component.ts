@@ -1,5 +1,5 @@
 // angular
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -7,11 +7,12 @@ import { takeUntil } from 'rxjs/operators';
 // app
 import {
 	faCode, faDownload, faExternalLinkSquareAlt,
-	faImages, faInfoCircle,
-	faLock, faSearch, faTimesCircle
+	faImages, faInfoCircle, faLock, faSearch, faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import projects from '../../../../../assets/data/projects/project';
+
+declare const lightGallery: any;
 
 @Component({
 	selector: 'app-projects',
@@ -82,7 +83,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * set selected filter
-	 *
 	 * @param filter
 	 */
 	public onClickChangeFilter(filter) {
@@ -103,7 +103,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * download project from github
-	 *
 	 * @param link
 	 */
 	public onClickDownloadProject(link) {
@@ -112,7 +111,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * toggle info block
-	 *
 	 * @param idx
 	 */
 	public onClickToggleInfoBlock(idx) {
@@ -125,7 +123,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * open github external link
-	 *
 	 * @param link
 	 */
 	public onClickOpenGithub(link) {
@@ -134,10 +131,20 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * open website external link
-	 *
 	 * @param link
 	 */
 	public onClickOpenWebsite(link) {
 		window.open(link, '_blank');
+	}
+
+	/**
+	 * open specific project gallery
+	 * @param projectGallery
+	 */
+	public onClickOpenProjectGallery(projectGallery: Array<string>) {
+		lightGallery(document.querySelector('body'), {
+			dynamic: true,
+			dynamicEl: projectGallery
+		});
 	}
 }

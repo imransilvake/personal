@@ -68,7 +68,6 @@ export class HelperService {
 
 	/**
 	 * fetch date in human readable format
-	 *
 	 * @param date
 	 * @param dateFormat
 	 */

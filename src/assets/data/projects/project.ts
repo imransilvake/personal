@@ -16,12 +16,8 @@ const projects = {
 			text: 'ingredients = {'
 		},
 		{
-			classes: ['ik-pink'],
-			text: 'milk: <span>true</span>,'
-		},
-		{
-			classes: ['ik-pink'],
-			text: 'sugar: <span>true</span>'
+			classes: ['ik-pink', 'ik-pink'],
+			text: 'milk: <span>true</span>, sugar: <span>true</span>'
 		},
 		{
 			classes: [],
@@ -114,7 +110,10 @@ const projects = {
 			},
 			actions: {
 				lock: true,
-				gallery: []
+				gallery: [
+					{ src: '/assets/images/photography/01.jpg' },
+					{ src: '/assets/images/photography/01.jpg' }
+				]
 			}
 		},
 		{

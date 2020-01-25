@@ -30,7 +30,6 @@ export class CodeBlockComponent implements OnInit {
 
 	/**
 	 * append class(es) in line
-	 *
 	 * @param object
 	 */
 	public appendClassesInLine(object: string[]) {
@@ -46,7 +45,6 @@ export class CodeBlockComponent implements OnInit {
 
 	/**
 	 * indent code line
-	 *
 	 * @param line
 	 */
 	public indentCodeLine(line) {

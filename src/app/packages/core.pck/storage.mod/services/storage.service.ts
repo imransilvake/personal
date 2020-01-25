@@ -11,7 +11,6 @@ export class StorageService {
 
 	/**
 	 * set item to local or session storage
-	 *
 	 * @param {string} key
 	 * @param value
 	 * @param {StorageTypeEnum} storageType
@@ -37,12 +36,10 @@ export class StorageService {
 
 	/**
 	 * get item from local or session storage
-	 *
 	 * @param {string} key
 	 * @param {StorageTypeEnum} storageType
-	 * @returns {any}
 	 */
-	public get(key: string, storageType?: StorageTypeEnum): any {
+	public get(key: string, storageType?: StorageTypeEnum) {
 		switch (storageType) {
 			case StorageTypeEnum.PERSISTANT:
 				if (this.exist(key, StorageTypeEnum.PERSISTANT)) {
@@ -69,7 +66,6 @@ export class StorageService {
 
 	/**
 	 * delete item from local or session storage
-	 *
 	 * @param {string} key
 	 * @param {StorageTypeEnum} storageType
 	 */
@@ -100,7 +96,6 @@ export class StorageService {
 
 	/**
 	 * check if item exist in local or session storage
-	 *
 	 * @param {string} key
 	 * @param {StorageTypeEnum} storageType
 	 * @returns {boolean}
@@ -123,7 +118,6 @@ export class StorageService {
 
 	/**
 	 * clear specific items from local or session storage
-	 *
 	 * @param {Array<string>} items
 	 * @param {StorageTypeEnum} storageType
 	 */

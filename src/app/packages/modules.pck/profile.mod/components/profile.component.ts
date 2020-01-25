@@ -29,6 +29,7 @@ export class ProfileComponent {
 
 	/**
 	 * get time period
+	 * @param period
 	 */
 	public getTP(period) {
 		const start = HelperService.getDate(period[0]);
@@ -38,6 +39,7 @@ export class ProfileComponent {
 
 	/**
 	 * get time difference
+	 * @param period
 	 */
 	public getTD(period) {
 		// dates
@@ -59,7 +61,6 @@ export class ProfileComponent {
 
 	/**
 	 * get display period
-	 *
 	 * @param period
 	 */
 	public getDisplayPeriod(period) {

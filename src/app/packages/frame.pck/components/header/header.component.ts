@@ -78,7 +78,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	/**
 	 * toggle theme mode: dark / light
-	 *
 	 * @param init
 	 */
 	public onClickThemeToggle(init?: boolean) {
@@ -97,6 +96,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	/**
 	 * toggle font size: standard / large
+	 * @param init
 	 */
 	public onClickFontSizeToggle(init?: boolean) {
 		// get fontSize from local storage
