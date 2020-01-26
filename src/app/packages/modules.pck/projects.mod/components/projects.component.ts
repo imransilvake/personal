@@ -1,5 +1,5 @@
 // angular
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -140,9 +140,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	/**
 	 * open specific project gallery
 	 * @param projectGallery
+	 * @param index
 	 */
-	public onClickOpenProjectGallery(projectGallery: Array<string>) {
-		lightGallery(document.querySelector('body'), {
+	public onClickOpenProjectGallery(projectGallery: Array<string>, index: number) {
+		lightGallery(document.querySelector(`#gallery-${index}`), {
 			dynamic: true,
 			dynamicEl: projectGallery
 		});

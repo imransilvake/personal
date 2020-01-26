@@ -103,7 +103,8 @@
 
 										<!-- Gallery -->
 										<fa-icon *ngIf="!!(item['actions']['gallery'] && item['actions']['gallery'].length > 0)"
-												 (click)="onClickOpenProjectGallery(item['actions']['gallery'])"
+												 (click)="onClickOpenProjectGallery(item['actions']['gallery'], idx)"
+												 id="gallery-{{idx}}"
 												 class="ik-icon"
 												 [icon]="faIcon[5]"></fa-icon>
 
