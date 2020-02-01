@@ -13,24 +13,17 @@
 			a {
 				display: block;
 				text-align: center;
+				width: 20px;
 
 				&.ik-bg {
 					background-color: var(--c2);
 					border-radius: 50%;
-					line-height: cd-lineHeight(1.1);
 				}
 
 				img {
 					display: block;
 					margin: 0 auto;
 					width: 20px;
-				}
-
-				.ik-icon {
-					color: var(--tc1);
-					display: block;
-					font-size: cd-fontSize(s20);
-					line-height: cd-lineHeight(1.1);
 				}
 
 				&:not(:last-child) {

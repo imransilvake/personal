@@ -6,18 +6,11 @@
 					<ng-container *ngFor="let item of socialLinks">
 						<a [href]="item['link']"
 						   class="cd-tooltip"
-						   [class.ik-bg]="item['extra']['bg']"
+						   [class.ik-bg]="item['bg']"
 						   target="_blank">
 
-							<!-- Icon -->
-							<fa-icon *ngIf="item['extra']['type'] === 'icon'"
-									 class="ik-icon"
-									 [icon]="item['icon']">
-							</fa-icon>
-
 							<!-- Image -->
-							<img *ngIf="item['extra']['type'] === 'img'"
-								 [src]="'assets/svg/profile/social/' + item['icon'] + '.svg'"
+							<img [src]="'assets/svg/profile/social/' + item['icon'] + '.svg'"
 								 [alt]="item['name']"/>
 
 							<!-- Tooltip -->
