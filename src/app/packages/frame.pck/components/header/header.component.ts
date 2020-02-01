@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 // app
 import navList from 'src/assets/data/other/nav-list';
 import { ROUTING } from '../../../../../environments/environment';
-import { faPalette, faTextHeight } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { LocalStorageItems } from '../../../../../app.config';
 
@@ -17,7 +16,8 @@ declare const document: any;
 })
 
 export class HeaderComponent implements OnInit {
-	public faIcons = [faPalette, faTextHeight];
+	public themeInactive = true;
+	public fontSizeInactive = true;
 	public routing = ROUTING;
 	public navList = navList;
 
@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit {
 		const theme = this._storageService.get(LocalStorageItems.colorMode) || 'light';
 		const reverse = (theme === 'light') ? 'dark' : 'light';
 		const value = init ? theme : reverse;
+		this.themeInactive = value === 'dark';
 
 		// add data attribute to body
 		const body = document.getElementsByTagName('body')[0];
@@ -59,6 +60,7 @@ export class HeaderComponent implements OnInit {
 		const fontSize = this._storageService.get(LocalStorageItems.fontSize) || '';
 		const reverse = fontSize ? '' : 'ik-font-large';
 		const value = init ? fontSize : reverse;
+		this.fontSizeInactive = value === 'ik-font-large';
 
 		// add data attribute to html
 		const html = document.getElementsByTagName('html')[0];

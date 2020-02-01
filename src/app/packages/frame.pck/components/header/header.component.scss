@@ -28,7 +28,7 @@ header {
 						left: 100%;
 						list-style: none;
 						margin-left: 10px;
-						padding: 1px 10px;
+						padding: 4px 5px;
 						position: absolute;
 						top: -5px;
 
@@ -37,9 +37,13 @@ header {
 								margin-right: 10px;
 							}
 
-							.ik-icon {
-								color: var(--tc1);
+							img {
 								cursor: pointer;
+								display: block;
+								height: 20px;
+								max-width: 20px;
+								vertical-align: middle;
+								width: 20px;
 							}
 						}
 					}

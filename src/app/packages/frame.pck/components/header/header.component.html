@@ -9,17 +9,14 @@
 							<img src="assets/svg/logo.svg" alt="iKhan" />
 						</a>
 						<ul>
-							<li>
-								<fa-icon class="ik-icon"
-										 (click)="onClickThemeToggle()"
-										 [icon]="faIcons[0]">
-								</fa-icon>
+							<li (click)="onClickThemeToggle()">
+								<img *ngIf="!themeInactive" src="assets/svg/header/drop-black.svg" alt="drop-black" />
+								<img *ngIf="themeInactive" src="assets/svg/header/drop-white.svg" alt="drop-white" />
 							</li>
-							<li>
-								<fa-icon class="ik-icon"
-										 (click)="onClickFontSizeToggle()"
-										 [icon]="faIcons[1]">
-								</fa-icon>
+							<li (click)="onClickFontSizeToggle()">
+								<img *ngIf="!themeInactive && !fontSizeInactive" src="assets/svg/header/font-black.svg" alt="font" />
+								<img *ngIf="themeInactive && !fontSizeInactive" src="assets/svg/header/font-white.svg" alt="font" />
+								<img *ngIf="fontSizeInactive" src="assets/svg/header/font-active.svg" alt="font-active" />
 							</li>
 						</ul>
 					</div>
