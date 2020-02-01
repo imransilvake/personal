@@ -1,14 +1,10 @@
 // angular
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 // app
 import navList from 'src/assets/data/other/nav-list';
 import { ROUTING } from '../../../../../environments/environment';
-import { faCompress, faExpand, faTextHeight, faTint } from '@fortawesome/free-solid-svg-icons';
-import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
+import { faPalette, faTextHeight } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { LocalStorageItems } from '../../../../../app.config';
 
@@ -20,19 +16,12 @@ declare const document: any;
 	styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent implements OnInit, OnDestroy {
-	public faIcons = [faExpand, faCompress, faTint, faTextHeight];
+export class HeaderComponent implements OnInit {
+	public faIcons = [faPalette, faTextHeight];
 	public routing = ROUTING;
 	public navList = navList;
-	public fullscreen = false;
 
-	private _ngUnSubscribe: Subject<void> = new Subject<void>();
-
-	constructor(
-		private _router: Router,
-		private _helperService: HelperService,
-		private _storageService: StorageService
-	) {
+	constructor(private _storageService: StorageService) {
 	}
 
 	ngOnInit() {
@@ -41,39 +30,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 		// init font size
 		this.onClickFontSizeToggle(true);
-
-		// detect full-screen
-		HelperService.detectFullScreen()
-			.pipe(takeUntil(this._ngUnSubscribe))
-			.subscribe(() => {
-				const fullscreenElement =
-					document.fullscreenElement ||
-					document.mozFullScreenElement ||
-					document.webkitFullscreenElement;
-				this.fullscreen = !(fullscreenElement === null);
-			});
-	}
-
-	ngOnDestroy() {
-		// remove subscriptions
-		this._ngUnSubscribe.next();
-		this._ngUnSubscribe.complete();
-	}
-
-	/**
-	 * show full screen
-	 */
-	public onClickShowFullScreen() {
-		HelperService.showFullScreen();
-		this.fullscreen = true;
-	}
-
-	/**
-	 * exit full screen
-	 */
-	public onClickExitFullScreen() {
-		this._helperService.exitFullScreen();
-		this.fullscreen = false;
 	}
 
 	/**
