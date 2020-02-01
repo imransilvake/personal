@@ -28,22 +28,23 @@ header {
 						left: 100%;
 						list-style: none;
 						margin-left: 10px;
-						padding: 4px 5px;
+						padding: 0 8px;
 						position: absolute;
 						top: -5px;
 
 						li {
 							&:not(:only-child):not(:last-child) {
-								margin-right: 6px;
+								margin-right: 10px;
 							}
 
-							img {
+							.ik-icon {
+								color: var(--tc1);
 								cursor: pointer;
-								display: block;
-								height: 20px;
-								max-width: 20px;
-								vertical-align: middle;
-								width: 20px;
+								vertical-align: text-top;
+
+								&.ik-active {
+									color: var(--c8);
+								}
 							}
 						}
 					}

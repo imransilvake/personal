@@ -6,6 +6,7 @@ import navList from 'src/assets/data/other/nav-list';
 import { ROUTING } from '../../../../../environments/environment';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { LocalStorageItems } from '../../../../../app.config';
+import { faTint, faFont } from '@fortawesome/free-solid-svg-icons';
 
 declare const document: any;
 
@@ -16,6 +17,7 @@ declare const document: any;
 })
 
 export class HeaderComponent implements OnInit {
+	public faIcons = [faTint, faFont];
 	public themeInactive = true;
 	public fontSizeInactive = true;
 	public routing = ROUTING;
