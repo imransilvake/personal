@@ -49,18 +49,16 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 			.subscribe(text => {
 				let result;
 				if (this.filter.value.id === 'all') {
-					result = projects['projects']
-						.filter(x =>
-							x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
-						);
+					result = projects['items']
+						.filter(x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1);
 				} else {
-					result = projects['projects']
+					result = projects['items']
 						.filter(x =>
-							x.filter === this.filter.value.id &&
+							x.controls.filter === this.filter.value.id &&
 							x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
 						);
 				}
-				this.projects = { ...projects, projects: result };
+				this.projects = { ...projects, items: result };
 			});
 	}
 
@@ -94,8 +92,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 		// update data
 		if (filter && filter.id !== 'all') {
-			const result = projects['projects'].filter(x => x.filter === filter.id);
-			this.projects = { ...projects, projects: result };
+			const result = projects['items'].filter(x => x.controls.filter === filter.id);
+			this.projects = { ...projects, items: result };
 		} else {
 			this.projects = projects;
 		}
@@ -130,7 +128,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * open website external link
+	 * open (website) external link
 	 * @param link
 	 */
 	public onClickOpenWebsite(link) {

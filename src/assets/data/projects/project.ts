@@ -71,13 +71,10 @@ const projects = {
 			text: 'PHP'
 		}
 	],
-	projects: [
+	items: [
 		{
-			filter: 'scss',
 			title: 'SCSS Framework',
-			class: 'ik-scss',
-			badge: 'SCSS',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'SCSS Framework is a pure scss framework for building responsive, fast, robust, and adaptable web apps.'
@@ -87,6 +84,11 @@ const projects = {
 					text: ['SCSS']
 				}
 			},
+			badge: 'SCSS',
+			controls: {
+				recent: true,
+				filter: 'scss'
+			},
 			actions: {
 				lock: false,
 				github: AppLinks.projects.github.list.scss.name,
@@ -94,11 +96,8 @@ const projects = {
 			}
 		},
 		{
-			filter: 'angular',
 			title: 'Hotel App Manager',
-			class: 'ik-js',
-			badge: 'Angular',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'An admin portal to manage hotel chains by providing features such as User Management, Message Broadcast, Reports and much more.'
@@ -107,6 +106,11 @@ const projects = {
 					label: 'Technologies',
 					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
+			},
+			badge: 'Angular',
+			controls: {
+				recent: true,
+				filter: 'angular'
 			},
 			actions: {
 				lock: true,
@@ -154,11 +158,8 @@ const projects = {
 			}
 		},
 		{
-			filter: 'angular',
 			title: 'Hotel Guest App',
-			class: 'ik-js',
-			badge: 'Angular',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'While on stay in a hotel, guest can clean, send repair messages, view room key number and many other important details in an instant.'
@@ -167,6 +168,11 @@ const projects = {
 					label: 'Technologies',
 					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
+			},
+			badge: 'Angular',
+			controls: {
+				recent: true,
+				filter: 'angular'
 			},
 			actions: {
 				lock: true,
@@ -197,11 +203,8 @@ const projects = {
 			}
 		},
 		{
-			filter: 'angular',
 			title: 'Rabt Portal',
-			class: 'ik-js',
-			badge: 'Angular',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'An admin portal that provides features such as Creation of Pilgrims, Groups and Packages, Packages Report and more.'
@@ -210,6 +213,11 @@ const projects = {
 					label: 'Technologies',
 					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
+			},
+			badge: 'Angular',
+			controls: {
+				recent: false,
+				filter: 'angular'
 			},
 			actions: {
 				lock: true,
@@ -230,11 +238,8 @@ const projects = {
 			}
 		},
 		{
-			filter: 'angular',
 			title: 'Hotel Staff App',
-			class: 'ik-js',
-			badge: 'NativeScript',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'A hotel can view guest repair messages, room clean status and many more features without doing any physical effort.'
@@ -243,6 +248,11 @@ const projects = {
 					label: 'Technologies',
 					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'NativeScript', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
+			},
+			badge: 'NativeScript',
+			controls: {
+				recent: false,
+				filter: 'angular'
 			},
 			actions: {
 				lock: true,
@@ -269,11 +279,8 @@ const projects = {
 			}
 		},
 		{
-			filter: 'react',
 			title: 'Slack App Clone',
-			class: 'ik-js',
-			badge: 'React',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'A Full-stack chat application (slack minimal) that provides Firbase Auth Signup & Signin, Real-time chatting and more.'
@@ -282,6 +289,11 @@ const projects = {
 					label: 'Technologies',
 					text: ['HTML5', 'CSS3', 'React', 'Material', 'Firebase', 'Redux', 'MomentJs', 'i18next', 'React Color']
 				}
+			},
+			badge: 'React',
+			controls: {
+				recent: true,
+				filter: 'react'
 			},
 			actions: {
 				lock: false,
@@ -299,11 +311,8 @@ const projects = {
 			}
 		},
 		{
-			filter: 'react',
 			title: 'Takeaway Challenge',
-			class: 'ik-js',
-			badge: 'React',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'A single and multiplayer game challenge given by Lieferando.'
@@ -312,6 +321,11 @@ const projects = {
 					label: 'Technologies',
 					text: ['HTML5', 'CSS3', 'React', 'Material', 'Firebase', 'Redux', 'MomentJs', 'i18next']
 				}
+			},
+			badge: 'React',
+			controls: {
+				recent: true,
+				filter: 'react'
 			},
 			actions: {
 				lock: false,
@@ -326,11 +340,8 @@ const projects = {
 			}
 		},
 		{
-			filter: 'react',
 			title: 'Tic-Tac-Toe',
-			class: 'ik-js',
-			badge: 'React',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'A Tic-Tac-Toe game created for self-learning that also provides time travelling feature.'
@@ -340,17 +351,19 @@ const projects = {
 					text: ['HTML5', 'CSS3', 'React']
 				}
 			},
+			badge: 'React',
+			controls: {
+				recent: false,
+				filter: 'react'
+			},
 			actions: {
 				lock: false,
 				github: AppLinks.projects.github.list.ticTacToe.name
 			}
 		},
 		{
-			filter: 'php',
 			title: 'Multisite Image Slider',
-			class: 'ik-php',
-			badge: 'PHP',
-			detail: {
+			description: {
 				excerpt: {
 					label: 'Excerpt',
 					text: 'A Multisite Image Slider build to handle company\'s multiple websites from a central place.'
@@ -359,6 +372,11 @@ const projects = {
 					label: 'Technologies',
 					text: ['HTML5', 'CSS3', 'PHP', 'OXID Framework']
 				}
+			},
+			badge: 'PHP',
+			controls: {
+				recent: false,
+				filter: 'php'
 			},
 			actions: {
 				lock: false,

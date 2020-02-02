@@ -1,21 +1,57 @@
-<div class="ik-home" [ngStyle]="{'background-image': overlayBG}">
+<div class="ik-home">
 	<div class="cd-container-fluid">
 		<div class="cd-container">
 			<div class="cd-row">
-				<!-- Badges -->
-				<div class="cd-col ik-badges">
-					<span *ngFor="let badge of homeIntro['badges']">{{ badge }}</span>
+				<!-- News Feed -->
+				<div class="cd-col cd-col-pm-t-8 cd-col-pm-d-9">
 				</div>
 
-				<!-- Content -->
-				<div class="cd-col ik-content">
-					<h1 class="ik-font-sacramento">
-						{{ homeIntro['title'] }}
-						<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
-						<fa-icon class="ik-icon ik-red" [icon]="faIcon[0]"></fa-icon>
-						<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
-					</h1>
-					<h4 class="ik-font-poiret">{{ homeIntro['desc'] }}</h4>
+				<!-- Sidebar -->
+				<div class="cd-col cd-col-pm-t-4 cd-col-pm-d-3">
+					<!-- Social Network -->
+					<div class="ik-block">
+						<div class="ik-items ik-social">
+							<ng-container *ngFor="let item of home['social']['links']">
+								<div class="ik-item cd-tooltip {{item['class']}}">
+									<div (click)="onClickOpenWebsite(item['link'])">
+										<img [src]="'assets/svg/profile/social/' + item['icon'] + '.svg'"
+											 [alt]="item['name']"/>
+									</div>
+									<span class="cd-arrow cd-bottom">{{item['name']}}</span>
+								</div>
+							</ng-container>
+						</div>
+					</div>
+
+					<!-- Recent Projects -->
+					<div class="ik-block">
+						<h5 class="ik-title">{{home['projects']['title']}}</h5>
+						<div class="ik-items ik-projects">
+							<ul>
+								<li *ngFor="let item of home['projects']['items']">
+									<!-- Title -->
+									<h6 *ngIf="!item['actions']['github']">
+										<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+										{{item['title']}}
+									</h6>
+
+									<!-- Link -->
+									<a *ngIf="item['actions']['github']"
+									   (click)="onClickOpenGithub(item['actions']['github'])">
+										<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+										{{item['title']}}
+									</a>
+
+									<!-- badge -->
+									<p [class.ik-scss]="item['controls']['filter'] === 'scss'"
+									   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
+									   [class.ik-php]="item['controls']['filter'] === 'php'">
+										{{item['controls']['filter']}}
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

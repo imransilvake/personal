@@ -21,7 +21,7 @@ export const AppLinks = {
 	social: {
 		github: 'https://github.com/imransilvake',
 		linkedin: 'https://www.linkedin.com/in/imransilvake/',
-		xing: 'https://www.xing.com/profile/Imran_Khan137'
+		instagram: 'http://instagram.com/imransilvake/'
 	},
 	projects: {
 		github: {

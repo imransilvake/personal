@@ -2,8 +2,8 @@
 import { Component } from '@angular/core';
 
 // app
-import homeIntro from '../../../assets/data/home/intro';
-import { faEye, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faLock } from '@fortawesome/free-solid-svg-icons';
+import home from '../../../assets/data/home/home';
 
 @Component({
 	selector: 'app-home',
@@ -12,7 +12,22 @@ import { faEye, faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 
 export class HomeComponent {
-	public overlayBG = 'url(assets/svg/bg-pattern.svg)';
-	public faIcon = [faHeart, faEye];
-	public homeIntro = homeIntro;
+	public faIcon = [faLock, faDownload];
+	public home = home;
+
+	/**
+	 * open (website) external link
+	 * @param link
+	 */
+	public onClickOpenWebsite(link) {
+		window.open(link, '_blank');
+	}
+
+	/**
+	 * open github external link
+	 * @param link
+	 */
+	public onClickOpenGithub(link) {
+		window.open(`${this.home['projects']['githubProfile']}${link}`, '_blank');
+	}
 }

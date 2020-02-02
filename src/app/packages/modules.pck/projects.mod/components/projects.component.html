@@ -39,15 +39,13 @@
 			<!-- Projects -->
 			<section class="cd-row ik-projects-list">
 				<!-- Data -->
-				<ng-container *ngIf="projects['projects'].length > 0">
-					<ng-container *ngFor="let item of projects['projects']; let idx=index;">
+				<ng-container *ngIf="projects['items'].length > 0">
+					<ng-container *ngFor="let item of projects['items']; let idx=index;">
 						<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
-							<div class="ik-banner"
-								 [class.ik-color]="!!item['class']"
-								 [ngClass]="{
-								'ik-scss': item['class'] === 'ik-scss',
-								'ik-js': item['class'] === 'ik-js',
-								'ik-php': item['class'] === 'ik-php'}">
+							<div class="ik-banner ik-color"
+								 [class.ik-scss]="item['controls']['filter'] === 'scss'"
+								 [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
+								 [class.ik-php]="item['controls']['filter'] === 'php'">
 								<!-- Cover -->
 								<img class="ik-bg-loader"
 									 *ngIf="!!item['photo']"
@@ -61,17 +59,17 @@
 								<h6 class="ik-title">{{ item['title'] }}</h6>
 
 								<!-- Info -->
-								<div class="ik-info" *ngIf="infoBlockIndex === idx && item['detail']">
+								<div class="ik-info" *ngIf="infoBlockIndex === idx && item['description']">
 									<!-- Excerpt -->
-									<ng-container *ngIf="item['detail']['excerpt']">
-										<h6>{{ item['detail']['excerpt']['label'] }}</h6>
-										<p>{{ item['detail']['excerpt']['text'] }}</p>
+									<ng-container *ngIf="item['description']['excerpt']">
+										<h6>{{ item['description']['excerpt']['label'] }}</h6>
+										<p>{{ item['description']['excerpt']['text'] }}</p>
 									</ng-container>
 
 									<!-- Tech -->
-									<ng-container *ngIf="item['detail']['tech']">
-										<h6>{{ item['detail']['tech']['label'] }}</h6>
-										<p>{{ item['detail']['tech']['text'].join(', ') }}</p>
+									<ng-container *ngIf="item['description']['tech']">
+										<h6>{{ item['description']['tech']['label'] }}</h6>
+										<p>{{ item['description']['tech']['text'].join(', ') }}</p>
 									</ng-container>
 								</div>
 							</div>
@@ -89,7 +87,7 @@
 
 									<div class="ik-right">
 										<!-- Info -->
-										<fa-icon *ngIf="!!(item['detail'] && item['detail']['excerpt'])"
+										<fa-icon *ngIf="!!(item['description'] && item['description']['excerpt'])"
 												 (click)="onClickToggleInfoBlock(idx)"
 												 class="ik-icon"
 												 [icon]="infoBlockIndex !== idx ? faIcon[3] : faIcon[6]"></fa-icon>
@@ -121,7 +119,7 @@
 				</ng-container>
 
 				<!-- Empty -->
-				<ng-container *ngIf="projects['projects'].length === 0">
+				<ng-container *ngIf="projects['items'].length === 0">
 					<div class="cd-col cd-center-align">
 						<h6 class="ik-empty">Empty search result!</h6>
 					</div>
