@@ -9,5 +9,9 @@ export const PROJECTS_ROUTES: Routes = [
 	{
 		path: '',
 		component: ProjectsComponent
+	},
+	{
+		path: ':filter',
+		component: ProjectsComponent
 	}
 ];

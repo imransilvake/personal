@@ -2,7 +2,8 @@
 import { Component } from '@angular/core';
 
 // app
-import { faDownload, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faLock } from '@fortawesome/free-solid-svg-icons';
+import { ROUTING } from '../../../environments/environment';
 import home from '../../../assets/data/home/home';
 
 @Component({
@@ -12,7 +13,8 @@ import home from '../../../assets/data/home/home';
 })
 
 export class HomeComponent {
-	public faIcon = [faLock, faDownload];
+	public faIcon = [faLock, faExternalLinkAlt];
+	public routing = ROUTING;
 	public home = home;
 
 	/**

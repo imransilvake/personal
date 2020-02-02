@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 // app
 import {
@@ -31,15 +32,19 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	private _ngUnSubscribe: Subject<void> = new Subject<void>();
 
-	constructor() {
+	constructor(private _route: ActivatedRoute) {
 		// form group
 		this.formFields = new FormGroup({
 			search: new FormControl(''),
-			filter: new FormControl('')
+			filter: new FormControl(this.projects['filters'][0])
 		});
 
-		// set filter all by default
-		this.filter.setValue(this.projects['filters'][0]);
+		// set filter based on path-param filter
+		const ppFilter = _route.snapshot.params && _route.snapshot.params['filter'];
+		const index = ppFilter && this.projects['filters'].findIndex(x => x.id === ppFilter);
+		if (ppFilter && index !== -1) {
+			this.onClickChangeFilter(this.projects['filters'][index]);
+		}
 	}
 
 	ngOnInit() {

@@ -76,17 +76,31 @@
 
 								a {
 									cursor: pointer;
+
+									.ik-icon {
+										display: inline-block;
+										margin-right: 2px;
+										width: 16px;
+									}
 								}
 
 								h6 {
 									color: var(--c4);
 									font-size: cd-fontSize(s15);
+
+									.ik-icon {
+										display: inline-block;
+										margin-right: 2px;
+										width: 16px;
+									}
 								}
 
 								p {
 									border-radius: 2px;
 									color: var(--c1);
+									cursor: pointer;
 									font-size: cd-fontSize(s14);
+									outline: none;
 									padding: 1px 5px;
 
 									&.ik-scss {

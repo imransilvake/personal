@@ -43,7 +43,8 @@
 									</a>
 
 									<!-- badge -->
-									<p [class.ik-scss]="item['controls']['filter'] === 'scss'"
+									<p [routerLink]="['/' + routing.pages.projects, item['controls']['filter']]"
+									   [class.ik-scss]="item['controls']['filter'] === 'scss'"
 									   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
 									   [class.ik-php]="item['controls']['filter'] === 'php'">
 										{{item['controls']['filter']}}
