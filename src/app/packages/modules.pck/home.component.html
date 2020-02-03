@@ -12,11 +12,9 @@
 					<div class="ik-block">
 						<div class="ik-items ik-social">
 							<ng-container *ngFor="let item of home['social']['links']">
-								<div class="ik-item cd-tooltip {{item['class']}}">
-									<div (click)="onClickOpenWebsite(item['link'])">
-										<img [src]="'assets/svg/profile/social/' + item['icon'] + '.svg'"
-											 [alt]="item['name']"/>
-									</div>
+								<div class="ik-item cd-tooltip {{item['class']}}" (click)="onClickOpenWebsite(item['link'])">
+									<img [src]="'assets/svg/profile/social/' + item['icon'] + '.svg'"
+										 [alt]="item['name']"/>
 									<span class="cd-arrow cd-bottom">{{item['name']}}</span>
 								</div>
 							</ng-container>
