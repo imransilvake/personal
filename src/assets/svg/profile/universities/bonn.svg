@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="864.6666671964867" height="877" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
-    <rect id="backgroundrect" width="100%" height="100%" fill="none" stroke="none"/>
+    <rect id="backgroundrect" width="100%" height="100%" fill="#fff" stroke="none"/>
     <g class="currentLayer">
         <g>
             <path fill="#00458E" fill-rule="nonzero" d="M565.1623681640626,235.88 c0,0 0,-49.3955 0,-49.3955 c0,-10.3701 8.40213,-18.6437 18.779,-18.6437 c10.3724,0 18.7136,8.27356 18.7136,18.6437 c0,0 0,49.3955 0,49.3955 c-2.45523,0 -3.87513,1.41765 -3.87513,3.03605 c0,0 0,2.2217700000000002 0,2.2217700000000002 l-29.7424,0 c0,0 0,-2.2217700000000002 0,-2.2217700000000002 c0,-1.6184 -1.4199000000000002,-3.03605 -3.03605,-3.03605 c0,0 -0.8390850000000001,0 -0.8390850000000001,0 z"/>
