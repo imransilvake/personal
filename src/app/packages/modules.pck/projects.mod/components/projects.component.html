@@ -28,7 +28,7 @@
 					<ul>
 						<ng-container *ngFor="let pFilter of projects['filters']">
 							<li [class.ik-active]="pFilter.id === filter.value.id"
-								(click)="onClickChangeFilter(pFilter)">
+								[routerLink]="['/' + routing.pages.projects, pFilter.id]">
 								<h6>{{ pFilter.text }}</h6>
 							</li>
 						</ng-container>

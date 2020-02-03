@@ -2,8 +2,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { filter, takeUntil } from 'rxjs/operators';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 // app
 import {
@@ -11,6 +11,7 @@ import {
 	faImages, faInfoCircle, faLock, faSearch, faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { ROUTING } from '../../../../../environments/environment';
 import projects from '../../../../../assets/data/projects/project';
 
 declare const lightGallery: any;
@@ -22,29 +23,38 @@ declare const lightGallery: any;
 })
 
 export class ProjectsComponent implements OnInit, OnDestroy {
+	public faIcon = [faCode, faDownload, faLock, faInfoCircle, faGithub, faImages, faTimesCircle, faExternalLinkSquareAlt, faSearch];
+	public routing = ROUTING;
 	public projects = projects;
-	public faIcon = [
-		faCode, faDownload, faLock, faInfoCircle, faGithub,
-		faImages, faTimesCircle, faExternalLinkSquareAlt, faSearch
-	];
 	public infoBlockIndex = -1;
 	public formFields;
 
 	private _ngUnSubscribe: Subject<void> = new Subject<void>();
 
-	constructor(private _route: ActivatedRoute) {
+	constructor(
+		private _route: ActivatedRoute,
+		private _router: Router
+	) {
+		// listen: router event
+		this._router.events
+			.pipe(
+				takeUntil(this._ngUnSubscribe),
+				filter(event => event instanceof NavigationEnd)
+			)
+			.subscribe(() => {
+				// set filter based on path-param filter
+				const ppFilter = _route.snapshot.params && _route.snapshot.params['filter'];
+				const index = ppFilter && this.projects['filters'].findIndex(x => x.id === ppFilter);
+				if (ppFilter && index !== -1) {
+					this.onClickChangeFilter(this.projects['filters'][index]);
+				}
+			});
+
 		// form group
 		this.formFields = new FormGroup({
 			search: new FormControl(''),
 			filter: new FormControl(this.projects['filters'][0])
 		});
-
-		// set filter based on path-param filter
-		const ppFilter = _route.snapshot.params && _route.snapshot.params['filter'];
-		const index = ppFilter && this.projects['filters'].findIndex(x => x.id === ppFilter);
-		if (ppFilter && index !== -1) {
-			this.onClickChangeFilter(this.projects['filters'][index]);
-		}
 	}
 
 	ngOnInit() {
@@ -54,8 +64,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 			.subscribe(text => {
 				let result;
 				if (this.filter.value.id === 'all') {
-					result = projects['items']
-						.filter(x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1);
+					result = projects['items'].filter(x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1);
 				} else {
 					result = projects['items']
 						.filter(x =>

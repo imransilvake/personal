@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 // app
-import { faExternalLinkAlt, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkSquareAlt, faLock } from '@fortawesome/free-solid-svg-icons';
 import { ROUTING } from '../../../environments/environment';
 import home from '../../../assets/data/home/home';
 
@@ -13,7 +13,7 @@ import home from '../../../assets/data/home/home';
 })
 
 export class HomeComponent {
-	public faIcon = [faLock, faExternalLinkAlt];
+	public faIcon = [faLock, faExternalLinkSquareAlt];
 	public routing = ROUTING;
 	public home = home;
 
