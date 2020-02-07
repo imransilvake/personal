@@ -30,11 +30,12 @@
 				"build": {
 					"builder": "@angular-devkit/build-angular:browser",
 					"options": {
-						"outputPath": "dist/ham",
+						"outputPath": "dist/ikhan",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "src/tsconfig.app.json",
+						"aot": true,
 						"assets": [
 							"src/favicon.ico",
 							"src/assets/svg",
@@ -68,7 +69,6 @@
 							"sourceMap": false,
 							"extractCss": true,
 							"namedChunks": false,
-							"aot": true,
 							"extractLicenses": true,
 							"vendorChunk": false,
 							"buildOptimizer": true
@@ -85,7 +85,6 @@
 							"sourceMap": false,
 							"extractCss": true,
 							"namedChunks": false,
-							"aot": true,
 							"extractLicenses": true,
 							"vendorChunk": false,
 							"buildOptimizer": true
@@ -102,7 +101,6 @@
 							"sourceMap": false,
 							"extractCss": true,
 							"namedChunks": false,
-							"aot": true,
 							"extractLicenses": true,
 							"vendorChunk": false,
 							"buildOptimizer": true
@@ -119,7 +117,6 @@
 							"sourceMap": false,
 							"extractCss": true,
 							"namedChunks": false,
-							"aot": true,
 							"extractLicenses": true,
 							"vendorChunk": false,
 							"buildOptimizer": true,
@@ -142,7 +139,6 @@
 							"sourceMap": false,
 							"extractCss": true,
 							"namedChunks": false,
-							"aot": true,
 							"extractLicenses": true,
 							"vendorChunk": false,
 							"buildOptimizer": true,
