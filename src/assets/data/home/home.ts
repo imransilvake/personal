@@ -16,12 +16,6 @@ const home = {
 				icon: 'linkedin',
 				link: AppLinks.social.linkedin,
 				class: 'ik-linkedin'
-			},
-			{
-				name: 'Instagram',
-				icon: 'instagram',
-				link: AppLinks.social.instagram,
-				class: 'ik-instagram'
 			}
 		]
 	},

@@ -8,7 +8,7 @@
 		.cd-col {
 			.ik-block {
 				&:not(:first-child) {
-					margin-top: 30px;
+					margin-top: 20px;
 				}
 
 				.ik-title {
@@ -28,12 +28,12 @@
 						.ik-item {
 							align-items: center;
 							background-color: var(--bg3);
-							border-radius: 5px;
+							border-radius: 50%;
 							cursor: pointer;
 							display: flex;
-							height: 100px;
+							height: 45px;
 							justify-content: center;
-							width: 100%;
+							width: 45px;
 
 							&:not(:last-child) {
 								margin-right: 10px;
@@ -47,13 +47,9 @@
 								background-color: var(--c13);
 							}
 
-							&.ik-instagram {
-								background: linear-gradient(45deg, var(--c14) 0%, var(--c15) 25%, var(--c16) 50%, var(--c17) 75%, var(--c18) 100%);
-							}
-
 							img {
 								display: block;
-								width: 30px;
+								width: 35px;
 							}
 						}
 					}

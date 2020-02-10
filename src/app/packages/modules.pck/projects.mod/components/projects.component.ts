@@ -95,18 +95,18 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * set selected filter
-	 * @param filter
+	 * @param sFilter
 	 */
-	public onClickChangeFilter(filter) {
+	public onClickChangeFilter(sFilter) {
 		// clear search
 		this.search.setValue('');
 
 		// update filter
-		this.filter.setValue(filter);
+		this.filter.setValue(sFilter);
 
 		// update data
-		if (filter && filter.id !== 'all') {
-			const result = projects['items'].filter(x => x.controls.filter === filter.id);
+		if (sFilter && sFilter.id !== 'all') {
+			const result = projects['items'].filter(x => x.controls.filter === sFilter.id);
 			this.projects = { ...projects, items: result };
 		} else {
 			this.projects = projects;
