@@ -18,6 +18,10 @@ const profileSkills = {
 			name: 'Angular'
 		},
 		{
+			id: 'aws',
+			name: 'Amazon Web Services'
+		},
+		{
 			id: 'nativescript',
 			name: 'NativeScript'
 		},
@@ -68,6 +72,10 @@ const profileSkills = {
 			items: ['Angular', 'React', 'NativeScript']
 		},
 		{
+			title: 'Authentication',
+			items: ['oAuth', 'AWS (Amplify)']
+		},
+		{
 			title: 'Styles',
 			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Design', 'Cross-Browser Compatibility']
 		},
@@ -80,7 +88,7 @@ const profileSkills = {
 			items: ['Firebase', 'MongoDB', 'MySQL']
 		},
 		{
-			title: 'Others',
+			title: 'Tools/Services',
 			items: ['npm', 'yarn', 'git', 'jira', 'confluence', 'webstorm', 'VSC', 'Mac OS', 'Ubuntu']
 		}
 	]
