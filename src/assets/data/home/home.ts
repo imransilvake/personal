@@ -20,7 +20,7 @@ const home = {
 		]
 	},
 	projects: {
-		title: 'Projects',
+		title: 'Recent Work',
 		githubProfile: projects.githubProfile,
 		items: projects.items.filter(x => !!x.controls.recent)
 	}
