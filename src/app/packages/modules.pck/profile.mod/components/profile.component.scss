@@ -130,9 +130,9 @@
 								}
 
 								.ik-list-wrapper {
-									ul {
-										@extend .ik-common-ul;
+									padding: 30px 0 0;
 
+									ul {
 										li {
 											align-items: center;
 											display: flex;
@@ -178,11 +178,10 @@
 								}
 
 								.ik-list-wrapper {
+									padding: 30px 0 0;
 									position: relative;
 
 									ul {
-										@extend .ik-common-ul;
-
 										&::before {
 											border-left: 1px solid var(--tc3);
 											bottom: 10%;
@@ -260,7 +259,7 @@
 								}
 
 								.ik-tags {
-									margin: 30px 0 0;
+									padding: 30px 0 0;
 
 									span {
 										@extend .ik-common-tag;
@@ -275,7 +274,7 @@
 								}
 
 								.ik-tags {
-									margin: 30px 0 0;
+									padding: 30px 0 0;
 
 									span {
 										@extend .ik-common-tag;
@@ -303,10 +302,6 @@
 	.ik-common-tag-color {
 		background-color: var(--bg3);
 		color: var(--c4);
-	}
-
-	.ik-common-ul {
-		margin: 30px 0 0;
 	}
 
 	// media
