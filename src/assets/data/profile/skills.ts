@@ -73,7 +73,7 @@ const profileSkills = {
 		},
 		{
 			title: 'Authentication',
-			items: ['oAuth', 'AWS (Amplify)']
+			items: ['oAuth', 'AWS Amplify']
 		},
 		{
 			title: 'Styles',
