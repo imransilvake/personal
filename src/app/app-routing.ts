@@ -30,8 +30,8 @@ const ROUTES: Routes = [
 	},
 	/*
 	{
-		path: 'news',
-		components: NewsComponent
+		path: 'code',
+		components: CodeComponent
 	},
 	 */
 	{

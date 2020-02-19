@@ -2,14 +2,14 @@
 	<div class="cd-container-fluid">
 		<div class="cd-container">
 			<div class="cd-row">
-				<!-- News Feed -->
+				<!-- Content -->
 				<div class="cd-col cd-col-pm-t-8 cd-col-pm-d-9">
 				</div>
 
 				<!-- Sidebar -->
 				<div class="cd-col cd-col-pm-t-4 cd-col-pm-d-3">
 					<!-- Social Network -->
-					<div class="ik-block ik-card ik-card-padding">
+					<section class="ik-block ik-card ik-card-padding">
 						<div class="ik-items ik-social">
 							<ng-container *ngFor="let item of home['social']['links']">
 								<div class="ik-item cd-tooltip {{item['class']}}" (click)="onClickOpenWebsite(item['link'])">
@@ -19,10 +19,10 @@
 								</div>
 							</ng-container>
 						</div>
-					</div>
+					</section>
 
 					<!-- Recent Projects -->
-					<div class="ik-block ik-card ik-card-padding">
+					<section class="ik-block ik-card ik-card-padding">
 						<h5 class="ik-title">{{home['projects']['title']}}</h5>
 						<div class="ik-items ik-projects">
 							<ul>
@@ -50,7 +50,7 @@
 								</li>
 							</ul>
 						</div>
-					</div>
+					</section>
 				</div>
 			</div>
 		</div>
