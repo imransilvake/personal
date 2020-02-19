@@ -20,8 +20,7 @@ export const LocalStorageItems = {
 export const AppLinks = {
 	social: {
 		github: 'https://github.com/imransilvake',
-		linkedin: 'https://www.linkedin.com/in/imransilvake/',
-		instagram: 'http://instagram.com/imransilvake/'
+		linkedin: 'https://www.linkedin.com/in/imransilvake/'
 	},
 	projects: {
 		github: {
