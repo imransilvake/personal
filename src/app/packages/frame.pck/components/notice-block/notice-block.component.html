@@ -9,11 +9,8 @@
 								*ngIf="randomBlock['icon']"
 								[icon]="randomBlock['icon']">
 						</fa-icon>
-						<span>{{ randomBlock['text'] }}</span>
+						<span [innerHTML]="randomBlock['text']"></span>
 					</div>
-					<a [href]="'mailto:' + randomBlock['email']">
-						{{ randomBlock['email'] }}
-					</a>
 				</div>
 			</section>
 		</div>

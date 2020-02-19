@@ -5,13 +5,11 @@ const noticeBlock = [
 	{
 		icon: faEnvelopeOpen,
 		text: 'I am currently looking out for new opportunities!',
-		email: 'imransilvake@gmail.com',
-		show: false
+		show: true
 	},
 	{
 		icon: faEnvelopeOpen,
-		text: 'Contact me for any query:',
-		email: 'imransilvake@gmail.com',
+		text: '<a href="mailto:imransilvake@gmail.com">Contact</a> me for any query!',
 		show: true
 	}
 ];

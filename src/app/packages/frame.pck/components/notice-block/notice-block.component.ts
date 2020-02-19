@@ -27,9 +27,9 @@ export class NoticeBlockComponent implements OnInit, OnDestroy {
 				switchMap(() => timer(
 					AppOptions.intervals.notice[0],
 					AppOptions.intervals.notice[1]
-				))
+				)),
+				takeUntil(this._ngUnSubscribe)
 			)
-			.pipe(takeUntil(this._ngUnSubscribe))
 			.subscribe(() => {
 				this.randomBlock = this.filteredNoticeBlock[Math.floor(
 					Math.random() * this.filteredNoticeBlock.length

@@ -81,7 +81,7 @@ const profileSkills = {
 		},
 		{
 			title: 'Libraries',
-			items: ['RxJs', 'MomentJs']
+			items: ['RxJs', 'MomentJs', 'NumeralJs']
 		},
 		{
 			title: 'Database',

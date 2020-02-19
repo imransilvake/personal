@@ -4,11 +4,16 @@
 		<div class="cd-container">
 			<div class="cd-row cd-center-align">
 				<div class="cd-col">
+					<!-- Logo -->
 					<div class="ik-profile-logo">
 						<img [src]="'assets/images/profile/' + profileIntro['photo'] + '.jpg'"
 							 [alt]="profileIntro['name']"/>
 					</div>
+
+					<!-- Name -->
 					<h1>{{ profileIntro['name'] }}</h1>
+
+					<!-- Designation -->
 					<h5 class="ik-font-poiret">{{ profileIntro['title'] }}</h5>
 				</div>
 			</div>
@@ -22,13 +27,13 @@
 			<div class="cd-container">
 				<div class="cd-row">
 					<div class="cd-col">
+						<!-- Title -->
 						<h2>{{ profileSummary['title'] }}</h2>
-						<p>{{ profileSummary['bio'] }}</p>
 
-						<div class="ik-tags">
-							<h6>{{ profileSummary['focus']['title'] }}</h6>
-							<span *ngFor="let skill of profileSummary['focus']['skills']">{{ skill }}</span>
-						</div>
+						<!-- Description -->
+						<ng-container *ngFor="let para of profileSummary['description']">
+							<p>{{ para }}</p>
+						</ng-container>
 					</div>
 				</div>
 			</div>
@@ -41,17 +46,24 @@
 					<!-- Skills -->
 					<section class="cd-col cd-col-pm-t-5 cd-col-pm-d-4 ik-quick-wrapper">
 						<div class="ik-skills">
+							<!-- Title -->
 							<h2>{{ profileSkills['title'] }}</h2>
 
+							<!-- Images -->
 							<div class="ik-logo">
 								<span class="cd-tooltip" *ngFor="let icon of profileSkills['icons']">
-									<img [src]="'assets/svg/profile/expertise/' + icon['id'] + '.svg'" [alt]="icon['name']"/>
+									<img [src]="'assets/svg/profile/expertise/' + icon['id'] + '.svg'"
+										 [alt]="icon['name']"/>
 									<span class="cd-arrow cd-bottom">{{ icon['name'] }}</span>
 								</span>
 							</div>
 
+							<!-- Tags -->
 							<div class="ik-tags" *ngFor="let skill of profileSkills['skills']">
+								<!-- Title -->
 								<h6>{{ skill['title'] }}</h6>
+
+								<!-- List -->
 								<ng-container *ngFor="let item of skill['items']">
 									<span>{{ item }}</span>
 								</ng-container>
@@ -65,9 +77,11 @@
 
 						<!-- Education -->
 						<section class="ik-education">
+							<!-- Title & SubTitle -->
 							<h2>{{ profileEducation['title'] }}</h2>
 							<h6>{{ profileEducation['subTitle'] }}</h6>
 
+							<!-- List -->
 							<div class="ik-list-wrapper">
 								<ul class="ik-remove-bullets">
 									<li *ngFor="let education of profileEducation['education']">
@@ -91,9 +105,11 @@
 
 						<!-- Experience -->
 						<section class="ik-experience">
+							<!-- Title & SubTitle -->
 							<h2>{{ profileExperience['title'] }}</h2>
 							<h6>{{ profileExperience['subTitle'] }}</h6>
 
+							<!-- List -->
 							<div class="ik-list-wrapper">
 								<ul class="ik-remove-bullets">
 									<li *ngFor="let exp of profileExperience['experience']">
@@ -111,8 +127,7 @@
 										</div>
 										<div class="ik-right">
 											<h5>{{ exp['designation'] }}</h5>
-											<p>
-												{{ exp['company'] }}, {{ getTP(exp['period']) }}
+											<p>{{ exp['company'] }}, {{ getTP(exp['period']) }}
 												<ng-container *ngIf="exp['period'].length === 1">
 													<span> - </span>
 													<span class="ik-on">present</span>
@@ -128,13 +143,13 @@
 
 						<!-- Languages -->
 						<section class="ik-languages">
+							<!-- Title & SubTitle -->
 							<h2>{{ profileLanguage['title'] }}</h2>
 							<h6>{{ profileLanguage['subTitle'] }}</h6>
 
+							<!-- Tags -->
 							<div class="ik-tags">
-								<span *ngFor="let item of profileLanguage['list']">
-									{{ item }}
-								</span>
+								<span *ngFor="let item of profileLanguage['list']">{{ item }}</span>
 							</div>
 						</section>
 
@@ -142,12 +157,12 @@
 
 						<!-- Interest -->
 						<section class="ik-interest">
+							<!-- Title -->
 							<h2>{{ profileInterest['title'] }}</h2>
 
+							<!-- Tags -->
 							<div class="ik-tags">
-								<span *ngFor="let item of profileInterest['list']">
-									{{ item }}
-								</span>
+								<span *ngFor="let item of profileInterest['list']">{{ item }}</span>
 							</div>
 						</section>
 					</div>

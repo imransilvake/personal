@@ -57,19 +57,6 @@
 							color: var(--tc2);
 							margin-top: 12px;
 						}
-
-						.ik-tags {
-							h6 {
-								color: var(--tc2);
-								margin: 20px 0 10px;
-							}
-
-							span {
-								@extend .ik-common-tag;
-								background-color: var(--bg2);
-								color: var(--c4);
-							}
-						}
 					}
 				}
 			}
