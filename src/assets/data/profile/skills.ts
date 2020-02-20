@@ -18,16 +18,12 @@ const profileSkills = {
 			name: 'Angular'
 		},
 		{
-			id: 'aws',
-			name: 'Amazon Web Services'
+			id: 'node',
+			name: 'NodeJs'
 		},
 		{
 			id: 'nativescript',
 			name: 'NativeScript'
-		},
-		{
-			id: 'node',
-			name: 'NodeJs'
 		},
 		{
 			id: 'npm',
@@ -36,6 +32,10 @@ const profileSkills = {
 		{
 			id: 'rxjs',
 			name: 'RxJs'
+		},
+		{
+			id: 'aws',
+			name: 'Amazon Web Services'
 		},
 		{
 			id: 'sass',

@@ -99,8 +99,7 @@
 									}
 
 									span {
-										@extend .ik-common-tag;
-										@extend .ik-common-tag-color;
+										@extend .ik-extend-tag;
 									}
 								}
 							}
@@ -249,8 +248,7 @@
 									margin: 30px 0 0;
 
 									span {
-										@extend .ik-common-tag;
-										@extend .ik-common-tag-color;
+										@extend .ik-extend-tag;
 									}
 								}
 							}
@@ -264,8 +262,7 @@
 									margin: 30px 0 0;
 
 									span {
-										@extend .ik-common-tag;
-										@extend .ik-common-tag-color;
+										@extend .ik-extend-tag;
 									}
 								}
 							}
@@ -276,19 +273,17 @@
 		}
 	}
 
-	// Common
-	.ik-common-tag {
+	// extended class(es)
+	.ik-extend-tag {
+		background-color: var(--bg3);
 		border-radius: 1px;
+		box-shadow: 1px 1px 1px var(--tc3);
+		color: var(--c4);
 		display: inline-block;
 		font-weight: cd-fontWeight(300);
 		line-height: cd-lineHeight(2);
 		margin: 0 3px 3px 0;
 		padding: 0 5px;
-	}
-
-	.ik-common-tag-color {
-		background-color: var(--bg3);
-		color: var(--c4);
 	}
 
 	// media
