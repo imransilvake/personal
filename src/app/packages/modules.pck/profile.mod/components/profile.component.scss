@@ -6,13 +6,14 @@
 	header {
 		background-color: var(--bg2);
 		padding: 0 0 30px;
-		position: relative;
 
 		.cd-container {
+			position: relative;
+
 			.cd-row {
 				.cd-col {
 					.ik-profile-logo {
-						bottom: -50px;
+						bottom: -(50 + 30) + px;
 						position: absolute;
 						right: 30px;
 						z-index: cd-zIndex(float);
@@ -27,7 +28,6 @@
 
 					h1 {
 						color: var(--tc1);
-						line-height: cd-lineHeight(1.2);
 					}
 
 					h5 {
@@ -281,9 +281,8 @@
 		color: var(--c4);
 		display: inline-block;
 		font-weight: cd-fontWeight(300);
-		line-height: cd-lineHeight(2);
 		margin: 0 3px 3px 0;
-		padding: 0 5px;
+		padding: 4px 5px;
 	}
 
 	// media
