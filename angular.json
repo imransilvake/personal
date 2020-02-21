@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"ham": {
+		"ik": {
 			"root": "",
 			"sourceRoot": "src",
 			"projectType": "application",
@@ -34,7 +34,7 @@
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
-						"tsConfig": "src/tsconfig.app.json",
+						"tsConfig": "tsconfig.app.json",
 						"aot": true,
 						"assets": [
 							"src/favicon.ico",
@@ -154,37 +154,37 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"options": {
-						"browserTarget": "ham:build"
+						"browserTarget": "ik:build"
 					},
 					"configurations": {
 						"stag": {
-							"browserTarget": "ham:build:stag"
+							"browserTarget": "ik:build:stag"
 						},
 						"next": {
-							"browserTarget": "ham:build:next"
+							"browserTarget": "ik:build:next"
 						},
 						"prod": {
-							"browserTarget": "ham:build:prod"
+							"browserTarget": "ik:build:prod"
 						},
 						"prod-en": {
-							"browserTarget": "ham:build:prod-en"
+							"browserTarget": "ik:build:prod-en"
 						},
 						"prod-de": {
-							"browserTarget": "ham:build:prod-de"
+							"browserTarget": "ik:build:prod-de"
 						}
 					}
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "ham:build"
+						"browserTarget": "ik:build"
 					}
 				},
 				"lint": {
 					"builder": "@angular-devkit/build-angular:tslint",
 					"options": {
 						"tsConfig": [
-							"src/tsconfig.app.json"
+							"tsconfig.app.json"
 						],
 						"exclude": [
 							"**/node_modules/**"
@@ -194,5 +194,5 @@
 			}
 		}
 	},
-	"defaultProject": "ham"
+	"defaultProject": "ik"
 }

@@ -1,6 +1,5 @@
 // angular
-import { LOCALE_ID, NgModule, TRANSLATIONS, TRANSLATIONS_FORMAT } from '@angular/core';
-import { I18n } from '@ngx-translate/i18n-polyfill';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,10 +11,6 @@ import { APP_ROUTES } from './app-routing';
 import { WidgetsModule } from './shared/widgets.mod/widgets.module';
 import { HomeComponent } from './packages/modules.pck/home.component';
 import { SharedModule } from './shared/shared.module';
-
-// i18n using polyfills
-// provided by webpack
-declare const require;
 
 @NgModule({
 	imports: [
@@ -37,18 +32,7 @@ declare const require;
 		AppComponent,
 		HomeComponent
 	],
-	providers: [
-		I18n,
-		{
-			provide: TRANSLATIONS,
-			useFactory: (locale) => {
-				locale = locale || 'de';
-				return require(`raw-loader!../locale/translation.${ locale }.xlf`);
-			},
-			deps: [LOCALE_ID]
-		},
-		{ provide: TRANSLATIONS_FORMAT, useValue: 'xlf' }
-	],
+	providers: [ ],
 	bootstrap: [AppComponent]
 })
 

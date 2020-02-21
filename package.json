@@ -1,6 +1,8 @@
 {
 	"name": "imran-khan",
 	"version": "1.0.0",
+	"author": "Imran Khan",
+	"private": true,
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve --port 1500",
@@ -18,12 +20,8 @@
 		"lint:ts": "ng lint",
 		"lint:scss": "stylelint \"src/**/*.scss\" --syntax scss",
 		"translate": "ng xi18n --output-path locale --out-file translation-temp.xlf",
-		"translate:ts": "ngx-extractor --input=src/**/*.ts --format=xlf --out-file=src/locale/translation-temp.xlf",
-		"test": "ng test",
-		"e2e": "ng e2e"
+		"translate:ts": "ngx-extractor --input=src/**/*.ts --format=xlf --out-file=src/locale/translation-temp.xlf"
 	},
-	"author": "Imran Khan",
-	"private": true,
 	"dependencies": {
 		"@angular/animations": "^9.0.2",
 		"@angular/cdk": "^9.0.1",
@@ -41,9 +39,6 @@
 		"@fortawesome/free-brands-svg-icons": "^5.12.1",
 		"@fortawesome/free-solid-svg-icons": "^5.12.1",
 		"@imransilvake/scss-framework": "^2.2.1",
-		"@ngrx/core": "^1.2.0",
-		"@ngx-translate/i18n-polyfill": "^1.0.0",
-		"core-js": "^3.6.4",
 		"hammerjs": "^2.0.8",
 		"lg-autoplay.js": "^1.0.0",
 		"lg-fullscreen.js": "^1.1.0",
@@ -51,7 +46,8 @@
 		"lightgallery.js": "^1.1.3",
 		"moment": "^2.24.0",
 		"rxjs": "^6.5.4",
-		"zone.js": "~0.10.2"
+		"zone.js": "~0.10.2",
+		"tslib": "^1.10.0"
 	},
 	"devDependencies": {
 		"@angular-devkit/build-angular": "~0.900.3",
