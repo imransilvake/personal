@@ -17,7 +17,7 @@ export class InputComponent implements OnInit {
 	@Input() showLabel = false;
 	@Input() labelName;
 
-	@Input() inputId = 'ham-input';
+	@Input() inputId = 'ik-input';
 	@Input() inputName;
 	@Input() inputType = 'text';
 	@Input() inputPlaceHolder;

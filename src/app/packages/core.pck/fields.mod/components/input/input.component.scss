@@ -1,6 +1,6 @@
 @import 'scss-methods';
 
-.ham-input-field {
+.ik-input-field {
 	label {
 		color: var(--c1);
 		display: block;
@@ -8,12 +8,12 @@
 		margin-bottom: 5px;
 	}
 
-	.ham-input-wrapper {
-		&.ham-invalid {
+	.ik-input-wrapper {
+		&.ik-invalid {
 			border: 1px solid var(--c7);
 		}
 
-		.ham-input {
+		.ik-input {
 			direction: ltr;
 			position: relative;
 			width: 100%;
@@ -31,11 +31,11 @@
 				padding: 12px;
 				width: 100%;
 
-				&.ham-space-left {
+				&.ik-space-left {
 					padding-left: 35px;
 				}
 
-				&.ham-space-right {
+				&.ik-space-right {
 					padding-right: 28px;
 				}
 
@@ -51,19 +51,19 @@
 			}
 
 			// icon
-			.ham-icon {
+			.ik-icon {
 				color: var(--c4);
 				cursor: pointer;
 				position: absolute;
 				top: 10px;
 
 				// icon: left
-				&.ham-left {
+				&.ik-left {
 					left: 10px;
 				}
 
 				// icon: right
-				&.ham-right {
+				&.ik-right {
 					right: 10px;
 				}
 			}
