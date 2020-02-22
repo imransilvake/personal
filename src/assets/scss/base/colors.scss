@@ -22,6 +22,7 @@ $color6: #dddddd;
 	--o1: rgba(0, 0, 0, .3);
 	--o2: rgba(0, 0, 0, .4);
 	--o3: rgba(0, 0, 0, .6);
+	--o4: rgba(221, 221, 221, .2);
 }
 
 [data-theme='light'] {
@@ -33,7 +34,6 @@ $color6: #dddddd;
 	--tc2: #{$color3};
 	--tc3: #{$color6};
 	--tc4: #{$color1};
-	--tc5: #{$color6};
 }
 
 [data-theme='dark'] {
@@ -45,5 +45,15 @@ $color6: #dddddd;
 	--tc2: #{$color5};
 	--tc3: #{$color3};
 	--tc4: #{$color4};
-	--tc5: #{$color4};
 }
+
+/**
+-------------------------------------------
+color		Light				Dark
+-------------------------------------------
+tc1			black_light 	-> 	white
+tc2			black_light 	-> 	grey
+tc3			white_light 	-> 	black_light
+tc4			white			-> 	black
+-------------------------------------------
+ */

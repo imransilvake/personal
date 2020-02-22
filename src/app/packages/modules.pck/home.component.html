@@ -4,7 +4,7 @@
 			<div class="cd-row">
 				<!-- Content -->
 				<div class="cd-col cd-col-pm-t-8 cd-col-pm-d-9">
-					<section class="ik-block ik-card">
+					<section class="ik-card ik-block">
 						<div class="ik-top-summary">
 							<div class="ik-photo">
 								<img [src]="'assets/images/profile/' + home['profile']['summary']['avatar']['photo'] + '.jpg'"
@@ -26,7 +26,7 @@
 				<!-- Sidebar -->
 				<div class="cd-col cd-col-pm-t-4 cd-col-pm-d-3">
 					<!-- Social Network -->
-					<section class="ik-block ik-card ik-card-padding">
+					<section class="ik-card ik-card-padding ik-block">
 						<div class="ik-items ik-social">
 							<ng-container *ngFor="let item of home['social']['links']">
 								<div class="ik-item cd-tooltip {{item['class']}}" (click)="onClickOpenWebsite(item['link'])">
@@ -39,7 +39,7 @@
 					</section>
 
 					<!-- Recent Projects -->
-					<section class="ik-block ik-card ik-card-padding">
+					<section class="ik-card ik-card-padding ik-block">
 						<div class="ik-items ik-projects">
 							<!-- Title -->
 							<h5 class="ik-title">{{home['projects']['title']}}</h5>

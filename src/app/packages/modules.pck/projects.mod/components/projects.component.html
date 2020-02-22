@@ -9,7 +9,7 @@
 			</section>
 
 			<!-- Search & Filters -->
-			<section class="cd-row ik-search-filter ik-card">
+			<section class="cd-row ik-card ik-search-filter">
 				<!-- Search -->
 				<div class="cd-col cd-col-pm-t-6 cd-col-pm-d-6">
 					<div class="ik-search">
@@ -60,7 +60,7 @@
 								<h6 class="ik-title">{{ item['title'] }}</h6>
 
 								<!-- Info -->
-								<div class="ik-info ik-card" *ngIf="infoBlockIndex === idx && item['description']">
+								<div class="ik-card ik-info" *ngIf="infoBlockIndex === idx && item['description']">
 									<!-- Excerpt -->
 									<ng-container *ngIf="item['description']['excerpt']">
 										<h6>{{ item['description']['excerpt']['label'] }}</h6>
@@ -74,12 +74,11 @@
 									</ng-container>
 								</div>
 							</div>
-							<div class="ik-detail ik-card">
+							<div class="ik-card ik-detail">
 								<!-- Actions -->
 								<div class="ik-actions">
 									<div class="ik-left">
-										<fa-icon
-												(click)="!item['actions']['lock'] && onClickDownloadProject(item['actions']['github'])"
+										<fa-icon (click)="!item['actions']['lock'] && onClickDownloadProject(item['actions']['github'])"
 												class="ik-icon"
 												[class.ik-download]="!item['actions']['lock']"
 												[icon]="!item['actions']['lock'] ? faIcon[1] : faIcon[2]">
