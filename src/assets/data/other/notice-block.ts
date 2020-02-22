@@ -4,12 +4,12 @@ import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 const noticeBlock = [
 	{
 		icon: faEnvelopeOpen,
-		text: 'I am currently looking out for new opportunities!',
+		text: 'I am currently looking out for new opportunities.',
 		show: true
 	},
 	{
 		icon: faEnvelopeOpen,
-		text: '<a href="mailto:imransilvake@gmail.com">Contact</a> me for any query!',
+		text: 'The website is not complete yet. The are few interesting features coming soon.',
 		show: true
 	}
 ];

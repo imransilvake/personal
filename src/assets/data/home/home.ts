@@ -1,8 +1,23 @@
 // app
 import { AppLinks } from '../../../app.config';
 import projects from '../projects/project';
+import profileSummary from '../profile/summery';
+import profileIntro from '../profile/intro';
 
 const home = {
+	profile: {
+		summary: {
+			avatar: {
+				photo: profileIntro.photo,
+				name: profileIntro.name
+			},
+			detail: {
+				title: profileIntro.title,
+				name: profileIntro.name,
+				excerpt: profileSummary.description[0]
+			}
+		},
+	},
 	social: {
 		links: [
 			{

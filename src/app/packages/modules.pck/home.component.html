@@ -4,6 +4,23 @@
 			<div class="cd-row">
 				<!-- Content -->
 				<div class="cd-col cd-col-pm-t-8 cd-col-pm-d-9">
+					<section class="ik-block ik-card">
+						<div class="ik-top-summary">
+							<div class="ik-photo">
+								<img [src]="'assets/images/profile/' + home['profile']['summary']['avatar']['photo'] + '.jpg'"
+									 [alt]="home['profile']['summary']['avatar']['name']"/>
+							</div>
+							<div class="ik-detail">
+								<h6>{{ home['profile']['summary']['detail']['title'] }}</h6>
+								<h2>{{ home['profile']['summary']['detail']['name'] }}</h2>
+								<p>{{ home['profile']['summary']['detail']['excerpt'] }}</p>
+								<p>
+									<a href="mailto:imransilvake@gmail.com">Contact</a>
+									<a [routerLink]="['/' + routing.pages.profile]">Visit Profile</a>
+								</p>
+							</div>
+						</div>
+					</section>
 				</div>
 
 				<!-- Sidebar -->
@@ -23,8 +40,11 @@
 
 					<!-- Recent Projects -->
 					<section class="ik-block ik-card ik-card-padding">
-						<h5 class="ik-title">{{home['projects']['title']}}</h5>
 						<div class="ik-items ik-projects">
+							<!-- Title -->
+							<h5 class="ik-title">{{home['projects']['title']}}</h5>
+
+							<!-- List -->
 							<ul>
 								<li *ngFor="let item of home['projects']['items']">
 									<!-- Title -->

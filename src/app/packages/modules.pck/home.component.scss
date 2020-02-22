@@ -8,18 +8,56 @@
 		.cd-col {
 			.ik-block {
 				&:not(:first-child) {
-					margin-top: 20px;
+					margin-top: 30px;
 				}
 
-				.ik-title {
-					color: var(--c4);
-					font-size: cd-fontSize(s16);
-					font-weight: cd-fontWeight(700);
-					margin-bottom: 10px;
-					text-transform: uppercase;
+				.ik-top-summary {
+					align-items: center;
+					display: flex;
+					padding: 25px;
+
+					.ik-photo {
+						border-radius: 10px;
+						box-shadow: 1px 1px 1px var(--o1);
+						min-width: 150px;
+						width: 250px;
+
+						img {
+							border-radius: 10px;
+							display: block;
+						}
+					}
+
+					.ik-detail {
+						margin-left: 25px;
+
+						h6 {
+							background-color: var(--bg3);
+							color: var(--c7);
+							display: inline-block;
+							padding: 0 6px;
+						}
+
+						h2 {
+							color: var(--tc2);
+							font-weight: 700;
+						}
+
+						p {
+							color: var(--tc2);
+						}
+					}
 				}
 
 				.ik-items {
+					.ik-title {
+						color: var(--c4);
+						font-size: cd-fontSize(s16);
+						font-weight: cd-fontWeight(700);
+						margin-bottom: 10px;
+						text-transform: uppercase;
+					}
+
 					&.ik-social {
 						align-items: center;
 						display: flex;

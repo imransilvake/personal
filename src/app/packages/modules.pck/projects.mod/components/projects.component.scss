@@ -117,10 +117,7 @@
 					}
 
 					.ik-info {
-						background-color: var(--c2);
-						border-bottom: 1px solid var(--c3);
 						bottom: 0;
-						color: var(--c1);
 						height: 200px;
 						left: 0;
 						overflow-y: auto;
@@ -130,6 +127,7 @@
 						top: 0;
 
 						h6 {
+							color: var(--c4);
 							font-weight: cd-fontWeight(700);
 						}
 
@@ -141,8 +139,6 @@
 				}
 
 				.ik-detail {
-					background-color: var(--c2);
-					border-bottom: 1px solid var(--c3);
 					padding: 5px 10px;
 
 					.ik-actions {
@@ -151,6 +147,8 @@
 
 						.ik-left {
 							.ik-icon {
+								color: var(--c4);
+
 								&.ik-download {
 									cursor: pointer;
 								}
@@ -159,6 +157,7 @@
 
 						.ik-right {
 							.ik-icon {
+								color: var(--c4);
 								cursor: pointer;
 
 								&:not(:only-child):not(:last-child) {

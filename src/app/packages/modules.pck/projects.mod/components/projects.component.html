@@ -60,7 +60,7 @@
 								<h6 class="ik-title">{{ item['title'] }}</h6>
 
 								<!-- Info -->
-								<div class="ik-info" *ngIf="infoBlockIndex === idx && item['description']">
+								<div class="ik-info ik-card" *ngIf="infoBlockIndex === idx && item['description']">
 									<!-- Excerpt -->
 									<ng-container *ngIf="item['description']['excerpt']">
 										<h6>{{ item['description']['excerpt']['label'] }}</h6>
@@ -74,7 +74,7 @@
 									</ng-container>
 								</div>
 							</div>
-							<div class="ik-detail">
+							<div class="ik-detail ik-card">
 								<!-- Actions -->
 								<div class="ik-actions">
 									<div class="ik-left">

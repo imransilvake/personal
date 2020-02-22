@@ -16,7 +16,7 @@ export const LocalStorageItems = {
 	fontSize: 'ik-font-size'
 };
 
-// links
+// app links
 export const AppLinks = {
 	social: {
 		github: 'https://github.com/imransilvake',
