@@ -6,10 +6,7 @@ const topNavList = [
 		name: 'Print'
 	},
 	{
-		name: 'EN'
-	},
-	{
-		name: 'DE'
+		name: 'Language'
 	}
 ];
 

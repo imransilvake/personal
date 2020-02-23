@@ -50,6 +50,7 @@
 							h6 {
 								color: var(--c6);
 								cursor: pointer;
+								font-weight: cd-fontWeight(400);
 							}
 
 							&.ik-active {
@@ -99,7 +100,7 @@
 						bottom: 0;
 						color: var(--c2);
 						display: flex;
-						font-weight: cd-fontWeight(600);
+						font-weight: cd-fontWeight(500);
 						justify-content: center;
 						left: 0;
 						position: absolute;
