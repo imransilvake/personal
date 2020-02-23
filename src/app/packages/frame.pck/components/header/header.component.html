@@ -1,10 +1,27 @@
 <header>
-	<div class="cd-container-fluid">
+	<!-- Top -->
+	<section class="cd-container-fluid ik-block">
 		<div class="cd-container">
-			<section class="cd-row">
+			<div class="cd-row">
+				<!-- Top Nav List -->
+				<div class="cd-col cd-right-align">
+					<ul class="ik-items ik-remove-bullets">
+						<li *ngFor="let item of topNavList">
+							<a>{{ item.name }}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Bottom -->
+	<section class="cd-container-fluid ik-block">
+		<div class="cd-container">
+			<div class="cd-row">
 				<!-- Logo -->
 				<div class="cd-col cd-col-pm-s-4">
-					<div class="ik-block">
+					<div class="ik-logo">
 						<a [routerLink]="['/' + routing.pages.home]">
 							<img src="assets/svg/logo.svg" alt="iKhan" />
 						</a>
@@ -19,10 +36,10 @@
 					</div>
 				</div>
 
-				<!-- Nav List -->
+				<!-- Bottom Nav List -->
 				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
-					<ul class="ik-list-items ik-remove-bullets">
-						<li *ngFor="let item of navList">
+					<ul class="ik-items ik-remove-bullets">
+						<li *ngFor="let item of bottomNavList">
 							<a [routerLink]="item.link"
 							   [routerLinkActive]="['ik-active']">
 								{{ item.name }}
@@ -30,7 +47,7 @@
 						</li>
 					</ul>
 				</div>
-			</section>
+			</div>
 		</div>
-	</div>
+	</section>
 </header>

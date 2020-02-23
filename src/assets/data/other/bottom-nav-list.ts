@@ -1,7 +1,7 @@
 // app
 import { ROUTING } from '../../../environments/environment';
 
-const navList = [
+const bottomNavList = [
 	{
 		name: 'Profile',
 		link: `/${ROUTING.pages.profile}`
@@ -22,4 +22,4 @@ const navList = [
 	}
 ];
 
-export default navList;
+export default bottomNavList;

@@ -9,7 +9,7 @@ const noticeBlock = [
 	},
 	{
 		icon: faEnvelopeOpen,
-		text: 'The website is not complete yet. The are few interesting features coming soon.',
+		text: 'There are few interesting features that are coming soon.',
 		show: true
 	}
 ];

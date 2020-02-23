@@ -1,82 +1,84 @@
 @import 'scss-methods';
 
 header {
-	background-color: var(--bg2);
-	border-bottom: 1px solid var(--tc3);
-	padding: 10px 0;
-	position: relative;
+	.ik-block {
+		background-color: var(--bg2);
+		border-bottom: 1px solid var(--tc3);
+		padding: 10px 0;
+		position: relative;
 
-	.cd-row {
-		align-items: center;
+		.cd-row {
+			align-items: center;
 
-		.cd-col {
-			margin: 0;
+			.cd-col {
+				margin: 0;
 
-			&:first-child {
-				.ik-block {
-					display: inline-block;
-					position: relative;
+				&:first-child {
+					.ik-logo {
+						display: inline-block;
+						position: relative;
 
-					a {
-						img {
-							width: 66px;
-						}
-					}
-
-					ul {
-						background-color: var(--bg3);
-						border-radius: 5px;
-						display: flex;
-						left: 100%;
-						list-style: none;
-						margin-left: 10px;
-						padding: 1px 8px 0;
-						position: absolute;
-						top: -5px;
-
-						li {
-							&:not(:only-child):not(:last-child) {
-								margin-right: 10px;
+						a {
+							img {
+								width: 66px;
 							}
+						}
 
-							.ik-icon {
-								color: var(--tc1);
-								cursor: pointer;
-								display: block;
+						ul {
+							background-color: var(--bg3);
+							border-radius: 5px;
+							display: flex;
+							left: 100%;
+							list-style: none;
+							margin-left: 10px;
+							padding: 1px 8px 0;
+							position: absolute;
+							top: -5px;
 
-								&.ik-active {
-									color: var(--c8);
+							li {
+								&:not(:only-child):not(:last-child) {
+									margin-right: 10px;
+								}
+
+								.ik-icon {
+									color: var(--tc1);
+									cursor: pointer;
+									display: block;
+
+									&.ik-active {
+										color: var(--c8);
+									}
 								}
 							}
 						}
 					}
 				}
-			}
 
-			&:last-child {
-				.ik-list-items {
-					margin: 0;
+				&:last-child {
+					.ik-items {
+						margin: 0;
 
-					li {
-						display: inline-block;
+						li {
+							display: inline-block;
 
-						a {
-							padding: 0 10px;
-
-							&.ik-active {
-								color: var(--c8);
-							}
-						}
-
-						&:first-child {
 							a {
-								padding-left: 0;
-							}
-						}
+								padding: 0 10px;
 
-						&:last-child {
-							a {
-								padding-right: 0;
+								&.ik-active {
+									color: var(--c8);
+								}
+							}
+
+							&:first-child {
+								a {
+									padding-left: 0;
+								}
+							}
+
+							&:last-child {
+								a {
+									padding-right: 0;
+								}
 							}
 						}
 					}
@@ -87,12 +89,14 @@ header {
 
 	// media
 	@include cd-media(desktop, mini) {
-		.cd-row {
-			.cd-col {
-				text-align: center;
+		.ik-block {
+			.cd-row {
+				.cd-col {
+					text-align: center;
 
-				&:last-child {
-					margin-top: 10px;
+					&:last-child {
+						margin-top: 10px;
+					}
 				}
 			}
 		}

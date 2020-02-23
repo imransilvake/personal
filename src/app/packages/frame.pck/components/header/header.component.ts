@@ -2,7 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 
 // app
-import navList from 'src/assets/data/other/nav-list';
+import topNavList from '../../../../../assets/data/other/top-nav-list';
+import bottomNavList from 'src/assets/data/other/bottom-nav-list';
 import { ROUTING } from '../../../../../environments/environment';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { LocalStorageItems } from '../../../../../app.config';
@@ -21,7 +22,8 @@ export class HeaderComponent implements OnInit {
 	public themeInactive = true;
 	public fontSizeInactive = true;
 	public routing = ROUTING;
-	public navList = navList;
+	public topNavList = topNavList;
+	public bottomNavList = bottomNavList;
 
 	constructor(private _storageService: StorageService) {
 	}
