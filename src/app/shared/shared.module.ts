@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // app
 import { AccessoriesModule } from '../packages/utilities.pck/accessories.mod/accessories.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MaterialModule } from '../packages/vendors.pck/material.mod/material.module';
 
 @NgModule({
 	exports: [
@@ -15,7 +14,6 @@ import { MaterialModule } from '../packages/vendors.pck/material.mod/material.mo
 		RouterModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MaterialModule,
 		AccessoriesModule,
 		FontAwesomeModule
 	]
