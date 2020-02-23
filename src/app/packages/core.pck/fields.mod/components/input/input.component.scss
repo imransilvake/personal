@@ -45,14 +45,14 @@
 				}
 
 				&::placeholder {
-					color: var(--c4);
+					color: var(--tc2);
 					opacity: 1;
 				}
 			}
 
 			// icon
 			.ik-icon {
-				color: var(--c4);
+				color: var(--tc2);
 				cursor: pointer;
 				position: absolute;
 				top: 10px;
@@ -83,7 +83,7 @@
 
 	// hint
 	.mat-hint {
-		color: var(--c4);
+		color: var(--tc2);
 		display: block;
 		font-size: cd-fontSize(s12);
 		margin-top: 4px;

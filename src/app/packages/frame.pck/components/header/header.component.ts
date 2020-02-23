@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import topNavList from '../../../../../assets/data/other/top-nav-list';
 import bottomNavList from 'src/assets/data/other/bottom-nav-list';
 import { ROUTING } from '../../../../../environments/environment';
-import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { LocalStorageItems } from '../../../../../app.config';
 import { faTint, faFont } from '@fortawesome/free-solid-svg-icons';
+import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 
 declare const document: any;
 
@@ -18,12 +18,12 @@ declare const document: any;
 })
 
 export class HeaderComponent implements OnInit {
-	public faIcons = [faTint, faFont];
-	public themeInactive = true;
-	public fontSizeInactive = true;
 	public routing = ROUTING;
+	public faIcons = [faTint, faFont];
 	public topNavList = topNavList;
 	public bottomNavList = bottomNavList;
+	public themeInactive = true;
+	public fontSizeInactive = true;
 
 	constructor(private _storageService: StorageService) {
 	}
