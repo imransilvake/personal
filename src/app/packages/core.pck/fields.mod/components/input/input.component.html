@@ -1,4 +1,4 @@
-<div class="ik-input-field" *ngIf="control">
+<section class="ik-input-field" *ngIf="control">
 	<!-- Label -->
 	<label *ngIf="showLabel" [htmlFor]="inputId">{{labelName}}</label>
 
@@ -42,7 +42,7 @@
 	</div>
 
 	<!-- Error -->
-	<section *ngIf="control.invalid && control.touched">
+	<div class="ik-error" *ngIf="control.invalid && control.touched">
 		<ng-container [ngSwitch]="control.errors | FirstKey">
 			<p *ngSwitchCase="'required'" i18n="@@Fields_Input_Error_Required">
 				Required field
@@ -57,8 +57,8 @@
 				Unknown error occurred
 			</p>
 		</ng-container>
-	</section>
+	</div>
 
 	<!-- Hint -->
-	<section *ngIf="showHint && hintText">{{hintText}}</section>
-</div>
+	<div class="ik-hint" *ngIf="showHint && hintText">{{hintText}}</div>
+</section>

@@ -71,7 +71,7 @@
 	}
 
 	// error
-	.mat-error {
+	.ik-error {
 		p {
 			background-color: var(--c7);
 			color: var(--c2);
@@ -82,7 +82,7 @@
 	}
 
 	// hint
-	.mat-hint {
+	.ik-hint {
 		color: var(--tc2);
 		display: block;
 		font-size: cd-fontSize(s12);
