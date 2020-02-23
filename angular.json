@@ -42,9 +42,6 @@
 							"src/assets/images"
 						],
 						"styles": [
-							"src/assets/fonts/roboto.scss",
-							"src/assets/fonts/sacramento.scss",
-							"src/assets/fonts/poiret-one.scss",
 							"src/styles.scss"
 						],
 						"stylePreprocessorOptions": {
