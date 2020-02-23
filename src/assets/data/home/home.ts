@@ -9,11 +9,14 @@ const home = {
 		summary: {
 			avatar: {
 				photo: profileIntro.photo,
+				cover: profileIntro.cover,
 				name: profileIntro.name
 			},
 			detail: {
-				title: profileIntro.title,
 				name: profileIntro.name,
+				title: profileIntro.title,
+				subTitle: `IM ${profileIntro.name}.`,
+				greetings: `Hello`,
 				excerpt: profileSummary.description[0]
 			}
 		},

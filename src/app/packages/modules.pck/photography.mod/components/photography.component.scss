@@ -5,14 +5,7 @@
 
 	.ik-slider-photo {
 		.ik-photo {
-			height: 500px;
 			position: relative;
-
-			img {
-				height: 500px;
-				object-fit: cover;
-				width: 100%;
-			}
 
 			.ik-text {
 				background-color: var(--o3);
@@ -112,16 +105,6 @@
 
 	// media
 	@include cd-media(desktop, smartphone) {
-		.ik-slider-photo {
-			.ik-photo {
-				height: 350px;
-
-				img {
-					height: 350px;
-				}
-			}
-		}
-
 		.ik-gallery {
 			.cd-row {
 				.cd-col {
@@ -138,16 +121,6 @@
 	}
 
 	@include cd-media(desktop, mini) {
-		.ik-slider-photo {
-			.ik-photo {
-				height: 250px;
-
-				img {
-					height: 250px;
-				}
-			}
-		}
-
 		.ik-gallery {
 			.cd-row {
 				.cd-col {

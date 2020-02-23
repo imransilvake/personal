@@ -1,7 +1,8 @@
 const profileIntro = {
 	name: 'Imran Khan',
-	title: 'JavaScript Frontend Developer',
-	photo: 'avatar'
+	title: 'Frontend Developer',
+	photo: 'avatar',
+	cover: 'cover'
 };
 
 export default profileIntro;

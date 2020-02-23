@@ -1,0 +1,55 @@
+.ik-image-fixed-size {
+	&.ik-one {
+		height: 500px;
+
+		img {
+			@extend .ik-image-properties;
+			height: 500px;
+		}
+	}
+
+	&.ik-two {
+		height: 270px;
+
+		img {
+			@extend .ik-image-properties;
+			height: 270px;
+		}
+	}
+
+	// extended class
+	.ik-image-properties {
+		display: block;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	// media
+	@include cd-media(desktop, smartphone) {
+		&.ik-one {
+			height: 350px;
+
+			img {
+				height: 350px;
+			}
+		}
+
+		&.ik-two {
+			height: 200px;
+
+			img {
+				height: 200px;
+			}
+		}
+	}
+
+	@include cd-media(desktop, mini) {
+		&.ik-one {
+			height: 250px;
+
+			img {
+				height: 250px;
+			}
+		}
+	}
+}

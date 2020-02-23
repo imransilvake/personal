@@ -6,17 +6,38 @@
 				<div class="cd-col cd-col-pm-t-8 cd-col-pm-d-9">
 					<section class="ik-card ik-block">
 						<div class="ik-top-summary">
-							<div class="ik-photo">
-								<img [src]="'assets/images/profile/' + home['profile']['summary']['avatar']['photo'] + '.jpg'"
-									 [alt]="home['profile']['summary']['avatar']['name']"/>
+							<div class="ik-profile">
+								<!-- Cover -->
+								<div class="ik-cover ik-image-fixed-size ik-two">
+									<img class="ik-bg-loader ik-loader-white"
+										 [src]="'assets/images/profile/' + home['profile']['summary']['avatar']['cover'] + '.jpg'"
+										 [alt]="home['profile']['summary']['avatar']['cover']"/>
+								</div>
+
+								<!-- Photo -->
+								<div class="ik-photo">
+									<img [src]="'assets/images/profile/' + home['profile']['summary']['avatar']['photo'] + '.jpg'"
+										 [alt]="home['profile']['summary']['avatar']['name']"/>
+								</div>
 							</div>
+
 							<div class="ik-detail">
-								<h6>{{ home['profile']['summary']['detail']['title'] }}</h6>
-								<h2>{{ home['profile']['summary']['detail']['name'] }}</h2>
+								<!-- Greetings -->
+								<h5>
+									<span>{{ home['profile']['summary']['detail']['greetings'] }}, </span>
+									<span>{{ home['profile']['summary']['detail']['subTitle'] }}</span>
+								</h5>
+
+								<!-- Title -->
+								<h3>{{ home['profile']['summary']['detail']['title'] }}</h3>
+
+								<!-- Excerpt -->
 								<p>{{ home['profile']['summary']['detail']['excerpt'] }}</p>
-								<p>
+
+								<!-- Excerpt -->
+								<p class="ik-buttons cd-hide">
 									<a href="mailto:imransilvake@gmail.com">Contact</a>
-									<a [routerLink]="['/' + routing.pages.profile]">Visit Profile</a>
+									<a [routerLink]="['/' + routing.pages.profile]">Profile</a>
 								</p>
 							</div>
 						</div>
