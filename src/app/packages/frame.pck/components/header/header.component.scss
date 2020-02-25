@@ -3,9 +3,12 @@
 header {
 	.ik-block {
 		background-color: var(--bg2);
-		border-bottom: 1px solid var(--tc3);
 		padding: 10px 0;
 		position: relative;
+
+		&.ik-border {
+			border-bottom: 1px solid var(--tc3);
+		}
 
 		.cd-row {
 			align-items: center;
