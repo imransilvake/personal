@@ -4,17 +4,11 @@ import { Routes } from '@angular/router';
 // app
 import { ROUTING } from '../environments/environment';
 import { E404Component } from './packages/frame.pck/components/e404/e404.component';
-import { HomeComponent } from './packages/modules.pck/home.component';
 
 const ROUTES: Routes = [
 	{
-		path: '',
-		redirectTo: ROUTING.pages.home,
-		pathMatch: 'full'
-	},
-	{
-		path: 'home',
-		component: HomeComponent
+		path: ROUTING.pages.home,
+		loadChildren: () => import('./packages/modules.pck/home.module').then(m => m.HomeModule)
 	},
 	{
 		path: ROUTING.pages.profile,
@@ -28,12 +22,6 @@ const ROUTES: Routes = [
 		path: ROUTING.pages.projects,
 		loadChildren: () => import('./packages/modules.pck/projects.mod/projects.module').then(m => m.ProjectsModule)
 	},
-	/*
-	{
-		path: 'code',
-		components: CodeComponent
-	},
-	 */
 	{
 		path: '**',
 		component: E404Component

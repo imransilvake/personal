@@ -4,33 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 // app
+import { APP_ROUTES } from './app-routing';
 import { AppComponent } from './app.component';
 import { FrameModule } from './packages/frame.pck/frame.module';
-import { APP_ROUTES } from './app-routing';
 import { WidgetsModule } from './shared/widgets.mod/widgets.module';
-import { HomeComponent } from './packages/modules.pck/home.component';
-import { SharedModule } from './shared/shared.module';
 
 @NgModule({
 	imports: [
 		// angular
 		BrowserModule,
-		RouterModule.forRoot(APP_ROUTES, {
-			onSameUrlNavigation: 'reload'
-		}),
+		RouterModule.forRoot(APP_ROUTES, { onSameUrlNavigation: 'reload' }),
 
-		// shared
-		SharedModule,
-
-		// core
+		// app
 		FrameModule,
 		WidgetsModule
 	],
-	declarations: [
-		AppComponent,
-		HomeComponent
-	],
-	providers: [ ],
+	declarations: [AppComponent],
 	bootstrap: [AppComponent]
 })
 
