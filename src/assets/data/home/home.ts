@@ -15,7 +15,7 @@ const home = {
 			detail: {
 				name: profileIntro.name,
 				title: profileIntro.title,
-				subTitle: `IM ${profileIntro.name}.`,
+				subTitle: `I'M ${profileIntro.name}.`,
 				greetings: `Hello`,
 				excerpt: profileSummary.description[0]
 			}
