@@ -9,5 +9,4 @@ const profileSummary = {
 		'organized team and environment. I am passionate to learn about new features and technologies.'
 	]
 };
-
 export default profileSummary;

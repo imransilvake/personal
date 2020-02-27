@@ -43,5 +43,4 @@ const home = {
 		items: projects.items.filter(x => !!x.controls.recent)
 	}
 };
-
 export default home;

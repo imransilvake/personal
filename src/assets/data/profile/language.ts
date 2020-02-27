@@ -7,5 +7,4 @@ const profileLanguage = {
 		'Deutsch',
 	]
 };
-
 export default profileLanguage;

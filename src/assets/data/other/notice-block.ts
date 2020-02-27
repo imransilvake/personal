@@ -13,5 +13,4 @@ const noticeBlock = [
 		show: true
 	}
 ];
-
 export default noticeBlock;

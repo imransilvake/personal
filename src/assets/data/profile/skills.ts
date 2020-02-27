@@ -93,5 +93,4 @@ const profileSkills = {
 		}
 	]
 };
-
 export default profileSkills;

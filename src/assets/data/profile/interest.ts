@@ -10,5 +10,4 @@ const profileInterest = {
 		'Coding'
 	]
 };
-
 export default profileInterest;

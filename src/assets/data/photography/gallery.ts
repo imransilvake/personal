@@ -35,5 +35,4 @@ const photography = {
 		}
 	]
 };
-
 export default photography;

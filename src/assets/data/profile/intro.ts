@@ -4,5 +4,4 @@ const profileIntro = {
 	photo: 'avatar',
 	cover: 'cover'
 };
-
 export default profileIntro;

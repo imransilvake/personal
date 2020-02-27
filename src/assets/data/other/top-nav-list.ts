@@ -1,6 +1,3 @@
-// app
-import { ROUTING } from '../../../environments/environment';
-
 const topNavList = [
 	{
 		name: 'Print'
@@ -9,5 +6,4 @@ const topNavList = [
 		name: 'Language'
 	}
 ];
-
 export default topNavList;

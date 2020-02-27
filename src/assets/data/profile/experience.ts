@@ -24,5 +24,4 @@ const profileExperience = {
 		}
 	]
 };
-
 export default profileExperience;
