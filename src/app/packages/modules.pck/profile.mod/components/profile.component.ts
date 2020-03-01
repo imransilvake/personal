@@ -60,18 +60,27 @@ export class ProfileComponent {
 	}
 
 	/**
-	 * get display period
+	 * display period
 	 * @param period
 	 */
-	public getDisplayPeriod(period) {
+	public displayPeriod(period, shortForm) {
 		const year = period[0];
 		const month = period[1];
 		if (year > 0 && month > 0) {
-			return `${year}Y ${month}M`;
+			return shortForm ? `${year}Y ${month}M` :
+				`${this.doPluralize(year, 'Year')} ${this.doPluralize(month, 'Month')}`;
 		} else if (year > 0 && month === 0) {
-			return `${year}Y`;
+			return shortForm ? `${year}Y` : `${this.doPluralize(year, 'Year')}`;
 		} else {
-			return `${month}M`;
+			return shortForm ? `${month}M` : `${this.doPluralize(month, 'Month')}`;
 		}
 	}
+
+	/**
+	 * pluralize the given name based on counts
+	 * @param count
+	 * @param noun
+	 * @param suffix
+	 */
+	public doPluralize = (count, noun, suffix = 's') => `${count} ${noun}${count !== 1 ? suffix : ''}`;
 }

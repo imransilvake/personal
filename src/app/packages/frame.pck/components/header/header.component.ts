@@ -1,5 +1,8 @@
 // angular
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 // app
 import topNavList from '../../../../../assets/data/other/top-nav-list';
@@ -9,6 +12,7 @@ import { LocalStorageItems } from '../../../../../app.config';
 import { faTint, faFont } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 
+declare const window: any;
 declare const document: any;
 
 @Component({
@@ -20,12 +24,29 @@ declare const document: any;
 export class HeaderComponent implements OnInit {
 	public routing = ROUTING;
 	public faIcons = [faTint, faFont];
-	public topNavList = topNavList;
+	public topNavListFiltered = topNavList.filter(i => i.id !== 'print');
+	public topNavList = this.topNavListFiltered;
 	public bottomNavList = bottomNavList;
 	public themeInactive = true;
 	public fontSizeInactive = true;
 
-	constructor(private _storageService: StorageService) {
+	private _ngUnSubscribe: Subject<void> = new Subject<void>();
+
+	constructor(
+		private _router: Router,
+		private _storageService: StorageService
+	) {
+		// listen: router event
+		this._router.events
+			.pipe(
+				takeUntil(this._ngUnSubscribe),
+				filter(event => event instanceof NavigationEnd)
+			)
+			.subscribe((res) => {
+				// update top nav list
+				this.topNavList = (res && res['url'] !== `/${ROUTING.pages.profile}`) ?
+					this.topNavListFiltered : topNavList;
+			});
 	}
 
 	ngOnInit() {
@@ -72,5 +93,14 @@ export class HeaderComponent implements OnInit {
 
 		// update to local storage
 		this._storageService.put(LocalStorageItems.fontSize, value);
+	}
+
+	/**
+	 * print profile
+	 */
+	public printProfilePage() {
+		if (window) {
+			window.print();
+		}
 	}
 }

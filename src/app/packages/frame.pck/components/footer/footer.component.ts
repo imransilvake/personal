@@ -15,7 +15,7 @@ export class FooterComponent {
 	public faIcon = faHeart;
 	public appVersion;
 
-	constructor(private _appVersion: AppVersionService) {
-		this.appVersion = _appVersion.getAppVersion;
+	constructor(private _appVersionService: AppVersionService) {
+		this.appVersion = _appVersionService.getAppVersion;
 	}
 }

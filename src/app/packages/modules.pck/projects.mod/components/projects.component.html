@@ -40,7 +40,7 @@
 			<!-- Projects -->
 			<section class="cd-row ik-projects-list">
 				<!-- Data -->
-				<ng-container *ngIf="projects['items'].length > 0">
+				<ng-container *ngIf="projects['items'].length > 0; else elseBlock">
 					<ng-container *ngFor="let item of projects['items']; let idx=index;">
 						<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4">
 							<div class="ik-banner ik-color"
@@ -119,11 +119,11 @@
 				</ng-container>
 
 				<!-- Empty -->
-				<ng-container *ngIf="projects['items'].length === 0">
+				<ng-template #elseBlock>
 					<div class="cd-col cd-center-align">
 						<h6 class="ik-empty">Empty search result!</h6>
 					</div>
-				</ng-container>
+				</ng-template>
 			</section>
 		</div>
 	</div>

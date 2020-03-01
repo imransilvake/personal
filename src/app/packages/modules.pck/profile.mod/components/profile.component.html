@@ -118,10 +118,10 @@
 												<p class="ik-number"
 												   [class.ik-current]="exp['period'].length === 1"
 												   [class.ik-year]="getTD(exp['period'])[0] > 0">
-													{{ getDisplayPeriod(getTD(exp['period'])) }}
+													{{ displayPeriod(getTD(exp['period']), true) }}
 												</p>
 												<span class="cd-arrow cd-bottom">
-													{{ getDisplayPeriod(getTD(exp['period'])) }}
+													{{ displayPeriod(getTD(exp['period']), false) }}
 												</span>
 											</div>
 										</div>

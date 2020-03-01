@@ -8,19 +8,19 @@ import { ScrollTopService } from './packages/utilities.pck/accessories.mod/servi
 	selector: 'app-root',
 	template: `
 		<!-- Notice Block -->
-		<app-notice-block></app-notice-block>
+		<app-notice-block class="ik-no-print"></app-notice-block>
 
 		<!-- Header -->
-		<app-header></app-header>
+		<app-header class="ik-no-print"></app-header>
 
 		<!-- Router Outlet -->
 		<router-outlet></router-outlet>
 
 		<!-- Footer -->
-		<app-footer></app-footer>
+		<app-footer class="ik-no-print"></app-footer>
 
 		<!-- Scroll Top -->
-		<app-scroll-top></app-scroll-top>
+		<app-scroll-top class="ik-no-print"></app-scroll-top>
 	`,
 })
 

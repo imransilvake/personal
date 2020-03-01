@@ -1,8 +1,10 @@
 const topNavList = [
 	{
-		name: 'Print'
+		id: 'print',
+		icon: 'printer'
 	},
 	{
+		id: 'lang',
 		name: 'Language'
 	}
 ];

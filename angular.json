@@ -10,20 +10,8 @@
 			"prefix": "app",
 			"schematics": {
 				"@schematics/angular:component": {
-					"styleext": "scss",
-					"spec": false
-				},
-				"@schematics/angular:module": {
-					"spec": false
-				},
-				"@schematics/angular:service": {
-					"spec": false
-				},
-				"@schematics/angular:pipe": {
-					"spec": false
-				},
-				"@schematics/angular:directive": {
-					"spec": false
+					"style": "scss",
+					"skipTests": true
 				}
 			},
 			"architect": {

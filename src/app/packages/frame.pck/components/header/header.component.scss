@@ -63,25 +63,28 @@ header {
 
 						li {
 							display: inline-block;
+							padding: 0 10px;
+							vertical-align: middle;
+
+							&:first-child {
+								padding-left: 0;
+							}
+
+							&:last-child {
+								padding-right: 0;
+							}
 
 							a {
-								padding: 0 10px;
-
 								&.ik-active {
 									color: var(--c8);
 								}
 							}
 
-							&:first-child {
-								a {
-									padding-left: 0;
-								}
-							}
-
-							&:last-child {
-								a {
-									padding-right: 0;
-								}
+							.ik-print {
+								cursor: pointer;
+								display: block;
+								height: 20px;
+								width: 20px;
 							}
 						}
 					}
