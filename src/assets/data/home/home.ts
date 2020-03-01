@@ -1,4 +1,6 @@
 // app
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { AppLinks } from '../../../app.config';
 import projects from '../projects/project';
 import profileSummary from '../profile/summery';
@@ -25,15 +27,22 @@ const home = {
 		links: [
 			{
 				name: 'Github',
-				icon: 'github',
+				img: 'github',
 				link: AppLinks.social.github,
 				class: 'ik-github'
 			},
 			{
 				name: 'Linkedin',
-				icon: 'linkedin',
+				icon: faLinkedinIn,
 				link: AppLinks.social.linkedin,
 				class: 'ik-linkedin'
+			},
+			{
+				name: 'Email',
+				icon: faEnvelope,
+				link: `mailto:${AppLinks.social.email}`,
+				isMail: true,
+				class: 'ik-email'
 			}
 		]
 	},

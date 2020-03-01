@@ -94,17 +94,33 @@
 								margin-right: 10px;
 							}
 
-							&.ik-github {
-								background-color: var(--c12);
-							}
-
-							&.ik-linkedin {
-								background-color: var(--c13);
+							.ik-icon {
+								font-size: cd-fontSize(s18);
+								margin-top: 2px;
 							}
 
 							img {
 								display: block;
 								width: 34px;
+							}
+
+							&.ik-github {
+								background-color: var(--c12);
+								border: 3px solid var(--tc2);
+							}
+
+							&.ik-linkedin {
+								border: 3px solid var(--c13);
+								color: var(--c13);
+
+								.ik-icon {
+									margin-left: 2px;
+								}
+							}
+
+							&.ik-email {
+								border: 3px solid var(--c7);
+								color: var(--c7);
 							}
 						}
 					}

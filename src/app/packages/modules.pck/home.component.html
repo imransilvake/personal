@@ -44,9 +44,19 @@
 					<section class="ik-card ik-card-padding ik-block">
 						<div class="ik-items ik-social">
 							<ng-container *ngFor="let item of home['social']['links']">
-								<div class="ik-item cd-tooltip {{item['class']}}" (click)="onClickOpenWebsite(item['link'])">
-									<img [src]="'assets/svg/home/social/' + item['icon'] + '.svg'"
+								<div class="ik-item cd-tooltip {{item['class']}}"
+									 (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
+									<!-- Image -->
+									<img *ngIf="!!item['img']"
+										 [src]="'assets/svg/home/social/' + item['img'] + '.svg'"
 										 [alt]="item['name']"/>
+
+									<!-- Icon -->
+									<fa-icon *ngIf="!!item['icon']"
+											 class="ik-icon"
+											 [icon]="item['icon']"></fa-icon>
+
+									<!-- Name -->
 									<span class="cd-arrow cd-bottom">{{item['name']}}</span>
 								</div>
 							</ng-container>

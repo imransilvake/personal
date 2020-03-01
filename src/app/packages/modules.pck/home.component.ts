@@ -20,9 +20,14 @@ export class HomeComponent {
 	/**
 	 * open (website) external link
 	 * @param link
+	 * @param isMail
 	 */
-	public onClickOpenWebsite(link) {
-		window.open(link, '_blank');
+	public onClickOpenWebsite(link, isMail) {
+		if (isMail) {
+			window.open(link, '_self');
+		} else {
+			window.open(link, '_blank');
+		}
 	}
 
 	/**
