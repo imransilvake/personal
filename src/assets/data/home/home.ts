@@ -89,7 +89,7 @@ const home = {
 								name: 'Horizon Zero Dawn'
 							},
 							{
-								name: 'Assassins Creed: Origins'
+								name: 'Assassin\'s Creed Origins'
 							}
 						]
 					},
