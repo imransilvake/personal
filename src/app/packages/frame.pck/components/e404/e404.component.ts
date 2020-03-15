@@ -4,8 +4,8 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 // app
-import page404 from '../../../../../assets/data/other/404';
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
+import page404 from '../../../../../assets/data/other/404';
 
 @Component({
 	selector: 'app-e404',
@@ -18,7 +18,7 @@ export class E404Component implements OnInit, OnDestroy {
 	public x = '50%';
 	public y = '50%';
 
-	private unSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe = new Subject();
 
 	ngOnInit() {
 		HelperService.detectMouseMove()

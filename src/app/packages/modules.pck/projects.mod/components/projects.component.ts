@@ -29,7 +29,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	public infoBlockIndex = -1;
 	public formFields;
 
-	private unSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe = new Subject();
 
 	constructor(
 		private _route: ActivatedRoute,

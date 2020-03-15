@@ -4,8 +4,8 @@ import { Subject, timer } from 'rxjs';
 import { startWith, switchMap, takeUntil } from 'rxjs/operators';
 
 // app
-import noticeBlock from '../../../../../assets/data/other/notice-block';
 import { AppOptions } from '../../../../../app.config';
+import noticeBlock from '../../../../../assets/data/other/notice-block';
 
 @Component({
 	selector: 'app-notice-block',
@@ -18,7 +18,7 @@ export class NoticeBlockComponent implements OnInit, OnDestroy {
 	public randomBlock = {};
 	public interval = new Subject();
 
-	private unSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe = new Subject();
 
 	ngOnInit() {
 		this.interval

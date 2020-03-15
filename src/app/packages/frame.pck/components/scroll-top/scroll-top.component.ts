@@ -18,7 +18,7 @@ export class ScrollTopComponent implements OnInit, OnDestroy {
 	public showScroll = false;
 	public scrollDuration = 300;
 
-	private unSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe = new Subject();
 
 	constructor(private _scrollTopService: ScrollTopService) {
 	}

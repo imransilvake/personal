@@ -5,12 +5,12 @@ import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 // app
-import topNavList from '../../../../../assets/data/other/top-nav-list';
-import bottomNavList from 'src/assets/data/other/bottom-nav-list';
 import { ROUTING } from '../../../../../environments/environment';
 import { LocalStorageItems } from '../../../../../app.config';
 import { faTint, faFont } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
+import topNavList from '../../../../../assets/data/other/top-nav-list';
+import bottomNavList from 'src/assets/data/other/bottom-nav-list';
 
 declare const window: any;
 declare const document: any;
@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
 	public themeInactive = true;
 	public fontSizeInactive = true;
 
-	private unSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe = new Subject();
 
 	constructor(
 		private _router: Router,

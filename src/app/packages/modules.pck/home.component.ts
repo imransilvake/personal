@@ -24,12 +24,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 	public activeSlideIndex = 0;
 
 	private infoBoardSlider = new Subject();
-	private infoBoardSliderExit;
-	private unSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe = new Subject();
 
 	ngOnInit() {
 		// info board slider
-		this.infoBoardSliderExit = this.infoBoardSlider
+		this.infoBoardSlider
 			.pipe(
 				takeUntil(this.unSubscribe),
 				startWith(''),
@@ -45,11 +44,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 		// remove subscriptions
 		this.unSubscribe.next();
 		this.unSubscribe.complete();
-
-		// unsubscribe slider
-		if (this.infoBoardSliderExit) {
-			this.infoBoardSliderExit.unsubscribe();
-		}
 	}
 
 	/**
@@ -92,7 +86,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 	 * reset slider counter
 	 */
 	private resetSliderCounterOnNavigationClick() {
-		if (this.infoBoardSliderExit) {
+		if (this.infoBoardSlider) {
 			this.infoBoardSlider.next(void 0);
 		}
 	}
