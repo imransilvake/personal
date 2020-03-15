@@ -75,52 +75,61 @@
 						text-transform: uppercase;
 					}
 
-					&.ik-social {
-						align-items: center;
-						display: flex;
-						justify-content: center;
-
-						.ik-item {
-							align-items: center;
-							background-color: var(--bg3);
-							border-radius: 50%;
-							cursor: pointer;
-							display: flex;
-							height: 40px;
-							justify-content: center;
-							width: 40px;
-
-							&:not(:last-child) {
-								margin-right: 10px;
-							}
-
-							.ik-icon {
-								font-size: cd-fontSize(s18);
-								margin-top: 2px;
-							}
+					&.ik-info-board {
+						.ik-photo {
+							background-color: var(--c5);
+							padding: 5px 0;
+							text-align: center;
 
 							img {
-								display: block;
-								width: 34px;
+								height: 35px;
+								width: 35px;
+							}
+						}
+
+						.ik-detail {
+							padding: 10px 15px;
+
+							h6 {
+								color: var(--tc2);
+								font-size: cd-fontSize(s15);
+								font-weight: cd-fontWeight(700);
+								margin: 5px 0 0;
+								text-transform: uppercase;
 							}
 
-							&.ik-github {
-								background-color: var(--c12);
-								border: 3px solid var(--tc2);
-							}
+							ul {
+								margin-left: 20px;
 
-							&.ik-linkedin {
-								border: 3px solid var(--c13);
-								color: var(--c13);
+								li {
+									color: var(--tc2);
 
-								.ik-icon {
-									margin-left: 2px;
+									p {
+										color: var(--tc2);
+										font-size: cd-fontSize(s14);
+									}
 								}
 							}
+						}
 
-							&.ik-email {
-								border: 3px solid var(--c7);
-								color: var(--c7);
+						.ik-dots {
+							padding: 5px 0;
+							text-align: center;
+
+							.ik-dot {
+								background-color: var(--c3);
+								border-radius: 50%;
+								cursor: pointer;
+								display: inline-block;
+								height: 10px;
+								margin: 0 2px;
+								transition: background-color .6s ease;
+								width: 10px;
+
+								&.ik-active {
+									background-color: var(--c4);
+									cursor: default;
+								}
 							}
 						}
 					}
@@ -180,6 +189,73 @@
 									}
 								}
 							}
+						}
+					}
+
+					&.ik-social {
+						align-items: center;
+						display: flex;
+						justify-content: center;
+
+						.ik-item {
+							align-items: center;
+							background-color: var(--bg3);
+							border-radius: 50%;
+							cursor: pointer;
+							display: flex;
+							height: 40px;
+							justify-content: center;
+							width: 40px;
+
+							&:not(:last-child) {
+								margin-right: 10px;
+							}
+
+							.ik-icon {
+								font-size: cd-fontSize(s18);
+								margin-top: 2px;
+							}
+
+							img {
+								display: block;
+								width: 34px;
+							}
+
+							&.ik-github {
+								background-color: var(--c12);
+								border: 3px solid var(--tc2);
+							}
+
+							&.ik-linkedin {
+								border: 3px solid var(--c13);
+								color: var(--c13);
+
+								.ik-icon {
+									margin-left: 2px;
+								}
+							}
+
+							&.ik-email {
+								border: 3px solid var(--c7);
+								color: var(--c7);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// media
+	@include cd-media(desktop, tablet) {
+		.cd-row {
+			flex-direction: column-reverse;
+
+			.cd-col {
+				&:last-child {
+					.ik-block {
+						&:last-child {
+							margin-bottom: 30px;
 						}
 					}
 				}

@@ -10,24 +10,109 @@ const home = {
 	profile: {
 		summary: {
 			avatar: {
+				name: profileIntro.name,
 				photo: profileIntro.photo,
-				cover: profileIntro.cover,
-				name: profileIntro.name
+				cover: profileIntro.cover
 			},
 			detail: {
 				name: profileIntro.name,
 				title: profileIntro.title,
-				subTitle: `I'M ${profileIntro.name}.`,
 				greetings: `Hello`,
+				subTitle: `I'M ${profileIntro.name}.`,
 				excerpt: profileSummary.description[0]
 			}
 		},
 	},
+	infoBoard: {
+		items: [
+			{
+				photo: 'office',
+				detail: [
+					{
+						title: 'Company',
+						items: [
+							{
+								name: 'TourismusSuite GmbH'
+							}
+						]
+					},
+					{
+						title: 'Technologies',
+						items: [
+							{
+								name: 'Angular'
+							},
+							{
+								name: 'NativeScript'
+							},
+							{
+								name: 'HTML5/CSS3 (SCSS)'
+							}
+						]
+					}
+				]
+			},
+			{
+				photo: 'work',
+				detail: [
+					{
+						title: 'Learning',
+						items: [
+							{
+								name: 'NativeScript'
+							},
+							{
+								name: 'React'
+							}
+						]
+					},
+					{
+						title: 'Next',
+						items: [
+							{
+								name: 'React Native'
+							},
+							{
+								name: 'Flutter'
+							}
+						]
+					}
+				]
+			},
+			{
+				photo: 'controller',
+				detail: [
+					{
+						title: 'Playing',
+						items: [
+							{
+								name: 'Horizon Zero Dawn'
+							},
+							{
+								name: 'Assassins Creed: Origins'
+							}
+						]
+					},
+					{
+						title: 'Next',
+						items: [
+							{
+								name: 'Cyberpunk 2077'
+							},
+							{
+								name: 'Read Dead Redemption 2'
+							}
+						]
+					}
+				]
+			}
+		]
+	},
 	social: {
-		links: [
+		items: [
 			{
 				name: 'Github',
-				img: 'github',
+				photo: 'github',
 				link: AppLinks.social.github,
 				class: 'ik-github'
 			},
@@ -41,14 +126,14 @@ const home = {
 				name: 'Email',
 				icon: faEnvelope,
 				link: `mailto:${AppLinks.social.email}`,
-				isMail: true,
-				class: 'ik-email'
+				class: 'ik-email',
+				isMail: true
 			}
 		]
 	},
 	projects: {
-		title: 'Recent Work',
 		githubProfile: projects.githubProfile,
+		title: 'Recent Work',
 		items: projects.items.filter(x => !!x.controls.recent)
 	}
 };

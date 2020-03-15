@@ -5,7 +5,8 @@ export const AppOptions = {
 		de: 'de'
 	},
 	intervals: {
-		notice: [0, 50000],
+		infoBoard: [10000, 10000],
+		notice: [0, 10000],
 		photography: [0, 10000]
 	}
 };

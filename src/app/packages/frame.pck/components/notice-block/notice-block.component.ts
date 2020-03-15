@@ -18,7 +18,7 @@ export class NoticeBlockComponent implements OnInit, OnDestroy {
 	public randomBlock = {};
 	public interval = new Subject();
 
-	private _ngUnSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe: Subject<void> = new Subject<void>();
 
 	ngOnInit() {
 		this.interval
@@ -28,7 +28,7 @@ export class NoticeBlockComponent implements OnInit, OnDestroy {
 					AppOptions.intervals.notice[0],
 					AppOptions.intervals.notice[1]
 				)),
-				takeUntil(this._ngUnSubscribe)
+				takeUntil(this.unSubscribe)
 			)
 			.subscribe(() => {
 				this.randomBlock = this.filteredNoticeBlock[Math.floor(
@@ -39,7 +39,7 @@ export class NoticeBlockComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		// remove subscriptions
-		this._ngUnSubscribe.next();
-		this._ngUnSubscribe.complete();
+		this.unSubscribe.next();
+		this.unSubscribe.complete();
 	}
 }

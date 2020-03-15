@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
 	public themeInactive = true;
 	public fontSizeInactive = true;
 
-	private _ngUnSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe: Subject<void> = new Subject<void>();
 
 	constructor(
 		private _router: Router,
@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
 		// listen: router event
 		this._router.events
 			.pipe(
-				takeUntil(this._ngUnSubscribe),
+				takeUntil(this.unSubscribe),
 				filter(event => event instanceof NavigationEnd)
 			)
 			.subscribe((res) => {

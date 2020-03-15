@@ -26,13 +26,13 @@ export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
 	public interval = new Subject();
 	public counter = 10;
 
-	private _ngUnSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe: Subject<void> = new Subject<void>();
 
 	constructor(private _router: Router) {
 		// listen: router event
 		this._router.events
 			.pipe(
-				takeUntil(this._ngUnSubscribe),
+				takeUntil(this.unSubscribe),
 				filter(event => event instanceof NavigationEnd)
 			)
 			.subscribe(() => this.photography = photography);
@@ -47,7 +47,7 @@ export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
 					AppOptions.intervals.photography[1]
 				))
 			)
-			.pipe(takeUntil(this._ngUnSubscribe))
+			.pipe(takeUntil(this.unSubscribe))
 			.subscribe(() => {
 				this.counter = 10;
 				this.randomBlock = this.photography['gallery'][Math.floor(
@@ -68,7 +68,7 @@ export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngOnDestroy() {
 		// remove subscriptions
-		this._ngUnSubscribe.next();
-		this._ngUnSubscribe.complete();
+		this.unSubscribe.next();
+		this.unSubscribe.complete();
 	}
 }

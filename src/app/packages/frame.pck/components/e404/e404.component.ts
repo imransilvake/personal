@@ -18,11 +18,11 @@ export class E404Component implements OnInit, OnDestroy {
 	public x = '50%';
 	public y = '50%';
 
-	private _ngUnSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe: Subject<void> = new Subject<void>();
 
 	ngOnInit() {
 		HelperService.detectMouseMove()
-			.pipe(takeUntil(this._ngUnSubscribe))
+			.pipe(takeUntil(this.unSubscribe))
 			.subscribe(event => {
 				// event['pageX']: get horizontal coordinates of the mouse
 				// window.innerWidth: browser width
@@ -54,7 +54,7 @@ export class E404Component implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		// remove subscriptions
-		this._ngUnSubscribe.next();
-		this._ngUnSubscribe.complete();
+		this.unSubscribe.next();
+		this.unSubscribe.complete();
 	}
 }

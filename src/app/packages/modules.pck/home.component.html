@@ -40,26 +40,40 @@
 
 				<!-- Sidebar -->
 				<div class="cd-col cd-col-pm-t-4 cd-col-pm-d-3">
-					<!-- Social Network -->
-					<section class="ik-card ik-card-padding ik-block">
-						<div class="ik-items ik-social">
-							<ng-container *ngFor="let item of home['social']['links']">
-								<div class="ik-item cd-tooltip {{item['class']}}"
-									 (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
+					<!-- Info Board -->
+					<section class="ik-card ik-block">
+						<div class="ik-items ik-info-board">
+							<div class="ik-item">
+								<ng-container *ngIf="activeSlide">
 									<!-- Image -->
-									<img *ngIf="!!item['img']"
-										 [src]="'assets/svg/home/social/' + item['img'] + '.svg'"
-										 [alt]="item['name']"/>
+									<div class="ik-photo">
+										<img [src]="'assets/svg/home/info-board/' + activeSlide['photo'] + '.svg'"
+											 [alt]="activeSlide['photo']"/>
+									</div>
 
-									<!-- Icon -->
-									<fa-icon *ngIf="!!item['icon']"
-											 class="ik-icon"
-											 [icon]="item['icon']"></fa-icon>
+									<!-- Detail -->
+									<div class="ik-detail">
+										<ng-container *ngFor="let itemDetail of activeSlide['detail']">
+											<h6>{{ itemDetail['title'] }}</h6>
+											<ul>
+												<ng-container *ngFor="let itemDetailItems of itemDetail['items']">
+													<li><p>{{ itemDetailItems['name'] }}</p></li>
+												</ng-container>
+											</ul>
+										</ng-container>
+									</div>
+								</ng-container>
 
-									<!-- Name -->
-									<span class="cd-arrow cd-bottom">{{item['name']}}</span>
+								<!-- Detail -->
+								<div class="ik-dots">
+									<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
+										<span class="ik-dot"
+											  [class.ik-active]="activeSlideIndex === idx"
+											  (click)="activeSlideIndex !== idx && onClickChangeSlide(idx, item)">
+										</span>
+									</ng-container>
 								</div>
-							</ng-container>
+							</div>
 						</div>
 					</section>
 
@@ -94,6 +108,30 @@
 									</p>
 								</li>
 							</ul>
+						</div>
+					</section>
+
+					<!-- Social Network -->
+					<section class="ik-card ik-card-padding ik-block">
+						<div class="ik-items ik-social">
+							<ng-container *ngFor="let item of home['social']['items']">
+								<div class="ik-item cd-tooltip {{item['class']}}"
+									 (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
+									<!-- Image -->
+									<img *ngIf="!!item['photo']"
+										 [src]="'assets/svg/home/social/' + item['photo'] + '.svg'"
+										 [alt]="item['name']"/>
+
+									<!-- Icon -->
+									<fa-icon *ngIf="!!item['icon']"
+											 class="ik-icon"
+											 [icon]="item['icon']">
+									</fa-icon>
+
+									<!-- Name -->
+									<span class="cd-arrow cd-bottom">{{item['name']}}</span>
+								</div>
+							</ng-container>
 						</div>
 					</section>
 				</div>

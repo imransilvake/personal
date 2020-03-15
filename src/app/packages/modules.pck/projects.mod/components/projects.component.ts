@@ -29,7 +29,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	public infoBlockIndex = -1;
 	public formFields;
 
-	private _ngUnSubscribe: Subject<void> = new Subject<void>();
+	private unSubscribe: Subject<void> = new Subject<void>();
 
 	constructor(
 		private _route: ActivatedRoute,
@@ -38,7 +38,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		// listen: router event
 		this._router.events
 			.pipe(
-				takeUntil(this._ngUnSubscribe),
+				takeUntil(this.unSubscribe),
 				filter(event => event instanceof NavigationEnd)
 			)
 			.subscribe(() => {
@@ -60,7 +60,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		// listen: search
 		this.search.valueChanges
-			.pipe(takeUntil(this._ngUnSubscribe))
+			.pipe(takeUntil(this.unSubscribe))
 			.subscribe(text => {
 				let result;
 				if (this.filter.value.id === 'all') {
@@ -78,8 +78,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		// remove subscriptions
-		this._ngUnSubscribe.next();
-		this._ngUnSubscribe.complete();
+		this.unSubscribe.next();
+		this.unSubscribe.complete();
 	}
 
 	/**
