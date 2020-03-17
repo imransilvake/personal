@@ -11,7 +11,28 @@
 					margin-top: 30px;
 				}
 
-				.ik-top-summary {
+				.ik-title {
+					color: var(--tc2);
+					font-size: cd-fontSize(s16);
+					font-weight: cd-fontWeight(700);
+					margin-bottom: 15px;
+					text-transform: uppercase;
+				}
+
+				&.ik-frameworks {
+					.ik-item {
+						.ik-photo {
+							img {
+								display: block;
+								margin: auto;
+								padding: 15px;
+								width: 75px;
+							}
+						}
+					}
+				}
+
+				&.ik-profile-summary {
 					.ik-profile {
 						position: relative;
 
@@ -66,179 +87,169 @@
 					}
 				}
 
-				.ik-items {
-					.ik-title {
-						color: var(--tc2);
-						font-size: cd-fontSize(s16);
-						font-weight: cd-fontWeight(700);
-						margin-bottom: 15px;
-						text-transform: uppercase;
+				&.ik-info-board {
+					.ik-photo {
+						background-color: var(--c5);
+						padding: 5px 0;
+						text-align: center;
+
+						img {
+							height: 35px;
+							width: 35px;
+						}
 					}
 
-					&.ik-info-board {
-						.ik-photo {
-							background-color: var(--c5);
-							padding: 5px 0;
-							text-align: center;
+					.ik-detail {
+						padding: 10px 15px;
 
-							img {
-								height: 35px;
-								width: 35px;
-							}
+						h6 {
+							color: var(--tc2);
+							font-size: cd-fontSize(s15);
+							font-weight: cd-fontWeight(700);
+							margin: 5px 0 0;
+							text-transform: uppercase;
 						}
 
-						.ik-detail {
-							padding: 10px 15px;
+						ul {
+							margin-left: 20px;
+
+							li {
+								color: var(--tc2);
+
+								p {
+									color: var(--tc2);
+									font-size: cd-fontSize(s14);
+								}
+							}
+						}
+					}
+
+					.ik-dots {
+						padding: 5px 0;
+						text-align: center;
+
+						.ik-dot {
+							background-color: var(--c3);
+							border-radius: 50%;
+							cursor: pointer;
+							display: inline-block;
+							height: 10px;
+							margin: 0 2px;
+							transition: background-color .6s ease;
+							width: 10px;
+
+							&.ik-active {
+								background-color: var(--c4);
+								cursor: default;
+							}
+						}
+					}
+				}
+
+				&.ik-projects {
+					ul {
+						list-style: none;
+
+						li {
+							align-items: center;
+							display: flex;
+							justify-content: space-between;
+
+							&:not(:last-child) {
+								margin-bottom: 10px;
+							}
+
+							a {
+								cursor: pointer;
+
+								.ik-icon {
+									display: inline-block;
+									width: 16px;
+								}
+							}
 
 							h6 {
 								color: var(--tc2);
 								font-size: cd-fontSize(s15);
-								font-weight: cd-fontWeight(700);
-								margin: 5px 0 0;
-								text-transform: uppercase;
-							}
-
-							ul {
-								margin-left: 20px;
-
-								li {
-									color: var(--tc2);
-
-									p {
-										color: var(--tc2);
-										font-size: cd-fontSize(s14);
-									}
-								}
-							}
-						}
-
-						.ik-dots {
-							padding: 5px 0;
-							text-align: center;
-
-							.ik-dot {
-								background-color: var(--c3);
-								border-radius: 50%;
-								cursor: pointer;
-								display: inline-block;
-								height: 10px;
-								margin: 0 2px;
-								transition: background-color .6s ease;
-								width: 10px;
-
-								&.ik-active {
-									background-color: var(--c4);
-									cursor: default;
-								}
-							}
-						}
-					}
-
-					&.ik-projects {
-						ul {
-							list-style: none;
-
-							li {
-								align-items: center;
-								display: flex;
-								justify-content: space-between;
-
-								&:not(:last-child) {
-									margin-bottom: 10px;
-								}
-
-								a {
-									cursor: pointer;
-
-									.ik-icon {
-										display: inline-block;
-										width: 16px;
-									}
-								}
-
-								h6 {
-									color: var(--tc2);
-									font-size: cd-fontSize(s15);
-									font-weight: cd-fontWeight(400);
-									padding-right: 10px;
-
-									.ik-icon {
-										display: inline-block;
-										width: 16px;
-									}
-								}
-
-								p {
-									border-radius: 2px;
-									color: var(--c1);
-									cursor: pointer;
-									font-size: cd-fontSize(s14);
-									outline: none;
-									padding: 0 5px;
-
-									&.ik-scss {
-										background-color: var(--c11);
-									}
-
-									&.ik-js {
-										background-color: var(--c5);
-									}
-
-									&.ik-php {
-										background-color: var(--c10);
-									}
-								}
-							}
-						}
-					}
-
-					&.ik-social {
-						align-items: center;
-						display: flex;
-						justify-content: center;
-
-						.ik-item {
-							align-items: center;
-							background-color: var(--bg3);
-							border-radius: 50%;
-							cursor: pointer;
-							display: flex;
-							height: 40px;
-							justify-content: center;
-							width: 40px;
-
-							&:not(:last-child) {
-								margin-right: 10px;
-							}
-
-							.ik-icon {
-								font-size: cd-fontSize(s18);
-								margin-top: 2px;
-							}
-
-							img {
-								display: block;
-								width: 34px;
-							}
-
-							&.ik-github {
-								background-color: var(--c12);
-								border: 3px solid var(--tc2);
-							}
-
-							&.ik-linkedin {
-								border: 3px solid var(--c13);
-								color: var(--c13);
+								font-weight: cd-fontWeight(400);
+								padding-right: 10px;
 
 								.ik-icon {
-									margin-left: 2px;
+									display: inline-block;
+									width: 16px;
 								}
 							}
 
-							&.ik-email {
-								border: 3px solid var(--c7);
-								color: var(--c7);
+							p {
+								border-radius: 2px;
+								color: var(--c1);
+								cursor: pointer;
+								font-size: cd-fontSize(s14);
+								outline: none;
+								padding: 0 5px;
+
+								&.ik-scss {
+									background-color: var(--c11);
+								}
+
+								&.ik-js {
+									background-color: var(--c5);
+								}
+
+								&.ik-php {
+									background-color: var(--c10);
+								}
 							}
+						}
+					}
+				}
+
+				&.ik-social {
+					align-items: center;
+					display: flex;
+					justify-content: center;
+
+					.ik-item {
+						align-items: center;
+						background-color: var(--bg3);
+						border-radius: 50%;
+						cursor: pointer;
+						display: flex;
+						height: 40px;
+						justify-content: center;
+						width: 40px;
+
+						&:not(:last-child) {
+							margin-right: 10px;
+						}
+
+						.ik-icon {
+							font-size: cd-fontSize(s18);
+							margin-top: 2px;
+						}
+
+						img {
+							display: block;
+							width: 34px;
+						}
+
+						&.ik-github {
+							background-color: var(--c12);
+							border: 3px solid var(--tc2);
+						}
+
+						&.ik-linkedin {
+							border: 3px solid var(--c13);
+							color: var(--c13);
+
+							.ik-icon {
+								margin-left: 2px;
+							}
+						}
+
+						&.ik-email {
+							border: 3px solid var(--c7);
+							color: var(--c7);
 						}
 					}
 				}

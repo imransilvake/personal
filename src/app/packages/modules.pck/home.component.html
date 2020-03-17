@@ -4,35 +4,48 @@
 			<div class="cd-row">
 				<!-- Content -->
 				<div class="cd-col cd-col-pm-t-8 cd-col-pm-d-9">
-					<section class="ik-card ik-block">
-						<div class="ik-top-summary">
-							<div class="ik-profile">
-								<!-- Cover -->
-								<div class="ik-cover ik-image-fixed ik-two">
-									<img class="ik-bg-loader ik-loader-white"
-										 [src]="'assets/images/profile/' + home['profile']['summary']['avatar']['cover'] + '.jpg'"
-										 [alt]="home['profile']['summary']['avatar']['cover']"/>
-								</div>
-
-								<!-- Photo -->
-								<div class="ik-photo">
-									<img [src]="'assets/images/profile/' + home['profile']['summary']['avatar']['photo'] + '.jpg'"
-										 [alt]="home['profile']['summary']['avatar']['name']"/>
-								</div>
+					<!-- Profile Info -->
+					<section class="ik-card ik-block ik-profile-summary">
+						<div class="ik-profile">
+							<!-- Cover -->
+							<div class="ik-cover ik-image-fixed ik-two">
+								<img class="ik-bg-loader ik-loader-white"
+									 [src]="'assets/images/profile/' + home['content']['profileInfo']['summary']['avatar']['cover'] + '.jpg'"
+									 [alt]="home['content']['profileInfo']['summary']['avatar']['cover']"/>
 							</div>
 
-							<div class="ik-detail">
-								<!-- Greetings -->
-								<h5>
-									<span>{{ home['profile']['summary']['detail']['greetings'] }}, </span>
-									<span>{{ home['profile']['summary']['detail']['subTitle'] }}</span>
-								</h5>
+							<!-- Photo -->
+							<div class="ik-photo">
+								<img [src]="'assets/images/profile/' + home['content']['profileInfo']['summary']['avatar']['photo'] + '.jpg'"
+									 [alt]="home['content']['profileInfo']['summary']['avatar']['name']"/>
+							</div>
+						</div>
 
-								<!-- Title -->
-								<h3>{{ home['profile']['summary']['detail']['title'] }}</h3>
+						<div class="ik-detail">
+							<!-- Greetings -->
+							<h5>
+								<span>{{ home['content']['profileInfo']['summary']['detail']['greetings'] }}, </span>
+								<span>{{ home['content']['profileInfo']['summary']['detail']['subTitle'] }}</span>
+							</h5>
 
-								<!-- Excerpt -->
-								<p>{{ home['profile']['summary']['detail']['excerpt'] }}</p>
+							<!-- Title -->
+							<h3>{{ home['content']['profileInfo']['summary']['detail']['title'] }}</h3>
+
+							<!-- Excerpt -->
+							<p>{{ home['content']['profileInfo']['summary']['detail']['excerpt'] }}</p>
+						</div>
+					</section>
+
+					<!-- JS Frameworks -->
+					<section class="ik-block ik-frameworks">
+						<h5 class="ik-title">JavaScript Frameworks</h5>
+						<div class="cd-row">
+							<div class="cd-col cd-col-pm-d-4 ik-card ik-item">
+								<!-- Image -->
+								<div class="ik-photo">
+									<img [src]="'assets/svg/profile/expertise/' + home['content']['jsFrameworks']['photo'] + '.svg'"
+										 [alt]="home['content']['jsFrameworks']['photo']"/>
+								</div>
 							</div>
 						</div>
 					</section>
@@ -41,98 +54,90 @@
 				<!-- Sidebar -->
 				<div class="cd-col cd-col-pm-t-4 cd-col-pm-d-3">
 					<!-- Info Board -->
-					<section class="ik-card ik-block">
-						<div class="ik-items ik-info-board">
-							<div class="ik-item">
-								<ng-container *ngIf="activeSlide">
-									<!-- Image -->
-									<div class="ik-photo">
-										<img [src]="'assets/svg/home/info-board/' + activeSlide['photo'] + '.svg'"
-											 [alt]="activeSlide['photo']"/>
-									</div>
+					<section class="ik-card ik-block ik-info-board">
+						<ng-container *ngIf="activeSlide">
+							<!-- Image -->
+							<div class="ik-photo">
+								<img [src]="'assets/svg/home/info-board/' + activeSlide['photo'] + '.svg'"
+									 [alt]="activeSlide['photo']"/>
+							</div>
 
-									<!-- Detail -->
-									<div class="ik-detail">
-										<ng-container *ngFor="let itemDetail of activeSlide['detail']">
-											<h6>{{ itemDetail['title'] }}</h6>
-											<ul>
-												<ng-container *ngFor="let itemDetailItems of itemDetail['items']">
-													<li><p>{{ itemDetailItems['name'] }}</p></li>
-												</ng-container>
-											</ul>
+							<!-- Detail -->
+							<div class="ik-detail">
+								<ng-container *ngFor="let itemDetail of activeSlide['detail']">
+									<h6>{{ itemDetail['title'] }}</h6>
+									<ul>
+										<ng-container *ngFor="let itemDetailItems of itemDetail['items']">
+											<li><p>{{ itemDetailItems['name'] }}</p></li>
 										</ng-container>
-									</div>
+									</ul>
 								</ng-container>
+							</div>
+						</ng-container>
 
-								<!-- Detail -->
-								<div class="ik-dots">
-									<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
+						<!-- Detail -->
+						<div class="ik-dots">
+							<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
 										<span class="ik-dot"
 											  [class.ik-active]="activeSlideIndex === idx"
 											  (click)="activeSlideIndex !== idx && onClickChangeSlide(idx, item)">
 										</span>
-									</ng-container>
-								</div>
-							</div>
+							</ng-container>
 						</div>
 					</section>
 
 					<!-- Recent Projects -->
-					<section class="ik-card ik-card-padding ik-block">
-						<div class="ik-items ik-projects">
-							<!-- Title -->
-							<h5 class="ik-title">{{home['projects']['title']}}</h5>
+					<section class="ik-card ik-card-padding ik-block ik-projects">
+						<!-- Title -->
+						<h5 class="ik-title">{{home['sidebar']['projects']['title']}}</h5>
 
-							<!-- List -->
-							<ul>
-								<li *ngFor="let item of home['projects']['items']">
-									<!-- Title -->
-									<h6 *ngIf="!item['actions']['github']">
-										<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
-										{{item['title']}}
-									</h6>
+						<!-- List -->
+						<ul>
+							<li *ngFor="let item of home['sidebar']['projects']['items']">
+								<!-- Title -->
+								<h6 *ngIf="!item['actions']['github']">
+									<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
+									{{item['title']}}
+								</h6>
 
-									<!-- Link -->
-									<a *ngIf="item['actions']['github']"
-									   (click)="onClickOpenGithub(item['actions']['github'])">
-										<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
-										{{item['title']}}
-									</a>
+								<!-- Link -->
+								<a *ngIf="item['actions']['github']"
+								   (click)="onClickOpenGithub(item['actions']['github'])">
+									<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+									{{item['title']}}
+								</a>
 
-									<!-- badge -->
-									<p [routerLink]="['/' + routing.pages.projects, item['controls']['filter']]"
-									   [class.ik-scss]="item['controls']['filter'] === 'scss'"
-									   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
-									   [class.ik-php]="item['controls']['filter'] === 'php'">
-										{{item['controls']['filter']}}
-									</p>
-								</li>
-							</ul>
-						</div>
+								<!-- badge -->
+								<p [routerLink]="['/' + routing.pages.projects, item['controls']['filter']]"
+								   [class.ik-scss]="item['controls']['filter'] === 'scss'"
+								   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
+								   [class.ik-php]="item['controls']['filter'] === 'php'">
+									{{item['controls']['filter']}}
+								</p>
+							</li>
+						</ul>
 					</section>
 
 					<!-- Social Network -->
-					<section class="ik-card ik-card-padding ik-block">
-						<div class="ik-items ik-social">
-							<ng-container *ngFor="let item of home['social']['items']">
-								<div class="ik-item cd-tooltip {{item['class']}}"
-									 (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
-									<!-- Image -->
-									<img *ngIf="!!item['photo']"
-										 [src]="'assets/svg/home/social/' + item['photo'] + '.svg'"
-										 [alt]="item['name']"/>
+					<section class="ik-card ik-card-padding ik-block ik-social">
+						<ng-container *ngFor="let item of home['sidebar']['social']['items']">
+							<div class="ik-item cd-tooltip {{item['class']}}"
+								 (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
+								<!-- Image -->
+								<img *ngIf="!!item['photo']"
+									 [src]="'assets/svg/home/social/' + item['photo'] + '.svg'"
+									 [alt]="item['name']"/>
 
-									<!-- Icon -->
-									<fa-icon *ngIf="!!item['icon']"
-											 class="ik-icon"
-											 [icon]="item['icon']">
-									</fa-icon>
+								<!-- Icon -->
+								<fa-icon *ngIf="!!item['icon']"
+										 class="ik-icon"
+										 [icon]="item['icon']">
+								</fa-icon>
 
-									<!-- Name -->
-									<span class="cd-arrow cd-bottom">{{item['name']}}</span>
-								</div>
-							</ng-container>
-						</div>
+								<!-- Name -->
+								<span class="cd-arrow cd-bottom">{{item['name']}}</span>
+							</div>
+						</ng-container>
 					</section>
 				</div>
 			</div>

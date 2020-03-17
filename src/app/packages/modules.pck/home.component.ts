@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 	public faIcon = [faLock, faExternalLinkSquareAlt];
 	public routing = ROUTING;
 	public home = home;
-	public totalSlides = home['infoBoard']['items'].length;
-	public activeSlide = home['infoBoard']['items'][0];
+	public totalSlides = home['sidebar']['infoBoard']['items'].length;
+	public activeSlide = home['sidebar']['infoBoard']['items'][0];
 	public activeSlideIndex = 0;
 
 	private infoBoardSlider = new Subject();
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 	 * @param link
 	 */
 	public onClickOpenGithub(link) {
-		window.open(`${this.home['projects']['githubProfile']}${link}`, '_blank');
+		window.open(`${this.home['sidebar']['projects']['githubProfile']}${link}`, '_blank');
 	}
 
 	/**
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 		this.resetSliderCounterOnNavigationClick();
 
 		// move to a specific slide
-		const slides = home['infoBoard']['items'];
+		const slides = home['sidebar']['infoBoard']['items'];
 		this.activeSlide = slides[slideIndex];
 		this.activeSlideIndex = slideIndex;
 	}
