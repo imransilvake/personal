@@ -41,6 +41,9 @@ const home = {
 										name: 'Routing and Navigation'
 									},
 									{
+										name: 'Input and Outputs'
+									},
+									{
 										name: 'Forms',
 										items: [
 											'Reactive Forms',
@@ -110,6 +113,20 @@ const home = {
 									},
 									{
 										name: 'Routing and Navigation'
+									},
+									{
+										name: 'States and Props'
+									},
+									{
+										name: 'Internationalization (i18n)'
+									},
+									{
+										name: 'App Deployment',
+										items: [
+											'AWS',
+											'Firebase',
+											'Netlify'
+										]
 									}
 								]
 							},
@@ -117,10 +134,10 @@ const home = {
 								title: 'Learning & Improving',
 								items: [
 									{
-										name: 'Animations'
+										name: 'Hooks'
 									},
 									{
-										name: 'Directives'
+										name: 'Axios'
 									}
 								]
 							}
@@ -144,23 +161,34 @@ const home = {
 										name: 'Routing and Navigation'
 									},
 									{
-										name: 'Forms',
+										name: 'Layout Containers',
 										items: [
-											'Reactive Forms',
-											'Validations (built-ins and custom)',
-											'Dynamic Forms'
+											'AbsoluteLayout',
+											'DockLayout',
+											'GridLayout',
+											'StackLayout',
+											'WrapLayout',
+											'FlexboxLayout'
 										]
-									}
-								]
-							},
-							{
-								title: 'Learning & Improving',
-								items: [
-									{
-										name: 'Animations'
 									},
 									{
-										name: 'Directives'
+										name: 'User Interface',
+										items: [
+											'ActionBar',
+											'ActivityIndicator',
+											'Animations',
+											'Dialogs',
+											'FormattedString',
+											'Label',
+											'Image',
+											'HtmlView',
+											'Progress',
+											'SearchBar',
+											'Switch',
+											'ScrollView',
+											'RadSideDrawer',
+											'RadListView'
+										]
 									}
 								]
 							}

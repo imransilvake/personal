@@ -295,9 +295,11 @@
 	}
 
 	// media
-	@include cd-media(desktop, tablet) {
+	@include cd-media(desktop, smartphone) {
 		.cd-row {
-			flex-direction: column-reverse;
+			&.ik-row-reverse {
+				flex-direction: column-reverse;
+			}
 
 			.cd-col {
 				&:last-child {
@@ -305,6 +307,12 @@
 						&:last-child {
 							margin-bottom: 30px;
 						}
+					}
+				}
+
+				&.ik-item {
+					&:not(:first-child) {
+						margin-top: 30px;
 					}
 				}
 			}

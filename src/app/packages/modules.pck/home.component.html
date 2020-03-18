@@ -1,9 +1,9 @@
 <div class="ik-home">
 	<div class="cd-container-fluid">
 		<div class="cd-container">
-			<div class="cd-row">
+			<div class="cd-row ik-row-reverse">
 				<!-- Content -->
-				<div class="cd-col cd-col-pm-t-8 cd-col-pm-d-9">
+				<div class="cd-col cd-col-pm-s-8 cd-col-pm-d-9">
 					<!-- Profile Summary -->
 					<section class="ik-card ik-block ik-profile-summary">
 						<div class="ik-profile">
@@ -41,7 +41,7 @@
 						<section class="ik-block ik-profile-skills">
 							<h5 class="ik-title">{{ block['title'] }}</h5>
 							<div class="cd-row">
-								<div class="cd-col cd-col-pm-d-4 ik-item" *ngFor="let skill of block['items']">
+								<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4 ik-item" *ngFor="let skill of block['items']">
 									<!-- Image -->
 									<div class="ik-photo">
 										<img [src]="'assets/svg/profile/expertise/' + skill['photo'] + '.svg'"
@@ -73,7 +73,7 @@
 				</div>
 
 				<!-- Sidebar -->
-				<div class="cd-col cd-col-pm-t-4 cd-col-pm-d-3">
+				<div class="cd-col cd-col-pm-s-4 cd-col-pm-d-3">
 					<!-- Info Board -->
 					<section class="ik-card ik-block ik-info-board">
 						<ng-container *ngIf="activeSlide">
