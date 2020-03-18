@@ -4,7 +4,7 @@
 			<div class="cd-row">
 				<!-- Content -->
 				<div class="cd-col cd-col-pm-t-8 cd-col-pm-d-9">
-					<!-- Profile Info -->
+					<!-- Profile Summary -->
 					<section class="ik-card ik-block ik-profile-summary">
 						<div class="ik-profile">
 							<!-- Cover -->
@@ -29,26 +29,47 @@
 							</h5>
 
 							<!-- Title -->
-							<h3>{{ home['content']['profileInfo']['summary']['detail']['title'] }}</h3>
+							<h4>{{ home['content']['profileInfo']['summary']['detail']['title'] }}</h4>
 
 							<!-- Excerpt -->
 							<p>{{ home['content']['profileInfo']['summary']['detail']['excerpt'] }}</p>
 						</div>
 					</section>
 
-					<!-- JS Frameworks -->
-					<section class="ik-block ik-frameworks">
-						<h5 class="ik-title">JavaScript Frameworks</h5>
-						<div class="cd-row">
-							<div class="cd-col cd-col-pm-d-4 ik-card ik-item">
-								<!-- Image -->
-								<div class="ik-photo">
-									<img [src]="'assets/svg/profile/expertise/' + home['content']['jsFrameworks']['photo'] + '.svg'"
-										 [alt]="home['content']['jsFrameworks']['photo']"/>
+					<!-- Profile Skills -->
+					<ng-container *ngFor="let block of home['content']['profileSkills']">
+						<section class="ik-block ik-profile-skills">
+							<h5 class="ik-title">{{ block['title'] }}</h5>
+							<div class="cd-row">
+								<div class="cd-col cd-col-pm-d-4 ik-item" *ngFor="let skill of block['items']">
+									<!-- Image -->
+									<div class="ik-photo">
+										<img [src]="'assets/svg/profile/expertise/' + skill['photo'] + '.svg'"
+											 [alt]="skill['photo']"/>
+									</div>
+
+									<!-- Detail -->
+									<div class="ik-detail ik-card">
+										<ng-container *ngFor="let block of skill['items']; let l=last;">
+											<h6>{{ block['title'] }}</h6>
+											<ul [class.ik-list-one]="!l">
+												<ng-container *ngFor="let blockItem of block['items']">
+													<li>
+														<p>{{ blockItem['name'] }}</p>
+														<ul *ngIf="!!blockItem['items']">
+															<ng-container *ngFor="let item of blockItem['items']">
+																<li><p>{{ item }}</p></li>
+															</ng-container>
+														</ul>
+													</li>
+												</ng-container>
+											</ul>
+										</ng-container>
+									</div>
 								</div>
 							</div>
-						</div>
-					</section>
+						</section>
+					</ng-container>
 				</div>
 
 				<!-- Sidebar -->

@@ -5,6 +5,8 @@
 	padding: 30px 0;
 
 	.cd-row {
+		margin: 0 -15px;
+
 		.cd-col {
 			.ik-block {
 				&:not(:first-child) {
@@ -17,19 +19,6 @@
 					font-weight: cd-fontWeight(700);
 					margin-bottom: 15px;
 					text-transform: uppercase;
-				}
-
-				&.ik-frameworks {
-					.ik-item {
-						.ik-photo {
-							img {
-								display: block;
-								margin: auto;
-								padding: 10px;
-								width: 60px;
-							}
-						}
-					}
 				}
 
 				&.ik-profile-summary {
@@ -73,16 +62,64 @@
 							}
 						}
 
-						h3 {
+						h4 {
 							color: var(--tc2);
 							font-weight: cd-fontWeight(500);
 							line-height: cd-lineHeight(1.2);
+							text-transform: uppercase;
 							margin: 5px 0;
 						}
 
 						p {
 							color: var(--tc2);
 							font-weight: cd-fontWeight(300);
+						}
+					}
+				}
+
+				&.ik-profile-skills {
+					.ik-item {
+						.ik-photo {
+							background-color: var(--c5);
+
+							img {
+								display: block;
+								height: 60px;
+								margin: auto;
+								padding: 10px;
+								width: 60px;
+							}
+						}
+
+						.ik-detail {
+							height: 300px;
+							overflow-y: auto;
+							padding: 15px;
+
+							h6 {
+								color: var(--tc2);
+								font-size: cd-fontSize(s15);
+								font-weight: cd-fontWeight(700);
+								margin: 5px 0 0;
+								text-transform: uppercase;
+							}
+
+							ul {
+								margin-left: 20px;
+
+								&.ik-list-one {
+									margin-bottom: 10px;
+								}
+
+								li {
+									color: var(--tc2);
+
+									p {
+										color: var(--tc2);
+										font-size: cd-fontSize(s14);
+									}
+								}
+							}
 						}
 					}
 				}

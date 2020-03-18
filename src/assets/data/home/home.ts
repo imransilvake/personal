@@ -19,14 +19,156 @@ const home = {
 					name: profileIntro.name,
 					title: profileIntro.title,
 					greetings: `Hello`,
-					subTitle: `I'M ${profileIntro.name}.`,
+					subTitle: `I'M ${ profileIntro.name }.`,
 					excerpt: profileSummary.description[0]
 				}
 			}
 		},
-		jsFrameworks: {
-			photo: 'angular'
-		}
+		profileSkills: [
+			{
+				title: 'JavaScript Frameworks',
+				items: [
+					{
+						photo: 'angular',
+						items: [
+							{
+								title: 'Knowledge',
+								items: [
+									{
+										name: 'Lifecycle Hooks'
+									},
+									{
+										name: 'Routing and Navigation'
+									},
+									{
+										name: 'Forms',
+										items: [
+											'Reactive Forms',
+											'Validations (built-ins and custom)',
+											'Dynamic Forms'
+										]
+									},
+									{
+										name: 'HttpClient',
+										items: [
+											'Error handling',
+											'HTTP headers',
+											'HTTP interceptors',
+											'Logging',
+											'Caching'
+										]
+									},
+									{
+										name: 'Observables and RxJs'
+									},
+									{
+										name: 'Internationalization (i18n)'
+									},
+									{
+										name: 'Services and Dependency Injection (DI)'
+									},
+									{
+										name: 'Modules, Lazy-load Modules and Components'
+									},
+									{
+										name: 'Pipes, Directives and Providers'
+									},
+									{
+										name: 'Shared Module'
+									},
+									{
+										name: 'App Deployment',
+										items: [
+											'AWS',
+											'Firebase',
+											'Netlify'
+										]
+									}
+								]
+							},
+							{
+								title: 'Learning & Improving',
+								items: [
+									{
+										name: 'Animations'
+									},
+									{
+										name: 'Directives'
+									}
+								]
+							}
+						]
+					},
+					{
+						photo: 'react',
+						items: [
+							{
+								title: 'Knowledge',
+								items: [
+									{
+										name: 'Lifecycle Hooks'
+									},
+									{
+										name: 'Routing and Navigation'
+									}
+								]
+							},
+							{
+								title: 'Learning & Improving',
+								items: [
+									{
+										name: 'Animations'
+									},
+									{
+										name: 'Directives'
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				title: 'Native Frameworks',
+				items: [
+					{
+						photo: 'nativescript',
+						items: [
+							{
+								title: 'Knowledge',
+								items: [
+									{
+										name: 'Lifecycle Hooks'
+									},
+									{
+										name: 'Routing and Navigation'
+									},
+									{
+										name: 'Forms',
+										items: [
+											'Reactive Forms',
+											'Validations (built-ins and custom)',
+											'Dynamic Forms'
+										]
+									}
+								]
+							},
+							{
+								title: 'Learning & Improving',
+								items: [
+									{
+										name: 'Animations'
+									},
+									{
+										name: 'Directives'
+									}
+								]
+							}
+						]
+					},
+				]
+			}
+		]
 	},
 	sidebar: {
 		infoBoard: {
@@ -131,7 +273,7 @@ const home = {
 				{
 					name: 'Email',
 					icon: faEnvelope,
-					link: `mailto:${AppLinks.social.email}`,
+					link: `mailto:${ AppLinks.social.email }`,
 					class: 'ik-email',
 					isMail: true
 				}
