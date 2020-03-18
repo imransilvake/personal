@@ -80,23 +80,15 @@ const home = {
 										name: 'Shared Module'
 									},
 									{
+										name: 'Animations (basics)'
+									},
+									{
 										name: 'App Deployment',
 										items: [
 											'AWS',
 											'Firebase',
 											'Netlify'
 										]
-									}
-								]
-							},
-							{
-								title: 'Learning & Improving',
-								items: [
-									{
-										name: 'Animations'
-									},
-									{
-										name: 'Directives'
 									}
 								]
 							}
@@ -131,13 +123,21 @@ const home = {
 								]
 							},
 							{
-								title: 'Learning & Improving',
+								title: 'Learning',
 								items: [
 									{
 										name: 'Hooks'
 									},
 									{
 										name: 'Axios'
+									}
+								]
+							},
+							{
+								title: 'Todos',
+								items: [
+									{
+										name: 'Apollo Client'
 									}
 								]
 							}
