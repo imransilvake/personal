@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 import { HOME_ROUTE } from './home-routing';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home.component';
+import { WidgetsModule } from '../../shared/widgets.mod/widgets.module';
 
 @NgModule({
 	imports: [
 		RouterModule.forChild(HOME_ROUTE),
-		SharedModule
+		SharedModule,
+		WidgetsModule
 	],
 	declarations: [
 		HomeComponent

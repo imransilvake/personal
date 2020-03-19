@@ -41,31 +41,8 @@
 						<section class="ik-block ik-profile-skills">
 							<h5 class="ik-title">{{ block['title'] }}</h5>
 							<div class="cd-row">
-								<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4 ik-item" *ngFor="let skill of block['items']">
-									<!-- Image -->
-									<div class="ik-photo">
-										<img [src]="'assets/svg/profile/expertise/' + skill['photo'] + '.svg'"
-											 [alt]="skill['photo']"/>
-									</div>
-
-									<!-- Detail -->
-									<div class="ik-detail ik-card">
-										<ng-container *ngFor="let block of skill['items']; let l=last;">
-											<h6>{{ block['title'] }}</h6>
-											<ul [class.ik-list-one]="!l">
-												<ng-container *ngFor="let blockItem of block['items']">
-													<li>
-														<p>{{ blockItem['name'] }}</p>
-														<ul *ngIf="!!blockItem['items']">
-															<ng-container *ngFor="let item of blockItem['items']">
-																<li><p>{{ item }}</p></li>
-															</ng-container>
-														</ul>
-													</li>
-												</ng-container>
-											</ul>
-										</ng-container>
-									</div>
+								<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4">
+									<app-card [data]="home['content']['profileSkills']"></app-card>
 								</div>
 							</div>
 						</section>

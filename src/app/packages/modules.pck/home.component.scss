@@ -77,53 +77,6 @@
 					}
 				}
 
-				&.ik-profile-skills {
-					.ik-item {
-						.ik-photo {
-							background-color: var(--c5);
-
-							img {
-								display: block;
-								height: 60px;
-								margin: auto;
-								padding: 10px;
-								width: 60px;
-							}
-						}
-
-						.ik-detail {
-							height: 300px;
-							overflow-y: auto;
-							padding: 15px;
-
-							h6 {
-								color: var(--tc2);
-								font-size: cd-fontSize(s15);
-								font-weight: cd-fontWeight(700);
-								margin: 5px 0 0;
-								text-transform: uppercase;
-							}
-
-							ul {
-								margin-left: 20px;
-
-								&.ik-list-one {
-									margin-bottom: 10px;
-								}
-
-								li {
-									color: var(--tc2);
-
-									p {
-										color: var(--tc2);
-										font-size: cd-fontSize(s14);
-									}
-								}
-							}
-						}
-					}
-				}
-
 				&.ik-info-board {
 					.ik-photo {
 						background-color: var(--c5);
@@ -307,12 +260,6 @@
 						&:last-child {
 							margin-bottom: 30px;
 						}
-					}
-				}
-
-				&.ik-item {
-					&:not(:first-child) {
-						margin-top: 30px;
 					}
 				}
 			}
