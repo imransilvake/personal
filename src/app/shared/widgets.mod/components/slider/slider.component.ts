@@ -5,6 +5,8 @@ import { Subject, timer } from 'rxjs';
 
 // app
 import { AppOptions } from '../../../../../app.config';
+import { SliderViewEnum } from '../../enums/slider-view.enum';
+import { SliderDirectionEnum } from '../../enums/slider-direction.enum';
 
 @Component({
 	selector: 'app-slider',
@@ -13,6 +15,7 @@ import { AppOptions } from '../../../../../app.config';
 })
 
 export class SliderComponent implements OnInit, OnDestroy {
+	@Input() viewType = SliderViewEnum.VIEW_INFO;
 	@Input() data;
 	@Input() activeSlide;
 	@Input() totalSlides;
@@ -63,5 +66,24 @@ export class SliderComponent implements OnInit, OnDestroy {
 		if (this.infoBoardSlider) {
 			this.infoBoardSlider.next(void 0);
 		}
+	}
+
+	/**
+	 * on swipe: left and right
+	 * @param direction
+	 */
+	public onSwipe(direction) {
+		let slideIndex;
+		switch (direction) {
+			case SliderDirectionEnum.DIRECTION_LEFT:
+				slideIndex = this.activeSlideIndex < (this.totalSlides - 1) ? this.activeSlideIndex + 1 : 0;
+				break;
+			case SliderDirectionEnum.DIRECTION_RIGHT:
+				slideIndex = this.activeSlideIndex === 0 ? (this.totalSlides - 1) : (this.activeSlideIndex - 1);
+				break;
+		}
+
+		// change slide
+		this.onClickChangeSlide(slideIndex);
 	}
 }

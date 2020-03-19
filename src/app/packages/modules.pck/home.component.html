@@ -37,12 +37,14 @@
 					</section>
 
 					<!-- Profile Skills -->
-					<ng-container *ngFor="let block of home['content']['profileSkills']">
+					<ng-container *ngFor="let block of home['content']['profileSkills']['items']">
 						<section class="ik-block">
 							<h5 class="ik-title">{{ block['title'] }}</h5>
 							<div class="cd-row">
 								<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4" *ngFor="let data of block['items']">
-									<app-card [data]="data" [assetsPath]="block['assetsPath']"></app-card>
+									<app-card [data]="data"
+											  [assetsPath]="home['content']['profileSkills']['assetsPath']">
+									</app-card>
 								</div>
 							</div>
 						</section>
