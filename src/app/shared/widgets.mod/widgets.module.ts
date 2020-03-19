@@ -6,6 +6,7 @@ import { SharedModule } from '../shared.module';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { CodeBlockComponent } from './components/code-block/code-block.component';
 import { CardComponent } from './components/card/card.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
 	imports: [
@@ -14,12 +15,14 @@ import { CardComponent } from './components/card/card.component';
 	declarations: [
 		ReadMoreComponent,
 		CodeBlockComponent,
-		CardComponent
+		CardComponent,
+		SliderComponent
 	],
 	exports: [
 		ReadMoreComponent,
 		CodeBlockComponent,
-		CardComponent
+		CardComponent,
+		SliderComponent
 	]
 })
 

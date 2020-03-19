@@ -1,12 +1,9 @@
 // angular
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { startWith, switchMap, takeUntil } from 'rxjs/operators';
-import { Subject, timer } from 'rxjs';
+import { Component } from '@angular/core';
 
 // app
 import { faExternalLinkSquareAlt, faLock } from '@fortawesome/free-solid-svg-icons';
 import { ROUTING } from '../../../environments/environment';
-import { AppOptions } from '../../../app.config';
 import home from '../../../assets/data/home/home';
 
 @Component({
@@ -15,36 +12,13 @@ import home from '../../../assets/data/home/home';
 	styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent {
 	public faIcon = [faLock, faExternalLinkSquareAlt];
 	public routing = ROUTING;
 	public home = home;
-	public totalSlides = home['sidebar']['infoBoard']['items'].length;
-	public activeSlide = home['sidebar']['infoBoard']['items'][0];
-	public activeSlideIndex = 0;
-
-	private infoBoardSlider = new Subject();
-	private unSubscribe = new Subject();
-
-	ngOnInit() {
-		// info board slider
-		this.infoBoardSlider
-			.pipe(
-				takeUntil(this.unSubscribe),
-				startWith(''),
-				switchMap(() => timer(AppOptions.intervals.infoBoard[0], AppOptions.intervals.infoBoard[1]))
-			)
-			.subscribe(() => {
-				const slideIndex = this.activeSlideIndex < (this.totalSlides - 1) ? this.activeSlideIndex + 1 : 0;
-				this.onClickChangeSlide(slideIndex);
-			});
-	}
-
-	ngOnDestroy() {
-		// remove subscriptions
-		this.unSubscribe.next();
-		this.unSubscribe.complete();
-	}
+	public infoBoardData = home['sidebar']['infoBoard'];
+	public infoBoardActiveSlide = home['sidebar']['infoBoard']['items'][0];
+	public infoBoardTotalSlides = home['sidebar']['infoBoard']['items'].length;
 
 	/**
 	 * open (website) external link
@@ -65,29 +39,5 @@ export class HomeComponent implements OnInit, OnDestroy {
 	 */
 	public onClickOpenGithub(link) {
 		window.open(`${this.home['sidebar']['projects']['githubProfile']}${link}`, '_blank');
-	}
-
-	/**
-	 * change slide based on clicked index
-	 * @param slideIndex
-	 * @param slideItem
-	 */
-	public onClickChangeSlide(slideIndex: number, slideItem?: any) {
-		// reset slider counter
-		this.resetSliderCounterOnNavigationClick();
-
-		// move to a specific slide
-		const slides = home['sidebar']['infoBoard']['items'];
-		this.activeSlide = slides[slideIndex];
-		this.activeSlideIndex = slideIndex;
-	}
-
-	/**
-	 * reset slider counter
-	 */
-	private resetSliderCounterOnNavigationClick() {
-		if (this.infoBoardSlider) {
-			this.infoBoardSlider.next(void 0);
-		}
 	}
 }

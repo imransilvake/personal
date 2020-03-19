@@ -27,6 +27,7 @@ const home = {
 		profileSkills: [
 			{
 				title: 'JavaScript Frameworks',
+				assetsPath: 'svg/profile/expertise',
 				items: [
 					{
 						photo: 'angular',
@@ -147,6 +148,7 @@ const home = {
 			},
 			{
 				title: 'Native Frameworks',
+				assetsPath: 'svg/profile/expertise',
 				items: [
 					{
 						photo: 'nativescript',
@@ -200,10 +202,11 @@ const home = {
 	},
 	sidebar: {
 		infoBoard: {
+			assetsPath: 'svg/home/info-board',
 			items: [
 				{
 					photo: 'office',
-					detail: [
+					items: [
 						{
 							title: 'Company',
 							items: [
@@ -230,7 +233,7 @@ const home = {
 				},
 				{
 					photo: 'work',
-					detail: [
+					items: [
 						{
 							title: 'Learning',
 							items: [
@@ -257,7 +260,7 @@ const home = {
 				},
 				{
 					photo: 'controller',
-					detail: [
+					items: [
 						{
 							title: 'Playing',
 							items: [

@@ -1,0 +1,18 @@
+<section class="ik-slider">
+	<!-- Info -->
+	<app-card [data]="activeSlide"
+			  [autoHeight]="true"
+			  [assetsPath]="data['assetsPath']"
+			  [cardClass]="false">
+	</app-card>
+
+	<!-- Dots Navigation -->
+	<div class="ik-dots">
+		<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
+			<span class="ik-dot"
+				  [class.ik-active]="activeSlideIndex === idx"
+				  (click)="activeSlideIndex !== idx && onClickChangeSlide(idx, item)">
+			</span>
+		</ng-container>
+	</div>
+</section>

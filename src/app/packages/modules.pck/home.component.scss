@@ -77,65 +77,6 @@
 					}
 				}
 
-				&.ik-info-board {
-					.ik-photo {
-						background-color: var(--c5);
-						padding: 5px 0;
-						text-align: center;
-
-						img {
-							height: 35px;
-							width: 35px;
-						}
-					}
-
-					.ik-detail {
-						padding: 10px 15px;
-
-						h6 {
-							color: var(--tc2);
-							font-size: cd-fontSize(s15);
-							font-weight: cd-fontWeight(700);
-							margin: 5px 0 0;
-							text-transform: uppercase;
-						}
-
-						ul {
-							margin-left: 20px;
-
-							li {
-								color: var(--tc2);
-
-								p {
-									color: var(--tc2);
-									font-size: cd-fontSize(s14);
-								}
-							}
-						}
-					}
-
-					.ik-dots {
-						padding: 5px 0;
-						text-align: center;
-
-						.ik-dot {
-							background-color: var(--c3);
-							border-radius: 50%;
-							cursor: pointer;
-							display: inline-block;
-							height: 10px;
-							margin: 0 2px;
-							transition: background-color .6s ease;
-							width: 10px;
-
-							&.ik-active {
-								background-color: var(--c4);
-								cursor: default;
-							}
-						}
-					}
-				}
-
 				&.ik-projects {
 					ul {
 						list-style: none;

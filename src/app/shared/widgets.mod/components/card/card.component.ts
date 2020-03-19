@@ -9,4 +9,7 @@ import { Component, Input } from '@angular/core';
 
 export class CardComponent {
 	@Input() data;
+	@Input() assetsPath;
+	@Input() autoHeight = false;
+	@Input() cardClass = true;
 }
