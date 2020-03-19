@@ -1,13 +1,13 @@
-<section class="ik-item" *ngFor="let skill of data['items']">
+<section class="ik-info-card">
 	<!-- Image -->
 	<div class="ik-photo">
-		<img [src]="'assets/svg/profile/expertise/' + skill['photo'] + '.svg'"
-			 [alt]="skill['photo']"/>
+		<img [src]="'assets/svg/profile/expertise/' + data['photo'] + '.svg'"
+			 [alt]="data['photo']"/>
 	</div>
 
 	<!-- Detail -->
 	<div class="ik-detail ik-card">
-		<ng-container *ngFor="let block of skill['items']; let l=last;">
+		<ng-container *ngFor="let block of data['items']; let l=last;">
 			<h6>{{ block['title'] }}</h6>
 			<ul [class.ik-list-one]="!l">
 				<ng-container *ngFor="let blockItem of block['items']">
