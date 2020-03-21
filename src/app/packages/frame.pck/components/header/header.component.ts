@@ -3,14 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-
 // app
 import { ROUTING } from '../../../../../environments/environment';
 import { LocalStorageItems } from '../../../../../app.config';
-import { faTint, faFont } from '@fortawesome/free-solid-svg-icons';
+import { faFont, faTint } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
-import topNavList from '../../../../../assets/data/other/top-nav-list';
-import bottomNavList from 'src/assets/data/other/bottom-nav-list';
+import { NavigationTopTypesEnum } from '../../enums/navigation-top-types.enum';
+import navigationTop from '../../../../../assets/data/other/navigation-top';
+import navigationBottom from 'src/assets/data/other/navigation-bottom';
 
 declare const window: any;
 declare const document: any;
@@ -24,9 +24,10 @@ declare const document: any;
 export class HeaderComponent implements OnInit {
 	public routing = ROUTING;
 	public faIcons = [faTint, faFont];
-	public topNavListFiltered = topNavList.filter(i => i.id !== 'print');
-	public topNavList = this.topNavListFiltered;
-	public bottomNavList = bottomNavList;
+	public navigationTopFiltered = navigationTop.filter(i => i.id !== NavigationTopTypesEnum.TYPE_PRINT);
+	public navigationTop = this.navigationTopFiltered;
+	public navigationBottom = navigationBottom;
+	public NavigationTopPrint = NavigationTopTypesEnum.TYPE_PRINT;
 	public themeInactive = true;
 	public fontSizeInactive = true;
 
@@ -44,8 +45,8 @@ export class HeaderComponent implements OnInit {
 			)
 			.subscribe((res) => {
 				// update top nav list
-				this.topNavList = (res && res['url'] !== `/${ROUTING.pages.profile}`) ?
-					this.topNavListFiltered : topNavList;
+				this.navigationTop = (res && res['url'] !== `/${ROUTING.pages.profile}`) ?
+					this.navigationTopFiltered : navigationTop;
 			});
 	}
 

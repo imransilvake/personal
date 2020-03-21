@@ -6,8 +6,8 @@
 				<!-- Top Nav List -->
 				<div class="cd-col cd-right-align">
 					<ul class="ik-items ik-remove-bullets">
-						<li *ngFor="let item of topNavList">
-							<ng-container *ngIf="item.id === 'print'; else elseBlock">
+						<li *ngFor="let item of navigationTop">
+							<ng-container *ngIf="item.id === NavigationTopPrint; else elseBlock">
 								<img class="ik-print"
 									 (click)="printProfilePage()"
 									 [src]="'assets/svg/profile/' + item['icon'] + '.svg'"
@@ -47,7 +47,7 @@
 				<!-- Bottom Nav List -->
 				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
 					<ul class="ik-items ik-remove-bullets">
-						<li *ngFor="let item of bottomNavList">
+						<li *ngFor="let item of navigationBottom">
 							<a [routerLink]="item.link"
 							   [routerLinkActive]="['ik-active']">
 								{{ item.name }}

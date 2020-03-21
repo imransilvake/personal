@@ -1,7 +1,7 @@
 // app
 import { ROUTING } from '../../../environments/environment';
 
-const bottomNavList = [
+const navigationBottom = [
 	{
 		name: 'Profile',
 		link: `/${ROUTING.pages.profile}`
@@ -15,4 +15,4 @@ const bottomNavList = [
 		link: `/${ROUTING.pages.photography}`
 	}
 ];
-export default bottomNavList;
+export default navigationBottom;
