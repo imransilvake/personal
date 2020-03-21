@@ -9,6 +9,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { CardComponent } from './components/card/card.component';
 import { CardInfoComponent } from './components/card/info/card-info.component';
 import { CardNoticeComponent } from './components/card/notice/card-notice.component';
+import { CardListComponent } from './components/card/list/card-list.component';
 
 @NgModule({
 	imports: [
@@ -20,7 +21,8 @@ import { CardNoticeComponent } from './components/card/notice/card-notice.compon
 		SliderComponent,
 		CardComponent,
 		CardInfoComponent,
-		CardNoticeComponent
+		CardNoticeComponent,
+		CardListComponent
 	],
 	exports: [
 		ReadMoreComponent,

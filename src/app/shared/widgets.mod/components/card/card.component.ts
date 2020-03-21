@@ -18,4 +18,6 @@ export class CardComponent {
 	@Input() infoCardClass = true;
 
 	@Input() noticeData;
+
+	@Input() listData;
 }

@@ -1,0 +1,67 @@
+@import 'scss-methods';
+
+.ik-list-card {
+	.ik-title {
+		color: var(--tc2);
+		font-size: cd-fontSize(s16);
+		font-weight: cd-fontWeight(700);
+		margin-bottom: 15px;
+		text-transform: uppercase;
+	}
+
+	ul {
+		list-style: none;
+
+		li {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+
+			a {
+				cursor: pointer;
+
+				.ik-icon {
+					display: inline-block;
+					width: 16px;
+				}
+			}
+
+			h6 {
+				color: var(--tc2);
+				font-size: cd-fontSize(s15);
+				font-weight: cd-fontWeight(400);
+				padding-right: 10px;
+
+				.ik-icon {
+					display: inline-block;
+					width: 16px;
+				}
+			}
+
+			p {
+				border-radius: 2px;
+				color: var(--c1);
+				cursor: pointer;
+				font-size: cd-fontSize(s14);
+				outline: none;
+				padding: 0 5px;
+
+				&.ik-scss {
+					background-color: var(--c11);
+				}
+
+				&.ik-js {
+					background-color: var(--c5);
+				}
+
+				&.ik-php {
+					background-color: var(--c10);
+				}
+			}
+		}
+	}
+}

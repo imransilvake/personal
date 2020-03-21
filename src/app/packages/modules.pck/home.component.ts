@@ -2,8 +2,7 @@
 import { Component } from '@angular/core';
 
 // app
-import { faExternalLinkSquareAlt, faLock } from '@fortawesome/free-solid-svg-icons';
-import { ROUTING } from '../../../environments/environment';
+import { CardViewEnum } from '../../shared/widgets.mod/enums/card-view.enum';
 import home from '../../../assets/data/home/home';
 
 @Component({
@@ -13,12 +12,11 @@ import home from '../../../assets/data/home/home';
 })
 
 export class HomeComponent {
-	public faIcon = [faLock, faExternalLinkSquareAlt];
-	public routing = ROUTING;
 	public home = home;
 	public infoBoardData = home['sidebar']['infoBoard'];
 	public infoBoardActiveSlide = home['sidebar']['infoBoard']['items'][0];
 	public infoBoardTotalSlides = home['sidebar']['infoBoard']['items'].length;
+	public cardViewList = CardViewEnum.CARD_LIST;
 
 	/**
 	 * open (website) external link
@@ -31,13 +29,5 @@ export class HomeComponent {
 		} else {
 			window.open(link, '_blank');
 		}
-	}
-
-	/**
-	 * open github external link
-	 * @param link
-	 */
-	public onClickOpenGithub(link) {
-		window.open(`${this.home['sidebar']['projects']['githubProfile']}${link}`, '_blank');
 	}
 }

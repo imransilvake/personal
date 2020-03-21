@@ -12,4 +12,9 @@
 	<ng-container *ngIf="cardViewType === 1">
 		<app-card-notice [noticeData]="noticeData"></app-card-notice>
 	</ng-container>
+
+	<!-- List -->
+	<ng-container *ngIf="cardViewType === 2">
+		<app-card-list [listData]="listData"></app-card-list>
+	</ng-container>
 </section>

@@ -41,7 +41,9 @@
 						<section class="ik-block">
 							<h5 class="ik-title">{{ block['title'] }}</h5>
 							<div class="cd-row">
-								<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4" *ngFor="let data of block['items']">
+								<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4"
+									 *ngFor="let data of block['items']; let f=first; let l=last;"
+									 [class.ik-first-item]="!f && l">
 									<app-card [infoData]="data"
 											  [infoAssetsPath]="home['content']['profileSkills']['assetsPath']">
 									</app-card>
@@ -52,7 +54,7 @@
 				</div>
 
 				<!-- Sidebar -->
-				<div class="cd-col cd-col-pm-s-4 cd-col-pm-d-3">
+				<div class="cd-col cd-col-pm-s-4 cd-col-pm-d-3 ik-m-bottom-space">
 					<!-- Info Board -->
 					<section class="ik-card ik-block" *ngIf="infoBoardActiveSlide">
 						<app-slider [data]="infoBoardData"
@@ -68,35 +70,10 @@
 					</section>
 
 					<!-- Recent Projects -->
-					<section class="ik-card ik-card-padding ik-block ik-projects">
-						<!-- Title -->
-						<h5 class="ik-title">{{home['sidebar']['projects']['title']}}</h5>
-
-						<!-- List -->
-						<ul>
-							<li *ngFor="let item of home['sidebar']['projects']['items']">
-								<!-- Title -->
-								<h6 *ngIf="!item['actions']['github']">
-									<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
-									{{item['title']}}
-								</h6>
-
-								<!-- Link -->
-								<a *ngIf="item['actions']['github']"
-								   (click)="onClickOpenGithub(item['actions']['github'])">
-									<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
-									{{item['title']}}
-								</a>
-
-								<!-- badge -->
-								<p [routerLink]="['/' + routing.pages.projects, item['controls']['filter']]"
-								   [class.ik-scss]="item['controls']['filter'] === 'scss'"
-								   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
-								   [class.ik-php]="item['controls']['filter'] === 'php'">
-									{{item['controls']['filter']}}
-								</p>
-							</li>
-						</ul>
+					<section class="ik-card ik-card-padding ik-block" *ngIf="home['sidebar']['projects']">
+						<app-card [listData]="home['sidebar']['projects']"
+								  [cardViewType]="cardViewList">
+						</app-card>
 					</section>
 
 					<!-- Social Network -->
