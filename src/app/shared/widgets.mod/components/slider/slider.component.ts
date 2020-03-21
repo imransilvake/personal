@@ -19,6 +19,8 @@ export class SliderComponent implements OnInit, OnDestroy {
 	@Input() data;
 	@Input() activeSlide;
 	@Input() totalSlides;
+	@Input() slideInterval = AppOptions.intervals.infoBoard;
+	@Input() showDotsNavigation = true;
 
 	public activeSlideIndex = 0;
 
@@ -31,7 +33,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 			.pipe(
 				takeUntil(this.unSubscribe),
 				startWith(''),
-				switchMap(() => timer(AppOptions.intervals.infoBoard[0], AppOptions.intervals.infoBoard[1]))
+				switchMap(() => timer(this.slideInterval[0], this.slideInterval[1]))
 			)
 			.subscribe(() => {
 				const slideIndex = this.activeSlideIndex < (this.totalSlides - 1) ? this.activeSlideIndex + 1 : 0;

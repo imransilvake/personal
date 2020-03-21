@@ -6,7 +6,7 @@ export const AppOptions = {
 	},
 	intervals: {
 		infoBoard: [10000, 10000],
-		notice: [0, 10000],
+		notice: [10000, 10000],
 		photography: [0, 10000]
 	}
 };

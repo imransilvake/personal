@@ -1,28 +1,15 @@
-<section class="ik-info-card">
-	<!-- Image -->
-	<div class="ik-photo">
-		<img [src]="'assets/' + assetsPath + '/' + data['photo'] + '.svg'"
-			 [alt]="data['photo']"/>
-	</div>
+<section class="ik-card-wrapper">
+	<!-- Info -->
+	<ng-container *ngIf="cardViewType === 0">
+		<app-card-info [infoData]="infoData"
+					   [infoAutoHeight]="infoAutoHeight"
+					   [infoAssetsPath]="infoAssetsPath"
+					   [infoCardClass]="infoCardClass">
+		</app-card-info>
+	</ng-container>
 
-	<!-- Detail -->
-	<div class="ik-detail"
-		 [class.ik-card]="cardClass"
-		 [class.ik-auto-height]="autoHeight">
-		<ng-container *ngFor="let block of data['items']; let l=last;">
-			<h6>{{ block['title'] }}</h6>
-			<ul [class.ik-list-one]="!l">
-				<ng-container *ngFor="let blockItem of block['items']">
-					<li>
-						<p>{{ blockItem['name'] }}</p>
-						<ul *ngIf="!!blockItem['items']">
-							<ng-container *ngFor="let item of blockItem['items']">
-								<li><p>{{ item }}</p></li>
-							</ng-container>
-						</ul>
-					</li>
-				</ng-container>
-			</ul>
-		</ng-container>
-	</div>
+	<!-- Notice -->
+	<ng-container *ngIf="cardViewType === 1">
+		<app-card-notice [noticeData]="noticeData"></app-card-notice>
+	</ng-container>
 </section>

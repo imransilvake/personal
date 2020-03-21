@@ -42,8 +42,8 @@
 							<h5 class="ik-title">{{ block['title'] }}</h5>
 							<div class="cd-row">
 								<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4" *ngFor="let data of block['items']">
-									<app-card [data]="data"
-											  [assetsPath]="home['content']['profileSkills']['assetsPath']">
+									<app-card [infoData]="data"
+											  [infoAssetsPath]="home['content']['profileSkills']['assetsPath']">
 									</app-card>
 								</div>
 							</div>
@@ -59,10 +59,10 @@
 									[activeSlide]="infoBoardActiveSlide"
 									[totalSlides]="infoBoardTotalSlides"
 									(updateActiveSlide)="infoBoardActiveSlide = $event">
-							<app-card [data]="infoBoardActiveSlide"
-									  [autoHeight]="true"
-									  [assetsPath]="infoBoardData['assetsPath']"
-									  [cardClass]="false">
+							<app-card [infoData]="infoBoardActiveSlide"
+									  [infoAutoHeight]="true"
+									  [infoAssetsPath]="infoBoardData['assetsPath']"
+									  [infoCardClass]="false">
 							</app-card>
 						</app-slider>
 					</section>

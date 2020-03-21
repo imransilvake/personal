@@ -5,7 +5,7 @@
 	<ng-content></ng-content>
 
 	<!-- Dots Navigation -->
-	<div class="ik-dots">
+	<div class="ik-dots" *ngIf="showDotsNavigation">
 		<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
 			<span class="ik-dot"
 				  [class.ik-active]="activeSlideIndex === idx"

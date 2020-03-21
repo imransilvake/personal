@@ -8,7 +8,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 import { WidgetsModule } from '../../shared/widgets.mod/widgets.module';
-import { NoticeBlockComponent } from './components/notice-block/notice-block.component';
 
 @NgModule({
 	imports: [
@@ -19,14 +18,12 @@ import { NoticeBlockComponent } from './components/notice-block/notice-block.com
 		E404Component,
 		HeaderComponent,
 		FooterComponent,
-		ScrollTopComponent,
-		NoticeBlockComponent
+		ScrollTopComponent
 	],
 	exports: [
 		HeaderComponent,
 		FooterComponent,
-		ScrollTopComponent,
-		NoticeBlockComponent
+		ScrollTopComponent
 	]
 })
 

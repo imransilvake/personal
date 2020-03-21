@@ -5,8 +5,10 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared.module';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { CodeBlockComponent } from './components/code-block/code-block.component';
-import { CardComponent } from './components/card/card.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { CardComponent } from './components/card/card.component';
+import { CardInfoComponent } from './components/card/info/card-info.component';
+import { CardNoticeComponent } from './components/card/notice/card-notice.component';
 
 @NgModule({
 	imports: [
@@ -15,14 +17,16 @@ import { SliderComponent } from './components/slider/slider.component';
 	declarations: [
 		ReadMoreComponent,
 		CodeBlockComponent,
+		SliderComponent,
 		CardComponent,
-		SliderComponent
+		CardInfoComponent,
+		CardNoticeComponent
 	],
 	exports: [
 		ReadMoreComponent,
 		CodeBlockComponent,
-		CardComponent,
-		SliderComponent
+		SliderComponent,
+		CardComponent
 	]
 })
 
