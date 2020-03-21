@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+
 // app
 import { ROUTING } from '../../../../../environments/environment';
 import { LocalStorageItems } from '../../../../../app.config';
@@ -11,8 +12,8 @@ import { StorageService } from '../../../core.pck/storage.mod/services/storage.s
 import { NavigationTopTypesEnum } from '../../enums/navigation-top-types.enum';
 import navigationTop from '../../../../../assets/data/other/navigation-top';
 import navigationBottom from 'src/assets/data/other/navigation-bottom';
+import html2canvas from 'html2canvas';
 
-declare const window: any;
 declare const document: any;
 
 @Component({
@@ -97,11 +98,15 @@ export class HeaderComponent implements OnInit {
 	}
 
 	/**
-	 * print profile
+	 * print profile page
 	 */
 	public printProfilePage() {
-		if (window) {
-			window.print();
-		}
+		html2canvas(document.querySelector('.ik-profile'))
+			.then((canvas) => {
+				const fakeLink = document.createElement('a');
+				fakeLink.download = 'ik-resume.png';
+				fakeLink.href = canvas.toDataURL('image/png');
+				fakeLink.click();
+			});
 	}
 }

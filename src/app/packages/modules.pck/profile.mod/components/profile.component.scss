@@ -1,10 +1,10 @@
 @import 'scss-methods';
 
 .ik-profile {
+	background-color: var(--bg2);
 	padding: 30px 0;
 
 	header {
-		background-color: var(--bg2);
 		padding: 0 0 30px;
 
 		.cd-container {
@@ -65,7 +65,6 @@
 		}
 
 		.ik-detail {
-			background-color: var(--bg2);
 			padding: 30px 0 0;
 
 			.cd-container {

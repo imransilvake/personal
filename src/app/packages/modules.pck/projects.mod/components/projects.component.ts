@@ -12,7 +12,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ROUTING } from '../../../../../environments/environment';
-import projects from '../../../../../assets/data/projects/project';
+import projects from 'src/assets/data/projects/projects';
+import codeBlock from '../../../../../assets/data/projects/code-block';
 
 declare const lightGallery: any;
 
@@ -25,6 +26,7 @@ declare const lightGallery: any;
 export class ProjectsComponent implements OnInit, OnDestroy {
 	public faIcon = [faCode, faDownload, faLock, faInfoCircle, faGithub, faImages, faTimesCircle, faExternalLinkSquareAlt, faSearch];
 	public routing = ROUTING;
+	public codeBlock = codeBlock;
 	public projects = projects;
 	public infoBlockIndex = -1;
 	public formFields;

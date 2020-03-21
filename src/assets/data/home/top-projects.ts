@@ -1,5 +1,5 @@
 // app
-import projects from '../projects/project';
+import projects from '../projects/projects';
 
 const topProjects = {
 	githubProfile: projects.githubProfile,

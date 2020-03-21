@@ -38,6 +38,7 @@
 		"@fortawesome/free-solid-svg-icons": "^5.12.1",
 		"@imransilvake/scss-framework": "^2.2.1",
 		"hammerjs": "^2.0.8",
+		"html2canvas": "^1.0.0-rc.5",
 		"lg-autoplay.js": "^1.0.0",
 		"lg-fullscreen.js": "^1.1.0",
 		"lg-zoom.js": "^1.0.1",
