@@ -12,7 +12,7 @@ const notifications = {
 		},
 		{
 			label: 'COMING SOON',
-			text: 'Language Switcher (EN/DE)',
+			text: 'Multi-Language Support (en/de)',
 			show: true
 		},
 		{
@@ -22,7 +22,7 @@ const notifications = {
 		},
 		{
 			label: 'TODO',
-			text: 'Photography Page Speed',
+			text: 'Photography page speed optimization',
 			show: true
 		}
 	]
