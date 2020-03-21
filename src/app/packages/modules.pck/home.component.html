@@ -57,7 +57,13 @@
 					<section class="ik-card ik-block" *ngIf="infoBoardActiveSlide">
 						<app-slider [data]="infoBoardData"
 									[activeSlide]="infoBoardActiveSlide"
-									[totalSlides]="infoBoardTotalSlides">
+									[totalSlides]="infoBoardTotalSlides"
+									(updateActiveSlide)="infoBoardActiveSlide = $event">
+							<app-card [data]="infoBoardActiveSlide"
+									  [autoHeight]="true"
+									  [assetsPath]="infoBoardData['assetsPath']"
+									  [cardClass]="false">
+							</app-card>
 						</app-slider>
 					</section>
 

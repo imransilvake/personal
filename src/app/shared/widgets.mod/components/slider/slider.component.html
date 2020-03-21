@@ -1,14 +1,8 @@
 <section class="ik-slider"
 		 (swipeleft)="onSwipe(0)"
 		 (swiperight)="onSwipe(1)">
-	<!-- Info Card -->
-	<ng-container *ngIf="viewType === 0">
-		<app-card [data]="activeSlide"
-				  [autoHeight]="true"
-				  [assetsPath]="data['assetsPath']"
-				  [cardClass]="false">
-		</app-card>
-	</ng-container>
+	<!-- Projection -->
+	<ng-content></ng-content>
 
 	<!-- Dots Navigation -->
 	<div class="ik-dots">

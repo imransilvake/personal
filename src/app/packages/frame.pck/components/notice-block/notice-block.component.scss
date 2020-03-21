@@ -1,7 +1,7 @@
 @import 'scss-methods';
 
 .ik-notice-block {
-	background-color: var(--c5);
+	background-color: var(--bg3);
 	padding: 10px;
 
 	.cd-row {
@@ -9,14 +9,15 @@
 			padding: 0;
 			text-align: center;
 
-			.ik-icon {
-				color: var(--c9);
-				margin-right: 5px;
-			}
-
 			span {
-				color: var(--c7);
+				color: var(--tc2);
 				font-weight: cd-fontWeight(500);
+
+				&.ik-label {
+					color: var(--c7);
+					font-size: cd-fontSize(s12);
+					font-weight: cd-fontWeight(700);
+				}
 			}
 		}
 	}

@@ -1,11 +1,10 @@
 // angular
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { Subject, timer } from 'rxjs';
 
 // app
 import { AppOptions } from '../../../../../app.config';
-import { SliderViewEnum } from '../../enums/slider-view.enum';
 import { SliderDirectionEnum } from '../../enums/slider-direction.enum';
 
 @Component({
@@ -15,7 +14,8 @@ import { SliderDirectionEnum } from '../../enums/slider-direction.enum';
 })
 
 export class SliderComponent implements OnInit, OnDestroy {
-	@Input() viewType = SliderViewEnum.VIEW_INFO;
+	@Output() updateActiveSlide: EventEmitter<any> = new EventEmitter();
+
 	@Input() data;
 	@Input() activeSlide;
 	@Input() totalSlides;
@@ -46,29 +46,6 @@ export class SliderComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * change slide based on clicked index
-	 * @param slideIndex
-	 * @param slideItem
-	 */
-	public onClickChangeSlide(slideIndex: number, slideItem?: any) {
-		// reset slider counter
-		this.resetSliderCounterOnNavigationClick();
-
-		// move to a specific slide
-		this.activeSlide = this.data['items'][slideIndex];
-		this.activeSlideIndex = slideIndex;
-	}
-
-	/**
-	 * reset slider counter
-	 */
-	private resetSliderCounterOnNavigationClick() {
-		if (this.infoBoardSlider) {
-			this.infoBoardSlider.next(void 0);
-		}
-	}
-
-	/**
 	 * on swipe: left and right
 	 * @param direction
 	 */
@@ -85,5 +62,31 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 		// change slide
 		this.onClickChangeSlide(slideIndex);
+	}
+
+	/**
+	 * change slide based on clicked index
+	 * @param slideIndex
+	 * @param slideItem
+	 */
+	public onClickChangeSlide(slideIndex: number, slideItem?: any) {
+		// reset slider counter
+		this.resetSliderCounterOnNavigationClick();
+
+		// move to a specific slide
+		this.activeSlide = this.data['items'][slideIndex];
+		this.activeSlideIndex = slideIndex;
+
+		// update active slide
+		this.updateActiveSlide.emit(this.activeSlide);
+	}
+
+	/**
+	 * reset slider counter
+	 */
+	private resetSliderCounterOnNavigationClick() {
+		if (this.infoBoardSlider) {
+			this.infoBoardSlider.next(void 0);
+		}
 	}
 }

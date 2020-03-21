@@ -1,21 +1,27 @@
-// app
-import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
-
 const noticeBlock = [
 	{
-		icon: faEnvelopeOpen,
-		text: 'Language switch (en/de) feature is coming soon.',
-		show: true
-	},
-	{
-		icon: faEnvelopeOpen,
-		text: 'Currently the home page is in development mode.',
-		show: true
-	},
-	{
-		icon: faEnvelopeOpen,
 		text: 'I am currently looking out for new opportunities.',
 		show: false
+	},
+	{
+		label: 'WORKING ON',
+		text: 'Home Page',
+		show: true
+	},
+	{
+		label: 'COMING SOON',
+		text: 'Language Switcher (EN/DE)',
+		show: true
+	},
+	{
+		label: 'TODO',
+		text: 'Code Section',
+		show: true
+	},
+	{
+		label: 'TODO',
+		text: 'Photography Page Speed',
+		show: true
 	}
 ];
 export default noticeBlock;
