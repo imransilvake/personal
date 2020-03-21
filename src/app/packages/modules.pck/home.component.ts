@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
 
 // app
 import { CardViewEnum } from '../../shared/widgets.mod/enums/card-view.enum';
-import home from '../../../assets/data/home/home';
+import profileInfo from '../../../assets/data/home/profile-info';
+import profileSkills from '../../../assets/data/home/profile-skills';
+import infoBoard from '../../../assets/data/home/info-board';
+import socialNetwork from '../../../assets/data/home/social-network';
+import topProjects from '../../../assets/data/home/top-projects';
 
 @Component({
 	selector: 'app-home',
@@ -12,10 +16,14 @@ import home from '../../../assets/data/home/home';
 })
 
 export class HomeComponent {
-	public home = home;
-	public infoBoardData = home['sidebar']['infoBoard'];
-	public infoBoardActiveSlide = home['sidebar']['infoBoard']['items'][0];
-	public infoBoardTotalSlides = home['sidebar']['infoBoard']['items'].length;
+	public profileInfo = profileInfo;
+	public profileSkills = profileSkills;
+	public infoBoard = infoBoard;
+	public socialNetwork = socialNetwork;
+	public topProjects = topProjects;
+
+	public infoBoardActiveSlide = infoBoard['items'][0];
+	public infoBoardTotalSlides = infoBoard['items'].length;
 	public cardViewList = CardViewEnum.CARD_LIST;
 
 	/**

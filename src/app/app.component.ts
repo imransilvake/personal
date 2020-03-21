@@ -17,7 +17,7 @@ import notifications from '../assets/data/other/notifications';
 					[slideInterval]="noticeInterval"
 					[showDotsNavigation]="false"
 					(updateActiveSlide)="noticeActive = $event">
-			<app-card [cardViewType]="cardViewType"
+			<app-card [cardViewType]="cardViewNotice"
 					  [noticeData]="noticeActive">
 			</app-card>
 		</app-slider>
@@ -37,7 +37,7 @@ import notifications from '../assets/data/other/notifications';
 })
 
 export class AppComponent {
-	public cardViewType = CardViewEnum.CARD_NOTICE;
+	public cardViewNotice = CardViewEnum.CARD_NOTICE;
 	public noticeList = { items: notifications['items'].filter(x => x.show) };
 	public noticeActive = this.noticeList['items'][0];
 	public noticeTotalSlides = this.noticeList['items'].length;

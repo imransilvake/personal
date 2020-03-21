@@ -10,34 +10,34 @@
 							<!-- Cover -->
 							<div class="ik-cover ik-image-fixed ik-two">
 								<img class="ik-bg-loader ik-loader-white"
-									 [src]="'assets/images/profile/' + home['content']['profileInfo']['summary']['avatar']['cover'] + '.jpg'"
-									 [alt]="home['content']['profileInfo']['summary']['avatar']['cover']"/>
+									 [src]="'assets/images/profile/' + profileInfo['summary']['avatar']['cover'] + '.jpg'"
+									 [alt]="profileInfo['summary']['avatar']['cover']"/>
 							</div>
 
 							<!-- Photo -->
 							<div class="ik-photo">
-								<img [src]="'assets/images/profile/' + home['content']['profileInfo']['summary']['avatar']['photo'] + '.jpg'"
-									 [alt]="home['content']['profileInfo']['summary']['avatar']['name']"/>
+								<img [src]="'assets/images/profile/' + profileInfo['summary']['avatar']['photo'] + '.jpg'"
+									 [alt]="profileInfo['summary']['avatar']['name']"/>
 							</div>
 						</div>
 
 						<div class="ik-detail">
 							<!-- Greetings -->
 							<h5>
-								<span>{{ home['content']['profileInfo']['summary']['detail']['greetings'] }}, </span>
-								<span>{{ home['content']['profileInfo']['summary']['detail']['subTitle'] }}</span>
+								<span>{{ profileInfo['summary']['detail']['greetings'] }}, </span>
+								<span>{{ profileInfo['summary']['detail']['subTitle'] }}</span>
 							</h5>
 
 							<!-- Title -->
-							<h4>{{ home['content']['profileInfo']['summary']['detail']['title'] }}</h4>
+							<h4>{{ profileInfo['summary']['detail']['title'] }}</h4>
 
 							<!-- Excerpt -->
-							<p>{{ home['content']['profileInfo']['summary']['detail']['excerpt'] }}</p>
+							<p>{{ profileInfo['summary']['detail']['excerpt'] }}</p>
 						</div>
 					</section>
 
 					<!-- Profile Skills -->
-					<ng-container *ngFor="let block of home['content']['profileSkills']['items']">
+					<ng-container *ngFor="let block of profileSkills['items']">
 						<section class="ik-block">
 							<h5 class="ik-title">{{ block['title'] }}</h5>
 							<div class="cd-row">
@@ -45,7 +45,7 @@
 									 *ngFor="let data of block['items']; let f=first; let l=last;"
 									 [class.ik-first-item]="!f && l">
 									<app-card [infoData]="data"
-											  [infoAssetsPath]="home['content']['profileSkills']['assetsPath']">
+											  [infoAssetsPath]="profileSkills['assetsPath']">
 									</app-card>
 								</div>
 							</div>
@@ -57,28 +57,28 @@
 				<div class="cd-col cd-col-pm-s-4 cd-col-pm-d-3 ik-m-bottom-space">
 					<!-- Info Board -->
 					<section class="ik-card ik-block" *ngIf="infoBoardActiveSlide">
-						<app-slider [data]="infoBoardData"
+						<app-slider [data]="infoBoard"
 									[activeSlide]="infoBoardActiveSlide"
 									[totalSlides]="infoBoardTotalSlides"
 									(updateActiveSlide)="infoBoardActiveSlide = $event">
 							<app-card [infoData]="infoBoardActiveSlide"
 									  [infoAutoHeight]="true"
-									  [infoAssetsPath]="infoBoardData['assetsPath']"
+									  [infoAssetsPath]="infoBoard['assetsPath']"
 									  [infoCardClass]="false">
 							</app-card>
 						</app-slider>
 					</section>
 
 					<!-- Recent Projects -->
-					<section class="ik-card ik-card-padding ik-block" *ngIf="home['sidebar']['projects']">
-						<app-card [listData]="home['sidebar']['projects']"
+					<section class="ik-card ik-card-padding ik-block" *ngIf="topProjects">
+						<app-card [listData]="topProjects"
 								  [cardViewType]="cardViewList">
 						</app-card>
 					</section>
 
 					<!-- Social Network -->
 					<section class="ik-card ik-card-padding ik-block ik-social">
-						<ng-container *ngFor="let item of home['sidebar']['social']['items']">
+						<ng-container *ngFor="let item of socialNetwork['items']">
 							<div class="ik-item cd-tooltip {{item['class']}}"
 								 (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
 								<!-- Image -->
