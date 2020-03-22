@@ -2,7 +2,6 @@
 import { AppLinks } from '../../../app.config';
 
 const projects = {
-	githubProfile: AppLinks.projects.github.profile,
 	filters: [
 		{
 			id: 'all',
@@ -45,7 +44,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: AppLinks.projects.github.list.scss.name,
+				link: `${AppLinks.projects.github.profile}${AppLinks.projects.github.list.scss.name}`,
 				website: AppLinks.projects.github.list.scss.link
 			}
 		},
@@ -251,7 +250,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: AppLinks.projects.github.list.slackClone.name,
+				link: `${AppLinks.projects.github.profile}${AppLinks.projects.github.list.slackClone.name}`,
 				gallery: [
 					{ src: '/assets/images/projects/slack-app-clone/01.png' },
 					{ src: '/assets/images/projects/slack-app-clone/02.png' },
@@ -283,7 +282,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: AppLinks.projects.github.list.takeAwayChallenge.name,
+				link: `${AppLinks.projects.github.profile}${AppLinks.projects.github.list.takeAwayChallenge.name}`,
 				gallery: [
 					{ src: '/assets/images/projects/takeaway-challenge/01.png' },
 					{ src: '/assets/images/projects/takeaway-challenge/02.png' },
@@ -312,7 +311,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: AppLinks.projects.github.list.ticTacToe.name
+				link: `${AppLinks.projects.github.profile}${AppLinks.projects.github.list.ticTacToe.name}`,
 			}
 		},
 		{
@@ -334,7 +333,7 @@ const projects = {
 			},
 			actions: {
 				lock: false,
-				github: AppLinks.projects.github.list.multiSiteSlider.name,
+				link: `${AppLinks.projects.github.profile}${AppLinks.projects.github.list.multiSiteSlider.name}`,
 				gallery: [
 					{ src: '/assets/images/projects/multisite-slider/01.png' },
 					{ src: '/assets/images/projects/multisite-slider/02.png' },

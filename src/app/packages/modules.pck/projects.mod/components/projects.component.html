@@ -78,7 +78,7 @@
 								<!-- Actions -->
 								<div class="ik-actions">
 									<div class="ik-left">
-										<fa-icon (click)="!item['actions']['lock'] && onClickDownloadProject(item['actions']['github'])"
+										<fa-icon (click)="!item['actions']['lock'] && onClickDownloadProject(item['actions']['link'])"
 												class="ik-icon"
 												[class.ik-download]="!item['actions']['lock']"
 												[icon]="!item['actions']['lock'] ? faIcon[1] : faIcon[2]">
@@ -93,8 +93,8 @@
 												 [icon]="infoBlockIndex !== idx ? faIcon[3] : faIcon[6]"></fa-icon>
 
 										<!-- Github -->
-										<fa-icon *ngIf="!!item['actions']['github']"
-												 (click)="onClickOpenGithub(item['actions']['github'])"
+										<fa-icon *ngIf="!!item['actions']['link']"
+												 (click)="onClickOpenGithub(item['actions']['link'])"
 												 class="ik-icon"
 												 [icon]="faIcon[4]">
 										</fa-icon>

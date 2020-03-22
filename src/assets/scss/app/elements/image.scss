@@ -1,10 +1,10 @@
 .ik-image-fixed {
 	&.ik-one {
-		height: 500px;
+		height: 65vh;
 
 		img {
 			@extend .ik-image-properties;
-			height: 500px;
+			height: 65vh;
 		}
 	}
 
@@ -27,10 +27,10 @@
 	// media
 	@include cd-media(desktop, smartphone) {
 		&.ik-one {
-			height: 350px;
+			height: 45vh;
 
 			img {
-				height: 350px;
+				height: 45vh;
 			}
 		}
 
@@ -45,10 +45,10 @@
 
 	@include cd-media(desktop, mini) {
 		&.ik-one {
-			height: 250px;
+			height: 30vh;
 
 			img {
-				height: 250px;
+				height: 30vh;
 			}
 		}
 	}

@@ -44,8 +44,9 @@
 
 					.ik-download {
 						.ik-disabled {
-							color: var(--bg2);
+							color: var(--c4);
 							cursor: default;
+							opacity: .6;
 						}
 					}
 				}
@@ -283,6 +284,10 @@
 									}
 								}
 							}
+						}
+
+						hr {
+							border-top-color: var(--tc3);
 						}
 					}
 				}

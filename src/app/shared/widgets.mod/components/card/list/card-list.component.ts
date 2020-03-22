@@ -2,7 +2,6 @@
 import { Component, Input } from '@angular/core';
 
 // app
-import { ROUTING } from '../../../../../../environments/environment';
 import { faExternalLinkSquareAlt, faLock } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -13,15 +12,15 @@ import { faExternalLinkSquareAlt, faLock } from '@fortawesome/free-solid-svg-ico
 
 export class CardListComponent {
 	@Input() listData;
+	@Input() filterRoute;
 
-	public routing = ROUTING;
 	public faIcon = [faLock, faExternalLinkSquareAlt];
 
 	/**
-	 * open github external link
+	 * open external link
 	 * @param link
 	 */
-	public onClickOpenGithub(link) {
-		window.open(`${this.listData['githubProfile']}${link}`, '_blank');
+	public onClickOpenLink(link) {
+		window.open(`${link}`, '_blank');
 	}
 }

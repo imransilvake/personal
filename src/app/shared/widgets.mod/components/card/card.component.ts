@@ -20,4 +20,5 @@ export class CardComponent {
 	@Input() noticeData;
 
 	@Input() listData;
+	@Input() filterRoute;
 }

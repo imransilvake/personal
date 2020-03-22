@@ -69,7 +69,8 @@
 
 					<!-- Recent Projects -->
 					<section class="ik-card ik-card-padding ik-block" *ngIf="topProjects">
-						<app-card [listData]="topProjects"
+						<app-card [filterRoute]="routing.pages.projects"
+								  [listData]="topProjects"
 								  [cardViewType]="cardViewList">
 						</app-card>
 					</section>

@@ -120,7 +120,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	 * @param link
 	 */
 	public onClickDownloadProject(link) {
-		window.open(`${this.projects['githubProfile']}${link}/archive/master.zip`, '_blank');
+		window.open(`${link}/archive/master.zip`, '_blank');
 	}
 
 	/**
@@ -140,7 +140,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	 * @param link
 	 */
 	public onClickOpenGithub(link) {
-		window.open(`${this.projects['githubProfile']}${link}`, '_blank');
+		window.open(`${link}`, '_blank');
 	}
 
 	/**

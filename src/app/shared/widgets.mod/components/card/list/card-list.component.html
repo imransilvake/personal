@@ -6,20 +6,20 @@
 	<ul>
 		<li *ngFor="let item of listData['items']">
 			<!-- Title -->
-			<h6 *ngIf="!item['actions']['github']">
+			<h6 *ngIf="!item['actions']['link']">
 				<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
 				{{item['title']}}
 			</h6>
 
 			<!-- Link -->
-			<a *ngIf="item['actions']['github']"
-			   (click)="onClickOpenGithub(item['actions']['github'])">
+			<a *ngIf="item['actions']['link']"
+			   (click)="onClickOpenLink(item['actions']['link'])">
 				<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
 				{{item['title']}}
 			</a>
 
-			<!-- badge -->
-			<p [routerLink]="['/' + routing.pages.projects, item['controls']['filter']]"
+			<!-- Badge -->
+			<p [routerLink]="['/' + filterRoute, item['controls']['filter']]"
 			   [class.ik-scss]="item['controls']['filter'] === 'scss'"
 			   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
 			   [class.ik-php]="item['controls']['filter'] === 'php'">
