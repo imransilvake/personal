@@ -27,7 +27,7 @@ export class ProfileComponent {
 	public profileExperience = profileExperience;
 	public profileLanguage = profileLanguage;
 	public profileInterest = profileInterest;
-	public isLoader = false;
+	public isDownloading = false;
 
 	/**
 	 * get time period
@@ -90,8 +90,8 @@ export class ProfileComponent {
 	 * download resume
 	 */
 	public onClickDownloadResume() {
-		// start loader
-		this.isLoader = true;
+		// start downloading
+		this.isDownloading = true;
 
 		// prepare canvas
 		html2canvas(document.querySelector('.ik-profile'))
@@ -103,7 +103,7 @@ export class ProfileComponent {
 				fakeLink.click();
 
 				// stop loader
-				this.isLoader = false;
+				this.isDownloading = false;
 			});
 	}
 }

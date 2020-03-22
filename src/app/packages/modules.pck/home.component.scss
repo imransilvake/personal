@@ -5,8 +5,6 @@
 	padding: 30px 0;
 
 	.cd-row {
-		margin: 0 -15px;
-
 		.cd-col {
 			.ik-block {
 				&:not(:first-child) {
@@ -72,6 +70,13 @@
 							color: var(--tc2);
 							font-weight: cd-fontWeight(300);
 						}
+					}
+				}
+
+				&.ik-profile-skills {
+					.cd-row {
+						margin-left: -15px;
+						margin-right: -15px;
 					}
 				}
 
