@@ -3,13 +3,7 @@ import { NavigationTopTypesEnum } from '../../../app/packages/frame.pck/enums/na
 
 const navigationTop = [
 	{
-		id: NavigationTopTypesEnum.TYPE_PRINT,
-		icon: 'print',
-		name: 'Print'
-	},
-	{
 		id: NavigationTopTypesEnum.TYPE_LANGUAGE,
-		icon: 'icon',
 		name: 'Language'
 	}
 ];

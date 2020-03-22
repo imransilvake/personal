@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 // app
 import * as moment from 'moment';
+import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
 import profileIntro from '../../../../../assets/data/profile/intro';
 import profileSummary from '../../../../../assets/data/profile/summery';
 import profileSkills from '../../../../../assets/data/profile/skills';
@@ -10,7 +11,7 @@ import profileEducation from '../../../../../assets/data/profile/education';
 import profileExperience from '../../../../../assets/data/profile/experience';
 import profileLanguage from '../../../../../assets/data/profile/language';
 import profileInterest from '../../../../../assets/data/profile/interest';
-import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
+import html2canvas from 'html2canvas';
 
 @Component({
 	selector: 'app-profile',
@@ -26,6 +27,7 @@ export class ProfileComponent {
 	public profileExperience = profileExperience;
 	public profileLanguage = profileLanguage;
 	public profileInterest = profileInterest;
+	public isLoader = false;
 
 	/**
 	 * get time period
@@ -83,4 +85,25 @@ export class ProfileComponent {
 	 * @param suffix
 	 */
 	public doPluralize = (count, noun, suffix = 's') => `${count} ${noun}${count !== 1 ? suffix : ''}`;
+
+	/**
+	 * download resume
+	 */
+	public onClickDownloadResume() {
+		// start loader
+		this.isLoader = true;
+
+		// prepare canvas
+		html2canvas(document.querySelector('.ik-profile'))
+			.then((canvas) => {
+				// download resume
+				const fakeLink = document.createElement('a');
+				fakeLink.download = 'ik-resume.png';
+				fakeLink.href = canvas.toDataURL('image/png');
+				fakeLink.click();
+
+				// stop loader
+				this.isLoader = false;
+			});
+	}
 }

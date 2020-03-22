@@ -1,8 +1,5 @@
 // angular
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter, takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
 
 // app
 import { ROUTING } from '../../../../../environments/environment';
@@ -12,7 +9,6 @@ import { StorageService } from '../../../core.pck/storage.mod/services/storage.s
 import { NavigationTopTypesEnum } from '../../enums/navigation-top-types.enum';
 import navigationTop from '../../../../../assets/data/other/navigation-top';
 import navigationBottom from 'src/assets/data/other/navigation-bottom';
-import html2canvas from 'html2canvas';
 
 declare const document: any;
 
@@ -25,30 +21,13 @@ declare const document: any;
 export class HeaderComponent implements OnInit {
 	public routing = ROUTING;
 	public faIcons = [faTint, faFont];
-	public navigationTopFiltered = navigationTop.filter(i => i.id !== NavigationTopTypesEnum.TYPE_PRINT);
-	public navigationTop = this.navigationTopFiltered;
+	public navigationTop = navigationTop;
 	public navigationBottom = navigationBottom;
-	public NavigationTopPrint = NavigationTopTypesEnum.TYPE_PRINT;
+	public navigationTopLanguage = NavigationTopTypesEnum.TYPE_LANGUAGE;
 	public themeInactive = true;
 	public fontSizeInactive = true;
 
-	private unSubscribe = new Subject();
-
-	constructor(
-		private _router: Router,
-		private _storageService: StorageService
-	) {
-		// listen: router event
-		this._router.events
-			.pipe(
-				takeUntil(this.unSubscribe),
-				filter(event => event instanceof NavigationEnd)
-			)
-			.subscribe((res) => {
-				// update top nav list
-				this.navigationTop = (res && res['url'] !== `/${ROUTING.pages.profile}`) ?
-					this.navigationTopFiltered : navigationTop;
-			});
+	constructor(private _storageService: StorageService) {
 	}
 
 	ngOnInit() {
@@ -95,18 +74,5 @@ export class HeaderComponent implements OnInit {
 
 		// update to local storage
 		this._storageService.put(LocalStorageItems.fontSize, value);
-	}
-
-	/**
-	 * print profile page
-	 */
-	public printProfilePage() {
-		html2canvas(document.querySelector('.ik-profile'))
-			.then((canvas) => {
-				const fakeLink = document.createElement('a');
-				fakeLink.download = 'ik-resume.png';
-				fakeLink.href = canvas.toDataURL('image/png');
-				fakeLink.click();
-			});
 	}
 }

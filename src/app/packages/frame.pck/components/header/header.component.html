@@ -7,15 +7,9 @@
 				<div class="cd-col cd-right-align">
 					<ul class="ik-items ik-remove-bullets">
 						<li *ngFor="let item of navigationTop">
-							<ng-container *ngIf="item.id === NavigationTopPrint; else elseBlock">
-								<img class="ik-print"
-									 (click)="printProfilePage()"
-									 [src]="'assets/svg/profile/' + item['icon'] + '.svg'"
-									 [alt]="item['id']" />
+							<ng-container *ngIf="item.id === navigationTopLanguage">
+								{{ item['name'] }}
 							</ng-container>
-							<ng-template #elseBlock>
-								<a>{{ item.name }}</a>
-							</ng-template>
 						</li>
 					</ul>
 				</div>
