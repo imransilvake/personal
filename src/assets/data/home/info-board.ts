@@ -1,8 +1,8 @@
 const infoBoard = {
-	assetsPath: 'svg/home/info-board',
-		items: [
+	assetsPath: 'assets/svg/home/info-board/',
+	items: [
 		{
-			photo: 'office',
+			photo: 'office.svg',
 			items: [
 				{
 					title: 'Company',
@@ -29,7 +29,7 @@ const infoBoard = {
 			]
 		},
 		{
-			photo: 'work',
+			photo: 'work.svg',
 			items: [
 				{
 					title: 'Learning',
@@ -56,7 +56,7 @@ const infoBoard = {
 			]
 		},
 		{
-			photo: 'controller',
+			photo: 'controller.svg',
 			items: [
 				{
 					title: 'Playing',

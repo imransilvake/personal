@@ -21,4 +21,7 @@ export class CardComponent {
 
 	@Input() listData;
 	@Input() filterRoute;
+
+	@Input() imageData;
+	@Input() imageAssetsPath;
 }

@@ -58,6 +58,7 @@
 						<app-slider [data]="infoBoard"
 									[activeSlide]="infoBoardActiveSlide"
 									[totalSlides]="infoBoardTotalSlides"
+									[slideInterval]="infoBoardInterval"
 									(updateActiveSlide)="infoBoardActiveSlide = $event">
 							<app-card [infoData]="infoBoardActiveSlide"
 									  [infoAutoHeight]="true"

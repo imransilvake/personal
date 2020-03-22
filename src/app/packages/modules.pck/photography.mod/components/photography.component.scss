@@ -3,32 +3,6 @@
 .ik-photography {
 	background-color: var(--bg4);
 
-	.ik-slider-photo {
-		.ik-photo {
-			position: relative;
-
-			.ik-text {
-				background-color: var(--o3);
-				border-radius: 2px;
-				color: var(--c2);
-				font-weight: cd-fontWeight(600);
-				position: absolute;
-
-				&.ik-counter {
-					padding: 1px 10px;
-					right: 10px;
-					top: 10px;
-				}
-
-				&.ik-title {
-					bottom: 10px;
-					left: 10px;
-					padding: 1px 6px;
-				}
-			}
-		}
-	}
-
 	.ik-gallery {
 		margin-top: 30px;
 

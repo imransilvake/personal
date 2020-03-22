@@ -19,4 +19,11 @@
 					   [listData]="listData">
 		</app-card-list>
 	</ng-container>
+
+	<!-- Image -->
+	<ng-container *ngIf="cardViewType === 3">
+		<app-card-image [imageData]="imageData"
+						[imageAssetsPath]="imageAssetsPath">
+		</app-card-image>
+	</ng-container>
 </section>

@@ -9,6 +9,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardInfoComponent } from './components/card/info/card-info.component';
 import { CardNoticeComponent } from './components/card/notice/card-notice.component';
 import { CardListComponent } from './components/card/list/card-list.component';
+import { CardImageComponent } from './components/card/image/card-image.component';
 
 @NgModule({
 	imports: [
@@ -20,7 +21,8 @@ import { CardListComponent } from './components/card/list/card-list.component';
 		CardComponent,
 		CardInfoComponent,
 		CardNoticeComponent,
-		CardListComponent
+		CardListComponent,
+		CardImageComponent
 	],
 	exports: [
 		CodeBlockComponent,

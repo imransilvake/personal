@@ -1,15 +1,14 @@
 // angular
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter, startWith, switchMap, takeUntil } from 'rxjs/operators';
-import { Subject, timer } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 // app
-import { AppOptions } from '../../../../../app.config';
 import { faExpand, faSmileWink } from '@fortawesome/free-solid-svg-icons';
-import photography from '../../../../../assets/data/photography/gallery';
+import { CardViewEnum } from '../../../../shared/widgets.mod/enums/card-view.enum';
+import { AppOptions } from '../../../../../app.config';
+import photography from 'src/assets/data/photography/photography';
 
-declare const lightGallery: any;
+declare const lightGallery;
 
 @Component({
 	selector: 'app-photography',
@@ -17,61 +16,24 @@ declare const lightGallery: any;
 	styleUrls: ['./photography.component.scss']
 })
 
-export class PhotographyComponent implements OnInit, AfterViewInit, OnDestroy {
-	@ViewChild('gallerySelector', { static: false }) gallerySelector: ElementRef;
+export class PhotographyComponent implements AfterViewInit {
+	@ViewChild('gallery', { static: false }) gallery: ElementRef;
 
 	public faIcon = [faSmileWink, faExpand];
-	public photography = {};
-	public randomBlock = {};
-	public counter = 10;
-
-	private photographySlider = new Subject();
-	private unSubscribe = new Subject();
+	public photography = photography;
+	public cardViewImage = CardViewEnum.CARD_IMAGE;
+	public imageList = photography;
+	public imageActive = photography['items'][0];
+	public imageTotalSlides = photography['items'].length;
+	public imageInterval = AppOptions.intervals.photography;
 
 	constructor(private _router: Router) {
-		// listen: router event
-		this._router.events
-			.pipe(
-				takeUntil(this.unSubscribe),
-				filter(event => event instanceof NavigationEnd)
-			)
-			.subscribe(() => this.photography = photography);
-	}
-
-	ngOnInit() {
-		this.photographySlider
-			.pipe(
-				takeUntil(this.unSubscribe),
-				startWith(''),
-				switchMap(() => timer(
-					AppOptions.intervals.photography[0],
-					AppOptions.intervals.photography[1]
-				))
-			)
-			.subscribe(() => {
-				// counter
-				this.counter = 10;
-
-				// random slide
-				this.randomBlock = this.photography['gallery'][Math.floor(
-					Math.random() * this.photography['gallery'].length
-				)];
-			});
-
-		// set 1 second interval
-		setInterval(() => this.counter -= 1, 1000);
 	}
 
 	ngAfterViewInit() {
 		// initialize light gallery
-		if (!!this.gallerySelector) {
-			lightGallery(this.gallerySelector.nativeElement);
+		if (!!this.gallery) {
+			lightGallery(this.gallery.nativeElement);
 		}
-	}
-
-	ngOnDestroy() {
-		// remove subscriptions
-		this.unSubscribe.next();
-		this.unSubscribe.complete();
 	}
 }

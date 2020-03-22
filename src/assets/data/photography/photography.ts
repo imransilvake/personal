@@ -1,6 +1,7 @@
 const photography = {
-	excerpt: 'Travel is fun',
-	gallery: [
+	title: 'Travel is fun',
+	assetsPath: 'assets/images/photography/',
+	items: [
 		{
 			photo: '01.jpg',
 			title: 'Pisa, Italy'

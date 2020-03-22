@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 // app
 import { ROUTING } from '../../../environments/environment';
+import { AppOptions } from '../../../app.config';
 import { CardViewEnum } from '../../shared/widgets.mod/enums/card-view.enum';
 import profileInfo from '../../../assets/data/home/profile-info';
 import profileSkills from '../../../assets/data/home/profile-skills';
@@ -20,13 +21,14 @@ export class HomeComponent {
 	public routing = ROUTING;
 	public profileInfo = profileInfo;
 	public profileSkills = profileSkills;
-	public infoBoard = infoBoard;
 	public socialNetwork = socialNetwork;
 	public topProjects = topProjects;
 
+	public infoBoard = infoBoard;
+	public cardViewList = CardViewEnum.CARD_LIST;
 	public infoBoardActiveSlide = infoBoard['items'][0];
 	public infoBoardTotalSlides = infoBoard['items'].length;
-	public cardViewList = CardViewEnum.CARD_LIST;
+	public infoBoardInterval = AppOptions.intervals.infoBoard;
 
 	/**
 	 * open (website) external link

@@ -19,17 +19,17 @@ export class SliderComponent implements OnInit, OnDestroy {
 	@Input() data;
 	@Input() activeSlide;
 	@Input() totalSlides;
-	@Input() slideInterval = AppOptions.intervals.infoBoard;
+	@Input() slideInterval = AppOptions.intervals.default;
 	@Input() showDotsNavigation = true;
 
 	public activeSlideIndex = 0;
 
-	private infoBoardSlider = new Subject();
+	private slider = new Subject();
 	private unSubscribe = new Subject();
 
 	ngOnInit() {
 		// info board slider
-		this.infoBoardSlider
+		this.slider
 			.pipe(
 				takeUntil(this.unSubscribe),
 				startWith(''),
@@ -87,8 +87,8 @@ export class SliderComponent implements OnInit, OnDestroy {
 	 * reset slider counter
 	 */
 	private resetSliderCounterOnNavigationClick() {
-		if (this.infoBoardSlider) {
-			this.infoBoardSlider.next(void 0);
+		if (this.slider) {
+			this.slider.next(void 0);
 		}
 	}
 }

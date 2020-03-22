@@ -1,16 +1,17 @@
 <div class="ik-photography">
 	<div class="cd-container-fluid">
-		<!-- Slider Photo -->
-		<section class="ik-slider-photo">
-			<div class="ik-photo ik-image-fixed ik-one">
-				<img class="ik-bg-loader ik-loader-grey"
-					 *ngIf="randomBlock && !!randomBlock['photo']"
-					 [src]="'assets/images/photography/' + randomBlock['photo']"
-					 [alt]="randomBlock['title']"/>
-				<h6 class="ik-text ik-counter">{{ counter }}</h6>
-				<h6 class="ik-text ik-title">{{ randomBlock['title'] }}</h6>
-			</div>
-		</section>
+		<!-- Slider Image -->
+		<app-slider [data]="imageList"
+					[activeSlide]="imageActive"
+					[totalSlides]="imageTotalSlides"
+					[slideInterval]="imageInterval"
+					[showDotsNavigation]="false"
+					(updateActiveSlide)="imageActive = $event">
+			<app-card [cardViewType]="cardViewImage"
+					  [imageData]="imageActive"
+					  [imageAssetsPath]="imageList['assetsPath']">
+			</app-card>
+		</app-slider>
 
 		<!-- Gallery List -->
 		<div class="cd-container ik-gallery">
@@ -18,15 +19,15 @@
 			<section class="cd-row">
 				<div class="cd-col">
 					<h2 class="ik-excerpt ik-font-sacramento">
-						{{ photography['excerpt'] }}
+						{{ photography['title'] }}
 						<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
 					</h2>
 				</div>
 			</section>
 
 			<!-- Gallery -->
-			<section class="cd-row" #gallerySelector>
-				<ng-container *ngFor="let item of photography['gallery']">
+			<section class="cd-row" #gallery>
+				<ng-container *ngFor="let item of photography['items']">
 					<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4"
 						 [attr.data-src]="'assets/images/photography/' + item['photo']">
 						<div class="ik-photo">
