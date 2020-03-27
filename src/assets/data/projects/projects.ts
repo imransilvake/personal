@@ -218,7 +218,6 @@ const projects = {
 					{ src: '/assets/images/projects/hsa/06.png' },
 					{ src: '/assets/images/projects/hsa/07.png' },
 					{ src: '/assets/images/projects/hsa/08.png' },
-					{ src: '/assets/images/projects/hsa/08a.png' },
 					{ src: '/assets/images/projects/hsa/09.png' },
 					{ src: '/assets/images/projects/hsa/10.png' },
 					{ src: '/assets/images/projects/hsa/11.png' },
@@ -227,7 +226,15 @@ const projects = {
 					{ src: '/assets/images/projects/hsa/14.png' },
 					{ src: '/assets/images/projects/hsa/15.png' },
 					{ src: '/assets/images/projects/hsa/16.png' },
-					{ src: '/assets/images/projects/hsa/17.png' }
+					{ src: '/assets/images/projects/hsa/17.png' },
+					{ src: '/assets/images/projects/hsa/18.png' },
+					{ src: '/assets/images/projects/hsa/19.png' },
+					{ src: '/assets/images/projects/hsa/20.png' },
+					{ src: '/assets/images/projects/hsa/21.png' },
+					{ src: '/assets/images/projects/hsa/22.png' },
+					{ src: '/assets/images/projects/hsa/23.png' },
+					{ src: '/assets/images/projects/hsa/24.png' },
+					{ src: '/assets/images/projects/hsa/25.png' }
 				]
 			}
 		},

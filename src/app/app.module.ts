@@ -2,7 +2,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // app
 import { APP_ROUTES } from './app-routing';
@@ -14,7 +13,6 @@ import { WidgetsModule } from './shared/widgets.mod/widgets.module';
 	imports: [
 		// angular
 		BrowserModule,
-		BrowserAnimationsModule,
 		RouterModule.forRoot(APP_ROUTES, { onSameUrlNavigation: 'reload' }),
 
 		// libraries

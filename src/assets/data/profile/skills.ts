@@ -81,15 +81,15 @@ const profileSkills = {
 		},
 		{
 			title: 'Libraries',
-			items: ['RxJs', 'MomentJs', 'NumeralJs', 'HammerJs', 'Html2canvas']
+			items: ['RxJs', 'MomentJs', 'NumeralJs', 'HammerJs', 'Lodash']
 		},
 		{
 			title: 'Database',
 			items: ['Firebase', 'MongoDB', 'MySQL']
 		},
 		{
-			title: 'Tools/Services',
-			items: ['npm', 'yarn', 'git', 'jira', 'confluence', 'webstorm', 'VSC', 'Mac OS', 'Ubuntu']
+			title: 'Tools / Systems / Services',
+			items: ['NPM', 'Yarn', 'Git', 'Jira', 'Confluence', 'WebStorm', 'VSC', 'Mac OS', 'Ubuntu']
 		}
 	]
 };

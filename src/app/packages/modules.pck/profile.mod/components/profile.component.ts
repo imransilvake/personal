@@ -11,7 +11,6 @@ import profileEducation from '../../../../../assets/data/profile/education';
 import profileExperience from '../../../../../assets/data/profile/experience';
 import profileLanguage from '../../../../../assets/data/profile/language';
 import profileInterest from '../../../../../assets/data/profile/interest';
-import html2canvas from 'html2canvas';
 
 @Component({
 	selector: 'app-profile',
@@ -27,7 +26,7 @@ export class ProfileComponent {
 	public profileExperience = profileExperience;
 	public profileLanguage = profileLanguage;
 	public profileInterest = profileInterest;
-	public isDownloading = false;
+	public isResumeDownloading = false;
 
 	/**
 	 * get time period
@@ -64,6 +63,7 @@ export class ProfileComponent {
 	/**
 	 * display period
 	 * @param period
+	 * @param shortForm
 	 */
 	public displayPeriod(period, shortForm) {
 		const year = period[0];
@@ -85,25 +85,4 @@ export class ProfileComponent {
 	 * @param suffix
 	 */
 	public doPluralize = (count, noun, suffix = 's') => `${count} ${noun}${count !== 1 ? suffix : ''}`;
-
-	/**
-	 * download resume
-	 */
-	public onClickDownloadResume() {
-		// start downloading
-		this.isDownloading = true;
-
-		// prepare canvas
-		html2canvas(document.querySelector('.ik-profile'))
-			.then((canvas) => {
-				// download resume
-				const fakeLink = document.createElement('a');
-				fakeLink.download = 'ik-resume.png';
-				fakeLink.href = canvas.toDataURL('image/png');
-				fakeLink.click();
-
-				// stop loader
-				this.isDownloading = false;
-			});
-	}
 }

@@ -3,6 +3,9 @@ const profileIntro = {
 	title: 'Frontend Developer',
 	photo: 'avatar',
 	cover: 'cover',
-	download: 'Download CV'
+	resume: {
+		download: 'Download CV',
+		loading: 'Please wait a few seconds'
+	}
 };
 export default profileIntro;
