@@ -16,6 +16,7 @@ export class CodeBlockComponent implements OnInit {
 	@Input() blockSize = CodeBlockEnum.FIXED;
 	@Input() codeScript = [];
 	@Input() curlyBrackets = [];
+	@Input() conditionIfOrElseNext = false;
 
 	ngOnInit() {
 		this.curlyBrackets = [];
@@ -50,10 +51,16 @@ export class CodeBlockComponent implements OnInit {
 	public indentCodeLine(line) {
 		const leftBracket = line.indexOf('{') !== -1;
 		const rightBracket = line.indexOf('}') !== -1;
+		const conditionIfOrElse = line.indexOf('if') !== -1 || line.indexOf('else') !== -1;
 
 		// {
 		if (leftBracket) {
 			this.curlyBrackets.push(true);
+		}
+
+		// if or else
+		if (conditionIfOrElse) {
+			this.conditionIfOrElseNext = true;
 		}
 
 		// content inside brackets
@@ -69,10 +76,13 @@ export class CodeBlockComponent implements OnInit {
 					this.curlyBrackets.pop();
 				}
 
-				return `<span class="ik-margin-left-${marginLeft * 10}">${line}</span>`;
+				return `<span class="ik-margin-left-${marginLeft * 20}">${line}</span>`;
 			} else if (!leftBracket && !rightBracket) { // single
-				return `<span class="ik-margin-left-${this.curlyBrackets.length * 10}">${line}</span>`;
+				return `<span class="ik-margin-left-${this.curlyBrackets.length * 20}">${line}</span>`;
 			}
+		} else if (!conditionIfOrElse && this.conditionIfOrElseNext) {
+			this.conditionIfOrElseNext = false;
+			return `<span class="ik-margin-left-20">${line}</span>`;
 		}
 
 		// }

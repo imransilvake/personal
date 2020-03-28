@@ -3,7 +3,7 @@ export const EnvironmentRoutes = {
 		home: '',
 		profile: 'profile',
 		projects: 'projects',
-		codeSection: 'codeSection',
+		codeSection: 'code-section',
 		photography: 'photography'
 	}
 };

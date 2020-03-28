@@ -26,7 +26,6 @@ export class ProfileComponent {
 	public profileExperience = profileExperience;
 	public profileLanguage = profileLanguage;
 	public profileInterest = profileInterest;
-	public isResumeDownloading = false;
 
 	/**
 	 * get time period

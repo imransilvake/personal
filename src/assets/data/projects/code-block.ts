@@ -8,16 +8,12 @@ const codeBlock = [
 		text: 'coffee = <span>new</span> Coffee(),'
 	},
 	{
-		classes: [],
-		text: 'ingredients = {'
+		classes: ['ik-orange'],
+		text: 'ingredients = <span>new</span> Ingredients(),'
 	},
 	{
-		classes: ['ik-pink', 'ik-pink'],
-		text: 'milk: <span>true</span>, sugar: <span>true</span>'
-	},
-	{
-		classes: [],
-		text: '};'
+		classes: ['ik-orange'],
+		text: 'code = <span>new</span> Code();'
 	},
 	{
 		classes: [],
@@ -25,23 +21,23 @@ const codeBlock = [
 	},
 	{
 		classes: ['ik-orange', 'ik-green'],
-		text: '<span>if</span> (cup.<span>empty</span>) {'
+		text: '<span>if</span> (cup.<span>empty</span>)'
 	},
 	{
 		classes: ['ik-green'],
 		text: 'cup.<span>fill</span>(coffee, ingredients);'
 	},
 	{
-		classes: ['ik-orange'],
-		text: '} <span>else</span> {'
+		classes: [],
+		text: '<br>'
 	},
 	{
 		classes: ['ik-green'],
 		text: 'cup.<span>drink</span>();'
 	},
 	{
-		classes: [],
-		text: '}'
+		classes: ['ik-green'],
+		text: 'code.<span>startWork</span>();'
 	}
 ];
 export default codeBlock;
