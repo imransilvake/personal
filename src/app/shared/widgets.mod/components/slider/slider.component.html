@@ -2,7 +2,9 @@
 		 (swipeleft)="onSwipe(0)"
 		 (swiperight)="onSwipe(1)">
 	<!-- Projection -->
-	<ng-content></ng-content>
+	<div class="ik-content">
+		<ng-content></ng-content>
+	</div>
 
 	<!-- Dots Navigation -->
 	<div class="ik-dots" *ngIf="showDotsNavigation">

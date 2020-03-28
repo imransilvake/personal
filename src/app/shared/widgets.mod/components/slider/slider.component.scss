@@ -1,6 +1,20 @@
 @import 'scss-methods';
 
 .ik-slider {
+	.ik-content {
+		position: relative;
+
+		&::after {
+			background-color: transparent;
+			bottom: 0;
+			content: '';
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
 	.ik-dots {
 		padding: 5px 0;
 		text-align: center;
