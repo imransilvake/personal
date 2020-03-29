@@ -8,7 +8,7 @@
 					<ul class="ik-items ik-remove-bullets">
 						<li *ngFor="let item of navigationTop">
 							<ng-container *ngIf="item.id === navigationTopLanguage">
-								{{ item['name'] }}
+								<app-language-switch></app-language-switch>
 							</ng-container>
 						</li>
 					</ul>

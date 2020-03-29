@@ -27,7 +27,7 @@ import notifications from '../assets/data/other/notifications';
 
 		<!-- Router Outlet -->
 		<router-outlet></router-outlet>
-		
+
 		<!-- Footer -->
 		<app-footer></app-footer>
 

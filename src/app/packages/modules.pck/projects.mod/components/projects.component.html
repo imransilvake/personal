@@ -28,9 +28,11 @@
 				<div class="cd-col cd-col-pm-t-6 cd-col-pm-d-6">
 					<ul>
 						<ng-container *ngFor="let pFilter of projects['filters']">
-							<li [class.ik-active]="pFilter.id === filter.value.id"
-								[routerLink]="['/' + routing.pages.projects, pFilter.id]">
-								<h6>{{ pFilter.text }}</h6>
+							<li>
+								<a [class.ik-active]="pFilter.id === filter.value.id"
+								   [routerLink]="['/' + routing.pages.projects, pFilter.id]">
+									{{ pFilter.text }}
+								</a>
 							</li>
 						</ng-container>
 					</ul>

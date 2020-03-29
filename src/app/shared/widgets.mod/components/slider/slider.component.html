@@ -9,10 +9,10 @@
 	<!-- Dots Navigation -->
 	<div class="ik-dots" *ngIf="showDotsNavigation">
 		<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
-			<span class="ik-dot"
+			<button class="ik-dot"
 				  [class.ik-active]="activeSlideIndex === idx"
 				  (click)="activeSlideIndex !== idx && onClickChangeSlide(idx, item)">
-			</span>
+			</button>
 		</ng-container>
 	</div>
 </section>

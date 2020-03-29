@@ -13,7 +13,7 @@ import { WidgetsModule } from './shared/widgets.mod/widgets.module';
 	imports: [
 		// angular
 		BrowserModule,
-		RouterModule.forRoot(APP_ROUTES, { onSameUrlNavigation: 'reload' }),
+		RouterModule.forRoot(APP_ROUTES),
 
 		// libraries
 		HammerModule,

@@ -11,20 +11,21 @@
 				{{item['title']}}
 			</h6>
 
-			<!-- Link -->
+			<!-- Link: Website -->
 			<a *ngIf="item['actions']['link']"
 			   (click)="onClickOpenLink(item['actions']['link'])">
 				<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
 				{{item['title']}}
 			</a>
 
-			<!-- Badge -->
-			<p [routerLink]="['/' + filterRoute, item['controls']['filter']]"
+			<!-- Link: Filter -->
+			<a [routerLink]="['/' + filterRoute, item['controls']['filter']]"
+			   class="ik-filter"
 			   [class.ik-scss]="item['controls']['filter'] === 'scss'"
 			   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
 			   [class.ik-php]="item['controls']['filter'] === 'php'">
 				{{item['controls']['filter']}}
-			</p>
+			</a>
 		</li>
 	</ul>
 </section>

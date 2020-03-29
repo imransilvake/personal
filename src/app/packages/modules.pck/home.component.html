@@ -79,7 +79,7 @@
 					<!-- Social Network -->
 					<section class="ik-card ik-card-padding ik-block ik-social">
 						<ng-container *ngFor="let item of socialNetwork['items']">
-							<div class="ik-item cd-tooltip {{item['class']}}"
+							<a class="ik-item cd-tooltip {{item['class']}}"
 								 (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
 								<!-- Image -->
 								<img *ngIf="!!item['photo']"
@@ -94,7 +94,7 @@
 
 								<!-- Name -->
 								<span class="cd-arrow cd-bottom">{{item['name']}}</span>
-							</div>
+							</a>
 						</ng-container>
 					</section>
 				</div>

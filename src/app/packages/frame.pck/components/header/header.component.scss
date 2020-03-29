@@ -75,6 +75,7 @@ header {
 							a {
 								&.ik-active {
 									color: var(--c8);
+									cursor: default;
 								}
 							}
 						}

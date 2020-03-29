@@ -3,8 +3,7 @@ import { NavigationTopTypesEnum } from '../../../app/packages/frame.pck/enums/na
 
 const navigationTop = [
 	{
-		id: NavigationTopTypesEnum.TYPE_LANGUAGE,
-		name: 'Language'
+		id: NavigationTopTypesEnum.TYPE_LANGUAGE
 	}
 ];
 export default navigationTop;

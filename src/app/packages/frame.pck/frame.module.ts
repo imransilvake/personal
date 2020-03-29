@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 import { WidgetsModule } from '../../shared/widgets.mod/widgets.module';
+import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
 
 @NgModule({
 	imports: [
@@ -18,7 +19,8 @@ import { WidgetsModule } from '../../shared/widgets.mod/widgets.module';
 		E404Component,
 		HeaderComponent,
 		FooterComponent,
-		ScrollTopComponent
+		ScrollTopComponent,
+		LanguageSwitchComponent
 	],
 	exports: [
 		HeaderComponent,
