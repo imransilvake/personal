@@ -6,7 +6,6 @@
 	height: 30px;
 	position: relative;
 	text-align: center;
-	transition: .3s ease all;
 	width: 100px;
 
 	.ik-active {
@@ -35,7 +34,6 @@
 		outline: none;
 		position: relative;
 		text-transform: uppercase;
-		transition: .3s ease all;
 		width: 50%;
 
 		&:hover {
@@ -45,6 +43,7 @@
 		&.ik-on {
 			color: var(--c2);
 			cursor: default;
+			transition: .3s ease color;
 		}
 	}
 }
