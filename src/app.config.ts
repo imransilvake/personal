@@ -14,8 +14,9 @@ export const AppOptions = {
 
 // local-storage items
 export const LocalStorageItems = {
-	colorMode: 'ik-color-mode',
-	fontSize: 'ik-font-size'
+	themeColorMode: 'ik-c',
+	fontSizeMode: 'ik-fs',
+	languageMode: 'ik-l',
 };
 
 // app links

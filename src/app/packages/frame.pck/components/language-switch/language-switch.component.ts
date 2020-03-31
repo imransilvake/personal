@@ -1,8 +1,10 @@
 // angular
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // app
-import { AppOptions } from '../../../../../app.config';
+import { AppOptions, LocalStorageItems } from '../../../../../app.config';
+import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
+import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
 
 @Component({
 	selector: 'app-language-switch',
@@ -10,14 +12,32 @@ import { AppOptions } from '../../../../../app.config';
 	styleUrls: ['./language-switch.component.scss']
 })
 
-export class LanguageSwitchComponent {
+export class LanguageSwitchComponent implements OnInit {
 	public appLanguages = AppOptions.languages;
 	public languageSwitcher = true;
 
+	constructor(private _storageService: StorageService) {
+	}
+
+	ngOnInit() {
+		// setup language mode
+		this.onClickChangeLanguage(true);
+	}
+
 	/**
 	 * on language change
+	 * @param init
 	 */
-	public onClickChangeLanguage() {
-		this.languageSwitcher = !this.languageSwitcher;
+	public onClickChangeLanguage(init?: boolean) {
+		// get languageMode from local storage
+		const languageMode = this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages['en'];
+		const reverse = (languageMode === AppOptions.languages['en']) ? AppOptions.languages['de'] : AppOptions.languages['en'];
+		const value = init ? languageMode : reverse;
+		this.languageSwitcher = value === AppOptions.languages['en'];
+
+		// update app language
+
+		// update to local storage
+		this._storageService.put(LocalStorageItems.languageMode, value, StorageTypeEnum.PERSISTANT);
 	}
 }

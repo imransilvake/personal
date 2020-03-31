@@ -18,9 +18,7 @@
 		"serve.app.prod-de": "ng serve -c prod-de --port 4002",
 		"build.app.prod-de": "ng build -c prod-de",
 		"lint:ts": "ng lint",
-		"lint:scss": "stylelint \"src/**/*.scss\" --syntax scss",
-		"translate": "ng xi18n --output-path locale --out-file translation-temp.xlf",
-		"translate:ts": "ngx-extractor --input=src/**/*.ts --format=xlf --out-file=src/locale/translation-temp.xlf"
+		"lint:scss": "stylelint \"src/**/*.scss\" --syntax scss"
 	},
 	"dependencies": {
 		"@angular/animations": "^9.0.6",
@@ -28,7 +26,6 @@
 		"@angular/compiler": "^9.0.6",
 		"@angular/core": "^9.0.6",
 		"@angular/forms": "^9.0.6",
-		"@angular/localize": "^9.0.6",
 		"@angular/platform-browser": "^9.0.6",
 		"@angular/platform-browser-dynamic": "^9.0.6",
 		"@angular/router": "^9.0.6",
