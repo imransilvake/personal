@@ -5,8 +5,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // app
-import { AccessoriesModule } from '../packages/utilities.pck/accessories.mod/accessories.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TranslateModule } from '@ngx-translate/core';
+import { AccessoriesModule } from '../packages/utilities.pck/accessories.mod/accessories.module';
 
 @NgModule({
 	exports: [
@@ -15,7 +16,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 		FormsModule,
 		ReactiveFormsModule,
 		AccessoriesModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		TranslateModule
 	]
 })
 

@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // app
+import { TranslateService } from '@ngx-translate/core';
 import { AppOptions, LocalStorageItems } from '../../../../../app.config';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
@@ -16,7 +17,10 @@ export class LanguageSwitchComponent implements OnInit {
 	public appLanguages = AppOptions.languages;
 	public languageSwitcher = true;
 
-	constructor(private _storageService: StorageService) {
+	constructor(
+		private _storageService: StorageService,
+		private _translate: TranslateService
+	) {
 	}
 
 	ngOnInit() {
@@ -36,6 +40,7 @@ export class LanguageSwitchComponent implements OnInit {
 		this.languageSwitcher = value === AppOptions.languages['en'];
 
 		// update app language
+		this._translate.use(value);
 
 		// update to local storage
 		this._storageService.put(LocalStorageItems.languageMode, value, StorageTypeEnum.PERSISTANT);
