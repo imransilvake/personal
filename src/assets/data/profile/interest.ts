@@ -3,7 +3,7 @@ const profileInterest = {
 	list: [
 		'Anime',
 		'Travel',
-		'Photogrpahy',
+		'photography',
 		'Music',
 		'Arts',
 		'Books',
