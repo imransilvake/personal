@@ -1,10 +1,30 @@
 {
+	"Common": {
+		"Designation": "Frontend Entwickler",
+		"Terms": {
+			"Knowledge": "Wissen",
+			"Learning": "Lernen",
+			"Next": "Nächste",
+			"Playing": "Spielen",
+			"Company": "Unternehmen",
+			"Technologies": "Technologien"
+		}
+	},
 	"Home": {
 		"Profile_Summary": {
-			"Greetings": "HALLO",
-			"Sub_Title": "HALLO",
-			"Title": "HALLO",
-			"Excerpt": "ok"
+			"Greetings": {
+				"One": "Hallo, ",
+				"Two": "Ich bin {{ name }}"
+			}
+		}
+	},
+	"Profile": {
+		"Summary": {
+			"Title": "Überblick",
+			"Description": {
+				"One": "Ich bin ein engagierter, kreativer und zuverlässiger Frontend-Entwickler mit nachgewiesenen Kenntnissen in HTML5, CSS3, SCSS, Javascript, Typescript, Angular, React und mehr. Ich habe auch Grundkenntnisse in Backend-Technologien (z. B. NodeJs, ExpressJs) mit MongoDB- und Firebase-Datenbanken.",
+				"Two": "Ich genieße es, makellose UX / UI zu entwerfen und zu entwickeln, die für die Benutzer intuitiv und angenehm ist. Ich habe eine Leidenschaft für das Lernen und ich liebe es wirklich, Apps von Grund auf neu zu erstellen und möchte in einem freundlich organisierten Team und Umfeld arbeiten. Ich lerne leidenschaftlich gerne neue Funktionen und Technologien kennen."
+			}
 		}
 	}
 }

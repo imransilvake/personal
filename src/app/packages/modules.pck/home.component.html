@@ -10,29 +10,32 @@
 							<!-- Cover -->
 							<div class="ik-cover ik-image-fixed ik-two">
 								<img class="ik-bg-loader ik-loader-white"
-									 [src]="'assets/images/profile/' + profileInfo['summary']['avatar']['cover'] + '.jpg'"
-									 [alt]="profileInfo['summary']['avatar']['cover']"/>
+									 [src]="'assets/images/profile/' + profileInfo['summary']['display']['cover']"
+									 [alt]="profileInfo['summary']['display']['cover']"/>
 							</div>
 
-							<!-- Photo -->
+							<!-- Avatar -->
 							<div class="ik-photo">
-								<img [src]="'assets/images/profile/' + profileInfo['summary']['avatar']['photo'] + '.jpg'"
-									 [alt]="profileInfo['summary']['avatar']['name']"/>
+								<img [src]="'assets/images/profile/' + profileInfo['summary']['display']['avatar']"
+									 [alt]="profileInfo['summary']['display']['avatar']"/>
 							</div>
 						</div>
 
 						<div class="ik-detail">
 							<!-- Greetings -->
 							<h5>
-								<span>{{ profileInfo['summary']['detail']['greetings'] }}, </span>
-								<span>{{ profileInfo['summary']['detail']['subTitle'] }}</span>
+								<span>{{ profileInfo['summary']['detail']['greetings']['one'] | translate }}</span>
+								<span>
+									{{ profileInfo['summary']['detail']['greetings']['two'] | translate:
+                                    {name: profileInfo['summary']['detail']['name']} }}
+								</span>
 							</h5>
 
-							<!-- Title -->
-							<h4>{{ profileInfo['summary']['detail']['title'] }}</h4>
+							<!-- Designation -->
+							<h4>{{ profileInfo['summary']['detail']['designation'] | translate }}</h4>
 
 							<!-- Excerpt -->
-							<p>{{ profileInfo['summary']['detail']['excerpt'] }}</p>
+							<p>{{ profileInfo['summary']['detail']['excerpt'] | translate }}</p>
 						</div>
 					</section>
 
@@ -80,7 +83,7 @@
 					<section class="ik-card ik-card-padding ik-block ik-social">
 						<ng-container *ngFor="let item of socialNetwork['items']">
 							<a class="ik-item cd-tooltip {{item['class']}}"
-								 (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
+							   (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
 								<!-- Image -->
 								<img *ngIf="!!item['photo']"
 									 [src]="'assets/svg/home/social/' + item['photo'] + '.svg'"

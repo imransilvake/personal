@@ -5,7 +5,7 @@ const infoBoard = {
 			photo: 'office.svg',
 			items: [
 				{
-					title: 'Company',
+					title: 'Common.Terms.Company',
 					items: [
 						{
 							name: 'TourismusSuite GmbH'
@@ -13,7 +13,7 @@ const infoBoard = {
 					]
 				},
 				{
-					title: 'Technologies',
+					title: 'Common.Terms.Technologies',
 					items: [
 						{
 							name: 'Angular'
@@ -32,7 +32,7 @@ const infoBoard = {
 			photo: 'work.svg',
 			items: [
 				{
-					title: 'Learning',
+					title: 'Common.Terms.Learning',
 					items: [
 						{
 							name: 'NativeScript'
@@ -43,7 +43,7 @@ const infoBoard = {
 					]
 				},
 				{
-					title: 'Next',
+					title: 'Common.Terms.Next',
 					items: [
 						{
 							name: 'React Native'
@@ -59,7 +59,7 @@ const infoBoard = {
 			photo: 'controller.svg',
 			items: [
 				{
-					title: 'Playing',
+					title: 'Common.Terms.Playing',
 					items: [
 						{
 							name: 'Horizon Zero Dawn'
@@ -70,7 +70,7 @@ const infoBoard = {
 					]
 				},
 				{
-					title: 'Next',
+					title: 'Common.Terms.Next',
 					items: [
 						{
 							name: 'Cyberpunk 2077'

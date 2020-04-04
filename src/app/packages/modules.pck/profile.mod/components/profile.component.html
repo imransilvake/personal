@@ -4,17 +4,17 @@
 		<div class="cd-container">
 			<div class="cd-row cd-center-align">
 				<div class="cd-col">
-					<!-- Logo -->
+					<!-- Avatar -->
 					<div class="ik-profile-logo">
-						<img [src]="'assets/images/profile/' + profileIntro['photo'] + '.jpg'"
-							 [alt]="profileIntro['name']"/>
+						<img [src]="'assets/images/profile/' + profileIntro['avatar']"
+							 [alt]="profileIntro['avatar']"/>
 					</div>
 
 					<!-- Name -->
 					<h1>{{ profileIntro['name'] }}</h1>
 
 					<!-- Designation -->
-					<h5 class="ik-font-poiret">{{ profileIntro['title'] }}</h5>
+					<h5 class="ik-font-poiret">{{ profileIntro['designation'] | translate }}</h5>
 				</div>
 			</div>
 		</div>
@@ -28,11 +28,11 @@
 				<div class="cd-row">
 					<div class="cd-col">
 						<!-- Title -->
-						<h2>{{ profileSummary['title'] }}</h2>
+						<h2>{{ profileSummary['title'] | translate }}</h2>
 
 						<!-- Description -->
-						<ng-container *ngFor="let para of profileSummary['description']">
-							<p>{{ para }}</p>
+						<ng-container *ngFor="let paragraph of profileSummary['description']">
+							<p>{{ paragraph | translate }}</p>
 						</ng-container>
 					</div>
 				</div>

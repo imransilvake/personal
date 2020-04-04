@@ -8,7 +8,7 @@ const profileSkills = {
 					photo: 'angular.svg',
 					items: [
 						{
-							title: 'Knowledge',
+							title: 'Common.Terms.Knowledge',
 							items: [
 								{
 									name: 'Lifecycle Hooks'
@@ -74,7 +74,7 @@ const profileSkills = {
 					photo: 'react.svg',
 					items: [
 						{
-							title: 'Knowledge',
+							title: 'Common.Terms.Knowledge',
 							items: [
 								{
 									name: 'Lifecycle Hooks'
@@ -99,21 +99,13 @@ const profileSkills = {
 							]
 						},
 						{
-							title: 'Learning',
+							title: 'Common.Terms.Learning',
 							items: [
 								{
 									name: 'Hooks'
 								},
 								{
 									name: 'Axios'
-								}
-							]
-						},
-						{
-							title: 'Todos',
-							items: [
-								{
-									name: 'Apollo Client'
 								}
 							]
 						}
@@ -128,7 +120,7 @@ const profileSkills = {
 					photo: 'nativescript.svg',
 					items: [
 						{
-							title: 'Knowledge',
+							title: 'Common.Terms.Knowledge',
 							items: [
 								{
 									name: 'Lifecycle Hooks'

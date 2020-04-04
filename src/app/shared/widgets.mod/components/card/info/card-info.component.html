@@ -10,7 +10,7 @@
 		 [class.ik-card]="infoCardClass"
 		 [class.ik-auto-height]="infoAutoHeight">
 		<ng-container *ngFor="let block of infoData['items']; let l=last;">
-			<h6>{{ block['title'] }}</h6>
+			<h6>{{ block['title'] | translate }}</h6>
 			<ul [class.ik-list-one]="!l">
 				<ng-container *ngFor="let blockItem of block['items']">
 					<li>

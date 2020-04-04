@@ -4,16 +4,17 @@ import profileSummary from '../profile/summery';
 
 const profileInfo = {
 	summary: {
-		avatar: {
-			name: profileIntro.name,
-			photo: profileIntro.photo,
+		display: {
+			avatar: profileIntro.avatar,
 			cover: profileIntro.cover
 		},
 		detail: {
+			greetings: {
+				one: 'Home.Profile_Summary.Greetings.One',
+				two: 'Home.Profile_Summary.Greetings.Two'
+			},
 			name: profileIntro.name,
-			title: profileIntro.title,
-			greetings: `Hello`,
-			subTitle: `I'M ${profileIntro.name}.`,
+			designation: profileIntro.designation,
 			excerpt: profileSummary.description[0]
 		}
 	}
