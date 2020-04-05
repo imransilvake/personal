@@ -79,7 +79,9 @@
 						<section class="ik-education">
 							<!-- Title & SubTitle -->
 							<h2>{{ profileEducation['title'] | translate }}</h2>
-							<h6>{{ profileEducation['subTitle'] }}</h6>
+							<h6 [translate]="profileEducation['subTitle']['text']"
+								[translateParams]="{type: profileEducation['subTitle']['type'] | translate}">
+							</h6>
 
 							<!-- List -->
 							<div class="ik-list-wrapper">
@@ -93,8 +95,17 @@
 											</div>
 										</div>
 										<div class="ik-right">
-											<h5>{{ education['degree'] }}</h5>
-											<p>{{ education['info'] }}</p>
+											<h5 [translate]="profileEducation['university_name']"
+												[translateParams]="{name: education['name']}">
+											</h5>
+											<p [translate]="profileEducation['university_info']"
+											   [translateParams]="{
+                                                    type: education['type'] | translate,
+                                                    degree: education['degree'] | translate,
+                                                    year: education['year'],
+                                                    country: education['country'] | translate
+                                               }">
+											</p>
 										</div>
 									</li>
 								</ul>
@@ -107,7 +118,9 @@
 						<section class="ik-experience">
 							<!-- Title & SubTitle -->
 							<h2>{{ profileExperience['title'] | translate }}</h2>
-							<h6>{{ profileExperience['subTitle'] }}</h6>
+							<h6 [translate]="profileExperience['subTitle']['text']"
+								[translateParams]="{type: profileExperience['subTitle']['type'] | translate}">
+							</h6>
 
 							<!-- List -->
 							<div class="ik-list-wrapper">
@@ -126,7 +139,12 @@
 											</div>
 										</div>
 										<div class="ik-right">
-											<h5>{{ exp['designation'] }}</h5>
+											<h5 [translate]="profileExperience['designation_info']"
+												[translateParams]="{
+													designation: exp['designation'] | translate,
+                                                    type: exp['type'] | translate
+												}">
+											</h5>
 											<p>{{ exp['company'] }}, {{ getTP(exp['period']) }}
 												<ng-container *ngIf="exp['period'].length === 1">
 													<span> - </span>

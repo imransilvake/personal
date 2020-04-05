@@ -24,10 +24,9 @@
 						<div class="ik-detail">
 							<!-- Greetings -->
 							<h5>
-								<span>{{ profileInfo['summary']['detail']['greetings']['one'] | translate }}</span>
-								<span>
-									{{ profileInfo['summary']['detail']['greetings']['two'] | translate:
-                                    {name: profileInfo['summary']['detail']['name']} }}
+								<span>{{ profileInfo['summary']['detail']['greetings']['text']['one'] | translate }}</span>
+								<span [translate]="profileInfo['summary']['detail']['greetings']['text']['two']"
+									  [translateParams]="{name: profileInfo['summary']['detail']['greetings']['name']}">
 								</span>
 							</h5>
 

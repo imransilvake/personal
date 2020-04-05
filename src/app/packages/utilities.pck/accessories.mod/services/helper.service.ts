@@ -4,9 +4,14 @@ import { fromEvent } from 'rxjs';
 
 // app
 import * as moment from 'moment';
+import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
+import { AppOptions, LocalStorageItems } from '../../../../../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class HelperService {
+	constructor(private _storageService: StorageService) {
+	}
+
 	/**
 	 * detect: scroll
 	 */
@@ -25,9 +30,12 @@ export class HelperService {
 	 * fetch date in human readable format
 	 * @param date
 	 * @param dateFormat
+	 * @param isLocale
 	 */
-	public static getDate(date: any, dateFormat?: string) {
+	public getDate(date: any, dateFormat?: string,  isLocale= true) {
 		const format = dateFormat ? dateFormat : 'MMMM YYYY';
-		return moment(date, 'MM-YYYY').format(format);
+		const language = this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages['en'];
+		const locale = isLocale ? language : AppOptions.languages['en'];
+		return moment(date, 'MM-YYYY').locale(locale).format(format);
 	}
 }

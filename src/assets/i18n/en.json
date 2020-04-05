@@ -1,8 +1,8 @@
 {
 	"Common": {
 		"Designation": "Frontend Developer",
-		"Made_With": "Made with",
 		"Terms": {
+			"Developer": "Developer",
 			"Knowledge": "Knowledge",
 			"Learning": "Learning",
 			"Next": "Next",
@@ -27,7 +27,14 @@
 			"Profile": "Profile",
 			"Projects": "Projects",
 			"Photography": "Photography"
-		}
+		},
+		"Designations": {
+			"Frontend": "Frontend",
+			"PHP": "PHP",
+			"PHP_WordPress": "PHP & WordPress",
+			"WordPress": "WordPress"
+		},
+		"Made_With": "Made with"
 	},
 	"Home": {
 		"Profile_Summary": {
@@ -56,7 +63,27 @@
 			"Styles": "Styles",
 			"Libraries": "Libraries",
 			"Database": "Database",
-			"Miscellaneous": "Miscellaneous"
+			"Miscellaneous": "Miscellaneous",
+			"Bachelor": "Bachelor",
+			"Masters": "Master",
+			"Computer_Science": "Computer Science",
+			"Month": "Month",
+			"Months": "Months",
+			"Year": "Year",
+			"Years": "Years"
+		},
+		"Countries": {
+			"Pakistan": "Pakistan",
+			"Germany": "Germany"
+		},
+		"Education": {
+			"Sub_Title": "{{ type }} Graduate",
+			"University_Name": "{{ name }} University",
+			"University_Info": "{{ type }}, {{ degree }}, {{ year }}, {{ country }}"
+		},
+		"Experience": {
+			"Sub_Title": "{{ type }} at TourismusSuite",
+			"Designation_Info": "{{ designation }} {{ type }}"
 		}
 	},
 	"Projects": {

@@ -27,13 +27,16 @@ export class ProfileComponent {
 	public profileLanguage = profileLanguage;
 	public profileInterest = profileInterest;
 
+	constructor(private _helperService: HelperService) {
+	}
+
 	/**
 	 * get time period
 	 * @param period
 	 */
 	public getTP(period) {
-		const start = HelperService.getDate(period[0]);
-		const end = period.length === 1 ? '' : HelperService.getDate(period[1]);
+		const start = this._helperService.getDate(period[0]);
+		const end = period.length === 1 ? '' : this._helperService.getDate(period[1]);
 		return end ? `${start} - ${end}` : start;
 	}
 
@@ -43,8 +46,8 @@ export class ProfileComponent {
 	 */
 	public getTD(period) {
 		// dates
-		const start = HelperService.getDate(period[0]);
-		const end = period.length === 1 ? moment() : HelperService.getDate(period[1]);
+		const start = this._helperService.getDate(period[0], null, false);
+		const end = period.length === 1 ? moment() : this._helperService.getDate(period[1], null, false);
 		const startM = moment(start, 'MMMM-YYYY');
 		const endM = moment(end, 'MMMM-YYYY');
 

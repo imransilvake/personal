@@ -1,18 +1,27 @@
 const profileEducation = {
 	title: 'Profile.Terms.Education',
-	subTitle: 'MS Graduate',
+	subTitle: {
+		text: 'Profile.Education.Sub_Title',
+		type: 'Profile.Terms.Masters',
+	},
+	university_name: 'Profile.Education.University_Name',
+	university_info: 'Profile.Education.University_Info',
 	education: [
 		{
-			name: 'BONN University',
+			name: 'BONN',
 			logo: 'bonn',
-			degree: 'MS in Computer Science',
-			info: 'IT, Informatics, 2015 - 2017, Germany'
+			type: 'Profile.Terms.Masters',
+			degree: 'Profile.Terms.Computer_Science',
+			country: 'Profile.Countries.Germany',
+			year: '2015 - 2017'
 		},
 		{
-			name: 'COMSATS University',
+			name: 'COMSATS',
 			logo: 'comsats',
-			degree: 'Bachelors in Computer Science',
-			info: 'IT, Informatics, 2010 - 2014, Pakistan'
+			type: 'Profile.Terms.Bachelor',
+			degree: 'Profile.Terms.Computer_Science',
+			country: 'Profile.Countries.Pakistan',
+			year: '2010 - 2014'
 		}
 	]
 };

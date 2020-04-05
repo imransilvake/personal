@@ -10,10 +10,12 @@ const profileInfo = {
 		},
 		detail: {
 			greetings: {
-				one: 'Home.Profile_Summary.Greetings.One',
-				two: 'Home.Profile_Summary.Greetings.Two'
+				text: {
+					one: 'Home.Profile_Summary.Greetings.One',
+					two: 'Home.Profile_Summary.Greetings.Two'
+				},
+				name: profileIntro.name
 			},
-			name: profileIntro.name,
 			designation: profileIntro.designation,
 			excerpt: profileSummary.description[0]
 		}
