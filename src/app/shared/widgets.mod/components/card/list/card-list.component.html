@@ -1,6 +1,6 @@
 <section class="ik-list-card">
 	<!-- Title -->
-	<h5 class="ik-title">{{listData['title']}}</h5>
+	<h5 class="ik-title">{{ listData['title'] | translate }}</h5>
 
 	<!-- List -->
 	<ul>
@@ -8,14 +8,14 @@
 			<!-- Title -->
 			<h6 *ngIf="!item['actions']['link']">
 				<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
-				{{item['title']}}
+				{{ item['title'] }}
 			</h6>
 
 			<!-- Link: Website -->
 			<a *ngIf="item['actions']['link']"
 			   (click)="onClickOpenLink(item['actions']['link'])">
 				<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
-				{{item['title']}}
+				{{ item['title'] }}
 			</a>
 
 			<!-- Link: Filter -->
@@ -24,7 +24,7 @@
 			   [class.ik-scss]="item['controls']['filter'] === 'scss'"
 			   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
 			   [class.ik-php]="item['controls']['filter'] === 'php'">
-				{{item['controls']['filter']}}
+				{{ item['controls']['filter'] }}
 			</a>
 		</li>
 	</ul>

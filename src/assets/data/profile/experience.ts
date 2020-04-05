@@ -1,5 +1,5 @@
 const profileExperience = {
-	title: 'Experience',
+	title: 'Profile.Terms.Experience',
 	subTitle: 'Frontend Developer at TourismusSuite',
 	experience: [
 		{

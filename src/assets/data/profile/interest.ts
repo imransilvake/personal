@@ -1,5 +1,5 @@
 const profileInterest = {
-	title: 'Interests',
+	title: 'Profile.Terms.Interests',
 	list: [
 		'Anime',
 		'Travel',

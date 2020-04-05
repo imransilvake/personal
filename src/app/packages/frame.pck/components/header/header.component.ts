@@ -7,8 +7,8 @@ import { LocalStorageItems } from '../../../../../app.config';
 import { faFont, faTint } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { NavigationTopTypesEnum } from '../../enums/navigation-top-types.enum';
-import navigationTop from '../../../../../assets/data/other/navigation-top';
-import navigationBottom from 'src/assets/data/other/navigation-bottom';
+import navigationTop from '../../../../../assets/data/common/navigation-top';
+import navigationBottom from 'src/assets/data/common/navigation-bottom';
 
 declare const document: any;
 

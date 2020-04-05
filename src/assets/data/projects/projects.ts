@@ -2,10 +2,13 @@
 import { AppLinks } from '../../../app.config';
 
 const projects = {
+	search: {
+		placeholder: 'Projects.Search_Placeholder'
+	},
 	filters: [
 		{
 			id: 'all',
-			text: 'All'
+			text: 'Common.Terms.All'
 		},
 		{
 			id: 'scss',
@@ -115,7 +118,7 @@ const projects = {
 			description: {
 				excerpt: {
 					label: 'Excerpt',
-					text: 'While on stay in a hotel, guest can clean, send repair messages, view room key number and many other important details in an instant.'
+					text: 'While on stay in a hotel, guest can clean, send repair messages, view room key number and many common important details in an instant.'
 				},
 				tech: {
 					label: 'Technologies',

@@ -1,13 +1,32 @@
 {
 	"Common": {
 		"Designation": "Frontend Entwickler",
+		"Made_With": "Gemacht mit",
 		"Terms": {
 			"Knowledge": "Wissen",
 			"Learning": "Lernen",
 			"Next": "Nächste",
 			"Playing": "Spielen",
 			"Company": "Unternehmen",
-			"Technologies": "Technologien"
+			"Technologies": "Technologien",
+			"Top_Projects": "Top Projekte",
+			"All": "Alle",
+			"Todo": "Todo",
+			"Job": "Arbeit",
+			"Working_On": "Behandelnd",
+			"Coming_Soon": "In Kürze"
+		},
+		"Notifications": {
+			"One": "Ich suche derzeit nach neuen Möglichkeiten",
+			"Two": "Startseite",
+			"Three": "Mehrsprachenunterstützung (en/de)",
+			"Four": "Codeabschnitt",
+			"Five": "Optimierung der Geschwindigkeit von Fotoseiten"
+		},
+		"Navigation": {
+			"Profile": "Profil",
+			"Projects": "Projekte",
+			"Photography": "Fotografie"
 		}
 	},
 	"Home": {
@@ -25,6 +44,25 @@
 				"One": "Ich bin ein engagierter, kreativer und zuverlässiger Frontend-Entwickler mit nachgewiesenen Kenntnissen in HTML5, CSS3, SCSS, Javascript, Typescript, Angular, React und mehr. Ich habe auch Grundkenntnisse in Backend-Technologien (z. B. NodeJs, ExpressJs) mit MongoDB- und Firebase-Datenbanken.",
 				"Two": "Ich genieße es, makellose UX / UI zu entwerfen und zu entwickeln, die für die Benutzer intuitiv und angenehm ist. Ich habe eine Leidenschaft für das Lernen und ich liebe es wirklich, Apps von Grund auf neu zu erstellen und möchte in einem freundlich organisierten Team und Umfeld arbeiten. Ich lerne leidenschaftlich gerne neue Funktionen und Technologien kennen."
 			}
+		},
+		"Terms": {
+			"Skills": "Kompetenzen",
+			"Education": "Bildung",
+			"Experience": "Erfahrung",
+			"Languages": "Sprachen",
+			"Interests": "Interessen",
+			"Programming_Languages": "Programmiersprachen",
+			"Authentication": "Authentifizierung",
+			"Styles": "Stile",
+			"Libraries": "Bibliotheken",
+			"Database": "Datenbank",
+			"Miscellaneous": "Sonstiges"
 		}
+	},
+	"Projects": {
+		"Search_Placeholder": "Suche"
+	},
+	"Photography": {
+		"Excerpt": "Reisen macht Spaß"
 	}
 }

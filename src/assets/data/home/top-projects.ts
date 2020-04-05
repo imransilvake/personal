@@ -2,7 +2,7 @@
 import projects from '../projects/projects';
 
 const topProjects = {
-	title: 'Top Projects',
+	title: 'Common.Terms.Top_Projects',
 	items: projects.items.filter(x => !!x.controls.recent)
 };
 export default topProjects;

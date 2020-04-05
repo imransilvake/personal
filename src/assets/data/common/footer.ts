@@ -1,4 +1,4 @@
 const footer = {
-	title: 'Made with '
+	title: 'Common.Made_With'
 };
 export default footer;

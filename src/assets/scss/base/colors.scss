@@ -34,6 +34,7 @@ $color6: #dddddd;
 	--tc2: #{$color3};
 	--tc3: #{$color6};
 	--tc4: #{$color1};
+	--tc5: #{$color2};
 }
 
 [data-theme='dark'] {
@@ -45,6 +46,7 @@ $color6: #dddddd;
 	--tc2: #{$color5};
 	--tc3: #{$color3};
 	--tc4: #{$color4};
+	--tc5: #{$color4};
 }
 
 /**
@@ -55,5 +57,6 @@ tc1			black_light 	-> 	white
 tc2			black_light 	-> 	grey
 tc3			white_light 	-> 	black_light
 tc4			white			-> 	black
+tc5			white_light		-> 	black
 -------------------------------------------
  */

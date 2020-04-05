@@ -1,5 +1,5 @@
 const profileSkills = {
-	title: 'Skills',
+	title: 'Profile.Terms.Skills',
 	icons: [
 		{
 			id: 'javascript',
@@ -64,7 +64,7 @@ const profileSkills = {
 	],
 	skills: [
 		{
-			title: 'Programming Languages',
+			title: 'Profile.Terms.Programming_Languages',
 			items: ['JavaScript', 'TypeScript', 'PHP']
 		},
 		{
@@ -72,23 +72,23 @@ const profileSkills = {
 			items: ['Angular', 'React', 'NativeScript']
 		},
 		{
-			title: 'Authentication',
+			title: 'Profile.Terms.Authentication',
 			items: ['oAuth', 'AWS Amplify']
 		},
 		{
-			title: 'Styles',
+			title: 'Profile.Terms.Styles',
 			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Design', 'Cross-Browser Compatibility']
 		},
 		{
-			title: 'Libraries',
+			title: 'Profile.Terms.Libraries',
 			items: ['RxJs', 'MomentJs', 'NumeralJs', 'HammerJs', 'Lodash']
 		},
 		{
-			title: 'Database',
+			title: 'Profile.Terms.Database',
 			items: ['Firebase', 'MongoDB', 'MySQL']
 		},
 		{
-			title: 'Tools / Systems / Services',
+			title: 'Profile.Terms.Miscellaneous',
 			items: ['NPM', 'Yarn', 'Git', 'Jira', 'Confluence', 'WebStorm', 'VSC', 'Mac OS', 'Ubuntu']
 		}
 	]

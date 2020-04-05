@@ -3,15 +3,15 @@ import { ROUTING } from '../../../environments/environment';
 
 const navigationBottom = [
 	{
-		name: 'Profile',
+		name: 'Common.Navigation.Profile',
 		link: `/${ROUTING.pages.profile}`
 	},
 	{
-		name: 'Projects',
+		name: 'Common.Navigation.Projects',
 		link: `/${ROUTING.pages.projects}`
 	},
 	{
-		name: 'Photography',
+		name: 'Common.Navigation.Photography',
 		link: `/${ROUTING.pages.photography}`
 	}
 ];

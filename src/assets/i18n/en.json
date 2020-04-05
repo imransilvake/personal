@@ -1,13 +1,32 @@
 {
 	"Common": {
 		"Designation": "Frontend Developer",
+		"Made_With": "Made with",
 		"Terms": {
 			"Knowledge": "Knowledge",
 			"Learning": "Learning",
 			"Next": "Next",
 			"Playing": "Playing",
 			"Company": "Company",
-			"Technologies": "Technologies"
+			"Technologies": "Technologies",
+			"Top_Projects": "Top Projects",
+			"All": "All",
+			"Todo": "Todo",
+			"Job": "Job",
+			"Working_On": "Working On",
+			"Coming_Soon": "Coming Soon"
+		},
+		"Notifications": {
+			"One": "I am currently looking out for new opportunities",
+			"Two": "Home Page",
+			"Three": "Multi-Language Support (en/de)",
+			"Four": "Code Section",
+			"Five": "Photography page speed optimization"
+		},
+		"Navigation": {
+			"Profile": "Profile",
+			"Projects": "Projects",
+			"Photography": "Photography"
 		}
 	},
 	"Home": {
@@ -25,6 +44,25 @@
 				"One": "I am dedicated, creative and dependable Frontend Developer with demonstrated skills in HTML5, CSS3, SCSS, Javascript, Typescript, Angular, React and more. I also have a basic knowledge of Backend Technologies (e.g, NodeJs, ExpressJs) with MongoDB and Firebase databases.",
 				"Two": "I enjoy designing and developing pristine UX/UI which is intuitive and pleasing for the users. I have a passion for learning and I really love to build apps from scratch and want to work in a friendly organized team and environment. I am passionate to learn about new features and technologies."
 			}
+		},
+		"Terms": {
+			"Skills": "Skills",
+			"Education": "Education",
+			"Experience": "Experience",
+			"Languages": "Languages",
+			"Interests": "Interests",
+			"Programming_Languages": "Programming Languages",
+			"Authentication": "Authentication",
+			"Styles": "Styles",
+			"Libraries": "Libraries",
+			"Database": "Database",
+			"Miscellaneous": "Miscellaneous"
 		}
+	},
+	"Projects": {
+		"Search_Placeholder": "Search"
+	},
+	"Photography": {
+		"Excerpt": "Travel is fun"
 	}
 }

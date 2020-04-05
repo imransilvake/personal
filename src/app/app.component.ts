@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import { AppOptions } from '../app.config';
 import { ScrollTopService } from './packages/utilities.pck/accessories.mod/services/scroll-top.service';
 import { CardViewEnum } from './shared/widgets.mod/enums/card-view.enum';
-import notifications from '../assets/data/other/notifications';
+import notifications from '../assets/data/common/notifications';
 
 @Component({
 	selector: 'app-root',

@@ -1,5 +1,5 @@
 const photography = {
-	title: 'Travel is fun',
+	excerpt: 'Photography.Excerpt',
 	assetsPath: 'assets/images/photography/',
 	items: [
 		{

@@ -47,7 +47,7 @@
 					<section class="cd-col cd-col-pm-t-5 cd-col-pm-d-4 ik-quick-wrapper">
 						<div class="ik-skills">
 							<!-- Title -->
-							<h2>{{ profileSkills['title'] }}</h2>
+							<h2>{{ profileSkills['title'] | translate }}</h2>
 
 							<!-- Images -->
 							<div class="ik-logo">
@@ -61,7 +61,7 @@
 							<!-- Tags -->
 							<div class="ik-tags" *ngFor="let skill of profileSkills['skills']">
 								<!-- Title -->
-								<h6>{{ skill['title'] }}</h6>
+								<h6>{{ skill['title'] | translate }}</h6>
 
 								<!-- List -->
 								<ng-container *ngFor="let item of skill['items']">
@@ -78,7 +78,7 @@
 						<!-- Education -->
 						<section class="ik-education">
 							<!-- Title & SubTitle -->
-							<h2>{{ profileEducation['title'] }}</h2>
+							<h2>{{ profileEducation['title'] | translate }}</h2>
 							<h6>{{ profileEducation['subTitle'] }}</h6>
 
 							<!-- List -->
@@ -106,7 +106,7 @@
 						<!-- Experience -->
 						<section class="ik-experience">
 							<!-- Title & SubTitle -->
-							<h2>{{ profileExperience['title'] }}</h2>
+							<h2>{{ profileExperience['title'] | translate }}</h2>
 							<h6>{{ profileExperience['subTitle'] }}</h6>
 
 							<!-- List -->
@@ -144,7 +144,7 @@
 						<!-- Languages -->
 						<section class="ik-languages">
 							<!-- Title & SubTitle -->
-							<h2>{{ profileLanguage['title'] }}</h2>
+							<h2>{{ profileLanguage['title'] | translate }}</h2>
 							<h6>{{ profileLanguage['subTitle'] }}</h6>
 
 							<!-- Tags -->
@@ -158,7 +158,7 @@
 						<!-- Interest -->
 						<section class="ik-interest">
 							<!-- Title -->
-							<h2>{{ profileInterest['title'] }}</h2>
+							<h2>{{ profileInterest['title'] | translate }}</h2>
 
 							<!-- Tags -->
 							<div class="ik-tags">

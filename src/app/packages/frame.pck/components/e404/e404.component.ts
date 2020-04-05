@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 // app
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
-import page404 from '../../../../../assets/data/other/404';
+import page404 from '../../../../../assets/data/common/404';
 
 @Component({
 	selector: 'app-e404',

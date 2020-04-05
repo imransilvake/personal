@@ -44,7 +44,7 @@
 						<li *ngFor="let item of navigationBottom">
 							<a [routerLink]="item.link"
 							   [routerLinkActive]="['ik-active']">
-								{{ item.name }}
+								{{ item.name | translate }}
 							</a>
 						</li>
 					</ul>

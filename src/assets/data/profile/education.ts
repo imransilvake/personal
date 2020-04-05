@@ -1,5 +1,5 @@
 const profileEducation = {
-	title: 'Education',
+	title: 'Profile.Terms.Education',
 	subTitle: 'MS Graduate',
 	education: [
 		{

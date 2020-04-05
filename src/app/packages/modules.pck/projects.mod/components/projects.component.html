@@ -18,7 +18,7 @@
 								[iconLeft]="faIcon[8]"
 								[inputId]="'ik-search'"
 								[inputName]="'search'"
-								[inputPlaceHolder]="'Search'"
+								[inputPlaceHolder]="projects['search']['placeholder'] | translate"
 								[control]="search">
 						</app-input>
 					</div>
@@ -31,7 +31,7 @@
 							<li>
 								<a [class.ik-active]="pFilter.id === filter.value.id"
 								   [routerLink]="['/' + routing.pages.projects, pFilter.id]">
-									{{ pFilter.text }}
+									{{ pFilter.text | translate }}
 								</a>
 							</li>
 						</ng-container>

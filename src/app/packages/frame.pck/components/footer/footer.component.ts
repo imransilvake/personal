@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 // app
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { AppVersionService } from '../../../utilities.pck/accessories.mod/services/app-version.service';
-import footer from '../../../../../assets/data/other/footer';
+import footer from '../../../../../assets/data/common/footer';
 
 @Component({
 	selector: 'app-footer',
