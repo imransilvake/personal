@@ -2,12 +2,12 @@ const profileInterest = {
 	title: 'Profile.Terms.Interests',
 	list: [
 		'Anime',
-		'Travel',
-		'photography',
-		'Music',
-		'Arts',
-		'Books',
-		'Coding'
+		'Coding',
+		'Profile.Interests.Travel',
+		'Profile.Interests.Photography',
+		'Profile.Interests.Music',
+		'Profile.Interests.Games',
+		'Profile.Interests.Cooking'
 	]
 };
 export default profileInterest;

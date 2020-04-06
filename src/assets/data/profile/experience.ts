@@ -5,6 +5,7 @@ const profileExperience = {
 		type: 'Common.Designation'
 	},
 	designation_info: 'Profile.Experience.Designation_Info',
+	current: 'Profile.Experience.Current',
 	experience: [
 		{
 			designation: 'Common.Designations.Frontend',

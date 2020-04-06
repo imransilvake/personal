@@ -83,7 +83,15 @@
 		},
 		"Experience": {
 			"Sub_Title": "{{ type }} at TourismusSuite",
-			"Designation_Info": "{{ designation }} {{ type }}"
+			"Designation_Info": "{{ designation }} {{ type }}",
+			"Current": "Current"
+		},
+		"Interests": {
+			"Travel": "Travel",
+			"Photography": "Photography",
+			"Music": "Music",
+			"Games": "Games",
+			"Cooking": "Cooking"
 		}
 	},
 	"Projects": {

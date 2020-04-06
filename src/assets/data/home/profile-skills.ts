@@ -2,7 +2,7 @@ const profileSkills = {
 	assetsPath: 'assets/svg/profile/expertise/',
 	items: [
 		{
-			title: 'JavaScript Frameworks',
+			title: 'Frameworks',
 			items: [
 				{
 					photo: 'angular.svg',
@@ -110,12 +110,7 @@ const profileSkills = {
 							]
 						}
 					]
-				}
-			]
-		},
-		{
-			title: 'Native Frameworks',
-			items: [
+				},
 				{
 					photo: 'nativescript.svg',
 					items: [

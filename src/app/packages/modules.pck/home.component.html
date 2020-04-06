@@ -43,8 +43,7 @@
 						<h5 class="ik-title">{{ block['title'] }}</h5>
 						<div class="cd-row">
 							<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4"
-								 *ngFor="let data of block['items']; let f=first; let l=last;"
-								 [class.ik-first-item]="!f && l">
+								 *ngFor="let data of block['items']">
 								<app-card [infoData]="data"
 										  [infoAssetsPath]="profileSkills['assetsPath']">
 								</app-card>

@@ -148,7 +148,7 @@
 											<p>{{ exp['company'] }}, {{ getTP(exp['period']) }}
 												<ng-container *ngIf="exp['period'].length === 1">
 													<span> - </span>
-													<span class="ik-on">present</span>
+													<span class="ik-on">{{ profileExperience['current'] | translate }}</span>
 												</ng-container>
 											</p>
 										</div>
@@ -180,7 +180,7 @@
 
 							<!-- Tags -->
 							<div class="ik-tags">
-								<span *ngFor="let item of profileInterest['list']">{{ item }}</span>
+								<span *ngFor="let item of profileInterest['list']">{{ item | translate }}</span>
 							</div>
 						</section>
 					</div>
