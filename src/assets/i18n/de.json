@@ -8,13 +8,15 @@
 			"Next": "Nächste",
 			"Playing": "Spielen",
 			"Company": "Unternehmen",
+			"Technology": "Technologie",
 			"Technologies": "Technologien",
 			"Top_Projects": "Top Projekte",
 			"All": "Alle",
 			"Todo": "Todo",
 			"Job": "Arbeit",
 			"Working_On": "Behandelnd",
-			"Coming_Soon": "In Kürze"
+			"Coming_Soon": "In Kürze",
+			"Excerpt": "Auszug"
 		},
 		"Notifications": {
 			"One": "Ich suche derzeit nach neuen Möglichkeiten",
@@ -98,7 +100,20 @@
 		}
 	},
 	"Projects": {
-		"Search_Placeholder": "Suche"
+		"Terms": {
+			"Search": "Suche"
+		},
+		"List": {
+			"SCSS": "SCSS Framework is a pure scss framework for building responsive, fast, robust, and adaptable web apps.",
+			"HAM": "An admin portal to manage hotel chains by providing features such as User Management, Message Broadcast, Reports and much more.",
+			"HGA": "While on stay in a hotel, guest can clean, send repair messages, view room key number and many common important details in an instant.",
+			"RP": "An admin portal that provides features such as Creation of Pilgrims, Groups and Packages, Packages Report and more.",
+			"HSA": "A hotel can view guest repair messages, room clean status and many more features without doing any physical effort.",
+			"SAC": "A Full-stack chat application (slack minimal) that provides Firbase Auth Signup & Signin, Real-time chatting and more.",
+			"TC": "A single and multiplayer game challenge given by Lieferando.",
+			"TTT": "A Tic-Tac-Toe game created for self-learning that also provides time travelling feature.",
+			"MIS": "A Multisite Image Slider build to handle company's multiple websites from a central place."
+		}
 	},
 	"Photography": {
 		"Excerpt": "Reisen macht Spaß"

@@ -65,13 +65,13 @@
 								<div class="ik-card ik-info" *ngIf="infoBlockIndex === idx && item['description']">
 									<!-- Excerpt -->
 									<ng-container *ngIf="item['description']['excerpt']">
-										<h6>{{ item['description']['excerpt']['label'] }}</h6>
-										<p>{{ item['description']['excerpt']['text'] }}</p>
+										<h6>{{ item['description']['excerpt']['label'] | translate }}</h6>
+										<p>{{ item['description']['excerpt']['text'] | translate }}</p>
 									</ng-container>
 
 									<!-- Tech -->
 									<ng-container *ngIf="item['description']['tech']">
-										<h6>{{ item['description']['tech']['label'] }}</h6>
+										<h6>{{ item['description']['tech']['label'] | translate }}</h6>
 										<p>{{ item['description']['tech']['text'].join(', ') }}</p>
 									</ng-container>
 								</div>

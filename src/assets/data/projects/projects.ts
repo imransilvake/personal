@@ -3,7 +3,7 @@ import { AppLinks } from '../../../app.config';
 
 const projects = {
 	search: {
-		placeholder: 'Projects.Search_Placeholder'
+		placeholder: 'Projects.Terms.Search'
 	},
 	filters: [
 		{
@@ -32,11 +32,11 @@ const projects = {
 			title: 'SCSS Framework',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'SCSS Framework is a pure scss framework for building responsive, fast, robust, and adaptable web apps.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.SCSS'
 				},
 				tech: {
-					label: 'Technology',
+					label: 'Common.Terms.Technology',
 					text: ['SCSS']
 				}
 			},
@@ -55,11 +55,11 @@ const projects = {
 			title: 'Hotel App Manager',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'An admin portal to manage hotel chains by providing features such as User Management, Message Broadcast, Reports and much more.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.HAM'
 				},
 				tech: {
-					label: 'Technologies',
+					label: 'Common.Terms.Technologies',
 					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
@@ -117,11 +117,11 @@ const projects = {
 			title: 'Hotel Guest App',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'While on stay in a hotel, guest can clean, send repair messages, view room key number and many common important details in an instant.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.HGA'
 				},
 				tech: {
-					label: 'Technologies',
+					label: 'Common.Terms.Technologies',
 					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
@@ -162,11 +162,11 @@ const projects = {
 			title: 'Rabt Portal',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'An admin portal that provides features such as Creation of Pilgrims, Groups and Packages, Packages Report and more.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.RP'
 				},
 				tech: {
-					label: 'Technologies',
+					label: 'Common.Terms.Technologies',
 					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
@@ -197,11 +197,11 @@ const projects = {
 			title: 'Hotel Staff App',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'A hotel can view guest repair messages, room clean status and many more features without doing any physical effort.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.HSA'
 				},
 				tech: {
-					label: 'Technologies',
+					label: 'Common.Terms.Technologies',
 					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'NativeScript', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
@@ -245,11 +245,11 @@ const projects = {
 			title: 'Slack App Clone',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'A Full-stack chat application (slack minimal) that provides Firbase Auth Signup & Signin, Real-time chatting and more.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.SAC'
 				},
 				tech: {
-					label: 'Technologies',
+					label: 'Common.Terms.Technologies',
 					text: ['HTML5', 'SCSS', 'React', 'Material', 'Firebase', 'Redux', 'MomentJs', 'i18next', 'React Color']
 				}
 			},
@@ -277,11 +277,11 @@ const projects = {
 			title: 'Takeaway Challenge',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'A single and multiplayer game challenge given by Lieferando.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.TC'
 				},
 				tech: {
-					label: 'Technologies',
+					label: 'Common.Terms.Technologies',
 					text: ['HTML5', 'SCSS', 'React', 'Material', 'Firebase', 'Redux', 'MomentJs', 'i18next']
 				}
 			},
@@ -306,11 +306,11 @@ const projects = {
 			title: 'Tic-Tac-Toe',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'A Tic-Tac-Toe game created for self-learning that also provides time travelling feature.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.TTT'
 				},
 				tech: {
-					label: 'Technologies',
+					label: 'Common.Terms.Technologies',
 					text: ['HTML5', 'SCSS', 'React']
 				}
 			},
@@ -328,11 +328,11 @@ const projects = {
 			title: 'Multisite Image Slider',
 			description: {
 				excerpt: {
-					label: 'Excerpt',
-					text: 'A Multisite Image Slider build to handle company\'s multiple websites from a central place.'
+					label: 'Common.Terms.Excerpt',
+					text: 'Projects.List.MIS'
 				},
 				tech: {
-					label: 'Technologies',
+					label: 'Common.Terms.Technologies',
 					text: ['HTML5', 'SCSS', 'PHP', 'OXID Framework']
 				}
 			},
