@@ -4,8 +4,12 @@ const profileExperience = {
 		text: 'Profile.Experience.Sub_Title',
 		type: 'Common.Designation'
 	},
-	designation_info: 'Profile.Experience.Designation_Info',
 	current: 'Profile.Experience.Current',
+	period: {
+		month: 'Profile.Terms.Month',
+		year: 'Profile.Terms.Year'
+	},
+	designation_info: 'Profile.Experience.Designation_Info',
 	experience: [
 		{
 			designation: 'Common.Designations.Frontend',

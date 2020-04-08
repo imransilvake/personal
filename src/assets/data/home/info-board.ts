@@ -22,7 +22,7 @@ const infoBoard = {
 							name: 'NativeScript'
 						},
 						{
-							name: 'HTML5/CSS3 (SCSS)'
+							name: 'HTML5/SCSS'
 						}
 					]
 				}

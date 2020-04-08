@@ -60,7 +60,7 @@ const projects = {
 				},
 				tech: {
 					label: 'Technologies',
-					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
+					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
 			badge: 'Angular',
@@ -122,7 +122,7 @@ const projects = {
 				},
 				tech: {
 					label: 'Technologies',
-					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
+					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
 			badge: 'Angular',
@@ -167,7 +167,7 @@ const projects = {
 				},
 				tech: {
 					label: 'Technologies',
-					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
+					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
 			badge: 'Angular',
@@ -202,7 +202,7 @@ const projects = {
 				},
 				tech: {
 					label: 'Technologies',
-					text: ['HTML5', 'CSS3', 'TypeScript', 'Angular', 'NativeScript', 'Material', 'MomentJs', 'RxJs', 'Store']
+					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'NativeScript', 'Material', 'MomentJs', 'RxJs', 'Store']
 				}
 			},
 			badge: 'NativeScript',
@@ -250,7 +250,7 @@ const projects = {
 				},
 				tech: {
 					label: 'Technologies',
-					text: ['HTML5', 'CSS3', 'React', 'Material', 'Firebase', 'Redux', 'MomentJs', 'i18next', 'React Color']
+					text: ['HTML5', 'SCSS', 'React', 'Material', 'Firebase', 'Redux', 'MomentJs', 'i18next', 'React Color']
 				}
 			},
 			badge: 'React',
@@ -282,7 +282,7 @@ const projects = {
 				},
 				tech: {
 					label: 'Technologies',
-					text: ['HTML5', 'CSS3', 'React', 'Material', 'Firebase', 'Redux', 'MomentJs', 'i18next']
+					text: ['HTML5', 'SCSS', 'React', 'Material', 'Firebase', 'Redux', 'MomentJs', 'i18next']
 				}
 			},
 			badge: 'React',
@@ -311,7 +311,7 @@ const projects = {
 				},
 				tech: {
 					label: 'Technologies',
-					text: ['HTML5', 'CSS3', 'React']
+					text: ['HTML5', 'SCSS', 'React']
 				}
 			},
 			badge: 'React',
@@ -333,7 +333,7 @@ const projects = {
 				},
 				tech: {
 					label: 'Technologies',
-					text: ['HTML5', 'CSS3', 'PHP', 'OXID Framework']
+					text: ['HTML5', 'SCSS', 'PHP', 'OXID Framework']
 				}
 			},
 			badge: 'PHP',

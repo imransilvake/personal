@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 // app
 import * as moment from 'moment';
+import { TranslateService } from '@ngx-translate/core';
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
 import profileIntro from '../../../../../assets/data/profile/intro';
 import profileSummary from '../../../../../assets/data/profile/summery';
@@ -27,7 +28,10 @@ export class ProfileComponent {
 	public profileLanguage = profileLanguage;
 	public profileInterest = profileInterest;
 
-	constructor(private _helperService: HelperService) {
+	constructor(
+		private _helperService: HelperService,
+		private _translate: TranslateService
+	) {
 	}
 
 	/**
@@ -72,11 +76,12 @@ export class ProfileComponent {
 		const month = period[1];
 		if (year > 0 && month > 0) {
 			return shortForm ? `${year}Y ${month}M` :
-				`${this.doPluralize(year, 'Year')} ${this.doPluralize(month, 'Month')}`;
+				`${this.doPluralize(year, this.profileExperience['period']['year'])} 
+				${this.doPluralize(month, this.profileExperience['period']['month'])}`;
 		} else if (year > 0 && month === 0) {
-			return shortForm ? `${year}Y` : `${this.doPluralize(year, 'Year')}`;
+			return shortForm ? `${year}Y` : `${this.doPluralize(year, this.profileExperience['period']['year'])}`;
 		} else {
-			return shortForm ? `${month}M` : `${this.doPluralize(month, 'Month')}`;
+			return shortForm ? `${month}M` : `${this.doPluralize(month, this.profileExperience['period']['month'])}`;
 		}
 	}
 
@@ -86,5 +91,5 @@ export class ProfileComponent {
 	 * @param noun
 	 * @param suffix
 	 */
-	public doPluralize = (count, noun, suffix = 's') => `${count} ${noun}${count !== 1 ? suffix : ''}`;
+	public doPluralize = (count, noun, suffix = 's') => `${count} ${this._translate.instant(noun)}${count !== 1 ? suffix : ''}`;
 }

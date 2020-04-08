@@ -1,6 +1,6 @@
 const profileLanguage = {
 	title: 'Profile.Terms.Languages',
-	subTitle: 'Learning Deutsch A2',
+	subTitle: 'Profile.Languages.Sub_Title',
 	list: [
 		'Urdu',
 		'English',

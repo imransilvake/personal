@@ -48,7 +48,7 @@
 		"Summary": {
 			"Title": "Überblick",
 			"Description": {
-				"One": "Ich bin ein engagierter, kreativer und zuverlässiger Frontend-Entwickler mit nachgewiesenen Kenntnissen in HTML5, CSS3, SCSS, Javascript, Typescript, Angular, React und mehr. Ich habe auch Grundkenntnisse in Backend-Technologien (z. B. NodeJs, ExpressJs) mit MongoDB- und Firebase-Datenbanken.",
+				"One": "Ich bin ein engagierter, kreativer und zuverlässiger Frontend-Entwickler mit nachgewiesenen Kenntnissen in HTML5, SCSS, Javascript, Typescript, Angular, React und mehr. Ich habe auch Grundkenntnisse in Backend-Technologien (z. B. NodeJs, ExpressJs) mit MongoDB- und Firebase-Datenbanken.",
 				"Two": "Ich genieße es, makellose UX / UI zu entwerfen und zu entwickeln, die für die Benutzer intuitiv und angenehm ist. Ich habe eine Leidenschaft für das Lernen und ich liebe es wirklich, Apps von Grund auf neu zu erstellen und möchte in einem freundlich organisierten Team und Umfeld arbeiten. Ich lerne leidenschaftlich gerne neue Funktionen und Technologien kennen."
 			}
 		},
@@ -64,13 +64,13 @@
 			"Libraries": "Bibliotheken",
 			"Database": "Datenbank",
 			"Miscellaneous": "Sonstiges",
-			"Bachelor": "Bachelor",
-			"Masters": "Master",
+			"Bachelor": "Bachelor's",
+			"Masters": "Master's",
 			"Computer_Science": "Informatik",
-			"Month": "Month",
-			"Months": "Months",
-			"Year": "Year",
-			"Years": "Years"
+			"Month": "Monat",
+			"Months": "Monate",
+			"Year": "Jahr",
+			"Years": "Jahre"
 		},
 		"Countries": {
 			"Pakistan": "Pakistan",
@@ -85,6 +85,9 @@
 			"Sub_Title": "{{ type }} bei TourismusSuite",
 			"Designation_Info": "{{ designation }} {{ type }}",
 			"Current": "Aktuell"
+		},
+		"Languages": {
+			"Sub_Title": "Deutsch Lernen A2"
 		},
 		"Interests": {
 			"Travel": "Reise",
