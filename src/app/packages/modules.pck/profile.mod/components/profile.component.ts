@@ -76,7 +76,7 @@ export class ProfileComponent {
 		const month = period[1];
 		if (year > 0 && month > 0) {
 			return shortForm ? `${year}Y ${month}M` :
-				`${this.doPluralize(year, this.profileExperience['period']['year'])} 
+				`${this.doPluralize(year, this.profileExperience['period']['year'])}
 				${this.doPluralize(month, this.profileExperience['period']['month'])}`;
 		} else if (year > 0 && month === 0) {
 			return shortForm ? `${year}Y` : `${this.doPluralize(year, this.profileExperience['period']['year'])}`;
