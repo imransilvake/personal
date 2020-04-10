@@ -12,10 +12,11 @@
 
 				.ik-excerpt {
 					color: var(--tc2);
+					font-weight: cd-fontWeight(300);
 					text-align: center;
 
 					.ik-icon {
-						color: var(--tc2);
+						color: var(--c7);
 						font-size: cd-fontSize(s24);
 						margin-left: 5px;
 					}

@@ -3,7 +3,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 // app
-import { faExpand, faSmileWink } from '@fortawesome/free-solid-svg-icons';
+import { faExpand, faPlane } from '@fortawesome/free-solid-svg-icons';
 import { CardViewEnum } from '../../../../shared/widgets.mod/enums/card-view.enum';
 import { AppOptions } from '../../../../../app.config';
 import photography from 'src/assets/data/photography/photography';
@@ -19,7 +19,7 @@ declare const lightGallery;
 export class PhotographyComponent implements AfterViewInit {
 	@ViewChild('gallery', { static: false }) gallery: ElementRef;
 
-	public faIcon = [faSmileWink, faExpand];
+	public faIcon = [faPlane, faExpand];
 	public photography = photography;
 	public cardViewImage = CardViewEnum.CARD_IMAGE;
 	public imageList = photography;
