@@ -130,11 +130,11 @@
 											<div class="cd-tooltip">
 												<p class="ik-number"
 												   [class.ik-current]="exp['period'].length === 1"
-												   [class.ik-year]="getTD(exp['period'])[0] > 0">
-													{{ displayPeriod(getTD(exp['period']), true) }}
+												   [class.ik-year]="exp['isYear']">
+													{{ exp['periodShort'] }}
 												</p>
 												<span class="cd-arrow cd-bottom">
-													{{ displayPeriod(getTD(exp['period']), false) }}
+													{{ exp['periodFull'] }}
 												</span>
 											</div>
 										</div>
@@ -145,7 +145,7 @@
                                                     type: exp['type'] | translate
 												}">
 											</h5>
-											<p>{{ exp['company'] }}, {{ getTP(exp['period']) }}
+											<p>{{ exp['company'] }}, {{ exp['periodText'] }}
 												<ng-container *ngIf="exp['period'].length === 1">
 													<span> - </span>
 													<span class="ik-on">{{ profileExperience['current'] | translate }}</span>
@@ -167,7 +167,7 @@
 
 							<!-- Tags -->
 							<div class="ik-tags">
-								<span *ngFor="let item of profileLanguage['list']">{{ item }}</span>
+								<span *ngFor="let item of profileLanguage['list']">{{ item | translate }}</span>
 							</div>
 						</section>
 

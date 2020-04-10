@@ -4,7 +4,7 @@ const profileLanguage = {
 	list: [
 		'Urdu',
 		'English',
-		'Deutsch',
+		'Profile.Languages.German',
 	]
 };
 export default profileLanguage;

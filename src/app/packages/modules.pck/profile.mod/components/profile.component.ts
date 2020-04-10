@@ -1,5 +1,7 @@
 // angular
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 // app
 import * as moment from 'moment';
@@ -19,7 +21,7 @@ import profileInterest from '../../../../../assets/data/profile/interest';
 	styleUrls: ['./profile.component.scss']
 })
 
-export class ProfileComponent {
+export class ProfileComponent implements OnInit, OnDestroy {
 	public profileIntro = profileIntro;
 	public profileSummary = profileSummary;
 	public profileSkills = profileSkills;
@@ -28,10 +30,43 @@ export class ProfileComponent {
 	public profileLanguage = profileLanguage;
 	public profileInterest = profileInterest;
 
+	private unSubscribe = new Subject();
+
 	constructor(
 		private _helperService: HelperService,
 		private _translate: TranslateService
 	) {
+	}
+
+	ngOnInit() {
+		// init experience
+		this.initExperience();
+
+		// listen: language change
+		this._translate.onLangChange
+			.pipe(takeUntil(this.unSubscribe))
+			.subscribe(() => this.initExperience());
+	}
+
+	ngOnDestroy() {
+		// remove subscriptions
+		this.unSubscribe.next();
+		this.unSubscribe.complete();
+	}
+
+	/**
+	 * init experience
+	 */
+	public initExperience() {
+		this.profileExperience['experience'] = this.profileExperience['experience'].map(item => {
+			return {
+				...item,
+				periodText: this.getTP(item['period']),
+				periodShort: this.displayPeriod(this.getTD(item['period']), true),
+				periodFull: this.displayPeriod(this.getTD(item['period']), false),
+				isYear: this.getTD(item['period'])[0] > 0
+			};
+		});
 	}
 
 	/**
@@ -91,5 +126,6 @@ export class ProfileComponent {
 	 * @param noun
 	 * @param suffix
 	 */
-	public doPluralize = (count, noun, suffix = 's') => `${count} ${this._translate.instant(noun)}${count !== 1 ? suffix : ''}`;
+	public doPluralize = (count, noun, suffix = 's') =>
+		`${count} ${this._translate.instant(noun)}${count !== 1 ? suffix : ''}`;
 }
