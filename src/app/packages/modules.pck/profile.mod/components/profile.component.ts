@@ -1,7 +1,7 @@
 // angular
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { startWith, takeUntil } from 'rxjs/operators';
 
 // app
 import * as moment from 'moment';
@@ -39,12 +39,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		// init experience
-		this.initExperience();
-
 		// listen: language change
 		this._translate.onLangChange
-			.pipe(takeUntil(this.unSubscribe))
+			.pipe(
+				startWith(0),
+				takeUntil(this.unSubscribe)
+			)
 			.subscribe(() => this.initExperience());
 	}
 
@@ -59,12 +59,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
 	 */
 	public initExperience() {
 		this.profileExperience['experience'] = this.profileExperience['experience'].map(item => {
+			const timePeriod = this.getTP(item['period']);
+			const timeDifference = this.getTD(item['period']);
 			return {
 				...item,
-				periodText: this.getTP(item['period']),
-				periodShort: this.displayPeriod(this.getTD(item['period']), true),
-				periodFull: this.displayPeriod(this.getTD(item['period']), false),
-				isYear: this.getTD(item['period'])[0] > 0
+				periodText: timePeriod,
+				periodShort: this.displayPeriod(timeDifference, true),
+				periodFull: this.displayPeriod(timeDifference, false),
+				isYear: timeDifference[0] > 0
 			};
 		});
 	}
