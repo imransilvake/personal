@@ -1,13 +1,13 @@
 // angular
 import { Injectable } from '@angular/core';
-import { AsyncSubject } from 'rxjs/internal/AsyncSubject';
+import { Subject } from 'rxjs';
 
 // app
 import { StorageTypeEnum } from '../enums/storage-type.enum';
 
 @Injectable({ providedIn: 'root' })
 export class StorageService {
-	private memory: { [name: string]: AsyncSubject<any> } = {};
+	private memory: { [name: string]: Subject<any> } = {};
 
 	/**
 	 * set item to local or session storage

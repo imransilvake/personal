@@ -1,13 +1,14 @@
 // angular
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { debounceTime, map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 // app
 import { HelperService } from './helper.service';
 
 @Injectable({ providedIn: 'root' })
 export class ScrollTopService {
-	public scrollEvent: EventEmitter<any> = new EventEmitter();
+	public scrollEvent: Subject<any> = new Subject();
 
 	/**
 	 * listener: scroll to top
@@ -24,7 +25,7 @@ export class ScrollTopService {
 				debounceTime(200)
 			)
 			.subscribe((scrollValue) => {
-				this.scrollEvent.emit(scrollValue > 200);
+				this.scrollEvent.next(scrollValue > 200);
 			});
 	}
 }

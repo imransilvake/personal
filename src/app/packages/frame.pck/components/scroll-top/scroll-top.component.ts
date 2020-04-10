@@ -24,12 +24,13 @@ export class ScrollTopComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		// init scroll top
+		this._scrollTopService.scrollTopListener();
+
 		// listen: scroll to top event
 		this._scrollTopService.scrollEvent
 			.pipe(takeUntil(this.unSubscribe))
-			.subscribe((status) => {
-				this.showScroll = status === true;
-			});
+			.subscribe((status) => this.showScroll = !!status);
 	}
 
 	ngOnDestroy() {
