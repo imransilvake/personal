@@ -11,17 +11,17 @@ const notifications = {
 			show: true
 		},
 		{
-			label: 'Common.Terms.Coming_Soon',
+			label: 'Common.Terms.Todo',
 			text: 'Common.Notifications.Three',
 			show: true
 		},
 		{
-			label: 'Common.Terms.Todo',
+			label: 'Common.Terms.Future_Plan',
 			text: 'Common.Notifications.Four',
 			show: true
 		},
 		{
-			label: 'Common.Terms.Todo',
+			label: 'Common.Terms.Future_Plan',
 			text: 'Common.Notifications.Five',
 			show: true
 		}

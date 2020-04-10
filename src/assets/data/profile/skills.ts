@@ -65,7 +65,7 @@ const profileSkills = {
 	skills: [
 		{
 			title: 'Profile.Terms.Programming_Languages',
-			items: ['JavaScript', 'TypeScript', 'PHP']
+			items: ['JavaScript', 'TypeScript']
 		},
 		{
 			title: 'Frameworks',
@@ -73,15 +73,15 @@ const profileSkills = {
 		},
 		{
 			title: 'Profile.Terms.Authentication',
-			items: ['oAuth', 'AWS Amplify']
+			items: ['AWS Amplify', 'Firebase', 'Auth0', 'JSON Web Token']
 		},
 		{
 			title: 'Profile.Terms.Styles',
-			items: ['HTML5', 'SCSS', 'Material', 'Bootstrap', 'Foundation', 'Responsive Design', 'Cross-Browser Compatibility']
+			items: ['HTML5', 'SCSS', 'Bootstrap', 'Foundation', 'Custom SCSS Framework', 'Responsive Design', 'Cross-Browser Compatibility']
 		},
 		{
 			title: 'Profile.Terms.Libraries',
-			items: ['RxJs', 'MomentJs', 'NumeralJs', 'HammerJs', 'Lodash']
+			items: ['RxJs', 'MomentJs', 'NumeralJs', 'HammerJs', 'ChartJs', 'LodashJs', 'PassportJs']
 		},
 		{
 			title: 'Profile.Terms.Database',
@@ -89,7 +89,7 @@ const profileSkills = {
 		},
 		{
 			title: 'Profile.Terms.Miscellaneous',
-			items: ['NPM', 'Yarn', 'Git', 'Jira', 'Confluence', 'WebStorm', 'VSC', 'Mac OS', 'Ubuntu']
+			items: ['Yarn', 'NPM', 'NodeJs', 'Git', 'Jira', 'Confluence', 'WebStorm', 'macOS']
 		}
 	]
 };

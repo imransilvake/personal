@@ -12,18 +12,18 @@
 			"Technologies": "Technologies",
 			"Top_Projects": "Top Projects",
 			"All": "All",
-			"Todo": "Todo",
 			"Job": "Job",
 			"Working_On": "Working On",
-			"Coming_Soon": "Coming Soon",
+			"Todo": "Todo",
+			"Future_Plan": "Future Plan",
 			"Excerpt": "Excerpt"
 		},
 		"Notifications": {
 			"One": "I am currently looking out for new opportunities",
-			"Two": "Home Page",
-			"Three": "Multi-Language Support (en/de)",
-			"Four": "Code Section",
-			"Five": "Photography page speed optimization"
+			"Two": "Overall website optimizations",
+			"Three": "Photography page speed optimization",
+			"Four": "(external) Code Section App",
+			"Five": "(external) Todo App"
 		},
 		"Navigation": {
 			"Profile": "Profile",
@@ -104,15 +104,15 @@
 			"Search": "Search"
 		},
 		"List": {
-			"SCSS": "SCSS Framework is a pure scss framework for building responsive, fast, robust, and adaptable web apps.",
-			"HAM": "An admin portal to manage hotel chains by providing features such as User Management, Message Broadcast, Reports and much more.",
-			"HGA": "While on stay in a hotel, guest can clean, send repair messages, view room key number and many common important details in an instant.",
-			"RP": "An admin portal that provides features such as Creation of Pilgrims, Groups and Packages, Packages Report and more.",
-			"HSA": "A hotel can view guest repair messages, room clean status and many more features without doing any physical effort.",
-			"SAC": "A Full-stack chat application (slack minimal) that provides Firbase Auth Signup & Signin, Real-time chatting and more.",
-			"TC": "A single and multiplayer game challenge given by Lieferando.",
-			"TTT": "A Tic-Tac-Toe game created for self-learning that also provides time travelling feature.",
-			"MIS": "A Multisite Image Slider build to handle company's multiple websites from a central place."
+			"SCSS": "SCSS Framework is developed for building responsive, fast, robust, and adaptable web apps.",
+			"HAM": "An admin portal to manage hotel chains by providing features such as User Management, Message Broadcasting, Graphs/Reports and much more.",
+			"HGA": "While on a stay in a hotel, guests can clean a room, send repair messages, view room key number and can do other important things in an instant.",
+			"RP": "An admin portal that provides features such as the creation of Pilgrims, Groups, and Packages, Packages Report and more.",
+			"HSA": "Hotel staff can view guest repair messages, room clean status and other features of a customer without doing any physical effort.",
+			"SAC": "A slack clone (minimal) that provides Firebase Auth Signup & Sign in, Real-time chatting on channels and an option to starred favorite channels.",
+			"TC": "A single (CPU) and a multiplayer game challenge provided as a code challenge by Lieferando.",
+			"TTT": "An interactive tic-tac-toe game that keeps moves history to allow a user to go back and forth between the game.",
+			"MIS": "An image slider to handle the company's multiple websites from a central place that allows features such as language switch, drag, and drop of items and more."
 		}
 	},
 	"Photography": {
