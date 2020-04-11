@@ -1,5 +1,6 @@
 // angular
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // app
 import { ROUTING } from '../../../../../environments/environment';
@@ -27,7 +28,10 @@ export class HeaderComponent implements OnInit {
 	public themeInactive = true;
 	public fontSizeInactive = true;
 
-	constructor(private _storageService: StorageService) {
+	constructor(
+		private _router: Router,
+		private _storageService: StorageService
+	) {
 	}
 
 	ngOnInit() {
@@ -36,6 +40,14 @@ export class HeaderComponent implements OnInit {
 
 		// setup font size
 		this.onClickFontSizeToggle(true);
+	}
+
+	/**
+	 * check active route
+	 * @param link
+	 */
+	public isActiveRoute(link) {
+		return this._router.isActive(link, false);
 	}
 
 	/**

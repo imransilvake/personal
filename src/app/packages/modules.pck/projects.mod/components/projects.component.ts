@@ -48,7 +48,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 				const ppFilter = _route.snapshot.params && _route.snapshot.params['filter'];
 				const index = ppFilter && this.projects['filters'].findIndex(x => x.id === ppFilter);
 				if (ppFilter && index !== -1) {
-					this.onClickChangeFilter(this.projects['filters'][index]);
+					this.onListenChangeFilter(this.projects['filters'][index]);
 				}
 			});
 
@@ -65,7 +65,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 			.pipe(takeUntil(this.unSubscribe))
 			.subscribe(text => {
 				let result;
-				if (this.filter.value.id === 'all') {
+				if (this.filter.value.id === projects['filters'][0].id) {
 					result = projects['items'].filter(x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1);
 				} else {
 					result = projects['items']
@@ -99,20 +99,20 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	 * set selected filter
 	 * @param sFilter
 	 */
-	public onClickChangeFilter(sFilter) {
-		// clear search
-		this.search.setValue('');
-
-		// update filter
-		this.filter.setValue(sFilter);
-
+	public onListenChangeFilter(sFilter) {
 		// update data
-		if (sFilter && sFilter.id !== 'all') {
+		if (sFilter && sFilter.id !== projects['filters'][0].id) {
 			const result = projects['items'].filter(x => x.controls.filter === sFilter.id);
 			this.projects = { ...projects, items: result };
 		} else {
 			this.projects = projects;
 		}
+
+		// update filter
+		this.filter.setValue(sFilter);
+
+		// update search
+		this.search.setValue(this.search.value);
 	}
 
 	/**
