@@ -11,8 +11,6 @@ import { NavigationTopTypesEnum } from '../../enums/navigation-top-types.enum';
 import navigationTop from '../../../../../assets/data/common/navigation-top';
 import navigationBottom from 'src/assets/data/common/navigation-bottom';
 
-declare const document: any;
-
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',

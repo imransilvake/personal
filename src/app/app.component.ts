@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 // app
 import { AppOptions } from '../app.config';
 import { CardViewEnum } from './shared/widgets.mod/enums/card-view.enum';
+import { AppMetaService } from './packages/utilities.pck/accessories.mod/services/app-meta.service';
 import notifications from '../assets/data/common/notifications';
 
 @Component({
@@ -41,4 +42,7 @@ export class AppComponent {
 	public noticeActive = this.noticeList['items'][0];
 	public noticeTotalSlides = this.noticeList['items'].length;
 	public noticeInterval = AppOptions.intervals.notice;
+
+	constructor(private _appMetaService: AppMetaService) {
+	}
 }

@@ -1,6 +1,5 @@
 {
 	"Common": {
-		"Designation": "Frontend Developer",
 		"Terms": {
 			"Developer": "Developer",
 			"Knowledge": "Knowledge",
@@ -36,6 +35,11 @@
 			"PHP_WordPress": "PHP & WordPress",
 			"WordPress": "WordPress"
 		},
+		"Meta": {
+			"Title": "{{ name }} | {{ page }}",
+			"Description": "English"
+		},
+		"Designation": "Frontend Developer",
 		"Made_With": "Made with"
 	},
 	"Home": {

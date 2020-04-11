@@ -37,7 +37,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		private _route: ActivatedRoute,
 		private _router: Router
 	) {
-		// listen: router event
+		// listen: router events
 		this._router.events
 			.pipe(
 				takeUntil(this.unSubscribe),

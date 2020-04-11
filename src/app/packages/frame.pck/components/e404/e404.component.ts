@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 // app
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
+import { AppMetaService } from '../../../utilities.pck/accessories.mod/services/app-meta.service';
 import page404 from '../../../../../assets/data/common/404';
 
 @Component({
@@ -20,7 +21,14 @@ export class E404Component implements OnInit, OnDestroy {
 
 	private unSubscribe = new Subject();
 
+	constructor(private _appMetaService: AppMetaService) {
+	}
+
 	ngOnInit() {
+		// robots disallow
+		this._appMetaService.event404.next(false);
+
+		// listen: mouse movement
 		HelperService.detectMouseMove()
 			.pipe(takeUntil(this.unSubscribe))
 			.subscribe(event => {
@@ -56,5 +64,8 @@ export class E404Component implements OnInit, OnDestroy {
 		// remove subscriptions
 		this.unSubscribe.next();
 		this.unSubscribe.complete();
+
+		// robots allow
+		this._appMetaService.event404.next(true);
 	}
 }
