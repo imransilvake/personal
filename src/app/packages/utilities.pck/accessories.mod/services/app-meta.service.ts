@@ -115,10 +115,20 @@ export class AppMetaService {
 			content: this.authorName
 		});
 
+		// keywords
+		this._meta.updateTag({
+			name: 'keywords',
+			content: this._translate.instant('Common.Meta.Keywords')
+		});
+
 		// description
 		this._meta.updateTag({
 			name: 'description',
-			content: this._translate.instant('Common.Meta.Description')
+			content: this._translate.instant('Common.Meta.Description', {
+				name: this.authorName,
+				designation: this._translate.instant('Common.Designations.Frontend'),
+				developer: this._translate.instant('Common.Terms.Developer')
+			})
 		});
 	}
 

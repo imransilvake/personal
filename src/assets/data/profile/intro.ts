@@ -1,6 +1,10 @@
 const profileIntro = {
 	name: 'Imran Khan',
-	designation: 'Common.Designation',
+	subTitle: {
+		text: 'Profile.Intro.Sub_Title',
+		designation: 'Common.Designations.Frontend',
+		developer: 'Common.Terms.Developer'
+	},
 	avatar: 'avatar.jpg',
 	cover: 'cover.jpg'
 };

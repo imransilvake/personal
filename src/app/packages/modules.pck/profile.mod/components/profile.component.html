@@ -14,7 +14,12 @@
 					<h1>{{ profileIntro['name'] }}</h1>
 
 					<!-- Designation -->
-					<h5>{{ profileIntro['designation'] | translate }}</h5>
+					<h5 [translate]="profileIntro['subTitle']['text']"
+						[translateParams]="{
+							designation: profileIntro['subTitle']['designation'] | translate,
+							developer: profileIntro['subTitle']['developer'] | translate
+						}">
+					</h5>
 				</div>
 			</div>
 		</div>
@@ -32,7 +37,11 @@
 
 						<!-- Description -->
 						<ng-container *ngFor="let paragraph of profileSummary['description']">
-							<p>{{ paragraph | translate }}</p>
+							<p [translate]="paragraph"
+							   [translateParams]="{
+							   		designation: 'Common.Designations.Frontend' | translate,
+							   		developer: 'Common.Terms.Developer' | translate
+							   }"></p>
 						</ng-container>
 					</div>
 				</div>
@@ -95,10 +104,10 @@
 											</div>
 										</div>
 										<div class="ik-right">
-											<h5 [translate]="profileEducation['university_name']"
+											<h5 [translate]="profileEducation['universityName']"
 												[translateParams]="{name: education['name']}">
 											</h5>
-											<p [translate]="profileEducation['university_info']"
+											<p [translate]="profileEducation['universityInfo']"
 											   [translateParams]="{
                                                     type: education['type'] | translate,
                                                     degree: education['degree'] | translate,
@@ -119,7 +128,10 @@
 							<!-- Title & SubTitle -->
 							<h2>{{ profileExperience['title'] | translate }}</h2>
 							<h6 [translate]="profileExperience['subTitle']['text']"
-								[translateParams]="{type: profileExperience['subTitle']['type'] | translate}">
+								[translateParams]="{
+									designation: profileExperience['subTitle']['designation'] | translate,
+									developer: profileExperience['subTitle']['developer'] | translate
+								}">
 							</h6>
 
 							<!-- List -->
@@ -139,10 +151,10 @@
 											</div>
 										</div>
 										<div class="ik-right">
-											<h5 [translate]="profileExperience['designation_info']"
+											<h5 [translate]="profileExperience['designationInfo']"
 												[translateParams]="{
 													designation: exp['designation'] | translate,
-                                                    type: exp['type'] | translate
+                                                    developer: exp['developer'] | translate
 												}">
 											</h5>
 											<p>{{ exp['company'] }}, {{ exp['periodText'] }}

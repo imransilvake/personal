@@ -12,19 +12,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="index, follow">
 		<meta name="author" content="author">
+		<meta name="keywords" content="keywords">
 		<meta name="description" content="description">
 
 		<!-- Favicon -->
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 
 		<!-- Font -->
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 		<!-- Styles -->
 		<style>
-			.cd-preloader-wrapper-pre {bottom: 0;left: 0;position: fixed;right: 0;top: 0;z-index: 4;}
-			.cd-preloader-wrapper-pre .cd-vh-center-pre {left: 50%; position: absolute; top: 50%; transform: translate(-50%,-50%);}
+			.cd-preloader-wrapper-pre {background-color: #fff; bottom: 0;left: 0;position: fixed;right: 0;top: 0;z-index: 4;}
+			.cd-preloader-wrapper-pre .cd-vh-center-pre {left: 50%; position: absolute; top: 50%; transform: translate(-50%,-50%); height: 146px;}
 			.cd-preloader-wrapper-pre .cd-svg-wrapper img {display: block; min-width: 100px; max-width: 100%; width: 100px; margin: 0 auto;}
+			.cd-preloader-wrapper-pre .cd-svg-wrapper img:last-child {width: 80px;min-width: 80px;margin-top: 5px;}
 		</style>
 	</head>
 	<body data-theme="light">
@@ -32,6 +34,7 @@
 			<section class="cd-preloader-wrapper-pre">
 				<div class="cd-svg-wrapper cd-vh-center-pre">
 					<img src="assets/svg/favicon/profile.svg" alt="loading-animation"/>
+					<img src="assets/svg/logo.svg" alt="logo"/>
 				</div>
 			</section>
 		</app-root>

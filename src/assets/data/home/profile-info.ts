@@ -16,7 +16,7 @@ const profileInfo = {
 				},
 				name: profileIntro.name
 			},
-			designation: profileIntro.designation,
+			subTitle: profileIntro.subTitle,
 			excerpt: profileSummary.description[0]
 		}
 	}

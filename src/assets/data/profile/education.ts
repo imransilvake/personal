@@ -4,8 +4,8 @@ const profileEducation = {
 		text: 'Profile.Education.Sub_Title',
 		type: 'Profile.Terms.Masters',
 	},
-	university_name: 'Profile.Education.University_Name',
-	university_info: 'Profile.Education.University_Info',
+	universityName: 'Profile.Education.University_Name',
+	universityInfo: 'Profile.Education.University_Info',
 	education: [
 		{
 			name: 'BONN',
