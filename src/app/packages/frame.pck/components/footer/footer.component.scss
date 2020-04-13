@@ -8,19 +8,20 @@ footer {
 		padding: 10px 0;
 
 		.cd-col {
-			h5 {
-				color: var(--tc2);
-				font-weight: cd-fontWeight(300);
+			h6 {
+				span {
+					color: var(--tc2);
+
+					&.ik-version {
+						font-size: cd-fontSize(s12);
+						margin-left: 5px;
+						vertical-align: middle;
+					}
+				}
 
 				.ik-angular {
 					margin: 0 5px;
 					width: 18px;
-				}
-
-				.ik-version {
-					font-size: cd-fontSize(s12);
-					margin-left: 5px;
-					vertical-align: middle;
 				}
 			}
 		}

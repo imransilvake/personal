@@ -1,9 +1,15 @@
 <section class="ik-notice-card" *ngIf="noticeData">
 	<div class="cd-container-fluid">
 		<div class="cd-container">
-			<span class="ik-label" [innerHTML]="noticeData['label'] | translate"></span>
-			<span> • </span>
-			<span [innerHTML]="noticeData['text'] | translate"></span>
+			<div class="cd-row">
+				<div class="cd-col">
+					<h6>
+						<span class="ik-label" [innerHTML]="noticeData['label'] | translate"></span>
+						<span> • </span>
+						<span [innerHTML]="noticeData['text'] | translate"></span>
+					</h6>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

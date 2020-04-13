@@ -129,8 +129,7 @@
 							<h2>{{ profileExperience['title'] | translate }}</h2>
 							<h6 [translate]="profileExperience['subTitle']['text']"
 								[translateParams]="{
-									designation: profileExperience['subTitle']['designation'] | translate,
-									developer: profileExperience['subTitle']['developer'] | translate
+									company: profileExperience['subTitle']['company'] | translate
 								}">
 							</h6>
 
@@ -157,7 +156,7 @@
                                                     developer: exp['developer'] | translate
 												}">
 											</h5>
-											<p>{{ exp['company'] }}, {{ exp['periodText'] }}
+											<p>{{ exp['company'] | translate }}, {{ exp['periodText'] }}
 												<ng-container *ngIf="exp['period'].length === 1">
 													<span> - </span>
 													<span class="ik-on">{{ profileExperience['current'] | translate }}</span>

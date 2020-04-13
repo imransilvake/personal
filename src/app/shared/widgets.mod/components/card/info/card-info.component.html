@@ -14,7 +14,7 @@
 			<ul [class.ik-list-one]="!l">
 				<ng-container *ngFor="let blockItem of block['items']">
 					<li>
-						<p>{{ blockItem['name'] }}</p>
+						<p>{{ blockItem['name'] | translate }}</p>
 						<ul *ngIf="!!blockItem['items']">
 							<ng-container *ngFor="let item of blockItem['items']">
 								<li><p>{{ item }}</p></li>

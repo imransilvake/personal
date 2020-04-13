@@ -2,8 +2,7 @@ const profileExperience = {
 	title: 'Profile.Terms.Experience',
 	subTitle: {
 		text: 'Profile.Experience.Sub_Title',
-		designation: 'Common.Designations.Frontend',
-		developer: 'Common.Terms.Developer'
+		company: 'Common.Companies.TS'
 	},
 	current: 'Profile.Experience.Current',
 	period: {
@@ -15,25 +14,25 @@ const profileExperience = {
 		{
 			designation: 'Common.Designations.Frontend',
 			developer: 'Common.Terms.Developer',
-			company: 'TourismusSuite',
+			company: 'Common.Companies.TS',
 			period: ['06-2016']
 		},
 		{
 			designation: 'Common.Designations.PHP',
 			developer: 'Common.Terms.Developer',
-			company: 'Denkwerk',
+			company: 'Common.Companies.DW',
 			period: ['12-2015', '05-2016']
 		},
 		{
 			designation: 'Common.Designations.PHP_WordPress',
 			developer: 'Common.Terms.Developer',
-			company: 'Gotechsol',
+			company: 'Common.Companies.GT',
 			period: ['06-2015', '09-2015']
 		},
 		{
 			designation: 'Common.Designations.WordPress',
 			developer: 'Common.Terms.Developer',
-			company: 'Aspire Solution',
+			company: 'Common.Companies.AS',
 			period: ['09-2014', '05-2015']
 		}
 	]

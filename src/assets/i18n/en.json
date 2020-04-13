@@ -35,6 +35,12 @@
 			"PHP_WordPress": "PHP & WordPress",
 			"WordPress": "WordPress"
 		},
+		"Companies": {
+			"TS": "TourismusSuite GmbH",
+			"DW": "Denkwerk GmbH",
+			"GT": "Gotechsol",
+			"AS": "Aspire Solution"
+		},
 		"Meta": {
 			"Title": "{{ name }} | {{ page }}",
 			"Keywords": "Resume, Profile, Personal, Angular, React, Javascript, NativeScript, Typescript",
@@ -72,6 +78,7 @@
 			"Styles": "Styles",
 			"Libraries": "Libraries",
 			"Database": "Database",
+			"SDK": "SDKs",
 			"Miscellaneous": "Miscellaneous",
 			"Bachelor": "Bachelor's",
 			"Masters": "Master's",
@@ -86,12 +93,12 @@
 			"Germany": "Germany"
 		},
 		"Education": {
-			"Sub_Title": "{{ type }} Graduate",
+			"Sub_Title": "I have a {{ type }} degree",
 			"University_Name": "{{ name }} University",
 			"University_Info": "{{ type }}, {{ degree }}, {{ year }}, {{ country }}"
 		},
 		"Experience": {
-			"Sub_Title": "{{ designation }} {{ developer }} at TourismusSuite",
+			"Sub_Title": "Working at {{ company }}",
 			"Designation_Info": "{{ designation }} {{ developer }}",
 			"Current": "Current"
 		},

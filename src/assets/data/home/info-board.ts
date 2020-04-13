@@ -8,7 +8,7 @@ const infoBoard = {
 					title: 'Common.Terms.Company',
 					items: [
 						{
-							name: 'TourismusSuite GmbH'
+							name: 'Common.Companies.TS'
 						}
 					]
 				},

@@ -88,6 +88,10 @@ const profileSkills = {
 			items: ['Firebase', 'MongoDB', 'MySQL']
 		},
 		{
+			title: 'Profile.Terms.SDK',
+			items: ['Mapbox', 'Google Maps']
+		},
+		{
 			title: 'Profile.Terms.Miscellaneous',
 			items: ['Yarn', 'NPM', 'NodeJs', 'Git', 'Jira', 'Confluence', 'WebStorm', 'macOS']
 		}
