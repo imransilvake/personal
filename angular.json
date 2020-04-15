@@ -30,7 +30,8 @@
 							"src/sitemap.xml",
 							"src/assets/images",
 							"src/assets/svg",
-							"src/assets/i18n"
+							"src/assets/i18n",
+							"src/_redirects"
 						],
 						"styles": [
 							"src/styles.scss"
