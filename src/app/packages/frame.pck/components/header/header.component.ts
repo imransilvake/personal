@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 // app
-import { APP_URL, ROUTING } from '../../../../../environments/environment';
+import { ROUTING } from '../../../../../environments/environment';
 import { LocalStorageItems } from '../../../../../app.config';
 import { faFont, faTint } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
@@ -18,7 +18,6 @@ import navigationBottom from 'src/assets/data/common/navigation-bottom';
 })
 
 export class HeaderComponent implements OnInit {
-	public appURL = APP_URL;
 	public routing = ROUTING;
 	public faIcons = [faTint, faFont];
 	public navigationTop = navigationTop;

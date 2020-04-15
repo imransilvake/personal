@@ -5,16 +5,16 @@ import projects from '../projects/projects';
 const navigationBottom = [
 	{
 		name: 'Common.Navigation.Profile',
-		link: `/${ROUTING.pages.profile}`
+		link: ROUTING.pages.profile
 	},
 	{
 		name: 'Common.Navigation.Projects',
-		link: `/${ROUTING.pages.projects}`,
+		link: ROUTING.pages.projects,
 		id: projects['filters'][0].id
 	},
 	{
 		name: 'Common.Navigation.Photography',
-		link: `/${ROUTING.pages.photography}`
+		link: ROUTING.pages.photography
 	}
 ];
 export default navigationBottom;
