@@ -96,50 +96,6 @@
 							"extractLicenses": true,
 							"vendorChunk": false,
 							"buildOptimizer": true
-						},
-						"prod-en": {
-							"fileReplacements": [
-								{
-									"replace": "src/environments/environment.ts",
-									"with": "src/environments/environment.prod.ts"
-								}
-							],
-							"optimization": true,
-							"outputHashing": "all",
-							"sourceMap": false,
-							"extractCss": true,
-							"namedChunks": false,
-							"extractLicenses": true,
-							"vendorChunk": false,
-							"buildOptimizer": true,
-							"outputPath": "dist/ik-en/",
-							"baseHref": "/en/",
-							"i18nFile": "src/locale/translation.en-US.xlf",
-							"i18nFormat": "xlf",
-							"i18nLocale": "en-US",
-							"i18nMissingTranslation": "error"
-						},
-						"prod-de": {
-							"fileReplacements": [
-								{
-									"replace": "src/environments/environment.ts",
-									"with": "src/environments/environment.prod.ts"
-								}
-							],
-							"optimization": true,
-							"outputHashing": "all",
-							"sourceMap": false,
-							"extractCss": true,
-							"namedChunks": false,
-							"extractLicenses": true,
-							"vendorChunk": false,
-							"buildOptimizer": true,
-							"outputPath": "dist/ik-de/",
-							"baseHref": "/de/",
-							"i18nFile": "src/locale/translation.de.xlf",
-							"i18nFormat": "xlf",
-							"i18nLocale": "de",
-							"i18nMissingTranslation": "error"
 						}
 					}
 				},
@@ -157,19 +113,7 @@
 						},
 						"prod": {
 							"browserTarget": "ik:build:prod"
-						},
-						"prod-en": {
-							"browserTarget": "ik:build:prod-en"
-						},
-						"prod-de": {
-							"browserTarget": "ik:build:prod-de"
 						}
-					}
-				},
-				"extract-i18n": {
-					"builder": "@angular-devkit/build-angular:extract-i18n",
-					"options": {
-						"browserTarget": "ik:build"
 					}
 				},
 				"lint": {
