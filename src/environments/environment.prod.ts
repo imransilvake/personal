@@ -9,4 +9,4 @@ export const environment = {
 export const APP_URL = 'http://localhost:4000';
 
 // routing
-export const ROUTING = EnvironmentRoutes;
+export const ROUTING = APP_URL + EnvironmentRoutes;
