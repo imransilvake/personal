@@ -3,7 +3,8 @@ import { AppLinks } from '../../../app.config';
 
 const projects = {
 	search: {
-		placeholder: 'Projects.Terms.Search'
+		placeholder: 'Projects.Terms.Search',
+		empty: 'Projects.Empty_Result'
 	},
 	filters: [
 		{

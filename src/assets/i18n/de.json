@@ -127,7 +127,8 @@
 			"TC": "Eine Einzel- (CPU) und eine Mehrspieler-Herausforderung, die von Lieferando als Code-Herausforderung bereitgestellt wird.",
 			"TTT": "Ein interaktives Tic-Tac-Toe-Spiel, das den Bewegungsverlauf aufzeichnet, damit ein Benutzer zwischen den Spielen hin und her wechseln kann.",
 			"MIS": "Ein Bildschieberegler zum Verwalten der mehreren Websites des Unternehmens von einem zentralen Ort aus, der Funktionen wie das Wechseln der Sprache, das Ziehen und Ablegen von Elementen und mehr ermöglicht."
-		}
+		},
+		"Empty_Result": "Suchergebnis leeren!"
 	},
 	"Photography": {
 		"Excerpt": "Reisen macht Spaß"
