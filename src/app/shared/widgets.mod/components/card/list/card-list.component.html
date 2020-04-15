@@ -19,7 +19,7 @@
 			</a>
 
 			<!-- Link: Filter -->
-			<a [routerLink]="['/' + filterRoute, item['controls']['filter']]"
+			<a [routerLink]="[filterRoute, item['controls']['filter']]"
 			   class="ik-filter"
 			   [class.ik-scss]="item['controls']['filter'] === 'scss'"
 			   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
