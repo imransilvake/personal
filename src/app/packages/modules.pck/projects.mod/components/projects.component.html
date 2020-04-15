@@ -30,7 +30,7 @@
 						<ng-container *ngFor="let pFilter of projects['filters']">
 							<li>
 								<a [class.ik-active]="pFilter.id === filter.value.id"
-								   [routerLink]="[routing.pages.projects, pFilter.id]">
+								   [routerLink]="['/' + routing.pages.projects, pFilter.id]">
 									{{ pFilter.text | translate }}
 								</a>
 							</li>
