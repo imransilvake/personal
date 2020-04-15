@@ -6,7 +6,7 @@ export const environment = {
 	production: false
 };
 
-export const APP_URL = 'http://localhost:4000';
+export const APP_URL = 'https://jovial-murdock-f13771.netlify.com';
 
 // routing
 export const ROUTING = APP_URL + EnvironmentRoutes;
