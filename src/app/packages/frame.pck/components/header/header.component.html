@@ -42,7 +42,7 @@
 				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
 					<ul class="ik-items ik-remove-bullets">
 						<li *ngFor="let item of navigationBottom">
-							<a [routerLink]="item.id ? [item.link, item.id] : item.link"
+							<a [routerLink]="item.id ? [appURL + item.link, item.id] : appURL + item.link"
 							   [class.ik-active]="isActiveRoute(item.link)">
 								{{ item.name | translate }}
 							</a>
