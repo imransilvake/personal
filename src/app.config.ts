@@ -22,8 +22,8 @@ export const LocalStorageItems = {
 // app links
 export const AppLinks = {
 	social: {
-		github: 'https://github.com/imransilvake',
-		linkedin: 'https://www.linkedin.com/in/imransilvake/',
+		github: 'https://github.com/imransilvake/',
+		linkedin: 'https://linkedin.com/in/imransilvake/',
 		email: 'imransilvake@gmail.com'
 	},
 	projects: {
@@ -32,7 +32,7 @@ export const AppLinks = {
 			list: {
 				scss: {
 					name: 'SCSS-Framework',
-					link: 'https://www.npmjs.com/package/@imransilvake/scss-framework'
+					link: 'https://npmjs.com/package/@imransilvake/scss-framework'
 				},
 				takeAwayChallenge: {
 					name: 'Takeaway-Challenge',

@@ -6,6 +6,6 @@ const profileIntro = {
 		developer: 'Common.Terms.Developer'
 	},
 	avatar: 'avatar.jpg',
-	cover: 'cover.jpg'
+	cover: 'JS'
 };
 export default profileIntro;

@@ -23,7 +23,29 @@
 						position: relative;
 
 						.ik-cover {
+							background-color: var(--c5);
 							border-bottom: 1px solid var(--tc3);
+							position: relative;
+
+							.ik-content {
+								border: 1px solid var(--c1);
+								height: 80px;
+								left: 0;
+								margin: -40px auto 0;
+								position: absolute;
+								right: 0;
+								top: 50%;
+								width: 80px;
+
+								h3 {
+									bottom: 0;
+									font-size: cd-fontSize(se3);
+									font-weight: cd-fontWeight(700);
+									line-height: cd-lineHeight(1);
+									position: absolute;
+									right: 6px;
+								}
+							}
 						}
 
 						.ik-photo {

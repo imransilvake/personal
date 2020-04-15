@@ -9,9 +9,9 @@
 						<div class="ik-profile">
 							<!-- Cover -->
 							<div class="ik-cover ik-image-fixed ik-two">
-								<img class="ik-bg-loader ik-loader-white"
-									 [src]="'assets/images/profile/' + profileInfo['summary']['display']['cover']"
-									 [alt]="profileInfo['summary']['display']['cover']"/>
+								<div class="ik-content">
+									<h3>{{ profileInfo['summary']['display']['cover'] }}</h3>
+								</div>
 							</div>
 
 							<!-- Avatar -->
