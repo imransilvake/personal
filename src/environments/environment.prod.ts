@@ -1,10 +1,11 @@
 // app
-import { EnvironmentRoutes } from './environment-routes';
+import { ENV_FIREBASE_CONFIG, ENV_ROUTES } from './common';
 
 // environment
 export const environment = {
-	production: false
+	production: false,
+	firebaseConfig : ENV_FIREBASE_CONFIG
 };
 
 // routing
-export const ROUTING = EnvironmentRoutes;
+export const ROUTING = ENV_ROUTES;
