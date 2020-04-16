@@ -105,6 +105,13 @@
 						padding: 0 5px;
 						position: absolute;
 						top: 15px;
+
+						&.ik-private {
+							background-color: var(--c7);
+							color: var(--c2);
+							left: auto;
+							right: 0;
+						}
 					}
 
 					.ik-info {

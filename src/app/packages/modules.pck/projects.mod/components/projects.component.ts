@@ -10,10 +10,11 @@ import {
 	faCode, faDownload, faExternalLinkSquareAlt,
 	faImages, faInfoCircle, faLock, faSearch, faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { ROUTING } from '../../../../../environments/environment';
 import projects from 'src/assets/data/projects/projects';
 import codeBlock from '../../../../../assets/data/projects/code-block';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { ROUTING } from '../../../../../environments/environment';
+import { FirebaseService } from '../../../../shared/common.mod/services/firebase.service';
 
 declare const lightGallery: any;
 
@@ -24,7 +25,10 @@ declare const lightGallery: any;
 })
 
 export class ProjectsComponent implements OnInit, OnDestroy {
-	public faIcon = [faCode, faDownload, faLock, faInfoCircle, faGithub, faImages, faTimesCircle, faExternalLinkSquareAlt, faSearch];
+	public faIcon = [
+		faCode, faDownload, faLock, faInfoCircle, faGithub,
+		faImages, faTimesCircle, faExternalLinkSquareAlt, faSearch
+	];
 	public routing = ROUTING;
 	public codeBlock = codeBlock;
 	public projects = projects;
@@ -35,7 +39,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private _route: ActivatedRoute,
-		private _router: Router
+		private _router: Router,
+		private _firebaseService: FirebaseService
 	) {
 		// listen: router events
 		this._router.events
@@ -153,13 +158,30 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * open specific project gallery
-	 * @param projectGallery
+	 * @param galleryId
 	 * @param index
 	 */
-	public onClickOpenProjectGallery(projectGallery: Array<string>, index: number) {
-		lightGallery(document.querySelector(`#gallery-${index}`), {
-			dynamic: true,
-			dynamicEl: projectGallery
-		});
+	public onClickOpenProjectGallery(galleryId: string, index: number) {
+		this._firebaseService.getProjectGallery(galleryId)
+			.then(block => {
+				const projectUrls = [];
+
+				// collect all promises
+				block['items'].forEach(i => projectUrls.push(
+					this._firebaseService.projects.child(galleryId).child(i.name).getDownloadURL())
+				);
+
+				// promise all
+				Promise.all(projectUrls).then(gallery => {
+					// map gallery
+					const galleryMapped = gallery.map(item => ({ src: item }));
+
+					// initiate light-gallery
+					lightGallery(document.querySelector(`#gallery-${index}`), {
+						dynamic: true,
+						dynamicEl: galleryMapped
+					});
+				});
+			});
 	}
 }

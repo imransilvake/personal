@@ -49,8 +49,13 @@
 								 [class.ik-scss]="item['controls']['filter'] === 'scss'"
 								 [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
 								 [class.ik-php]="item['controls']['filter'] === 'php'">
-								<!-- Badge -->
-								<p class="ik-badge">{{ item['badge'] }}</p>
+								<!-- Badge | Code -->
+								<p class="ik-badge">{{ item['badges']['code'] }}</p>
+
+								<!-- Badge | Private -->
+								<p class="ik-badge ik-private" *ngIf="item['controls']['lock']">
+									{{ item['badges']['private'] | translate }}
+								</p>
 
 								<!-- Title -->
 								<h6 class="ik-title">{{ item['title'] }}</h6>
@@ -74,10 +79,11 @@
 								<!-- Actions -->
 								<div class="ik-actions">
 									<div class="ik-left">
-										<fa-icon (click)="!item['actions']['lock'] && onClickDownloadProject(item['actions']['link'])"
+										<!-- Download -->
+										<fa-icon (click)="!item['controls']['lock'] && onClickDownloadProject(item['actions']['link'])"
 												class="ik-icon"
-												[class.ik-download]="!item['actions']['lock']"
-												[icon]="!item['actions']['lock'] ? faIcon[1] : faIcon[2]">
+												[class.ik-download]="!item['controls']['lock']"
+												[icon]="!item['controls']['lock'] ? faIcon[1] : faIcon[2]">
 										</fa-icon>
 									</div>
 
@@ -96,8 +102,8 @@
 										</fa-icon>
 
 										<!-- Gallery -->
-										<fa-icon *ngIf="!!(item['actions']['gallery'] && item['actions']['gallery'].length > 0)"
-												 (click)="onClickOpenProjectGallery(item['actions']['gallery'], idx)"
+										<fa-icon *ngIf="!!item['actions']['galleryId'] && !item['controls']['lock']"
+												 (click)="onClickOpenProjectGallery(item['actions']['galleryId'], idx)"
 												 id="gallery-{{idx}}"
 												 class="ik-icon"
 												 [icon]="faIcon[5]"></fa-icon>
