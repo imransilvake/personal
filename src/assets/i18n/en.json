@@ -115,7 +115,8 @@
 	},
 	"Projects": {
 		"Terms": {
-			"Search": "Search"
+			"Search": "Search",
+			"Private": "private"
 		},
 		"List": {
 			"SCSS": "SCSS Framework is developed for building responsive, fast, robust, and adaptable web apps.",

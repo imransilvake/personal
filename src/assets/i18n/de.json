@@ -115,7 +115,8 @@
 	},
 	"Projects": {
 		"Terms": {
-			"Search": "Suche"
+			"Search": "Suche",
+			"Private": "privat"
 		},
 		"List": {
 			"SCSS": "SCSS Framework wurde entwickelt, um reaktionsschnelle, schnelle, robuste und anpassungsfähige Web-Apps zu erstellen.",
