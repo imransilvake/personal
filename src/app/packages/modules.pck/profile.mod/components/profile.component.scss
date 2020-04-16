@@ -137,9 +137,9 @@
 
 												img {
 													border: 1px solid var(--tc3);
-													height: 46px;
+													height: 50px;
 													padding: 2px;
-													width: 46px;
+													width: 50px;
 												}
 											}
 
@@ -200,10 +200,10 @@
 													border-radius: 50%;
 													box-shadow: 0 0 3px 0 var(--o1);
 													color: var(--tc2);
-													height: 46px;
-													padding-top: 13px;
+													height: 50px;
+													padding-top: 16px;
 													text-align: center;
-													width: 46px;
+													width: 50px;
 
 													&.ik-current {
 														background-color: var(--c10);
@@ -212,7 +212,6 @@
 
 													&.ik-year {
 														font-size: cd-fontSize(s12);
-														padding-top: 14px;
 													}
 												}
 											}
