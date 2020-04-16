@@ -7,19 +7,19 @@ import { E404Component } from './packages/frame.pck/components/e404/e404.compone
 
 const ROUTES: Routes = [
 	{
-		path: ROUTING.pages.home,
+		path: ROUTING.home,
 		loadChildren: () => import('./packages/modules.pck/home.module').then(m => m.HomeModule)
 	},
 	{
-		path: ROUTING.pages.profile,
+		path: ROUTING.profile,
 		loadChildren: () => import('./packages/modules.pck/profile.mod/profile.module').then(m => m.ProfileModule)
 	},
 	{
-		path: ROUTING.pages.photography,
+		path: ROUTING.photography,
 		loadChildren: () => import('./packages/modules.pck/photography.mod/photography.module').then(m => m.PhotographyModule)
 	},
 	{
-		path: ROUTING.pages.projects,
+		path: ROUTING.projects,
 		loadChildren: () => import('./packages/modules.pck/projects.mod/projects.module').then(m => m.ProjectsModule)
 	},
 	{

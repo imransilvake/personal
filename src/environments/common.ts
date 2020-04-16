@@ -1,11 +1,9 @@
 // routes
 export const ENV_ROUTES = {
-	pages: {
-		home: '',
-		profile: 'profile',
-		projects: 'projects',
-		photography: 'photography'
-	}
+	home: '',
+	profile: 'profile',
+	projects: 'projects',
+	photography: 'photography'
 };
 
 // firebase

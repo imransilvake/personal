@@ -72,7 +72,7 @@ export class AppMetaService {
 
 			// condition
 			switch (newRoute) {
-				case this.routing.pages.profile:
+				case this.routing.profile:
 					const profile = this._translate.instant('Common.Meta.Title',
 						{
 							name: this.authorName,
@@ -81,7 +81,7 @@ export class AppMetaService {
 					);
 					this._title.setTitle(profile);
 					break;
-				case this.routing.pages.projects:
+				case this.routing.projects:
 					const projects = this._translate.instant('Common.Meta.Title',
 						{
 							name: this.authorName,
@@ -90,7 +90,7 @@ export class AppMetaService {
 					);
 					this._title.setTitle(projects);
 					break;
-				case this.routing.pages.photography:
+				case this.routing.photography:
 					const photography = this._translate.instant('Common.Meta.Title',
 						{
 							name: this.authorName,
