@@ -25,12 +25,12 @@
 			border-radius: 50%;
 			cursor: pointer;
 			display: inline-block;
-			height: 10px;
-			margin: 0 2px;
+			height: 12px;
+			margin: 0 3px;
 			outline: 0;
 			padding: 0;
 			transition: background-color .6s ease;
-			width: 10px;
+			width: 12px;
 
 			&.ik-active {
 				background-color: var(--c4);
