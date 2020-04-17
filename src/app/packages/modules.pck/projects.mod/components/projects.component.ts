@@ -161,27 +161,17 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	 * @param galleryId
 	 * @param index
 	 */
-	public onClickOpenProjectGallery(galleryId: string, index: number) {
-		this._firebaseService.getProjectGallery(galleryId)
-			.then(block => {
-				const projectUrls = [];
+	public async onClickOpenProjectGallery(galleryId: string, index: number) {
+		// get gallery list from firebase
+		const galleryList = await this._firebaseService.storageGetProjectGallery(galleryId);
 
-				// collect all promises
-				block['items'].forEach(i => projectUrls.push(
-					this._firebaseService.projects.child(galleryId).child(i.name).getDownloadURL())
-				);
+		// map gallery according to lightGallery
+		const galleryMapped = galleryList.map(item => ({ src: item }));
 
-				// promise all
-				Promise.all(projectUrls).then(gallery => {
-					// map gallery
-					const galleryMapped = gallery.map(item => ({ src: item }));
-
-					// initiate light-gallery
-					lightGallery(document.querySelector(`#gallery-${index}`), {
-						dynamic: true,
-						dynamicEl: galleryMapped
-					});
-				});
-			});
+		// initiate lightGallery
+		lightGallery(document.querySelector(`#gallery-${index}`), {
+			dynamic: true,
+			dynamicEl: galleryMapped
+		});
 	}
 }

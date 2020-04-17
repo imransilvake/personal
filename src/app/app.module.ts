@@ -8,9 +8,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // app
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { APP_ROUTES } from './app-routing';
 import { environment } from '../environments/environment';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { FrameModule } from './packages/frame.pck/frame.module';
 import { WidgetsModule } from './shared/widgets.mod/widgets.module';

@@ -11,11 +11,17 @@ export class FirebaseService {
 	}
 
 	/**
-	 * fetch specific project gallery
+	 * fetch specific project gallery from firebase storage
 	 * @param galleryId
 	 */
-	public getProjectGallery(galleryId) {
-		const projectPath = this.projects.child(galleryId);
-		return projectPath.listAll();
+	public async storageGetProjectGallery(galleryId) {
+		// get gallery data from firebase
+		const galleryData = await this.projects.child(galleryId).listAll();
+
+		// collect promises of all images
+		const projectUrls = galleryData['items'].map(i =>
+			this.projects.child(galleryId).child(i.name).getDownloadURL());
+
+		return Promise.all(projectUrls);
 	}
 }
