@@ -7,7 +7,7 @@ import { filter, takeUntil } from 'rxjs/operators';
 
 // app
 import {
-	faCode, faDownload, faExternalLinkSquareAlt, faImages,
+	faCamera, faCode, faDownload, faExternalLinkSquareAlt,
 	faInfoCircle, faLock, faSearch, faSpinner, faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 import projects from 'src/assets/data/projects/projects';
@@ -26,7 +26,7 @@ declare const lightGallery: any;
 
 export class ProjectsComponent implements OnInit, OnDestroy {
 	public faIcon = [
-		faCode, faDownload, faLock, faInfoCircle, faGithub, faImages,
+		faCode, faDownload, faLock, faInfoCircle, faGithub, faCamera,
 		faTimesCircle, faExternalLinkSquareAlt, faSearch, faSpinner
 	];
 	public routing = ROUTING;
@@ -174,7 +174,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 		// check if gallery list contains data
 		if (galleryList && galleryList.length > 0) {
-			// map gallery according to lightGallery
+			// map gallery list according to lightGallery data format
 			const galleryMapped = galleryList.map(item => ({ src: item }));
 
 			// initiate lightGallery
