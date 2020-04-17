@@ -7,8 +7,8 @@ import { filter, takeUntil } from 'rxjs/operators';
 
 // app
 import {
-	faCode, faDownload, faExternalLinkSquareAlt,
-	faImages, faInfoCircle, faLock, faSearch, faTimesCircle
+	faCode, faDownload, faExternalLinkSquareAlt, faImages,
+	faInfoCircle, faLock, faSearch, faSpinner, faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 import projects from 'src/assets/data/projects/projects';
 import codeBlock from '../../../../../assets/data/projects/code-block';
@@ -26,13 +26,14 @@ declare const lightGallery: any;
 
 export class ProjectsComponent implements OnInit, OnDestroy {
 	public faIcon = [
-		faCode, faDownload, faLock, faInfoCircle, faGithub,
-		faImages, faTimesCircle, faExternalLinkSquareAlt, faSearch
+		faCode, faDownload, faLock, faInfoCircle, faGithub, faImages,
+		faTimesCircle, faExternalLinkSquareAlt, faSearch, faSpinner
 	];
 	public routing = ROUTING;
 	public codeBlock = codeBlock;
 	public projects = projects;
 	public infoBlockIndex = -1;
+	public spinnerIndex = -1;
 	public formFields;
 
 	private unSubscribe = new Subject();
@@ -162,16 +163,25 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	 * @param index
 	 */
 	public async onClickOpenProjectGallery(galleryId: string, index: number) {
+		// start spinner
+		this.spinnerIndex = index;
+
 		// get gallery list from firebase
 		const galleryList = await this._firebaseService.storageGetProjectGallery(galleryId);
 
-		// map gallery according to lightGallery
-		const galleryMapped = galleryList.map(item => ({ src: item }));
+		// stop spinner
+		this.spinnerIndex = -1;
 
-		// initiate lightGallery
-		lightGallery(document.querySelector(`#gallery-${index}`), {
-			dynamic: true,
-			dynamicEl: galleryMapped
-		});
+		// check if gallery list contains data
+		if (galleryList && galleryList.length > 0) {
+			// map gallery according to lightGallery
+			const galleryMapped = galleryList.map(item => ({ src: item }));
+
+			// initiate lightGallery
+			lightGallery(document.querySelector(`#gallery-${index}`), {
+				dynamic: true,
+				dynamicEl: galleryMapped
+			});
+		}
 	}
 }

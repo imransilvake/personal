@@ -15,13 +15,22 @@ export class FirebaseService {
 	 * @param galleryId
 	 */
 	public async storageGetProjectGallery(galleryId) {
-		// get gallery data from firebase
-		const galleryData = await this.projects.child(galleryId).listAll();
+		// Wait for the result of listAll() to settle,
+		// and assign the fulfilled value to galleryData.
+		// If the result of listAll() rejects, our code
+		// throws, and we jump to the catch block.
+		// Otherwise, this block continues to run.
+		try {
+			// get gallery data from firebase
+			const galleryData = await this.projects.child(galleryId).listAll();
 
-		// collect promises of all images
-		const projectUrls = galleryData['items'].map(i =>
-			this.projects.child(galleryId).child(i.name).getDownloadURL());
+			// collect promises of all images
+			const projectUrls = galleryData['items'].map(i =>
+				this.projects.child(galleryId).child(i.name).getDownloadURL());
 
-		return Promise.all(projectUrls);
+			return Promise.all(projectUrls);
+		} catch (e) {
+			new Promise((resolve) => { resolve([]); });
+		}
 	}
 }
