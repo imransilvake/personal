@@ -14,7 +14,10 @@ import projects from 'src/assets/data/projects/projects';
 import codeBlock from '../../../../../assets/data/projects/code-block';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ROUTING } from '../../../../../environments/environment';
+import { MemoryStorageItems } from '../../../../../app.config';
 import { FirebaseService } from '../../../../shared/common.mod/services/firebase.service';
+import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
+import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
 
 declare const lightGallery: any;
 
@@ -41,7 +44,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	constructor(
 		private _route: ActivatedRoute,
 		private _router: Router,
-		private _firebaseService: FirebaseService
+		private _firebaseService: FirebaseService,
+		private _storageService: StorageService
 	) {
 		// listen: router events
 		this._router.events
@@ -166,8 +170,27 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		// start spinner
 		this.spinnerIndex = index;
 
+		// get project galleries from memory (if exists)
+		const projectGalleries = this._storageService.get(
+			MemoryStorageItems.projectGalleries, StorageTypeEnum.MEMORY
+		);
+
 		// get gallery list from firebase
-		const galleryList = await this._firebaseService.storageGetProjectGallery(galleryId);
+		const galleryList = projectGalleries && projectGalleries[galleryId] ?
+			projectGalleries[galleryId] : await this._firebaseService.storageGetProjectGallery(galleryId);
+
+		// update project galleries in memory
+		if (!(projectGalleries && projectGalleries[galleryId])) {
+			// prepare payload
+			const payload = {};
+			payload[galleryId] = galleryList;
+
+			// save to memory
+			this._storageService.put(
+				MemoryStorageItems.projectGalleries, { ...projectGalleries, ...payload },
+				StorageTypeEnum.MEMORY
+			);
+		}
 
 		// stop spinner
 		this.spinnerIndex = -1;

@@ -12,11 +12,17 @@ export const AppOptions = {
 	}
 };
 
+// memory-storage items
+export const MemoryStorageItems = {
+	projectGalleries: 'ik-pr',
+	photographyGalleries: 'ik-ph'
+}
+
 // local-storage items
 export const LocalStorageItems = {
 	themeColorMode: 'ik-c',
 	fontSizeMode: 'ik-fs',
-	languageMode: 'ik-l',
+	languageMode: 'ik-l'
 };
 
 // app links
