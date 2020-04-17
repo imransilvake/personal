@@ -65,36 +65,6 @@ export class StorageService {
 	}
 
 	/**
-	 * delete item from local or session storage
-	 * @param {string} key
-	 * @param {StorageTypeEnum} storageType
-	 */
-	public remove(key: string, storageType?: StorageTypeEnum) {
-		switch (storageType) {
-			case StorageTypeEnum.PERSISTANT:
-				if (this.exist(key, StorageTypeEnum.PERSISTANT)) {
-					localStorage.removeItem(key);
-				}
-				break;
-
-			case StorageTypeEnum.SESSION:
-				if (this.exist(key, StorageTypeEnum.SESSION)) {
-					sessionStorage.removeItem(key);
-				}
-				break;
-
-			case StorageTypeEnum.MEMORY:
-				if (this.exist(key, StorageTypeEnum.MEMORY)) {
-					this.memory = {};
-				}
-				break;
-
-			default:
-				localStorage.removeItem(key);
-		}
-	}
-
-	/**
 	 * check if item exist in local or session storage
 	 * @param {string} key
 	 * @param {StorageTypeEnum} storageType
@@ -114,30 +84,5 @@ export class StorageService {
 			default:
 				return localStorage.getItem(key) !== null;
 		}
-	}
-
-	/**
-	 * clear specific items from local or session storage
-	 * @param {Array<string>} items
-	 * @param {StorageTypeEnum} storageType
-	 */
-	public clearStorageItems(items: Array<string>, storageType: StorageTypeEnum) {
-		items.forEach((item) => {
-			this.remove(item, storageType);
-		});
-	}
-
-	/**
-	 * clear all localStorage items
-	 */
-	public static clearAllLocalStorageItems() {
-		localStorage.clear();
-	}
-
-	/**
-	 * clear all sessionStorage items
-	 */
-	public static clearAllSessionStorageItems() {
-		sessionStorage.clear();
 	}
 }
