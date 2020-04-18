@@ -1,9 +1,39 @@
-<section class="ik-push-notification" *ngIf="isConnectionDown">
-	<div class="ik-head">
-		<fa-icon class="ik-icon" [icon]="faIcons[0]" [spin]="true"></fa-icon>
-	</div>
-	<div class="ik-content">
-		<h5>Network Connection</h5>
-		<p>Your internet connection is currently down. Please check your connection.</p>
-	</div>
+<section class="ik-push-notification">
+	<ng-container *ngFor="let notification of pushNotificationsList; let idx=index;">
+		<div *ngIf="notification['controls']['show']"
+			 class="ik-message"
+			 [class.ik-animate]="animateIndex === idx">
+			<!-- Head -->
+			<div class="ik-head">
+				<!-- Icon -->
+				<fa-icon class="ik-icon"
+						 [class.ik-red]="!!notification['controls']['error']"
+						 [class.ik-green]="!notification['controls']['error']"
+						 [icon]="notification['detail']['icon']"
+						 [spin]="notification['controls']['spin']">
+				</fa-icon>
+
+				<!-- Title -->
+				<h5>{{ notification['detail']['title'] | translate }}</h5>
+			</div>
+
+			<!-- Content -->
+			<div class="ik-content">
+				<p>{{ notification['detail']['description'] | translate }}</p>
+			</div>
+
+			<!-- Buttons -->
+			<div class="ik-buttons" *ngIf="notification['controls']['allowClose']">
+				<ng-container *ngFor="let button of notification['buttons']">
+					<button class="ik-button"
+							(click)="!button['disabled'] && onClickRemoveMessage(notification['id'], idx)"
+							[class.ik-close]="!button['disabled']"
+							[class.ik-dismiss]="!!button['disabled']"
+							[translate]="button['text']"
+							[translateParams]="{ seconds: counter }">
+					</button>
+				</ng-container>
+			</div>
+		</div>
+	</ng-container>
 </section>

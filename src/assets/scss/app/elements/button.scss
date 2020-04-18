@@ -1,0 +1,18 @@
+.ik-button {
+	background-color: var(--c8);
+	border-radius: 2px;
+	border: none;
+	color: var(--c2);
+	cursor: pointer;
+	font-size: cd-fontSize(s15);
+	outline: 0;
+	padding: 5px 10px;
+
+	&:hover {
+		opacity: .9;
+	}
+
+	&:disabled {
+		cursor: default;
+	}
+}

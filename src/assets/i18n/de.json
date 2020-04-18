@@ -24,6 +24,22 @@
 			"Four": "(externe) Code Section App",
 			"Five": "(externe) Todo App"
 		},
+		"Push_Notifications": {
+			"Messages": {
+				"Welcome": {
+					"Title": "Herzlich willkommen",
+					"Description": "Dies ist meine persönliche Website und hier können Sie alles über meine beruflichen Aktivitäten erfahren."
+				},
+				"Network_Connection": {
+					"Title": "Netzwerkverbindung",
+					"Description": "Ihre Internetverbindung ist derzeit unterbrochen. Bitte überprüfen Sie Ihren Router."
+				}
+			},
+			"Buttons": {
+				"Close": "Schließen",
+				"Dismiss": "In {{ seconds }} Sekunden schließen"
+			}
+		},
 		"Navigation": {
 			"Profile": "Profil",
 			"Projects": "Projekte",

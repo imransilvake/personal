@@ -8,7 +8,8 @@ export const AppOptions = {
 		default: [20000, 20000],
 		infoBoard: [10000, 10000],
 		notice: [10000, 10000],
-		photography: [10000, 10000]
+		photography: [10000, 10000],
+		welcome: [1000, 1000, 15]
 	}
 };
 
@@ -22,7 +23,8 @@ export const MemoryStorageItems = {
 export const LocalStorageItems = {
 	themeColorMode: 'ik-c',
 	fontSizeMode: 'ik-fs',
-	languageMode: 'ik-l'
+	languageMode: 'ik-l',
+	welcomePN: 'ik-w'
 };
 
 // app links
