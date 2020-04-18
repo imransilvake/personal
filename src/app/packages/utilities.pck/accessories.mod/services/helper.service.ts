@@ -1,6 +1,6 @@
 // angular
 import { Injectable } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import { fromEvent, merge } from 'rxjs';
 
 // app
 import * as moment from 'moment';
@@ -13,10 +13,13 @@ export class HelperService {
 	}
 
 	/**
-	 * detect: scroll
+	 * detect: network connection
 	 */
-	public static detectScroll() {
-		return fromEvent(window, 'scroll');
+	public static detectNetworkConnection() {
+		return merge(
+			fromEvent(window, 'offline'),
+			fromEvent(window, 'online')
+		);
 	}
 
 	/**
@@ -24,6 +27,13 @@ export class HelperService {
 	 */
 	public static detectMouseMove() {
 		return fromEvent(window, 'mousemove');
+	}
+
+	/**
+	 * detect: scroll
+	 */
+	public static detectScroll() {
+		return fromEvent(window, 'scroll');
 	}
 
 	/**

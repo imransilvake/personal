@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import { AppOptions } from '../app.config';
 import { CardViewEnum } from './shared/widgets.mod/enums/card-view.enum';
 import { AppMetaService } from './packages/utilities.pck/accessories.mod/services/app-meta.service';
-import notifications from '../assets/data/common/notifications';
+import notice from '../assets/data/common/notice';
 
 @Component({
 	selector: 'app-root',
@@ -33,12 +33,15 @@ import notifications from '../assets/data/common/notifications';
 
 		<!-- Scroll Top -->
 		<app-scroll-top></app-scroll-top>
+
+		<!-- Push Notification -->
+		<app-push-notification></app-push-notification>
 	`
 })
 
 export class AppComponent {
 	public cardViewNotice = CardViewEnum.CARD_NOTICE;
-	public noticeList = { items: notifications['items'].filter(x => x.show) };
+	public noticeList = { items: notice['items'].filter(x => x.show) };
 	public noticeActive = this.noticeList['items'][0];
 	public noticeTotalSlides = this.noticeList['items'].length;
 	public noticeInterval = AppOptions.intervals.notice;

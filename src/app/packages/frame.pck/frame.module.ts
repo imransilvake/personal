@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 import { WidgetsModule } from '../../shared/widgets.mod/widgets.module';
 import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
+import { PushNotificationComponent } from './components/push-notification/push-notification.component';
 
 @NgModule({
 	imports: [
@@ -20,12 +21,14 @@ import { LanguageSwitchComponent } from './components/language-switch/language-s
 		HeaderComponent,
 		FooterComponent,
 		ScrollTopComponent,
-		LanguageSwitchComponent
+		LanguageSwitchComponent,
+		PushNotificationComponent
 	],
 	exports: [
 		HeaderComponent,
 		FooterComponent,
-		ScrollTopComponent
+		ScrollTopComponent,
+		PushNotificationComponent
 	]
 })
 

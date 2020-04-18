@@ -1,0 +1,42 @@
+@import 'scss-methods';
+
+.ik-push-notification {
+	align-items: flex-end;
+	bottom: 20px;
+	display: flex;
+	left: 20px;
+	position: fixed;
+	width: 330px;
+	z-index: cd-zIndex(float);
+
+	.ik-head {
+		background-color: var(--tc5);
+		border-radius: 50%;
+
+		.ik-icon {
+			color: var(--c7);
+			display: flex;
+			font-size: 1.5rem;
+			margin: 5px;
+		}
+	}
+
+	.ik-content {
+		background-color: var(--tc5);
+		border-bottom: 1px solid var(--tc5);
+		border-radius: 4px;
+		color: var(--tc2);
+		margin-left: 5px;
+		padding: 5px 10px;
+
+		h5 {
+			margin-bottom: 2px;
+		}
+	}
+
+	// media
+	@include cd-media(desktop, mini) {
+		right: 20px;
+		width: auto;
+	}
+}

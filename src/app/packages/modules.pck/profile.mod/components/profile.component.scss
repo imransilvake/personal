@@ -1,7 +1,7 @@
 @import 'scss-methods';
 
 .ik-profile {
-	background-color: var(--bg2);
+	background-color: var(--tc2);
 	padding: 30px 0;
 
 	header {
@@ -16,7 +16,6 @@
 						bottom: -(50 + 30) + px;
 						position: absolute;
 						right: 30px;
-						z-index: cd-zIndex(float);
 
 						img {
 							border-radius: 50%;
@@ -28,12 +27,12 @@
 					}
 
 					h1 {
-						color: var(--tc2);
+						color: var(--tc6);
 						line-height: cd-lineHeight(1);
 					}
 
 					h5 {
-						color: var(--tc2);
+						color: var(--tc6);
 						font-weight: cd-fontWeight(300);
 					}
 
@@ -48,22 +47,20 @@
 	}
 
 	.ik-content {
-		position: relative;
-
 		.ik-summary {
-			background-color: var(--bg3);
+			background-color: var(--tc3);
 			padding: 30px 0;
 
 			.cd-container {
 				.cd-row {
 					.cd-col {
 						h2 {
-							color: var(--tc2);
+							color: var(--tc6);
 							line-height: cd-lineHeight(1);
 						}
 
 						p {
-							color: var(--tc2);
+							color: var(--tc6);
 							margin-top: 12px;
 							text-align: justify;
 						}
@@ -81,7 +78,7 @@
 						&.ik-quick-wrapper {
 							.ik-skills {
 								h2 {
-									color: var(--tc2);
+									color: var(--tc6);
 								}
 
 								.ik-logo {
@@ -92,7 +89,7 @@
 										margin-right: 3px;
 
 										img {
-											border: 1px solid var(--tc3);
+											border: 1px solid var(--tc7);
 											height: 50px;
 											padding: 2px;
 											width: 50px;
@@ -102,7 +99,7 @@
 
 								.ik-tags {
 									h6 {
-										color: var(--tc2);
+										color: var(--tc6);
 										margin: 10px 0 5px;
 									}
 
@@ -116,11 +113,11 @@
 						&.ik-background-wrapper {
 							.ik-education {
 								h2 {
-									color: var(--tc2);
+									color: var(--tc6);
 								}
 
 								h6 {
-									color: var(--tc2);
+									color: var(--tc6);
 									font-weight: cd-fontWeight(400);
 								}
 
@@ -136,7 +133,7 @@
 												float: left;
 
 												img {
-													border: 1px solid var(--tc3);
+													border: 1px solid var(--tc7);
 													height: 50px;
 													padding: 2px;
 													width: 50px;
@@ -147,11 +144,11 @@
 												margin-left: 20px;
 
 												h5 {
-													color: var(--tc2);
+													color: var(--tc6);
 												}
 
 												p {
-													color: var(--tc2);
+													color: var(--tc6);
 													font-weight: cd-fontWeight(300);
 												}
 											}
@@ -166,11 +163,11 @@
 
 							.ik-experience {
 								h2 {
-									color: var(--tc2);
+									color: var(--tc6);
 								}
 
 								h6 {
-									color: var(--tc2);
+									color: var(--tc6);
 									font-weight: cd-fontWeight(400);
 								}
 
@@ -180,7 +177,7 @@
 
 									ul {
 										&::before {
-											border-left: 1px solid var(--tc3);
+											border-left: 1px solid var(--tc7);
 											bottom: 10%;
 											content: '';
 											left: 22px;
@@ -196,10 +193,10 @@
 												float: left;
 
 												.ik-number {
-													background-color: var(--bg1);
+													background-color: var(--tc1);
 													border-radius: 50%;
 													box-shadow: 0 0 3px 0 var(--o1);
-													color: var(--tc2);
+													color: var(--tc6);
 													height: 50px;
 													padding-top: 16px;
 													text-align: center;
@@ -220,11 +217,11 @@
 												margin-left: 20px;
 
 												h5 {
-													color: var(--tc2);
+													color: var(--tc6);
 												}
 
 												p {
-													color: var(--tc2);
+													color: var(--tc6);
 													font-weight: cd-fontWeight(300);
 
 													.ik-on {
@@ -248,11 +245,11 @@
 
 							.ik-languages {
 								h2 {
-									color: var(--tc2);
+									color: var(--tc6);
 								}
 
 								h6 {
-									color: var(--tc2);
+									color: var(--tc6);
 									font-weight: cd-fontWeight(400);
 								}
 
@@ -267,7 +264,7 @@
 
 							.ik-interest {
 								h2 {
-									color: var(--tc2);
+									color: var(--tc6);
 								}
 
 								.ik-tags {
@@ -281,7 +278,7 @@
 						}
 
 						hr {
-							border-top-color: var(--tc3);
+							border-top-color: var(--tc7);
 						}
 					}
 				}
@@ -291,9 +288,9 @@
 
 	// extended class
 	.ik-extend-tag {
-		background-color: var(--bg3);
+		background-color: var(--tc3);
 		border-radius: 2px;
-		color: var(--tc2);
+		color: var(--tc6);
 		display: inline-block;
 		font-weight: cd-fontWeight(300);
 		margin: 0 3px 3px 0;
@@ -313,7 +310,6 @@
 							img {
 								box-shadow: none;
 								margin: auto;
-								width: 140px;
 							}
 						}
 					}

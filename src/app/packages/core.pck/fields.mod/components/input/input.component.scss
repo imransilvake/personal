@@ -19,11 +19,11 @@
 			width: 100%;
 
 			input {
-				background-color: var(--bg4);
+				background-color: var(--tc4);
 				border: none;
 				border-radius: 2px;
-				box-shadow: inset 0 2px 3px var(--tc3);
-				color: var(--tc1);
+				box-shadow: inset 0 2px 3px var(--tc7);
+				color: var(--tc5);
 				cursor: pointer;
 				font-size: cd-fontSize(s14);
 				margin: 0;
@@ -45,14 +45,14 @@
 				}
 
 				&::placeholder {
-					color: var(--tc2);
+					color: var(--tc6);
 					opacity: 1;
 				}
 			}
 
 			// icon
 			.ik-icon {
-				color: var(--tc2);
+				color: var(--tc6);
 				cursor: pointer;
 				position: absolute;
 				top: 10px;
@@ -83,7 +83,7 @@
 
 	// hint
 	.ik-hint {
-		color: var(--tc2);
+		color: var(--tc6);
 		display: block;
 		font-size: cd-fontSize(s12);
 		margin-top: 4px;

@@ -1,8 +1,8 @@
 @import 'scss-methods';
 
 footer {
-	background-color: var(--bg2);
-	border-top: 1px solid var(--tc3);
+	background-color: var(--tc2);
+	border-top: 1px solid var(--tc7);
 
 	.cd-row {
 		padding: 10px 0;
@@ -10,7 +10,7 @@ footer {
 		.cd-col {
 			h6 {
 				span {
-					color: var(--tc2);
+					color: var(--tc6);
 
 					&.ik-version {
 						font-size: cd-fontSize(s12);

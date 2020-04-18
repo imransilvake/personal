@@ -1,7 +1,7 @@
 @import 'scss-methods';
 
 .ik-404 {
-	background-color: var(--bg4);
+	background-color: var(--tc4);
 
 	.cd-row {
 		.cd-col {
@@ -9,7 +9,7 @@
 				padding: 50px 0;
 
 				.ik-ghost {
-					$ghost-box: var(--tc5);
+					$ghost-box: var(--tc4);
 					$ghost: var(--c3);
 					$ghost-left-eye: var(--c7);
 					$ghost-right-eye: var(--c7);
@@ -99,7 +99,7 @@
 				}
 
 				p {
-					color: var(--tc2);
+					color: var(--tc6);
 				}
 			}
 		}

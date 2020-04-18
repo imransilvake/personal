@@ -2,12 +2,12 @@
 
 header {
 	.ik-block {
-		background-color: var(--bg2);
+		background-color: var(--tc2);
 		padding: 10px 0;
 		position: relative;
 
 		&.ik-border {
-			border-bottom: 1px solid var(--tc3);
+			border-bottom: 1px solid var(--tc7);
 		}
 
 		.cd-row {
@@ -29,7 +29,7 @@ header {
 						}
 
 						ul {
-							background-color: var(--bg3);
+							background-color: var(--tc3);
 							border-radius: 5px;
 							display: flex;
 							left: 100%;
@@ -45,7 +45,7 @@ header {
 								}
 
 								.ik-icon {
-									color: var(--tc1);
+									color: var(--tc5);
 									cursor: pointer;
 									display: block;
 

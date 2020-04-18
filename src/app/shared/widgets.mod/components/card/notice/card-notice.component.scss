@@ -1,12 +1,12 @@
 @import 'scss-methods';
 
 .ik-notice-card {
-	background-color: var(--bg3);
+	background-color: var(--tc3);
 	padding: 8px 0;
 	text-align: center;
 
 	span {
-		color: var(--tc2);
+		color: var(--tc6);
 		font-weight: cd-fontWeight(500);
 
 		&.ik-label {

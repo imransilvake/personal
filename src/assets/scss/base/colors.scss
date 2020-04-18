@@ -25,37 +25,35 @@ $color6: #dddddd;
 }
 
 [data-theme='light'] {
-	--bg1: #{$color1};
-	--bg2: #{$color1};
-	--bg3: #{$color2};
-	--bg4: #{$color2};
-	--tc1: #{$color3};
-	--tc2: #{$color3};
-	--tc3: #{$color6};
-	--tc4: #{$color1};
-	--tc5: #{$color2};
+	--tc1: #{$color1};
+	--tc2: #{$color1};
+	--tc3: #{$color2};
+	--tc4: #{$color2};
+	--tc5: #{$color3};
+	--tc6: #{$color3};
+	--tc7: #{$color6};
 }
 
 [data-theme='dark'] {
-	--bg1: #{$color3};
-	--bg2: #{$color4};
-	--bg3: #{$color3};
-	--bg4: #{$color4};
-	--tc1: #{$color1};
-	--tc2: #{$color5};
+	--tc1: #{$color3};
+	--tc2: #{$color4};
 	--tc3: #{$color3};
 	--tc4: #{$color4};
-	--tc5: #{$color4};
+	--tc5: #{$color1};
+	--tc6: #{$color5};
+	--tc7: #{$color3};
 }
 
 /**
 -------------------------------------------
 color		Light				Dark
 -------------------------------------------
-tc1			black_light 	-> 	white
-tc2			black_light 	-> 	grey
-tc3			white_light 	-> 	black_light
-tc4			white			-> 	black
-tc5			white_light		-> 	black
+tc1			white			-> 	black_light
+tc2			white		    -> 	black
+tc3			white_light		-> 	black_light
+tc4			white_light		-> 	black
+tc5			black_light 	-> 	white
+tc6			black_light 	-> 	grey
+tc7			grey 	        -> 	black_light
 -------------------------------------------
- */
+*/

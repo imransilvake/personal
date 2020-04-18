@@ -1,30 +1,30 @@
-const notifications = {
+const notice = {
 	items: [
 		{
 			label: 'Common.Terms.Job',
-			text: 'Common.Notifications.One',
+			text: 'Common.Notice.One',
 			show: false
 		},
 		{
 			label: 'Common.Terms.Working_On',
-			text: 'Common.Notifications.Two',
+			text: 'Common.Notice.Two',
 			show: true
 		},
 		{
 			label: 'Common.Terms.Todo',
-			text: 'Common.Notifications.Three',
+			text: 'Common.Notice.Three',
 			show: true
 		},
 		{
 			label: 'Common.Terms.Future_Plan',
-			text: 'Common.Notifications.Four',
+			text: 'Common.Notice.Four',
 			show: true
 		},
 		{
 			label: 'Common.Terms.Future_Plan',
-			text: 'Common.Notifications.Five',
+			text: 'Common.Notice.Five',
 			show: true
 		}
 	]
 };
-export default notifications;
+export default notice;

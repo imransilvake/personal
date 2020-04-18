@@ -1,10 +1,10 @@
 @import 'scss-methods';
 
 .ik-info-card {
-	background-color: var(--bg1);
+	background-color: var(--tc1);
 
 	.ik-photo {
-		border-bottom: 1px solid var(--tc5);
+		border-bottom: 1px solid var(--tc4);
 		padding: 8px 0;
 
 		img {
@@ -24,7 +24,7 @@
 		}
 
 		h6 {
-			color: var(--tc2);
+			color: var(--tc6);
 			font-size: cd-fontSize(s15);
 			font-weight: cd-fontWeight(700);
 			margin: 5px 0 0;
@@ -39,10 +39,10 @@
 			}
 
 			li {
-				color: var(--tc2);
+				color: var(--tc6);
 
 				p {
-					color: var(--tc2);
+					color: var(--tc6);
 					font-size: cd-fontSize(s14);
 				}
 			}

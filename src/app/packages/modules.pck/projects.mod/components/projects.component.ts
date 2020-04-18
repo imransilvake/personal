@@ -7,8 +7,8 @@ import { filter, takeUntil } from 'rxjs/operators';
 
 // app
 import {
-	faCamera, faCode, faDownload, faExternalLinkSquareAlt,
-	faInfoCircle, faLock, faSearch, faSpinner, faTimesCircle
+	faCamera, faCircleNotch, faCode, faDownload, faInfoCircle,
+	faExternalLinkSquareAlt, faLock, faSearch, faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 import projects from 'src/assets/data/projects/projects';
 import codeBlock from '../../../../../assets/data/projects/code-block';
@@ -30,7 +30,7 @@ declare const lightGallery: any;
 export class ProjectsComponent implements OnInit, OnDestroy {
 	public faIcon = [
 		faCode, faDownload, faLock, faInfoCircle, faGithub, faCamera,
-		faTimesCircle, faExternalLinkSquareAlt, faSearch, faSpinner
+		faTimesCircle, faExternalLinkSquareAlt, faSearch, faCircleNotch
 	];
 	public routing = ROUTING;
 	public codeBlock = codeBlock;
