@@ -1,6 +1,7 @@
 // angular
 import { NgModule } from '@angular/core';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
@@ -24,6 +25,7 @@ export function createTranslateLoader(http: HttpClient) {
 	imports: [
 		// angular
 		BrowserModule,
+		BrowserAnimationsModule,
 		RouterModule.forRoot(APP_ROUTES),
 		HttpClientModule,
 

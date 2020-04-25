@@ -1,8 +1,9 @@
-<section class="ik-push-notification">
-	<ng-container *ngFor="let notification of pushNotificationsList; let idx=index;">
-		<div *ngIf="notification['controls']['show']"
-			 class="ik-message"
-			 [class.ik-animate]="animateIndex === idx">
+<section class="ik-push-notification" *ngIf="validateNotificationsLength">
+	<ng-container *ngFor="let notification of pushNotificationsList">
+		<div @slideInOut
+			 (@slideInOut.done)="onValidateNotificationsLength()"
+			 *ngIf="notification['controls']['show']"
+			 class="ik-message">
 			<!-- Head -->
 			<div class="ik-head">
 				<!-- Icon -->
@@ -23,10 +24,12 @@
 			</div>
 
 			<!-- Buttons -->
-			<div class="ik-buttons" *ngIf="notification['controls']['allowClose']">
+			<div class="ik-buttons"
+				 [class.ik-show]="notification['controls']['show']"
+				 *ngIf="notification['controls']['allowClose']">
 				<ng-container *ngFor="let button of notification['buttons']">
 					<button class="ik-button"
-							(click)="!button['disabled'] && onClickRemoveMessage(notification['id'], idx)"
+							(click)="!button['disabled'] && updateNotificationList(notification['id'], false)"
 							[class.ik-close]="!button['disabled']"
 							[class.ik-dismiss]="!!button['disabled']"
 							[translate]="button['text']"

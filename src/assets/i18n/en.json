@@ -37,7 +37,7 @@
 			},
 			"Buttons": {
 				"Close": "Close",
-				"Dismiss": "Dismiss in {{ seconds }} second(s)"
+				"Dismiss": "Dismiss in {{ seconds }}s"
 			}
 		},
 		"Navigation": {

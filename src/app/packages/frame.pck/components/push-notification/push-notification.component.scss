@@ -11,22 +11,15 @@
 		background-color: var(--tc1);
 		box-shadow: 1px 1px 1px var(--o1);
 		padding: 10px;
-		transition: transform .4s ease-out 0s;
 
 		&:not(:last-child) {
 			margin-bottom: 20px;
 		}
 
-		&.ik-animate {
-			transform: translateX(-352px);
-		}
-
 		.ik-head {
 			align-items: center;
-			border-bottom: 1px solid var(--tc4);
 			display: flex;
 			margin-bottom: 10px;
-			padding-bottom: 10px;
 
 			.ik-icon {
 				display: flex;
@@ -46,11 +39,7 @@
 		}
 
 		.ik-buttons {
-			align-items: center;
-			border-top: 1px solid var(--tc4);
-			display: flex;
 			margin-top: 10px;
-			padding-top: 10px;
 
 			button {
 				&:not(:first-child) {
@@ -58,12 +47,12 @@
 				}
 
 				&.ik-close {
-					background-color: var(--c7);
+					background-color: var(--c8);
 				}
 
 				&.ik-dismiss {
-					background-color: var(--c5);
-					color: var(--c1);
+					background-color: transparent;
+					color: var(--c7);
 					cursor: default;
 				}
 			}

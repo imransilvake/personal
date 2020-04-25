@@ -1,5 +1,6 @@
 // angular
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations';
 import { of, Subject, timer } from 'rxjs';
 import { delay, takeUntil } from 'rxjs/operators';
 
@@ -14,11 +15,22 @@ import pushNotifications from '../../../../../assets/data/common/push-notificati
 @Component({
 	selector: 'app-push-notification',
 	templateUrl: './push-notification.component.html',
-	styleUrls: ['./push-notification.component.scss']
+	styleUrls: ['./push-notification.component.scss'],
+	animations: [
+		trigger('slideInOut', [
+			transition(':enter', [
+				style({ transform: 'translateX(-100%)' }),
+				animate(500, style({ transform: 'translateX(0)' }))
+			]),
+			transition(':leave', [
+				animate(500, style({ transform: 'translateX(-100%)' }))
+			])
+		])
+	]
 })
 
 export class PushNotificationComponent implements OnInit, OnDestroy {
-	public animateIndex = -1;
+	public validateNotificationsLength = true;
 	public counter = AppOptions.intervals.welcome[2];
 	public pushNotificationsList = pushNotifications;
 
@@ -28,20 +40,23 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		// init welcome message
-		this.initWelcomeMessage();
+		// welcome message
+		of(null)
+			.pipe(delay(1000))
+			.subscribe(() => this.welcomeMessage());
 
 		// listen: network connection
 		HelperService.detectNetworkConnection()
 			.pipe(takeUntil(this.unSubscribe))
 			.subscribe(res => {
-				if (res && res['type'] === 'offline') {
-					// update push notification list
-					this.updateNotificationList(PushNotificationsTypesEnum.NETWORK_CONNECTION, true);
-				} else {
-					// close message
-					this.onClickRemoveMessage(PushNotificationsTypesEnum.NETWORK_CONNECTION, 1);
-				}
+				// set active
+				this.validateNotificationsLength = true;
+
+				// update push notification list
+				this.updateNotificationList(
+					PushNotificationsTypesEnum.NETWORK_CONNECTION,
+					res && res['type'] === 'offline'
+				);
 			});
 	}
 
@@ -52,12 +67,13 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * init welcome message
+	 * welcome message
 	 */
-	public initWelcomeMessage() {
+	public welcomeMessage() {
 		// get welcomePushNotification from local storage
 		const welcome = this._storageService.get(LocalStorageItems.welcomePN, StorageTypeEnum.PERSISTANT);
 		if (!welcome) {
+			// add message
 			// update push notification list
 			this.updateNotificationList(PushNotificationsTypesEnum.WELCOME, true);
 
@@ -65,13 +81,17 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 			const welcomeMessageTimer = timer(AppOptions.intervals.welcome[0], AppOptions.intervals.welcome[1])
 				.pipe(takeUntil(this.unSubscribe))
 				.subscribe((sec) => {
+					// second
+					const second = sec + 1;
+
 					// set counter
-					this.counter = AppOptions.intervals.welcome[2] - (sec + 1);
+					this.counter = AppOptions.intervals.welcome[2] - second;
 
 					// validate condition
-					if ((sec + 1) === AppOptions.intervals.welcome[2]) {
+					if (second === AppOptions.intervals.welcome[2]) {
 						// close message
-						this.onClickRemoveMessage(PushNotificationsTypesEnum.WELCOME, 0);
+						// update push notification list
+						this.updateNotificationList(PushNotificationsTypesEnum.WELCOME, false);
 
 						// complete subscription
 						welcomeMessageTimer.unsubscribe();
@@ -81,6 +101,14 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 			// update to local storage
 			this._storageService.put(LocalStorageItems.welcomePN, 'true', StorageTypeEnum.PERSISTANT);
 		}
+	}
+
+	/**
+	 * validate notifications container
+	 */
+	public onValidateNotificationsLength() {
+		const items = this.pushNotificationsList.filter(f => f.controls['show']);
+		this.validateNotificationsLength = !!(items && items.length);
 	}
 
 	/**
@@ -95,26 +123,5 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 			}
 			return item;
 		});
-	}
-
-	/**
-	 * remove message from the notifications list after completing animation
-	 * @param notificationId
-	 * @param index
-	 */
-	public onClickRemoveMessage(notificationId: PushNotificationsTypesEnum, index: number) {
-		// set animate index
-		this.animateIndex = index;
-
-		// delay 400ms to complete the animation
-		of(null)
-			.pipe(delay(400))
-			.subscribe(() => {
-				// update push notification list
-				this.updateNotificationList(notificationId, false);
-
-				// reset animate index
-				this.animateIndex = -1;
-			});
 	}
 }

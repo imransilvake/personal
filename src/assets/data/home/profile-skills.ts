@@ -56,7 +56,7 @@ const profileSkills = {
 									name: 'Shared Module'
 								},
 								{
-									name: 'Animations (basics)'
+									name: 'Animations'
 								},
 								{
 									name: 'App Deployment',

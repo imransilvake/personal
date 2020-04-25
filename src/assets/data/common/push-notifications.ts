@@ -1,9 +1,23 @@
 // app
 import { PushNotificationsTypesEnum } from '../../../app/packages/frame.pck/enums/push-notifications-types.enum';
-import { faSmileBeam } from '@fortawesome/free-regular-svg-icons';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { faSmileBeam } from '@fortawesome/free-regular-svg-icons';
 
 const pushNotifications = [
+	{
+		id: PushNotificationsTypesEnum.NETWORK_CONNECTION,
+		detail: {
+			icon: faCircleNotch,
+			title: 'Common.Push_Notifications.Messages.Network_Connection.Title',
+			description: 'Common.Push_Notifications.Messages.Network_Connection.Description'
+		},
+		controls: {
+			show: false,
+			spin: true,
+			error: true,
+			allowClose: false
+		}
+	},
 	{
 		id: PushNotificationsTypesEnum.WELCOME,
 		detail: {
@@ -27,20 +41,6 @@ const pushNotifications = [
 				disabled: true
 			}
 		]
-	},
-	{
-		id: PushNotificationsTypesEnum.NETWORK_CONNECTION,
-		detail: {
-			icon: faCircleNotch,
-			title: 'Common.Push_Notifications.Messages.Network_Connection.Title',
-			description: 'Common.Push_Notifications.Messages.Network_Connection.Description'
-		},
-		controls: {
-			show: false,
-			spin: true,
-			error: true,
-			allowClose: false
-		}
 	}
 ];
 export default pushNotifications;
