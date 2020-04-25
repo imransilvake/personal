@@ -31,7 +31,7 @@ export class FirebaseService {
 			// return all promises
 			return Promise.all(projectUrls);
 		} catch (e) {
-			new Promise((resolve) => { resolve([]); });
+			return new Promise((resolve) => { resolve([]); });
 		}
 	}
 }
