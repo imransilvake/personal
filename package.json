@@ -9,9 +9,7 @@
 		"build": "ng build",
 		"serve.app.next": "ng serve -c next --port 2000",
 		"build.app.next": "ng build -c next",
-		"serve.app.stag": "ng serve -c stag --port 3000",
-		"build.app.stag": "ng build -c stag",
-		"serve.app.prod": "ng serve -c prod --port 4000",
+		"serve.app.prod": "ng serve -c prod --port 3000",
 		"build.app.prod": "ng build -c prod",
 		"lint:ts": "ng lint",
 		"lint:scss": "stylelint \"src/**/*.scss\" --syntax scss"
