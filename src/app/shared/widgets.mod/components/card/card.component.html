@@ -26,4 +26,9 @@
 						[imageAssetsPath]="imageAssetsPath">
 		</app-card-image>
 	</ng-container>
+
+	<!-- Code -->
+	<ng-container *ngIf="cardViewType === 4">
+		<app-card-code [codeData]="codeData"></app-card-code>
+	</ng-container>
 </section>

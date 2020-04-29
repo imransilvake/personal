@@ -1,4 +1,5 @@
 export const enum PushNotificationsTypesEnum {
 	WELCOME,
-	NETWORK_CONNECTION
+	NETWORK_CONNECTION,
+	ERROR_GENERAL
 }

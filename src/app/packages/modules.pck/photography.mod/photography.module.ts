@@ -6,15 +6,13 @@ import { RouterModule } from '@angular/router';
 import { PHOTOGRAPHY_ROUTES } from './photography-routing';
 import { WidgetsModule } from '../../../shared/widgets.mod/widgets.module';
 import { SharedModule } from '../../../shared/shared.module';
-import { FrameModule } from '../../frame.pck/frame.module';
 import { PhotographyComponent } from './components/photography.component';
 
 @NgModule({
 	imports: [
 		RouterModule.forChild(PHOTOGRAPHY_ROUTES),
 		SharedModule,
-		WidgetsModule,
-		FrameModule
+		WidgetsModule
 	],
 	declarations: [
 		PhotographyComponent

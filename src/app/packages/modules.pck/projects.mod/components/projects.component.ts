@@ -7,8 +7,15 @@ import { filter, takeUntil } from 'rxjs/operators';
 
 // app
 import {
-	faCamera, faCircleNotch, faCode, faDownload, faInfoCircle,
-	faExternalLinkSquareAlt, faLock, faSearch, faTimesCircle
+	faCamera,
+	faCircleNotch,
+	faCode,
+	faDownload,
+	faExternalLinkSquareAlt,
+	faInfoCircle,
+	faLock,
+	faSearch,
+	faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 import projects from 'src/assets/data/projects/projects';
 import codeBlock from '../../../../../assets/data/projects/code-block';
@@ -18,6 +25,9 @@ import { MemoryStorageItems } from '../../../../../app.config';
 import { FirebaseService } from '../../../../shared/common.mod/services/firebase.service';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
+import { CardViewEnum } from '../../../../shared/widgets.mod/enums/card-view.enum';
+import { TriggersService } from '../../../../shared/common.mod/services/triggers.service';
+import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifications-types.enum';
 
 declare const lightGallery: any;
 
@@ -33,6 +43,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		faTimesCircle, faExternalLinkSquareAlt, faSearch, faCircleNotch
 	];
 	public routing = ROUTING;
+	public cardViewList = CardViewEnum.CARD_CODE;
 	public codeBlock = codeBlock;
 	public projects = projects;
 	public infoBlockIndex = -1;
@@ -45,7 +56,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		private _route: ActivatedRoute,
 		private _router: Router,
 		private _firebaseService: FirebaseService,
-		private _storageService: StorageService
+		private _storageService: StorageService,
+		private _triggersService: TriggersService
 	) {
 		// listen: router events
 		this._router.events
@@ -205,6 +217,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 				dynamic: true,
 				dynamicEl: galleryMapped
 			});
+		} else {
+			// error: show push message
+			this._triggersService.PushNotificationType
+				.next(PushNotificationsTypesEnum.ERROR_GENERAL);
 		}
 	}
 }

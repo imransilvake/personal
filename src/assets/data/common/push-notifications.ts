@@ -1,7 +1,7 @@
 // app
 import { PushNotificationsTypesEnum } from '../../../app/packages/frame.pck/enums/push-notifications-types.enum';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
-import { faSmileBeam } from '@fortawesome/free-regular-svg-icons';
+import { faSmileBeam, faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 
 const pushNotifications = [
 	{
@@ -17,6 +17,30 @@ const pushNotifications = [
 			error: true,
 			allowClose: false
 		}
+	},
+	{
+		id: PushNotificationsTypesEnum.ERROR_GENERAL,
+		detail: {
+			icon: faTimesCircle,
+			title: 'Common.Push_Notifications.Messages.Error_General.Title',
+			description: 'Common.Push_Notifications.Messages.Error_General.Description'
+		},
+		controls: {
+			show: false,
+			spin: false,
+			error: true,
+			allowClose: true
+		},
+		buttons: [
+			{
+				text: 'Common.Push_Notifications.Buttons.Close',
+				disabled: false
+			},
+			{
+				text: 'Common.Push_Notifications.Buttons.Dismiss',
+				disabled: true
+			}
+		]
 	},
 	{
 		id: PushNotificationsTypesEnum.WELCOME,

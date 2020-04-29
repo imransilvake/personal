@@ -1,32 +1,23 @@
 // angular
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { animate, style, transition, trigger } from '@angular/animations';
 import { of, Subject, timer } from 'rxjs';
 import { delay, takeUntil } from 'rxjs/operators';
 
 // app
+import pushNotifications from '../../../../../assets/data/common/push-notifications';
+import { slideFromLeftInOut } from '../../../utilities.pck/accessories.mod/animations/slide-from-left-in-out.animation';
+import { AppOptions, LocalStorageItems } from '../../../../../app.config';
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
 import { PushNotificationsTypesEnum } from '../../enums/push-notifications-types.enum';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
-import { AppOptions, LocalStorageItems } from '../../../../../app.config';
-import pushNotifications from '../../../../../assets/data/common/push-notifications';
+import { TriggersService } from '../../../../shared/common.mod/services/triggers.service';
 
 @Component({
 	selector: 'app-push-notification',
 	templateUrl: './push-notification.component.html',
 	styleUrls: ['./push-notification.component.scss'],
-	animations: [
-		trigger('slideInOut', [
-			transition(':enter', [
-				style({ transform: 'translateX(-100%)' }),
-				animate(500, style({ transform: 'translateX(0)' }))
-			]),
-			transition(':leave', [
-				animate(500, style({ transform: 'translateX(-100%)' }))
-			])
-		])
-	]
+	animations: [slideFromLeftInOut]
 })
 
 export class PushNotificationComponent implements OnInit, OnDestroy {
@@ -36,7 +27,10 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 
 	private unSubscribe = new Subject();
 
-	constructor(private _storageService: StorageService) {
+	constructor(
+		private _storageService: StorageService,
+		private _triggersService: TriggersService
+	) {
 	}
 
 	ngOnInit() {
@@ -57,6 +51,17 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 					PushNotificationsTypesEnum.NETWORK_CONNECTION,
 					res && res['type'] === 'offline'
 				);
+			});
+
+		// listen: general error
+		this._triggersService.PushNotificationType
+			.pipe(takeUntil(this.unSubscribe))
+			.subscribe((type: PushNotificationsTypesEnum) => {
+				// set active
+				this.validateNotificationsLength = true;
+
+				// update push notification list
+				this.updateNotificationList(type, true);
 			});
 	}
 

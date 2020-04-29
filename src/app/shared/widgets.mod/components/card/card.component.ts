@@ -24,4 +24,6 @@ export class CardComponent {
 
 	@Input() imageData;
 	@Input() imageAssetsPath;
+
+	@Input() codeData;
 }

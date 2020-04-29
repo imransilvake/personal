@@ -33,6 +33,10 @@
 				"Network_Connection": {
 					"Title": "Netzwerkverbindung",
 					"Description": "Ihre Internetverbindung ist derzeit unterbrochen. Bitte überprüfen Sie Ihren Router."
+				},
+				"Error_General": {
+					"Title": "Unbekannter Fehler",
+					"Description": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es nach einigen Sekunden erneut."
 				}
 			},
 			"Buttons": {

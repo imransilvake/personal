@@ -33,6 +33,10 @@
 				"Network_Connection": {
 					"Title": "Network Connection",
 					"Description": "Your internet connection is currently down. Please check your router."
+				},
+				"Error_General": {
+					"Title": "Unknown Error",
+					"Description": "An unknown error occurred. Please try again after few seconds."
 				}
 			},
 			"Buttons": {

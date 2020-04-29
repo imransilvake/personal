@@ -33,6 +33,10 @@ const photography = {
 		{
 			photo: '08.jpg',
 			title: 'Luxembourg'
+		},
+		{
+			photo: '09.jpg',
+			title: 'Koh Samed, Thailand'
 		}
 	]
 };
