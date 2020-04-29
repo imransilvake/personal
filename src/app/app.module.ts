@@ -14,7 +14,7 @@ import { APP_ROUTES } from './app-routing';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { FrameModule } from './packages/frame.pck/frame.module';
-import { WidgetsModule } from './shared/widgets.mod/widgets.module';
+import { WidgetsModule } from './packages/utilities.pck/widgets.mod/widgets.module';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {

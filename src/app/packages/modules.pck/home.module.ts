@@ -4,9 +4,9 @@ import { RouterModule } from '@angular/router';
 
 // app
 import { HOME_ROUTE } from './home-routing';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../shared.module';
 import { HomeComponent } from './home.component';
-import { WidgetsModule } from '../../shared/widgets.mod/widgets.module';
+import { WidgetsModule } from '../utilities.pck/widgets.mod/widgets.module';
 
 @NgModule({
 	imports: [

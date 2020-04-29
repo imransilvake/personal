@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 // app
 import { AppOptions } from '../app.config';
-import { CardViewEnum } from './shared/widgets.mod/enums/card-view.enum';
+import { CardViewEnum } from './packages/utilities.pck/widgets.mod/enums/card-view.enum';
 import { AppMetaService } from './packages/utilities.pck/accessories.mod/services/app-meta.service';
 import notice from '../assets/data/common/notice';
 

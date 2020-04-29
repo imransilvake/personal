@@ -11,7 +11,7 @@ import { HelperService } from '../../../utilities.pck/accessories.mod/services/h
 import { PushNotificationsTypesEnum } from '../../enums/push-notifications-types.enum';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
-import { TriggersService } from '../../../../shared/common.mod/services/triggers.service';
+import { TriggersService } from '../../../utilities.pck/common.mod/services/triggers.service';
 
 @Component({
 	selector: 'app-push-notification',

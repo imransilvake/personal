@@ -22,12 +22,12 @@ import codeBlock from '../../../../../assets/data/projects/code-block';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ROUTING } from '../../../../../environments/environment';
 import { MemoryStorageItems } from '../../../../../app.config';
-import { FirebaseService } from '../../../../shared/common.mod/services/firebase.service';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
-import { CardViewEnum } from '../../../../shared/widgets.mod/enums/card-view.enum';
-import { TriggersService } from '../../../../shared/common.mod/services/triggers.service';
 import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifications-types.enum';
+import { CardViewEnum } from '../../../utilities.pck/widgets.mod/enums/card-view.enum';
+import { FirebaseService } from '../../../utilities.pck/common.mod/services/firebase.service';
+import { TriggersService } from '../../../utilities.pck/common.mod/services/triggers.service';
 
 declare const lightGallery: any;
 

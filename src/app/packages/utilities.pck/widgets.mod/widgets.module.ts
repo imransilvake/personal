@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 
 // app
-import { SharedModule } from '../shared.module';
+import { SharedModule } from '../../../shared.module';
 import { SliderComponent } from './components/slider/slider.component';
 import { CardComponent } from './components/card/card.component';
 import { CardInfoComponent } from './components/card/info/card-info.component';

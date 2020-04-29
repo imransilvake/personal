@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 // app
 import { PROFILE_ROUTES } from './profile-routing';
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedModule } from '../../../shared.module';
 import { ProfileComponent } from './components/profile.component';
 
 @NgModule({

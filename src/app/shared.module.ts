@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // app
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
-import { AccessoriesModule } from '../packages/utilities.pck/accessories.mod/accessories.module';
+import { AccessoriesModule } from './packages/utilities.pck/accessories.mod/accessories.module';
 
 @NgModule({
 	exports: [

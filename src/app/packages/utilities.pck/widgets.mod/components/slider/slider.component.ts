@@ -4,7 +4,7 @@ import { startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { Subject, timer } from 'rxjs';
 
 // app
-import { AppOptions } from '../../../../../app.config';
+import { AppOptions } from '../../../../../../app.config';
 import { SliderDirectionEnum } from '../../enums/slider-direction.enum';
 
 @Component({

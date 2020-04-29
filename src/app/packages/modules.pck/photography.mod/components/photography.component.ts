@@ -3,10 +3,10 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 // app
-import { faExpand, faPlane } from '@fortawesome/free-solid-svg-icons';
-import { CardViewEnum } from '../../../../shared/widgets.mod/enums/card-view.enum';
-import { AppOptions } from '../../../../../app.config';
 import photography from 'src/assets/data/photography/photography';
+import { faExpand, faPlane } from '@fortawesome/free-solid-svg-icons';
+import { AppOptions } from '../../../../../app.config';
+import { CardViewEnum } from '../../../utilities.pck/widgets.mod/enums/card-view.enum';
 
 declare const lightGallery;
 
