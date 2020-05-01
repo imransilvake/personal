@@ -28,7 +28,6 @@ export class SliderComponent implements OnInit, OnDestroy {
 	private unSubscribe = new Subject();
 
 	ngOnInit() {
-		// info board slider
 		this.slider
 			.pipe(
 				takeUntil(this.unSubscribe),

@@ -22,10 +22,10 @@ export class PhotographyComponent implements AfterViewInit {
 	public faIcon = [faPlane, faExpand];
 	public photography = photography;
 	public cardViewImage = CardViewEnum.CARD_IMAGE;
-	public imageList = photography;
-	public imageActive = photography['items'][0];
-	public imageTotalSlides = photography['items'].length;
-	public imageInterval = AppOptions.intervals.photography;
+	public sliderList = photography;
+	public sliderTotalSlides = photography['items'].length;
+	public sliderInterval = AppOptions.intervals.photography;
+	public sliderImageActive = photography['items'][0];
 
 	constructor(private _router: Router) {
 	}

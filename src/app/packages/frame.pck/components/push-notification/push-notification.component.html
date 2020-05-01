@@ -33,7 +33,7 @@
 							[class.ik-close]="!button['disabled']"
 							[class.ik-dismiss]="!!button['disabled']"
 							[translate]="button['text']"
-							[translateParams]="{ seconds: counter }">
+							[translateParams]="{ seconds: counter[notification['id']] }">
 					</button>
 				</ng-container>
 			</div>

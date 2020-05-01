@@ -21,13 +21,18 @@
 						margin-left: 5px;
 					}
 				}
+			}
+		}
 
+		.ik-masonry {
+			.ik-item {
 				.ik-photo {
 					cursor: pointer;
 					position: relative;
 
 					img {
 						background-color: var(--c2);
+						image-orientation: from-image;
 					}
 
 					h6 {
@@ -68,39 +73,6 @@
 							right: 0;
 							top: 0;
 						}
-					}
-				}
-			}
-		}
-	}
-
-	// media
-	@include cd-media(desktop, smartphone) {
-		.ik-gallery {
-			.cd-row {
-				.cd-col {
-					&:nth-child(2n + 1) {
-						padding-right: 10px;
-					}
-
-					&:nth-child(2n) {
-						padding-left: 10px;
-					}
-				}
-			}
-		}
-	}
-
-	@include cd-media(desktop, mini) {
-		.ik-gallery {
-			.cd-row {
-				.cd-col {
-					&:nth-child(2n + 1) {
-						padding-right: 15px;
-					}
-
-					&:nth-child(2n) {
-						padding-left: 15px;
 					}
 				}
 			}

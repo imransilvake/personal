@@ -17,28 +17,3 @@
 .ik-green { color: var(--c8); }
 .ik-orange { color: var(--c9); }
 .ik-pink { color: var(--c11); }
-
-// bg loader
-.ik-bg-loader {
-	background-image: url('/assets/svg/loader.svg');
-	background-position: center;
-	background-repeat: no-repeat;
-
-	.ik-loader-grey {
-		background-color: var(--tc4);
-	}
-
-	.ik-loader-white {
-		background-color: var(--tc3);
-	}
-}
-
-// card
-.ik-card {
-	background-color: var(--tc1);
-	border-bottom: 1px solid var(--tc7);
-
-	&.ik-card-padding {
-		padding: 15px;
-	}
-}

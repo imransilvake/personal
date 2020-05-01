@@ -1,15 +1,15 @@
 <div class="ik-photography">
 	<div class="cd-container-fluid">
 		<!-- Slider Image -->
-		<app-slider [data]="imageList"
-					[activeSlide]="imageActive"
-					[totalSlides]="imageTotalSlides"
-					[slideInterval]="imageInterval"
+		<app-slider [data]="sliderList"
+					[activeSlide]="sliderImageActive"
+					[totalSlides]="sliderTotalSlides"
+					[slideInterval]="sliderInterval"
 					[showDotsNavigation]="false"
-					(updateActiveSlide)="imageActive = $event">
+					(updateActiveSlide)="sliderImageActive = $event">
 			<app-card [cardViewType]="cardViewImage"
-					  [imageData]="imageActive"
-					  [imageAssetsPath]="imageList['assetsPath']">
+					  [imageData]="sliderImageActive"
+					  [imageAssetsPath]="sliderList['assetsPath']">
 			</app-card>
 		</app-slider>
 
@@ -25,10 +25,10 @@
 				</div>
 			</section>
 
-			<!-- Gallery -->
-			<section class="cd-row" #gallery>
+			<!-- Masonry Gallery -->
+			<section class="cd-container ik-masonry" #gallery>
 				<ng-container *ngFor="let item of photography['items']">
-					<div class="cd-col cd-col-pm-s-6 cd-col-pm-t-4 cd-col-pm-d-4"
+					<div class="ik-item"
 						 [attr.data-src]="'assets/images/photography/' + item['photo']">
 						<div class="ik-photo">
 							<!-- Cover -->

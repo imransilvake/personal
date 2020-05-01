@@ -7,6 +7,11 @@
 // helpers
 @import 'helpers';
 
+// layouts
+@import 'layouts/card';
+@import 'layouts/bg-loader';
+@import 'layouts/masonry';
+
 // elements
 @import 'elements/image';
 @import 'elements/button';

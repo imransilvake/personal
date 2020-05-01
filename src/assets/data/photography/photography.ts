@@ -19,7 +19,7 @@ const photography = {
 			title: 'Koh Samed, Thailand'
 		},
 		{
-			photo: '05.jpg',
+			photo: '05_p.jpg',
 			title: 'Koh Samed, Thailand'
 		},
 		{

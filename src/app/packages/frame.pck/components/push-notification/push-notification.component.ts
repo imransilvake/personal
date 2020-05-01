@@ -22,7 +22,8 @@ import { TriggersService } from '../../../utilities.pck/common.mod/services/trig
 
 export class PushNotificationComponent implements OnInit, OnDestroy {
 	public validateNotificationsLength = true;
-	public counter = AppOptions.intervals.welcome[2];
+	public counter = [];
+	public timer = [];
 	public pushNotificationsList = pushNotifications;
 
 	private unSubscribe = new Subject();
@@ -62,6 +63,9 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 
 				// update push notification list
 				this.updateNotificationList(type, true);
+
+				// add notification timer
+				this.addNotificationTimer(type, AppOptions.intervals.welcome[2]);
 			});
 	}
 
@@ -78,30 +82,11 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 		// get welcomePushNotification from local storage
 		const welcome = this._storageService.get(LocalStorageItems.welcomePN, StorageTypeEnum.PERSISTANT);
 		if (!welcome) {
-			// add message
 			// update push notification list
 			this.updateNotificationList(PushNotificationsTypesEnum.WELCOME, true);
 
-			// start timer
-			const welcomeMessageTimer = timer(AppOptions.intervals.welcome[0], AppOptions.intervals.welcome[1])
-				.pipe(takeUntil(this.unSubscribe))
-				.subscribe((sec) => {
-					// second
-					const second = sec + 1;
-
-					// set counter
-					this.counter = AppOptions.intervals.welcome[2] - second;
-
-					// validate condition
-					if (second === AppOptions.intervals.welcome[2]) {
-						// close message
-						// update push notification list
-						this.updateNotificationList(PushNotificationsTypesEnum.WELCOME, false);
-
-						// complete subscription
-						welcomeMessageTimer.unsubscribe();
-					}
-				});
+			// add notification timer
+			this.addNotificationTimer(PushNotificationsTypesEnum.WELCOME, AppOptions.intervals.welcome[2]);
 
 			// update to local storage
 			this._storageService.put(LocalStorageItems.welcomePN, 'true', StorageTypeEnum.PERSISTANT);
@@ -128,5 +113,42 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 			}
 			return item;
 		});
+	}
+
+	/**
+	 * add notification timer
+	 * @param type
+	 * @param interval
+	 */
+	public addNotificationTimer(type: PushNotificationsTypesEnum, interval: number) {
+		// set counter
+		this.counter[type] = interval;
+
+		// reset particular timer
+		if (this.timer[type]) {
+			this.timer[type].unsubscribe();
+		}
+
+		// set timer
+		this.timer[type] = timer(AppOptions.intervals.welcome[0], AppOptions.intervals.welcome[1])
+			.pipe(takeUntil(this.unSubscribe))
+			.subscribe((sec) => {
+				// second
+				const second = sec + 1;
+
+				// set particular counter
+				this.counter[type] = interval - second;
+
+				// validate condition
+				if (second === interval) {
+					// close message
+					// update push notification list
+					this.updateNotificationList(type, false);
+
+					// complete subscription
+					this.timer[type].unsubscribe();
+				}
+			});
+
 	}
 }

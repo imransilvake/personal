@@ -1,0 +1,23 @@
+.ik-masonry {
+	column-count: 3;
+	padding-bottom: 30px;
+
+	.ik-item {
+		margin-bottom: 20px;
+	}
+
+	// media
+	@include cd-media(desktop, smartphone) {
+		column-count: 2;
+	}
+
+	@include cd-media(desktop, mini) {
+		column-count: 1;
+
+		.ik-item {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
