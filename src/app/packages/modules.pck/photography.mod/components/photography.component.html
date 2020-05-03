@@ -1,17 +1,21 @@
 <div class="ik-photography">
 	<div class="cd-container-fluid">
 		<!-- Slider Image -->
-		<app-slider [data]="sliderList"
-					[activeSlide]="sliderImageActive"
-					[totalSlides]="sliderTotalSlides"
-					[slideInterval]="sliderInterval"
-					[showDotsNavigation]="false"
-					(updateActiveSlide)="sliderImageActive = $event">
-			<app-card [cardViewType]="cardViewImage"
-					  [imageData]="sliderImageActive"
-					  [imageAssetsPath]="sliderList['assetsPath']">
-			</app-card>
-		</app-slider>
+		<ng-container *ngIf="sliderList && sliderList['items'] && sliderList['items'].length">
+			<app-slider [data]="sliderList"
+						[activeSlide]="sliderImageActive"
+						[totalSlides]="sliderTotalSlides"
+						[slideInterval]="sliderInterval"
+						[showSlideCounter]="true"
+						[showDotsNavigation]="false"
+						(updateActiveSlide)="sliderImageActive = $event">
+				<div @fadeInOut>
+					<app-card [cardViewType]="cardViewImage"
+							  [imageData]="sliderImageActive">
+					</app-card>
+				</div>
+			</app-slider>
+		</ng-container>
 
 		<!-- Gallery List -->
 		<div class="cd-container ik-gallery">
@@ -19,31 +23,43 @@
 			<section class="cd-row">
 				<div class="cd-col">
 					<h4 class="ik-excerpt">
-						{{ photography['excerpt'] | translate }}
+						{{ excerpt | translate }}
 						<fa-icon class="ik-icon" [icon]="faIcon[0]"></fa-icon>
 					</h4>
 				</div>
 			</section>
 
 			<!-- Masonry Gallery -->
-			<section class="cd-container ik-masonry" #gallery>
-				<ng-container *ngFor="let item of photography['items']">
-					<div class="ik-item"
-						 [attr.data-src]="'assets/images/photography/' + item['photo']">
-						<div class="ik-photo">
-							<!-- Cover -->
-							<img class="ik-bg-loader ik-loader-grey"
-								 [src]="'assets/images/photography/' + item['photo']"
-								 [alt]="item['title']"/>
+			<section class="ik-grid-wrapper">
+				<div class="ik-grid" #gallery>
+					<ng-container *ngFor="let item of galleryList">
+						<div class="ik-item"
+							 @fadeInOut
+							 [attr.data-src]="item['photo']"
+							 [class.ik-span-1]="!item['portrait']"
+							 [class.ik-span-2]="item['portrait']">
+							<div class="ik-photo">
+								<!-- Cover -->
+								<img class="ik-bg-loader ik-loader-grey"
+									 [src]="item['photo']"
+									 [alt]="item['title']"/>
 
-							<!-- Icon -->
-							<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
+								<!-- Icon -->
+								<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
 
-							<!-- Title -->
-							<h6>{{ item['title'] }}</h6>
+								<!-- Title -->
+								<h6 class="ik-text-bg">{{ item['title'] }}</h6>
+							</div>
 						</div>
-					</div>
-				</ng-container>
+					</ng-container>
+				</div>
+
+				<!-- Load More -->
+				<div class="ik-load-more" *ngIf="isLoadMore">
+					<button class="ik-button" (click)="getPhotographyGallery()">
+						Load More
+					</button>
+				</div>
 			</section>
 		</div>
 	</div>

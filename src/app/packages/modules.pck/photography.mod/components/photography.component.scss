@@ -24,57 +24,60 @@
 			}
 		}
 
-		.ik-masonry {
-			.ik-item {
-				.ik-photo {
-					cursor: pointer;
-					position: relative;
+		.ik-grid-wrapper {
+			padding: 0 15px;
 
-					img {
-						background-color: var(--c2);
-						image-orientation: from-image;
-					}
+			.ik-grid {
+				padding-bottom: 30px;
 
-					h6 {
-						align-items: center;
-						bottom: 0;
-						color: var(--c2);
-						display: none;
-						font-weight: cd-fontWeight(600);
-						justify-content: center;
-						left: 0;
-						position: absolute;
-						right: 0;
-						top: 0;
-					}
+				.ik-item {
+					align-items: center;
+					background-color: var(--c4);
+					display: flex;
 
-					.ik-icon {
-						color: var(--c1);
-						left: 10px;
-						position: absolute;
-						top: 8px;
-					}
+					.ik-photo {
+						cursor: pointer;
+						position: relative;
 
-					&:hover {
+						img {
+							background-color: var(--c2);
+							image-orientation: from-image;
+						}
+
 						h6 {
-							display: flex;
+							bottom: 5px;
+							display: none;
+							position: absolute;
+							right: 5px;
 						}
 
 						.ik-icon {
-							color: var(--c2);
+							color: var(--c1);
+							left: 10px;
+							position: absolute;
+							top: 8px;
 						}
 
-						&::before {
-							background-color: var(--o2);
-							bottom: 0;
-							content: '';
-							left: 0;
-							position: absolute;
-							right: 0;
-							top: 0;
+						&:hover {
+							img {
+								filter: brightness(120%);
+							}
+
+							h6 {
+								display: block;
+							}
+
+							.ik-icon {
+								color: var(--c2);
+							}
 						}
 					}
 				}
+			}
+
+			.ik-load-more {
+				padding-bottom: 30px;
+				text-align: center;
 			}
 		}
 	}

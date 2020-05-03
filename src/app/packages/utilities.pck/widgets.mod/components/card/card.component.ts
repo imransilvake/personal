@@ -23,7 +23,6 @@ export class CardComponent {
 	@Input() filterRoute;
 
 	@Input() imageData;
-	@Input() imageAssetsPath;
 
 	@Input() codeData;
 }

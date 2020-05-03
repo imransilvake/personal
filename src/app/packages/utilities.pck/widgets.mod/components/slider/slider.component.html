@@ -1,8 +1,12 @@
 <section class="ik-slider"
 		 (swipeleft)="onSwipe(0)"
 		 (swiperight)="onSwipe(1)">
-	<!-- Projection -->
+	<!-- Content -->
 	<div class="ik-content">
+		<!-- Slide Counter -->
+		<h6 *ngIf="showSlideCounter" class="ik-text-bg ik-count">{{ slideCounter }}</h6>
+
+		<!-- Projection -->
 		<ng-content></ng-content>
 	</div>
 

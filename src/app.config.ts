@@ -53,3 +53,9 @@ export const AppLinks = {
 		}
 	}
 };
+
+// firebase storage
+export const FirebaseStorage = {
+	projects: 'projects',
+	photography: 'photography'
+}

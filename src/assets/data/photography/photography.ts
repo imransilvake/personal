@@ -1,42 +1,176 @@
 const photography = {
 	excerpt: 'Photography.Excerpt',
-	assetsPath: 'assets/images/photography/',
 	items: [
 		{
-			photo: '01.jpg',
 			title: 'Pisa, Italy'
 		},
 		{
-			photo: '02.jpg',
 			title: 'Pisa, Italy'
 		},
 		{
-			photo: '03.jpg',
-			title: 'Bangkok, Thailand'
+			title: 'Bangkok, Thailand',
+			slider: true
 		},
 		{
-			photo: '04.jpg',
-			title: 'Koh Samed, Thailand'
+			title: 'Koh Samed, Thailand',
+			slider: true
 		},
 		{
-			photo: '05_p.jpg',
-			title: 'Koh Samed, Thailand'
+			title: 'Koh Samed, Thailand',
+			portrait: true
 		},
 		{
-			photo: '06.jpg',
-			title: 'Koh Samed, Thailand'
+			title: 'Koh Samed, Thailand',
+			slider: true
 		},
 		{
-			photo: '07.jpg',
-			title: 'Luxembourg'
+			title: 'Luxembourg',
+			slider: true
 		},
 		{
-			photo: '08.jpg',
-			title: 'Luxembourg'
+			title: 'Luxembourg',
+			slider: true
 		},
 		{
-			photo: '09.jpg',
-			title: 'Koh Samed, Thailand'
+			title: 'Koh Samed, Thailand',
+			slider: true
+		},
+		{
+			title: 'Rome, Italy'
+		},
+		{
+			title: 'Rome, Italy',
+			portrait: true
+		},
+		{
+			title: 'Rome, Italy'
+		},
+		{
+			title: 'Rome, Italy',
+			slider: true
+		},
+		{
+			title: 'Rome, Italy',
+			slider: true
+		},
+		{
+			title: 'Rome, Italy',
+			slider: true
+		},
+		{
+			title: 'Rome, Italy',
+			slider: true
+		},
+		{
+			title: 'Vatican City, Italy',
+			slider: true
+		},
+		{
+			title: 'Vatican City, Italy',
+			slider: true
+		},
+		{
+			title: 'Pisa, Italy'
+		},
+		{
+			title: 'Pisa, Italy',
+			slider: true
+		},
+		{
+			title: 'Pisa, Italy',
+			slider: true
+		},
+		{
+			title: 'Pisa, Italy',
+			slider: true
+		},
+		{
+			title: 'Pisa, Italy',
+			slider: true
+		},
+		{
+			title: 'Pisa, Italy'
+		},
+		{
+			title: 'Pisa, Italy'
+		},
+		{
+			title: 'Pisa, Italy'
+		},
+		{
+			title: 'Pisa, Italy',
+			slider: true
+		},
+		{
+			title: 'Pisa, Italy',
+			portrait: true
+		},
+		{
+			title: 'Pisa, Italy'
+		},
+		{
+			title: 'Florence, Italy',
+			slider: true
+		},
+		{
+			title: 'Florence, Italy'
+		},
+		{
+			title: 'Florence, Italy',
+			slider: true
+		},
+		{
+			title: 'Florence, Italy',
+			slider: true
+		},
+		{
+			title: 'Florence, Italy',
+			slider: true
+		},
+		{
+			title: 'Florence, Italy',
+			slider: true
+		},
+		{
+			title: 'Florence, Italy'
+		},
+		{
+			title: 'Venice, Italy',
+			portrait: true
+		},
+		{
+			title: 'Venice, Italy',
+			slider: true
+		},
+		{
+			title: 'Venice, Italy',
+			slider: true
+		},
+		{
+			title: 'Venice, Italy',
+			slider: true
+		},
+		{
+			title: 'Venice, Italy'
+		},
+		{
+			title: 'Venice, Italy',
+			slider: true
+		},
+		{
+			title: 'Venice, Italy',
+			slider: true
+		},
+		{
+			title: 'Venice, Italy',
+			slider: true
+		},
+		{
+			title: 'Venice, Italy'
+		},
+		{
+			title: 'Venice, Italy',
+			slider: true
 		}
 	]
 };

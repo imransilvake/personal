@@ -17,3 +17,12 @@
 .ik-green { color: var(--c8); }
 .ik-orange { color: var(--c9); }
 .ik-pink { color: var(--c11); }
+
+// text bg
+.ik-text-bg {
+	background-color: var(--o3);
+	border-radius: 2px;
+	color: var(--c2);
+	font-weight: cd-fontWeight(600);
+	padding: 1px 6px;
+}

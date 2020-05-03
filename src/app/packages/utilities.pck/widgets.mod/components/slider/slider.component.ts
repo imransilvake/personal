@@ -20,14 +20,20 @@ export class SliderComponent implements OnInit, OnDestroy {
 	@Input() activeSlide;
 	@Input() totalSlides;
 	@Input() slideInterval = AppOptions.intervals.default;
+	@Input() showSlideCounter = false;
 	@Input() showDotsNavigation = true;
 
 	public activeSlideIndex = 0;
+	public slideCounter;
 
 	private slider = new Subject();
 	private unSubscribe = new Subject();
 
 	ngOnInit() {
+		// slide counter
+		this.slideCounter = `1 / ${this.totalSlides}`;
+
+		// slider
 		this.slider
 			.pipe(
 				takeUntil(this.unSubscribe),
@@ -80,6 +86,9 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 		// update active slide
 		this.updateActiveSlide.emit(this.activeSlide);
+
+		// update slide counter
+		this.slideCounter = `${slideIndex + 1} / ${this.totalSlides}`;
 	}
 
 	/**

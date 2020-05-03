@@ -13,6 +13,13 @@
 			right: 0;
 			top: 0;
 		}
+
+		.ik-count {
+			left: 10px;
+			position: absolute;
+			top: 10px;
+			z-index: cd-zIndex(float);
+		}
 	}
 
 	.ik-dots {
