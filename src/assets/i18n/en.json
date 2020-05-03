@@ -152,6 +152,7 @@
 		"Empty_Result": "Empty search result!"
 	},
 	"Photography": {
-		"Excerpt": "Travel is fun"
+		"Excerpt": "Travel is fun",
+		"LoadMore": "Load More"
 	}
 }

@@ -1,5 +1,6 @@
 const photography = {
 	excerpt: 'Photography.Excerpt',
+	loadMore: 'Photography.LoadMore',
 	items: [
 		{
 			title: 'Pisa, Italy'

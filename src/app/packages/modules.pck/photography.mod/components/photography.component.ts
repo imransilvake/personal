@@ -13,6 +13,8 @@ import { CardViewEnum } from '../../../utilities.pck/widgets.mod/enums/card-view
 import { FirebaseService } from '../../../utilities.pck/common.mod/services/firebase.service';
 import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
+import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifications-types.enum';
+import { TriggersService } from '../../../utilities.pck/common.mod/services/triggers.service';
 
 declare const lightGallery;
 
@@ -27,7 +29,7 @@ export class PhotographyComponent implements OnInit {
 	@ViewChild('gallery', { static: false }) gallery: ElementRef;
 
 	public faIcon = [faPlane, faExpand];
-	public excerpt = photography['excerpt'];
+	public photography = photography;
 
 	public cardViewImage = CardViewEnum.CARD_IMAGE;
 	public sliderList = {};
@@ -36,12 +38,13 @@ export class PhotographyComponent implements OnInit {
 	public sliderImageActive;
 
 	public galleryList = [];
-	public isLoadMore = true;
+	public isLoadMore = false;
 
 	constructor(
 		private _router: Router,
 		private _firebaseService: FirebaseService,
-		private _storageService: StorageService
+		private _storageService: StorageService,
+		private _triggersService: TriggersService
 	) {
 	}
 
@@ -68,45 +71,51 @@ export class PhotographyComponent implements OnInit {
 		const promiseData = photographyGalleries ?
 			photographyGalleries : await this._firebaseService.storageGetPhotographyGallery();
 
-		// gallery data
-		const galleryData = photographyGalleries ? promiseData['data'] : await promiseData['data'];
+		if (promiseData && promiseData['data']) {
+			// gallery data
+			const galleryData = photographyGalleries ? promiseData['data'] : await promiseData['data'];
 
-		// get photography galleries from memory (if exists)
-		const storedData = this._storageService.get(
-			MemoryStorageItems.photographyGalleries, StorageTypeEnum.MEMORY
-		);
+			// get photography galleries from memory (if exists)
+			const storedData = this._storageService.get(
+				MemoryStorageItems.photographyGalleries, StorageTypeEnum.MEMORY
+			);
 
-		// save to memory
-		// old + new: when old data is present + when user is not coming to photography route
-		this._storageService.put(
-			MemoryStorageItems.photographyGalleries,
-			{
-				data: storedData && !photographyGalleries ? storedData['data'].concat(galleryData) : galleryData,
-				isNextPageToken: promiseData['isNextPageToken']
-			},
-			StorageTypeEnum.MEMORY
-		);
+			// save to memory
+			// old + new: when old data is present + when user is not coming to photography route
+			this._storageService.put(
+				MemoryStorageItems.photographyGalleries,
+				{
+					data: storedData && !photographyGalleries ? storedData['data'].concat(galleryData) : galleryData,
+					isNextPageToken: promiseData['isNextPageToken']
+				},
+				StorageTypeEnum.MEMORY
+			);
 
-		// formatted gallery data
-		const galleryDataFormatted = this.formatGalleryData(galleryData);
+			// formatted gallery data
+			const galleryDataFormatted = this.formatGalleryData(galleryData);
 
-		// update slider
-		this.updateSlider(galleryDataFormatted);
+			// update slider
+			this.updateSlider(galleryDataFormatted);
 
-		// update gallery
-		this.galleryList.push(...galleryDataFormatted);
+			// update gallery
+			this.galleryList.push(...galleryDataFormatted);
 
-		// next page token
-		this.isLoadMore = !!promiseData['isNextPageToken'];
+			// next page token
+			this.isLoadMore = !!promiseData['isNextPageToken'];
 
-		// initialize light gallery
-		of(null)
-			.pipe(delay(500))
-			.subscribe(() => {
-				if (!!this.gallery) {
-					lightGallery(this.gallery.nativeElement);
-				}
-			});
+			// initialize light gallery
+			of(null)
+				.pipe(delay(500))
+				.subscribe(() => {
+					if (!!this.gallery) {
+						lightGallery(this.gallery.nativeElement);
+					}
+				});
+		} else {
+			// error: show push message
+			this._triggersService.PushNotificationType
+				.next(PushNotificationsTypesEnum.ERROR_GENERAL);
+		}
 	}
 
 	/**

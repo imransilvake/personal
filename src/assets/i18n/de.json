@@ -152,6 +152,7 @@
 		"Empty_Result": "Suchergebnis leeren!"
 	},
 	"Photography": {
-		"Excerpt": "Reisen macht Spaß"
+		"Excerpt": "Reisen macht Spaß",
+		"LoadMore": "Mehr laden"
 	}
 }
