@@ -199,7 +199,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 			// save to memory
 			this._storageService.put(
-				MemoryStorageItems.projectGalleries, { ...projectGalleries, ...payload },
+				MemoryStorageItems.projectGalleries,
+				{ ...projectGalleries, ...payload },
 				StorageTypeEnum.MEMORY
 			);
 		}

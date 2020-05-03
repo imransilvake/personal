@@ -7,10 +7,12 @@ import { of } from 'rxjs';
 // app
 import photography from 'src/assets/data/photography/photography';
 import { faExpand, faPlane } from '@fortawesome/free-solid-svg-icons';
-import { AppOptions } from '../../../../../app.config';
+import { AppOptions, MemoryStorageItems } from '../../../../../app.config';
 import { fadeInOut } from '../../../utilities.pck/accessories.mod/animations/fade-in-out.animation';
 import { CardViewEnum } from '../../../utilities.pck/widgets.mod/enums/card-view.enum';
 import { FirebaseService } from '../../../utilities.pck/common.mod/services/firebase.service';
+import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
+import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 
 declare const lightGallery;
 
@@ -38,23 +40,52 @@ export class PhotographyComponent implements OnInit {
 
 	constructor(
 		private _router: Router,
-		private _firebaseService: FirebaseService
+		private _firebaseService: FirebaseService,
+		private _storageService: StorageService
 	) {
 	}
 
 	ngOnInit() {
+		// get photography galleries from memory (if exists)
+		const photographyGalleries = this._storageService.get(
+			MemoryStorageItems.photographyGalleries, StorageTypeEnum.MEMORY
+		);
+
+		// set page token taken from memory
+		if (photographyGalleries) {
+			this._firebaseService.photographyPageToken = photographyGalleries['isNextPageToken'];
+		}
+
 		// get photography gallery
-		this.getPhotographyGallery().then();
+		this.getPhotographyGallery(photographyGalleries).then();
 	}
 
 	/**
 	 * get photography gallery
+	 * @param photographyGalleries
 	 */
-	public async getPhotographyGallery() {
-		const promiseData: any = await this._firebaseService.storageGetPhotographyGallery();
+	public async getPhotographyGallery(photographyGalleries?) {
+		const promiseData = photographyGalleries ?
+			photographyGalleries : await this._firebaseService.storageGetPhotographyGallery();
 
 		// gallery data
-		const galleryData = await promiseData['data'];
+		const galleryData = photographyGalleries ? promiseData['data'] : await promiseData['data'];
+
+		// get photography galleries from memory (if exists)
+		const storedData = this._storageService.get(
+			MemoryStorageItems.photographyGalleries, StorageTypeEnum.MEMORY
+		);
+
+		// save to memory
+		// old + new: when old data is present + when user is not coming to photography route
+		this._storageService.put(
+			MemoryStorageItems.photographyGalleries,
+			{
+				data: storedData && !photographyGalleries ? storedData['data'].concat(galleryData) : galleryData,
+				isNextPageToken: promiseData['isNextPageToken']
+			},
+			StorageTypeEnum.MEMORY
+		);
 
 		// formatted gallery data
 		const galleryDataFormatted = this.formatGalleryData(galleryData);
@@ -69,7 +100,8 @@ export class PhotographyComponent implements OnInit {
 		this.isLoadMore = !!promiseData['isNextPageToken'];
 
 		// initialize light gallery
-		of(null).pipe(delay(500))
+		of(null)
+			.pipe(delay(500))
 			.subscribe(() => {
 				if (!!this.gallery) {
 					lightGallery(this.gallery.nativeElement);
@@ -97,7 +129,7 @@ export class PhotographyComponent implements OnInit {
 		// filter data
 		const filteredData = formattedData.filter(i => !!i['slider']);
 
-		// set slider
+		// update slider values
 		if (!this.sliderList['items']) {
 			this.sliderList = { ...photography, items: filteredData };
 			this.sliderInterval = AppOptions.intervals.photography;
