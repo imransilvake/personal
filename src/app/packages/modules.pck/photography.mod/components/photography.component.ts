@@ -123,10 +123,16 @@ export class PhotographyComponent implements OnInit {
 	 * @param urlData
 	 */
 	public formatGalleryData(urlData) {
+		// split different sizes images
+		const minFiles = urlData.filter(i => i.indexOf('_min') !== -1);
+		const thumbFiles = urlData.filter(i => i.indexOf('_thumb') !== -1);
+
+		// format
 		const content = photography['items'].slice(this.galleryList.length);
-		return urlData.map((url, index) => ({
+		return minFiles.map((url, index) => ({
 			...content[index],
-			photo: url
+			photo: url,
+			thumbPhoto: thumbFiles[index]
 		}));
 	}
 

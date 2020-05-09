@@ -51,9 +51,10 @@ export class FirebaseService {
 		// Otherwise, this block continues to run.
 		try {
 			// payload
+			// 60 = 20 (hq) + 20 (compressed) + 20 (thumbnail)
 			const payload = this.photographyPageToken ?
-				{ maxResults: 20, pageToken: this.photographyPageToken } :
-				{ maxResults: 20 };
+				{ maxResults: 60, pageToken: this.photographyPageToken } :
+				{ maxResults: 60 };
 
 			// get gallery data from firebase
 			const galleryData = await this._firebaseDatabase.storage
