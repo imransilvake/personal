@@ -1,0 +1,13 @@
+<section class="ik-font-switch">
+	<div class="ik-wrapper ik-left"
+		 [class.ik-active]="!fontSizeSwitcher"
+		 (click)="fontSizeSwitcher && onClickChangeFontSize()">
+		<fa-icon class="ik-icon" [icon]="faIcons[0]"></fa-icon>
+	</div>
+	<div class="ik-wrapper ik-right"
+		 [class.ik-active]="fontSizeSwitcher"
+		 (click)="!fontSizeSwitcher && onClickChangeFontSize()">
+		<fa-icon class="ik-icon" [icon]="faIcons[0]"></fa-icon>
+		<fa-icon class="ik-icon" [icon]="faIcons[0]"></fa-icon>
+	</div>
+</section>
