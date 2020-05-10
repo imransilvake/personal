@@ -1,0 +1,46 @@
+@import 'scss-methods';
+
+.ik-theme-switch {
+	.ik-wrapper {
+		align-items: center;
+		background-color: var(--tc3);
+		border-radius: 65px;
+		cursor: pointer;
+		display: flex;
+		height: 30px;
+		justify-content: space-between;
+		padding: 6px;
+		position: relative;
+		width: 65px;
+
+		.ik-icon {
+			font-size: cd-fontSize(s18);
+
+			&.ik-moon {
+				color: var(--c5);
+			}
+
+			&.ik-sun {
+				color: var(--c9);
+			}
+		}
+
+		.ik-ball {
+			background-color: var(--tc2);
+			border-radius: 50%;
+			height: 24px;
+			left: 4px;
+			position: absolute;
+			top: 3px;
+			transform: translateX(0);
+			transition: transform .2s linear;
+			width: 24px;
+		}
+
+		&.ik-active {
+			.ik-ball {
+				transform: translateX(33px);
+			}
+		}
+	}
+}

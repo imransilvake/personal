@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 
 // app
 import { TranslateService } from '@ngx-translate/core';
-import { AppOptions, LocalStorageItems } from '../../../../../app.config';
-import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
-import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
+import { AppOptions, LocalStorageItems } from '../../../../../../app.config';
+import { StorageService } from '../../../../core.pck/storage.mod/services/storage.service';
+import { StorageTypeEnum } from '../../../../core.pck/storage.mod/enums/storage-type.enum';
 
 @Component({
 	selector: 'app-language-switch',

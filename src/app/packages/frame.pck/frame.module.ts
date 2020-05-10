@@ -8,8 +8,9 @@ import { E404Component } from './components/e404/e404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
-import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
+import { LanguageSwitchComponent } from './components/header/language-switch/language-switch.component';
 import { PushNotificationComponent } from './components/push-notification/push-notification.component';
+import { ThemeSwitchComponent } from './components/header/theme-switch/theme-switch.component';
 
 @NgModule({
 	imports: [
@@ -22,7 +23,8 @@ import { PushNotificationComponent } from './components/push-notification/push-n
 		FooterComponent,
 		ScrollTopComponent,
 		LanguageSwitchComponent,
-		PushNotificationComponent
+		PushNotificationComponent,
+		ThemeSwitchComponent
 	],
 	exports: [
 		HeaderComponent,

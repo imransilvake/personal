@@ -2,7 +2,7 @@
 import { ROUTING } from '../../../environments/environment';
 import projects from '../projects/projects';
 
-const navigationBottom = [
+const navigation = [
 	{
 		name: 'Common.Navigation.Profile',
 		link: ROUTING.profile
@@ -17,4 +17,4 @@ const navigationBottom = [
 		link: ROUTING.photography
 	}
 ];
-export default navigationBottom;
+export default navigation;

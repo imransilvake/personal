@@ -6,7 +6,7 @@ header {
 		padding: 10px 0;
 		position: relative;
 
-		&.ik-border {
+		&.ik-border-bottom {
 			border-bottom: 1px solid var(--tc7);
 		}
 
@@ -27,59 +27,29 @@ header {
 								width: 66px;
 							}
 						}
-
-						ul {
-							background-color: var(--tc3);
-							border-radius: 5px;
-							display: flex;
-							left: 100%;
-							list-style: none;
-							margin-left: 10px;
-							padding: 1px 8px 0;
-							position: absolute;
-							top: -5px;
-
-							li {
-								&:not(:only-child):not(:last-child) {
-									margin-right: 10px;
-								}
-
-								.ik-icon {
-									color: var(--tc5);
-									cursor: pointer;
-									display: block;
-
-									&.ik-active {
-										color: var(--c8);
-									}
-								}
-							}
-						}
 					}
 				}
 
-				&:last-child {
-					.ik-items {
-						margin: 0;
+				.ik-items {
+					margin: 0;
 
-						li {
-							display: inline-block;
-							padding: 0 10px;
-							vertical-align: middle;
+					li {
+						display: inline-block;
+						padding: 0 10px;
+						vertical-align: middle;
 
-							&:first-child {
-								padding-left: 0;
-							}
+						&:first-child {
+							padding-left: 0;
+						}
 
-							&:last-child {
-								padding-right: 0;
-							}
+						&:last-child {
+							padding-right: 0;
+						}
 
-							a {
-								&.ik-active {
-									color: var(--c8);
-									cursor: default;
-								}
+						a {
+							&.ik-active {
+								color: var(--c8);
+								cursor: default;
 							}
 						}
 					}

@@ -3,13 +3,26 @@
 	<section class="cd-container-fluid ik-block">
 		<div class="cd-container">
 			<div class="cd-row">
-				<!-- Top Nav List -->
-				<div class="cd-col cd-right-align">
+				<!-- Left -->
+				<div class="cd-col cd-col-pm-s-4">
 					<ul class="ik-items ik-remove-bullets">
-						<li *ngFor="let item of navigationTop">
-							<ng-container *ngIf="item.id === navigationTopLanguage">
-								<app-language-switch></app-language-switch>
-							</ng-container>
+						<li>
+							<app-theme-switch></app-theme-switch>
+						</li>
+						<li (click)="onClickFontSizeToggle()">
+							<fa-icon class="ik-icon"
+									 [icon]="faIcons[0]"
+									 [class.ik-active]="fontSizeInactive">
+							</fa-icon>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Right -->
+				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
+					<ul class="ik-items ik-remove-bullets">
+						<li>
+							<app-language-switch></app-language-switch>
 						</li>
 					</ul>
 				</div>
@@ -18,7 +31,7 @@
 	</section>
 
 	<!-- Bottom -->
-	<section class="cd-container-fluid ik-block ik-border">
+	<section class="cd-container-fluid ik-block ik-border-bottom">
 		<div class="cd-container">
 			<div class="cd-row">
 				<!-- Logo -->
@@ -27,21 +40,13 @@
 						<a [routerLink]="[routing.home]">
 							<img src="assets/svg/logo.svg" alt="iKhan" />
 						</a>
-						<ul>
-							<li (click)="onClickThemeToggle()">
-								<fa-icon class="ik-icon" [icon]="faIcons[0]"></fa-icon>
-							</li>
-							<li (click)="onClickFontSizeToggle()">
-								<fa-icon class="ik-icon" [icon]="faIcons[1]" [class.ik-active]="fontSizeInactive"></fa-icon>
-							</li>
-						</ul>
 					</div>
 				</div>
 
-				<!-- Bottom Nav List -->
+				<!-- Navigation List -->
 				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
 					<ul class="ik-items ik-remove-bullets">
-						<li *ngFor="let item of navigationBottom">
+						<li *ngFor="let item of navigation">
 							<a [routerLink]="item.id ? [item.link, item.id] : item.link"
 							   [class.ik-active]="isActiveRoute(item.link)">
 								{{ item.name | translate }}
