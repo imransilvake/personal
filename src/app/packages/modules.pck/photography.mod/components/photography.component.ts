@@ -6,7 +6,7 @@ import { of } from 'rxjs';
 
 // app
 import photography from 'src/assets/data/photography/photography';
-import { faExpand, faPlane } from '@fortawesome/free-solid-svg-icons';
+import { faCircleNotch, faExpand, faPlane } from '@fortawesome/free-solid-svg-icons';
 import { AppOptions, MemoryStorageItems } from '../../../../../app.config';
 import { fadeInOut } from '../../../utilities.pck/accessories.mod/animations/fade-in-out.animation';
 import { CardViewEnum } from '../../../utilities.pck/widgets.mod/enums/card-view.enum';
@@ -28,7 +28,7 @@ declare const lightGallery;
 export class PhotographyComponent implements OnInit {
 	@ViewChild('gallery', { static: false }) gallery: ElementRef;
 
-	public faIcon = [faPlane, faExpand];
+	public faIcon = [faPlane, faExpand, faCircleNotch];
 	public photography = photography;
 
 	public cardViewImage = CardViewEnum.CARD_IMAGE;
@@ -39,6 +39,7 @@ export class PhotographyComponent implements OnInit {
 
 	public galleryList = [];
 	public isLoadMore = false;
+	public isLoader = false;
 
 	constructor(
 		private _router: Router,
@@ -68,9 +69,17 @@ export class PhotographyComponent implements OnInit {
 	 * @param photographyGalleries
 	 */
 	public async getPhotographyGallery(photographyGalleries?) {
+		// start loading
+		this.isLoader = true;
+
+		// fetch data from memory or firebase
 		const promiseData = photographyGalleries ?
 			photographyGalleries : await this._firebaseService.storageGetPhotographyGallery();
 
+		// stop loading
+		this.isLoader = false;
+
+		// validate data
 		if (promiseData && promiseData['data']) {
 			// gallery data
 			const galleryData = photographyGalleries ? promiseData['data'] : await promiseData['data'];

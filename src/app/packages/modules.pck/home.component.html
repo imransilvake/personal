@@ -5,8 +5,8 @@
 				<!-- Content -->
 				<div class="cd-col cd-col-pm-s-8 cd-col-pm-d-9">
 					<!-- Profile Summary -->
-					<section class="ik-card ik-block ik-profile-summary">
-						<div class="ik-profile">
+					<section class="ik-card ik-block ik-summary">
+						<div class="ik-display">
 							<!-- Cover -->
 							<div class="ik-cover ik-image-fixed ik-two">
 								<div class="ik-content">
@@ -14,11 +14,8 @@
 								</div>
 							</div>
 
-							<!-- Avatar -->
-							<div class="ik-photo">
-								<img [src]="'assets/images/profile/' + profileInfo['summary']['display']['avatar']"
-									 [alt]="profileInfo['summary']['display']['avatar']"/>
-							</div>
+							<!-- Wave -->
+							<img class="ik-wave" [src]="'assets/svg/home/summary/wave.svg'" [alt]="'wave'">
 						</div>
 
 						<div class="ik-detail">

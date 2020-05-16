@@ -5,7 +5,6 @@ import profileSummary from '../profile/summery';
 const profileInfo = {
 	summary: {
 		display: {
-			avatar: profileIntro.avatar,
 			cover: profileIntro.cover
 		},
 		detail: {

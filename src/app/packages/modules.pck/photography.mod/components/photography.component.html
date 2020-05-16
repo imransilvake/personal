@@ -56,8 +56,13 @@
 
 				<!-- Load More -->
 				<div class="ik-load-more" *ngIf="isLoadMore">
-					<button class="ik-button" (click)="getPhotographyGallery()">
+					<button class="ik-button" (click)="getPhotographyGallery()" [disabled]="isLoader">
 						{{ photography['loadMore'] | translate }}
+						<fa-icon class="ik-icon"
+								 *ngIf="isLoader"
+								 [icon]="faIcon[2]"
+								 [spin]="true">
+						</fa-icon>
 					</button>
 				</div>
 			</section>

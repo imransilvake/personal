@@ -18,24 +18,28 @@ const profileSkills = {
 			name: 'Angular'
 		},
 		{
-			id: 'node',
-			name: 'NodeJs'
+			id: 'flutter',
+			name: 'Flutter'
 		},
 		{
 			id: 'nativescript',
 			name: 'NativeScript'
 		},
 		{
+			id: 'node',
+			name: 'NodeJs'
+		},
+		{
 			id: 'npm',
 			name: 'NPM'
 		},
 		{
-			id: 'rxjs',
-			name: 'RxJs'
-		},
-		{
 			id: 'aws',
 			name: 'Amazon Web Services'
+		},
+		{
+			id: 'rxjs',
+			name: 'RxJs'
 		},
 		{
 			id: 'sass',
@@ -69,7 +73,7 @@ const profileSkills = {
 		},
 		{
 			title: 'Frameworks',
-			items: ['Angular', 'React', 'NativeScript']
+			items: ['Angular', 'React', 'Flutter', 'NativeScript']
 		},
 		{
 			title: 'Profile.Terms.Authentication',

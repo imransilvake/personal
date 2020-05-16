@@ -18,13 +18,12 @@
 					text-transform: uppercase;
 				}
 
-				&.ik-profile-summary {
-					.ik-profile {
+				&.ik-summary {
+					.ik-display {
 						position: relative;
 
 						.ik-cover {
 							background-color: var(--c5);
-							border-bottom: 1px solid var(--tc7);
 							position: relative;
 
 							.ik-content {
@@ -48,25 +47,15 @@
 							}
 						}
 
-						.ik-photo {
-							bottom: 0;
-							left: 25px;
-							margin-bottom: -50px;
+						.ik-wave {
 							position: absolute;
-
-							img {
-								border-radius: 50%;
-								box-shadow: 0 4px 8px 0 var(--o1);
-								display: block;
-								height: 100px;
-								width: 100px;
-							}
+							top: 100%;
 						}
 					}
 
 					.ik-detail {
-						margin-top: 40px;
 						padding: 25px;
+						position: relative;
 
 						h6 {
 							color: var(--tc6);
