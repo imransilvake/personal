@@ -66,7 +66,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 				periodText: timePeriod,
 				periodShort: this.displayPeriod(timeDifference, true),
 				periodFull: this.displayPeriod(timeDifference, false),
-				isYear: timeDifference[0] > 0
+				isYearAndMonth: timeDifference[0] > 0 && timeDifference[1] > 0
 			};
 		});
 	}

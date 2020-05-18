@@ -198,7 +198,7 @@
 													box-shadow: 0 0 3px 0 var(--o1);
 													color: var(--tc6);
 													height: 50px;
-													padding-top: 16px;
+													padding-top: 15px;
 													text-align: center;
 													width: 50px;
 
@@ -207,8 +207,9 @@
 														color: var(--c2);
 													}
 
-													&.ik-year {
+													&.ik-year-and-month {
 														font-size: cd-fontSize(s12);
+														padding-top: 16px;
 													}
 												}
 											}

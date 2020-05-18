@@ -12,17 +12,16 @@
 			"Top_Projects": "Top Projects",
 			"All": "All",
 			"Job": "Job",
-			"Working_On": "Working On",
+			"Working": "Working",
 			"Todo": "Todo",
-			"Future_Plan": "Future Plan",
 			"Excerpt": "Excerpt"
 		},
 		"Notice": {
 			"One": "I am currently looking out for new opportunities",
-			"Two": "Overall website optimizations",
-			"Three": "Photography page speed optimization",
-			"Four": "(external) Code Section App",
-			"Five": "(external) Todo App"
+			"Two": "Implementing a custom gallery for the website",
+			"Three": "Flutter App: Wallpaper",
+			"Four": "Flutter Game: Langaw",
+			"Five": "Flutter Game: Flappy Bird"
 		},
 		"Push_Notifications": {
 			"Messages": {

@@ -12,17 +12,16 @@
 			"Top_Projects": "Top Projekte",
 			"All": "Alle",
 			"Job": "Arbeit",
-			"Working_On": "Behandelnd",
+			"Working": "Arbeiten",
 			"Todo": "Todo",
-			"Future_Plan": "Zukunftsplan",
 			"Excerpt": "Auszug"
 		},
 		"Notice": {
 			"One": "Ich suche derzeit nach neuen Möglichkeiten",
-			"Two": "Allgemeine Website-Optimierungen",
-			"Three": "Optimierung der Geschwindigkeit von Fotoseiten",
-			"Four": "(externe) Code Section App",
-			"Five": "(externe) Todo App"
+			"Two": "Implementieren einer benutzerdefinierten Galerie für die Website",
+			"Three": "Flutter App: Wallpaper",
+			"Four": "Flutter Spiel: Langaw",
+			"Five": "Flutter Spiel: Flappy Bird"
 		},
 		"Push_Notifications": {
 			"Messages": {

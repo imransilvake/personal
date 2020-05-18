@@ -6,7 +6,7 @@ const notice = {
 			show: false
 		},
 		{
-			label: 'Common.Terms.Working_On',
+			label: 'Common.Terms.Working',
 			text: 'Common.Notice.Two',
 			show: true
 		},
@@ -16,12 +16,12 @@ const notice = {
 			show: true
 		},
 		{
-			label: 'Common.Terms.Future_Plan',
+			label: 'Common.Terms.Todo',
 			text: 'Common.Notice.Four',
 			show: true
 		},
 		{
-			label: 'Common.Terms.Future_Plan',
+			label: 'Common.Terms.Todo',
 			text: 'Common.Notice.Five',
 			show: true
 		}
