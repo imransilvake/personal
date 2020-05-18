@@ -13,7 +13,7 @@ import { StorageService } from '../../../../core.pck/storage.mod/services/storag
 })
 
 export class FontSwitchComponent implements OnInit {
-	public faIcons = [faFont];
+	public faIcon = [faFont];
 	public fontSizeSwitcher = true;
 
 	constructor(private _storageService: StorageService) {
