@@ -2,7 +2,7 @@ const profileSkills = {
 	assetsPath: 'assets/svg/profile/expertise/',
 	items: [
 		{
-			title: 'Frameworks',
+			title: 'Web & Mobile Frameworks',
 			items: [
 				{
 					photo: 'angular.svg',
@@ -106,6 +106,37 @@ const profileSkills = {
 								},
 								{
 									name: 'Axios'
+								}
+							]
+						}
+					]
+				},
+				{
+					photo: 'flutter.svg',
+					items: [
+						{
+							title: 'Common.Terms.Knowledge',
+							items: [
+								{
+									name: 'Widgets',
+									items: [
+										'Stateful / Stateless',
+										'Row',
+										'Column',
+										'Expanded',
+										'Padding',
+										'Margin',
+										'Center'
+									]
+								},
+								{
+									name: 'Dart Basics',
+									items: [
+										'Functions',
+										'List',
+										'If/Else',
+										'Classes & Objects'
+									]
 								}
 							]
 						}

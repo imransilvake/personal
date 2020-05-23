@@ -5,10 +5,10 @@ const infoBoard = {
 			photo: 'office.svg',
 			items: [
 				{
-					title: 'Common.Terms.Company',
+					title: 'Common.Terms.Working',
 					items: [
 						{
-							name: 'Common.Companies.TS'
+							name: 'Game: Langsaw'
 						}
 					]
 				},
@@ -16,13 +16,13 @@ const infoBoard = {
 					title: 'Common.Terms.Technologies',
 					items: [
 						{
-							name: 'Angular'
+							name: 'Flutter'
 						},
 						{
-							name: 'NativeScript'
+							name: 'Dart'
 						},
 						{
-							name: 'HTML5/SCSS'
+							name: 'Flame Engine'
 						}
 					]
 				}
@@ -35,10 +35,10 @@ const infoBoard = {
 					title: 'Common.Terms.Learning',
 					items: [
 						{
-							name: 'NativeScript'
+							name: 'Flutter'
 						},
 						{
-							name: 'React'
+							name: 'Dart'
 						}
 					]
 				},
@@ -46,10 +46,10 @@ const infoBoard = {
 					title: 'Common.Terms.Next',
 					items: [
 						{
-							name: 'React Native'
+							name: 'React'
 						},
 						{
-							name: 'Flutter'
+							name: 'React Native'
 						}
 					]
 				}
@@ -65,7 +65,7 @@ const infoBoard = {
 							name: 'Horizon Zero Dawn'
 						},
 						{
-							name: 'Assassin\'s Creed Origins'
+							name: 'God of War'
 						}
 					]
 				},

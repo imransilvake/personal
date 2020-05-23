@@ -10,12 +10,16 @@ const profileSkills = {
 			name: 'TypeScript'
 		},
 		{
-			id: 'react',
-			name: 'ReactJs'
+			id: 'dart',
+			name: 'Dart'
 		},
 		{
 			id: 'angular',
 			name: 'Angular'
+		},
+		{
+			id: 'react',
+			name: 'ReactJs'
 		},
 		{
 			id: 'flutter',
@@ -30,26 +34,6 @@ const profileSkills = {
 			name: 'NodeJs'
 		},
 		{
-			id: 'npm',
-			name: 'NPM'
-		},
-		{
-			id: 'aws',
-			name: 'Amazon Web Services'
-		},
-		{
-			id: 'rxjs',
-			name: 'RxJs'
-		},
-		{
-			id: 'sass',
-			name: 'Sass'
-		},
-		{
-			id: 'bootstrap',
-			name: 'Bootstrap'
-		},
-		{
 			id: 'html5',
 			name: 'HTML5'
 		},
@@ -58,18 +42,42 @@ const profileSkills = {
 			name: 'CSS3'
 		},
 		{
+			id: 'sass',
+			name: 'Sass'
+		},
+		{
+			id: 'material-design',
+			name: 'Material Design'
+		},
+		{
+			id: 'npm',
+			name: 'NPM'
+		},
+		{
+			id: 'yarn',
+			name: 'Yarn'
+		},
+		{
 			id: 'git',
 			name: 'Git'
 		},
 		{
 			id: 'webstorm',
 			name: 'WebStorm'
+		},
+		{
+			id: 'xCode',
+			name: 'xCode'
+		},
+		{
+			id: 'android-studio',
+			name: 'Android Studio'
 		}
 	],
 	skills: [
 		{
 			title: 'Profile.Terms.Programming_Languages',
-			items: ['JavaScript', 'TypeScript']
+			items: ['JavaScript', 'TypeScript', 'Dart']
 		},
 		{
 			title: 'Frameworks',
@@ -97,7 +105,7 @@ const profileSkills = {
 		},
 		{
 			title: 'Profile.Terms.Miscellaneous',
-			items: ['Yarn', 'NPM', 'NodeJs', 'Git', 'Jira', 'Confluence', 'WebStorm', 'macOS']
+			items: ['Yarn', 'NPM', 'NodeJs', 'Git', 'Jira', 'Confluence', 'WebStorm', 'xCode', 'Android Studio', 'macOS']
 		}
 	]
 };
