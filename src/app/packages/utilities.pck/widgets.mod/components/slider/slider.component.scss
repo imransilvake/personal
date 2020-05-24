@@ -1,9 +1,6 @@
 @import 'scss-methods';
 
 .ik-slider {
-	touch-action: pan-y;
-	-webkit-overflow-scrolling: touch;
-
 	.ik-content {
 		position: relative;
 
