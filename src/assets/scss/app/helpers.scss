@@ -30,3 +30,8 @@
 .ik-remove-bullets {
 	list-style: none;
 }
+
+// touch action
+.ik-touch-action {
+	touch-action: pan-y !important;
+}
