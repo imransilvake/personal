@@ -1,6 +1,9 @@
 @import 'scss-methods';
 
 .ik-slider {
+	touch-action: pan-y;
+	-webkit-overflow-scrolling: touch;
+
 	.ik-content {
 		position: relative;
 
@@ -14,11 +17,42 @@
 			top: 0;
 		}
 
-		.ik-count {
+		.ik-options {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
 			left: 10px;
 			position: absolute;
+			right: 10px;
 			top: 10px;
 			z-index: cd-zIndex(float);
+
+			.ik-slider-counter {
+				display: inline;
+			}
+
+			.ik-controls {
+				display: inline;
+				padding: 1px;
+
+				.ik-list {
+					display: flex;
+
+					li {
+						cursor: pointer;
+						text-align: center;
+						width: 35px;
+
+						&:hover {
+							background-color: var(--c8);
+						}
+
+						.ik-icon {
+							font-size: cd-fontSize(s18);
+						}
+					}
+				}
+			}
 		}
 	}
 
