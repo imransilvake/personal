@@ -1,8 +1,9 @@
 <section class="ik-image-card">
 	<div class="ik-photo ik-image-fixed ik-one">
 		<img class="ik-bg-loader ik-loader-grey"
+			 [style.transform]="'scale3d(' + imageZoom + ', ' + imageZoom + ', 1)'"
 			 [src]="imageData['photo']"
 			 [alt]="imageData['title']"/>
-		<h6 class="ik-text-bg ik-text ik-title">{{ imageData['title'] }}</h6>
+		<h6 class="ik-bg-shadow ik-text ik-title">{{ imageData['title'] }}</h6>
 	</div>
 </section>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 // app
 import { SharedModule } from '../../../shared.module';
+import { PhotoGalleryComponent } from './components/photo-gallery/photo-gallery.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CardComponent } from './components/card/card.component';
 import { CardInfoComponent } from './components/card/info/card-info.component';
@@ -16,6 +17,7 @@ import { CardCodeComponent } from './components/card/code/card-code.component';
 		SharedModule
 	],
 	declarations: [
+		PhotoGalleryComponent,
 		SliderComponent,
 		CardComponent,
 		CardInfoComponent,
@@ -25,6 +27,7 @@ import { CardCodeComponent } from './components/card/code/card-code.component';
 		CardCodeComponent
 	],
 	exports: [
+		PhotoGalleryComponent,
 		SliderComponent,
 		CardComponent
 	]

@@ -6,12 +6,15 @@
 						[activeSlide]="sliderImageActive"
 						[totalSlides]="sliderTotalSlides"
 						[slideInterval]="sliderInterval"
-						[showSlideCounter]="true"
 						[showDotsNavigation]="false"
-						(updateActiveSlide)="sliderImageActive = $event">
-				<div @fadeInOut>
+						[showSlideCounter]="true"
+						[showControls]="true"
+						(updateActiveSlide)="sliderImageActive = $event"
+						(updateZoom)="sliderImageZoom = $event">
+				<div>
 					<app-card [cardViewType]="cardViewImage"
-							  [imageData]="sliderImageActive">
+							  [imageData]="sliderImageActive"
+							  [imageZoom]="sliderImageZoom">
 					</app-card>
 				</div>
 			</app-slider>
@@ -48,7 +51,7 @@
 								<fa-icon class="ik-icon" [icon]="faIcon[1]"></fa-icon>
 
 								<!-- Title -->
-								<h6 class="ik-text-bg">{{ item['title'] }}</h6>
+								<h6 class="ik-bg-shadow">{{ item['title'] }}</h6>
 							</div>
 						</div>
 					</ng-container>

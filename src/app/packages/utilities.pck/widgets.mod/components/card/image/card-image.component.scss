@@ -4,6 +4,10 @@
 	.ik-photo {
 		position: relative;
 
+		img {
+			transition: transform 250ms ease-in-out;
+		}
+
 		.ik-text {
 			position: absolute;
 

@@ -36,6 +36,7 @@ export class PhotographyComponent implements OnInit {
 	public sliderTotalSlides;
 	public sliderInterval;
 	public sliderImageActive;
+	public sliderImageZoom;
 
 	public galleryList = [];
 	public isLoadMore = false;
@@ -76,9 +77,6 @@ export class PhotographyComponent implements OnInit {
 		const promiseData = photographyGalleries ?
 			photographyGalleries : await this._firebaseService.storageGetPhotographyGallery();
 
-		// stop loading
-		this.isLoader = false;
-
 		// validate data
 		if (promiseData && promiseData['data']) {
 			// gallery data
@@ -112,6 +110,9 @@ export class PhotographyComponent implements OnInit {
 			// next page token
 			this.isLoadMore = !!promiseData['isNextPageToken'];
 
+			// stop loading
+			this.isLoader = false;
+
 			// initialize light gallery
 			of(null)
 				.pipe(delay(500))
@@ -124,6 +125,9 @@ export class PhotographyComponent implements OnInit {
 			// error: show push message
 			this._triggersService.PushNotificationType
 				.next(PushNotificationsTypesEnum.ERROR_GENERAL);
+
+			// stop loading
+			this.isLoader = false;
 		}
 	}
 
