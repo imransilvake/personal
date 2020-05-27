@@ -54,7 +54,7 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 				);
 			});
 
-		// listen: general error
+		// listen: handle errors
 		this._triggersService.PushNotificationType
 			.pipe(takeUntil(this.unSubscribe))
 			.subscribe((type: PushNotificationsTypesEnum) => {
@@ -90,29 +90,18 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 
 			// update to local storage
 			this._storageService.put(LocalStorageItems.welcomePN, 'true', StorageTypeEnum.PERSISTANT);
+		} else {
+			// validate notifications container
+			this.validateNotificationsContainer();
 		}
 	}
 
 	/**
 	 * validate notifications container
 	 */
-	public onValidateNotificationsLength() {
+	public validateNotificationsContainer() {
 		const items = this.pushNotificationsList.filter(f => f.controls['show']);
 		this.validateNotificationsLength = !!(items && items.length);
-	}
-
-	/**
-	 * update notification list
-	 * @param type
-	 * @param status
-	 */
-	public updateNotificationList(type: PushNotificationsTypesEnum, status: boolean) {
-		this.pushNotificationsList.map(item => {
-			if (item.id === type) {
-				item['controls']['show'] = status;
-			}
-			return item;
-		});
 	}
 
 	/**
@@ -149,6 +138,19 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 					this.timer[type].unsubscribe();
 				}
 			});
+	}
 
+	/**
+	 * update notification list
+	 * @param type
+	 * @param status
+	 */
+	public updateNotificationList(type: PushNotificationsTypesEnum, status: boolean) {
+		this.pushNotificationsList.map(item => {
+			if (item.id === type) {
+				item['controls']['show'] = status;
+			}
+			return item;
+		});
 	}
 }

@@ -1,7 +1,7 @@
 <section class="ik-push-notification" *ngIf="validateNotificationsLength">
 	<ng-container *ngFor="let notification of pushNotificationsList">
 		<div @slideFromLeftInOut
-			 (@slideFromLeftInOut.done)="onValidateNotificationsLength()"
+			 (@slideFromLeftInOut.done)="validateNotificationsContainer()"
 			 *ngIf="notification['controls']['show']"
 			 class="ik-message">
 			<!-- Head -->
