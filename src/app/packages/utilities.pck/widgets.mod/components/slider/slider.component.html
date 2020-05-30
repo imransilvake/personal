@@ -1,14 +1,15 @@
 <section class="ik-slider ik-touch-action"
 		 (swipeleft)="onSwipeOrClick(0)"
 		 (swiperight)="onSwipeOrClick(1)">
-	<!-- Content -->
+	<!-- Content Projection -->
 	<div class="ik-content">
-		<!-- Projection -->
 		<ng-content></ng-content>
 	</div>
 
 	<!-- Options -->
 	<ng-container *ngIf="totalSlides > 1">
+		<!-- Progress Bar -->
+
 		<!-- Options -->
 		<div class="ik-options" *ngIf="showSlideCounter || showControls">
 			<!-- Slide Counter -->
@@ -52,7 +53,7 @@
 			<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
 				<button class="ik-dot"
 						[class.ik-active]="activeSlideIndex === idx"
-						(click)="activeSlideIndex !== idx && onClickChangeSlide(idx)">
+						(click)="activeSlideIndex !== idx && onClickChangeSlide(idx, true)">
 				</button>
 			</ng-container>
 		</div>
