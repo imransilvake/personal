@@ -1,9 +1,15 @@
 <section class="ik-image-card">
-	<div class="ik-photo ik-image-fixed ik-one">
+	<div class="ik-photo"
+		 [class.ik-fixed-height]="!imageAutoHeight"
+		 [class.ik-cover-area]="imageAutoHeight">
+		<!-- Image -->
 		<img class="ik-bg-loader ik-loader-grey"
-			 [style.transform]="'scale3d(' + imageZoom + ', ' + imageZoom + ', 1)'"
-			 [src]="imageData['photo']"
-			 [alt]="imageData['title']"/>
-		<h6 class="ik-bg-shadow ik-text ik-title">{{ imageData['title'] }}</h6>
+			 [src]="imageData['photo'] || imageData['src']"
+			 [alt]="imageData['title'] || 'photo'"/>
+
+		<!-- Title -->
+		<h6 class="ik-bg-shadow ik-text ik-title" *ngIf="imageData['title']">
+			{{ imageData['title'] }}
+		</h6>
 	</div>
 </section>

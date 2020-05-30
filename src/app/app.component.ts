@@ -12,8 +12,6 @@ import notice from '../assets/data/common/notice';
 	template: `
 		<!-- Notice Board -->
 		<app-slider [data]="noticeList"
-					[activeSlide]="noticeActive"
-					[totalSlides]="noticeTotalSlides"
 					[slideInterval]="noticeInterval"
 					[showDotsNavigation]="false"
 					(updateActiveSlide)="noticeActive = $event">
@@ -36,14 +34,16 @@ import notice from '../assets/data/common/notice';
 
 		<!-- Push Notification -->
 		<app-push-notification></app-push-notification>
+		
+		<!-- Photo Gallery -->
+		<app-photo-gallery></app-photo-gallery>
 	`
 })
 
 export class AppComponent {
 	public cardViewNotice = CardViewEnum.CARD_NOTICE;
 	public noticeList = { items: notice['items'].filter(x => x.show) };
-	public noticeActive = this.noticeList['items'][0];
-	public noticeTotalSlides = this.noticeList['items'].length;
+	public noticeActive;
 	public noticeInterval = AppOptions.intervals.notice;
 
 	constructor(private _appMetaService: AppMetaService) {

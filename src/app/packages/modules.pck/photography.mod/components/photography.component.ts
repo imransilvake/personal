@@ -1,8 +1,6 @@
 // angular
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { delay } from 'rxjs/operators';
-import { of } from 'rxjs';
 
 // app
 import photography from 'src/assets/data/photography/photography';
@@ -15,8 +13,8 @@ import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-typ
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
 import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifications-types.enum';
 import { TriggersService } from '../../../utilities.pck/common.mod/services/triggers.service';
-
-declare const lightGallery;
+import { PhotoGalleryService } from '../../../utilities.pck/widgets.mod/services/photo-gallery.service';
+import { PhotoGalleryInterface } from '../../../utilities.pck/widgets.mod/interfaces/photo-gallery.interface';
 
 @Component({
 	selector: 'app-photography',
@@ -26,17 +24,13 @@ declare const lightGallery;
 })
 
 export class PhotographyComponent implements OnInit {
-	@ViewChild('gallery', { static: false }) gallery: ElementRef;
-
 	public faIcon = [faPlane, faExpand, faCircleNotch];
 	public photography = photography;
 
 	public cardViewImage = CardViewEnum.CARD_IMAGE;
 	public sliderList = {};
-	public sliderTotalSlides;
 	public sliderInterval;
 	public sliderImageActive;
-	public sliderImageZoom;
 
 	public galleryList = [];
 	public isLoadMore = false;
@@ -46,7 +40,8 @@ export class PhotographyComponent implements OnInit {
 		private _router: Router,
 		private _firebaseService: FirebaseService,
 		private _storageService: StorageService,
-		private _triggersService: TriggersService
+		private _triggersService: TriggersService,
+		private _photoGalleryService: PhotoGalleryService
 	) {
 	}
 
@@ -112,15 +107,6 @@ export class PhotographyComponent implements OnInit {
 
 			// stop loading
 			this.isLoader = false;
-
-			// initialize light gallery
-			of(null)
-				.pipe(delay(500))
-				.subscribe(() => {
-					if (!!this.gallery) {
-						lightGallery(this.gallery.nativeElement);
-					}
-				});
 		} else {
 			// error: show push message
 			this._triggersService.PushNotificationType
@@ -140,7 +126,7 @@ export class PhotographyComponent implements OnInit {
 		const minFiles = urlData.filter(i => i.indexOf('_min') !== -1);
 		const thumbFiles = urlData.filter(i => i.indexOf('_thumb') !== -1);
 
-		// format
+		// map data according to photoGallery format
 		const content = photography['items'].slice(this.galleryList.length);
 		return minFiles.map((url, index) => ({
 			...content[index],
@@ -161,10 +147,25 @@ export class PhotographyComponent implements OnInit {
 		if (!this.sliderList['items']) {
 			this.sliderList = { ...photography, items: filteredData };
 			this.sliderInterval = AppOptions.intervals.photography;
-			this.sliderImageActive = this.sliderList['items'][0];
 		} else {
 			this.sliderList = { ...photography, items: this.sliderList['items'].concat(filteredData) };
 		}
-		this.sliderTotalSlides = this.sliderList['items'].length;
+	}
+
+	/**
+	 * open photo gallery
+	 * @param item
+	 * @param index
+	 */
+	public onClickOpenPhotoGallery(item: any, index: number) {
+		// payload
+		const payload: PhotoGalleryInterface = {
+			show: true,
+			currentIndex: index,
+			items: this.galleryList
+		};
+
+		// trigger photo gallery
+		this._photoGalleryService.triggerPhotoGallery.next(payload);
 	}
 }

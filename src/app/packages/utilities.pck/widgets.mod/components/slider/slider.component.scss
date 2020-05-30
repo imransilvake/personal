@@ -14,65 +14,102 @@
 			top: 0;
 		}
 
-		.ik-options {
-			align-items: center;
-			display: flex;
-			justify-content: space-between;
-			left: 10px;
+		.ik-slider-counter {
+			display: inline;
+			left: 20px;
 			position: absolute;
-			right: 10px;
 			top: 10px;
-			z-index: cd-zIndex(float);
+			z-index: cd-zIndex(normal);
+		}
 
-			.ik-slider-counter {
-				display: inline;
-			}
+		.ik-controls {
+			position: absolute;
+			right: 20px;
+			top: 10px;
+			z-index: cd-zIndex(normal);
 
-			.ik-controls {
-				display: inline;
-				padding: 1px;
+			.ik-list {
+				li {
+					background-color: var(--c2);
+					border-radius: 50%;
+					cursor: pointer;
+					height: 35px;
+					text-align: center;
+					width: 35px;
 
-				.ik-list {
-					display: flex;
+					&:not(:last-child) {
+						margin-bottom: 10px;
+					}
 
-					li {
-						cursor: pointer;
-						text-align: center;
-						width: 35px;
+					&:hover {
+						opacity: .9;
+					}
 
-						&:hover {
-							background-color: var(--c8);
-						}
-
-						.ik-icon {
-							font-size: cd-fontSize(s18);
-						}
+					.ik-icon {
+						color: var(--c1);
+						display: block;
+						font-size: cd-fontSize(s18);
+						padding-top: 5px;
 					}
 				}
 			}
 		}
-	}
 
-	.ik-dots {
-		padding: 5px 0;
-		text-align: center;
+		.ik-arrows {
+			.ik-left {
+				background-color: var(--o1);
+				left: 20px;
+				position: absolute;
+				top: 50%;
+				z-index: cd-zIndex(normal);
 
-		.ik-dot {
-			background-color: var(--c3);
-			border: none;
-			border-radius: 50%;
-			cursor: pointer;
-			display: inline-block;
-			height: 12px;
-			margin: 0 3px;
-			outline: 0;
-			padding: 0;
-			transition: background-color .6s ease;
-			width: 12px;
+				.ik-icon {
+					font-size: cd-fontSize(s20);
+				}
+			}
 
-			&.ik-active {
-				background-color: var(--c4);
-				cursor: default;
+			.ik-right {
+				background-color: var(--o1);
+				right: 20px;
+				position: absolute;
+				top: 50%;
+				z-index: cd-zIndex(normal);
+
+				.ik-icon {
+					font-size: cd-fontSize(s20);
+				}
+			}
+		}
+
+		.ik-dots {
+			padding: 5px 0;
+			text-align: center;
+
+			&.ik-over-content {
+				bottom: 20px;
+				left: 0;
+				position: absolute;
+				right: 0;
+				z-index: cd-zIndex(normal);
+			}
+
+			.ik-dot {
+				background-color: var(--c3);
+				border: none;
+				border-radius: 50%;
+				cursor: pointer;
+				display: inline-block;
+				height: 12px;
+				margin: 0 3px;
+				outline: 0;
+				padding: 0;
+				transition: background-color .6s ease;
+				width: 12px;
+
+				&.ik-active {
+					background-color: var(--c4);
+					cursor: default;
+				}
 			}
 		}
 	}

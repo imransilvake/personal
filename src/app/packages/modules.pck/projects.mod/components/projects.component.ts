@@ -17,9 +17,9 @@ import {
 	faSearch,
 	faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import projects from 'src/assets/data/projects/projects';
 import codeBlock from '../../../../../assets/data/projects/code-block';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ROUTING } from '../../../../../environments/environment';
 import { MemoryStorageItems } from '../../../../../app.config';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
@@ -28,8 +28,8 @@ import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifi
 import { CardViewEnum } from '../../../utilities.pck/widgets.mod/enums/card-view.enum';
 import { FirebaseService } from '../../../utilities.pck/common.mod/services/firebase.service';
 import { TriggersService } from '../../../utilities.pck/common.mod/services/triggers.service';
-
-declare const lightGallery: any;
+import { PhotoGalleryInterface } from '../../../utilities.pck/widgets.mod/interfaces/photo-gallery.interface';
+import { PhotoGalleryService } from '../../../utilities.pck/widgets.mod/services/photo-gallery.service';
 
 @Component({
 	selector: 'app-projects',
@@ -57,7 +57,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		private _router: Router,
 		private _firebaseService: FirebaseService,
 		private _storageService: StorageService,
-		private _triggersService: TriggersService
+		private _triggersService: TriggersService,
+		private _photoGalleryService: PhotoGalleryService
 	) {
 		// listen: router events
 		this._router.events
@@ -210,18 +211,30 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 		// check if gallery list contains data
 		if (galleryList && galleryList.length > 0) {
-			// map gallery list according to lightGallery data format
-			const galleryMapped = galleryList.map(item => ({ src: item }));
+			// map data according to photoGallery format
+			const galleryMapped = galleryList.map(item => ({ photo: item }));
 
-			// initiate lightGallery
-			lightGallery(document.querySelector(`#gallery-${index}`), {
-				dynamic: true,
-				dynamicEl: galleryMapped
-			});
+			// open photo gallery
+			this.openPhotoGallery(galleryMapped);
 		} else {
 			// error: show push message
 			this._triggersService.PushNotificationType
 				.next(PushNotificationsTypesEnum.ERROR_GENERAL);
 		}
+	}
+
+	/**
+	 * open photo gallery
+	 * @param items
+	 */
+	public openPhotoGallery(items: any) {
+		// payload
+		const payload: PhotoGalleryInterface = {
+			show: true,
+			items: items
+		};
+
+		// trigger photo gallery
+		this._photoGalleryService.triggerPhotoGallery.next(payload);
 	}
 }

@@ -10,6 +10,6 @@ import { Component, Input } from '@angular/core';
 export class CardInfoComponent {
 	@Input() infoData;
 	@Input() infoAssetsPath;
-	@Input() infoAutoHeight = false;
-	@Input() infoCardClass = true;
+	@Input() infoAutoHeight;
+	@Input() infoCardClass;
 }

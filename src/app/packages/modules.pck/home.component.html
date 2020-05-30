@@ -8,7 +8,7 @@
 					<section class="ik-card ik-block ik-summary">
 						<div class="ik-display">
 							<!-- Cover -->
-							<div class="ik-cover ik-image-fixed ik-two">
+							<div class="ik-cover">
 								<div class="ik-content">
 									<h3>{{ profileInfo['summary']['display']['cover'] }}</h3>
 								</div>
@@ -62,11 +62,10 @@
 				<!-- Sidebar -->
 				<div class="cd-col cd-col-pm-s-4 cd-col-pm-d-3 ik-m-bottom-space">
 					<!-- Info Board -->
-					<section class="ik-card ik-block" *ngIf="infoBoardActiveSlide">
+					<section class="ik-card ik-block">
 						<app-slider [data]="infoBoard"
-									[activeSlide]="infoBoardActiveSlide"
-									[totalSlides]="infoBoardTotalSlides"
 									[slideInterval]="infoBoardInterval"
+									[showDotsNavigation]="true"
 									(updateActiveSlide)="infoBoardActiveSlide = $event">
 							<app-card [infoData]="infoBoardActiveSlide"
 									  [infoAutoHeight]="true"

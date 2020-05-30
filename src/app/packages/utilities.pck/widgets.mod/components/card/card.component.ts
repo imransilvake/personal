@@ -23,7 +23,7 @@ export class CardComponent {
 	@Input() filterRoute;
 
 	@Input() imageData;
-	@Input() imageZoom;
+	@Input() imageAutoHeight = true;
 
 	@Input() codeData;
 }

@@ -24,10 +24,9 @@ export class HomeComponent {
 	public socialNetwork = socialNetwork;
 	public topProjects = topProjects;
 
-	public infoBoard = infoBoard;
 	public cardViewList = CardViewEnum.CARD_LIST;
-	public infoBoardActiveSlide = infoBoard['items'][0];
-	public infoBoardTotalSlides = infoBoard['items'].length;
+	public infoBoard = infoBoard;
+	public infoBoardActiveSlide;
 	public infoBoardInterval = AppOptions.intervals.infoBoard;
 
 	/**

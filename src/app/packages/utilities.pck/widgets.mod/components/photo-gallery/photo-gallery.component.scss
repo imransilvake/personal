@@ -1,0 +1,17 @@
+@import 'scss-methods';
+
+.ik-photo-gallery {
+	background-color: cd-palette($cd-background, 2000, .95);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: cd-zIndex(modal);
+
+	.ik-slider-wrapper {
+		align-items: center;
+		display: flex;
+		height: 100vh;
+	}
+}

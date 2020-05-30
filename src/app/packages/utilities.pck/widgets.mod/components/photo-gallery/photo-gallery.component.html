@@ -1,1 +1,18 @@
-<p>photo-gallery works!</p>
+<section class="ik-photo-gallery" *ngIf="showPhotoGallery">
+	<!-- Slider -->
+	<div class="ik-slider-wrapper">
+		<app-slider [data]="dataList"
+					[activeSlideIndex]="dataActiveSlideIndex"
+					[slideInterval]="dataInterval"
+					[showSlideCounter]="true"
+					[showControls]="true"
+					[showArrowsNavigation]="true"
+					(updateActiveSlide)="dataActive = $event"
+					(closeSlider)="onClickClosePhotoGallery()">
+			<app-card [cardViewType]="cardViewImage"
+					  [imageData]="dataActive"
+					  [imageAutoHeight]="true">
+			</app-card>
+		</app-slider>
+	</div>
+</section>

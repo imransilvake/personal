@@ -107,7 +107,6 @@
 										<!-- Spinner -->
 										<fa-icon *ngIf="!!item['actions']['galleryId'] && !item['controls']['lock']"
 												 (click)="onClickOpenProjectGallery(item['actions']['galleryId'], idx)"
-												 id="gallery-{{idx}}"
 												 class="ik-icon"
 												 [spin]="spinnerIndex === idx"
 												 [icon]="spinnerIndex === idx ? faIcon[9] : faIcon[5]"></fa-icon>

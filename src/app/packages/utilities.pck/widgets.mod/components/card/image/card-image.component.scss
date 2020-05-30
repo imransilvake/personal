@@ -5,7 +5,26 @@
 		position: relative;
 
 		img {
+			display: block;
 			transition: transform 250ms ease-in-out;
+		}
+
+		&.ik-fixed-height {
+			max-height: 70vh;
+
+			img {
+				max-height: 70vh;
+				object-fit: cover;
+				width: 100%;
+			}
+		}
+
+		&.ik-cover-area {
+			img {
+				height: 100vh;
+				object-fit: contain;
+				width: 100%;
+			}
 		}
 
 		.ik-text {
@@ -13,7 +32,7 @@
 
 			&.ik-title {
 				bottom: 10px;
-				right: 10px;
+				right: 20px;
 			}
 		}
 	}

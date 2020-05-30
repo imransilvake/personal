@@ -3,50 +3,58 @@
 		 (swiperight)="onSwipeOrClick(1)">
 	<!-- Content -->
 	<div class="ik-content">
-		<!-- Options -->
-		<div class="ik-options" *ngIf="showSlideCounter || showControls">
-			<!-- Slide Counter -->
-			<h6 *ngIf="showSlideCounter" class="ik-bg-shadow ik-slider-counter">{{ slideCounter }}</h6>
-
-			<!-- Controls -->
-			<div *ngIf="showControls" class="ik-bg-shadow ik-controls">
-				<ul class="ik-remove-bullets ik-list">
-					<li (click)="onClickTriggerControl(0)">
-						<fa-icon [icon]="faIcon[0]" class="ik-icon"></fa-icon>
-					</li>
-					<li (click)="onClickTriggerControl(1)">
-						<fa-icon [icon]="faIcon[1]" class="ik-icon"></fa-icon>
-					</li>
-					<li (click)="onClickTriggerControl(2)">
-						<fa-icon [icon]="faIcon[2]" class="ik-icon"></fa-icon>
-					</li>
-					<li (click)="onClickTriggerControl(3)">
-						<fa-icon [icon]="faIcon[3]" class="ik-icon"></fa-icon>
-					</li>
-					<li (click)="onClickTriggerControl(4)">
-						<fa-icon [icon]="faIcon[4]" class="ik-icon"></fa-icon>
-					</li>
-					<li *ngIf="!isSliderPlay" (click)="onClickTriggerControl(5)">
-						<fa-icon [icon]="faIcon[5]" class="ik-icon"></fa-icon>
-					</li>
-					<li *ngIf="isSliderPlay" (click)="onClickTriggerControl(6)">
-						<fa-icon [icon]="faIcon[6]" class="ik-icon"></fa-icon>
-					</li>
-				</ul>
-			</div>
-		</div>
-
 		<!-- Projection -->
 		<ng-content></ng-content>
-	</div>
 
-	<!-- Dots Navigation -->
-	<div class="ik-dots" *ngIf="showDotsNavigation">
-		<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
-			<button class="ik-dot"
-				  [class.ik-active]="activeSlideIndex === idx"
-				  (click)="activeSlideIndex !== idx && onClickChangeSlide(idx)">
-			</button>
+		<!-- Options -->
+		<ng-container *ngIf="totalSlides > 1">
+			<!-- Options -->
+			<div class="ik-options" *ngIf="showSlideCounter || showControls">
+				<!-- Slide Counter -->
+				<h6 *ngIf="showSlideCounter" class="ik-bg-shadow ik-slider-counter">
+					{{ slideCounter }}
+				</h6>
+
+				<!-- Controls -->
+				<div *ngIf="showControls" class="ik-controls">
+					<ul class="ik-remove-bullets ik-list">
+						<li (click)="onClickTriggerControl(0)">
+							<fa-icon [icon]="faIcon[0]" class="ik-icon"></fa-icon>
+						</li>
+						<li (click)="onClickTriggerControl(1)">
+							<fa-icon [icon]="faIcon[1]" class="ik-icon"></fa-icon>
+						</li>
+						<li *ngIf="!isSliderPlay" (click)="onClickTriggerControl(2)">
+							<fa-icon [icon]="faIcon[2]" class="ik-icon"></fa-icon>
+						</li>
+						<li *ngIf="isSliderPlay" (click)="onClickTriggerControl(3)">
+							<fa-icon [icon]="faIcon[3]" class="ik-icon"></fa-icon>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Arrows Navigation -->
+			<div class="ik-arrows" *ngIf="showArrowsNavigation">
+				<button class="ik-button ik-left" (click)="onClickTriggerControl(4)">
+					<fa-icon [icon]="faIcon[4]" class="ik-icon"></fa-icon>
+				</button>
+				<button class="ik-button ik-right" (click)="onClickTriggerControl(5)">
+					<fa-icon [icon]="faIcon[5]" class="ik-icon"></fa-icon>
+				</button>
+			</div>
+
+			<!-- Dots Navigation -->
+			<div class="ik-dots"
+				 [class.ik-over-content]="dotsNavigationFixed"
+				 *ngIf="showDotsNavigation">
+				<ng-container *ngFor="let item of [].constructor(totalSlides); let idx=index;">
+					<button class="ik-dot"
+							[class.ik-active]="activeSlideIndex === idx"
+							(click)="activeSlideIndex !== idx && onClickChangeSlide(idx)">
+					</button>
+				</ng-container>
+			</div>
 		</ng-container>
 	</div>
 </section>

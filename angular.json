@@ -41,13 +41,7 @@
 							"includePaths": [
 								"src/assets/scss/"
 							]
-						},
-						"scripts": [
-							"node_modules/lightgallery.js/dist/js/lightgallery.min.js",
-							"node_modules/lg-fullscreen.js/dist/lg-fullscreen.min.js",
-							"node_modules/lg-zoom.js/dist/lg-zoom.min.js",
-							"node_modules/lg-autoplay.js/dist/lg-autoplay.min.js"
-						]
+						}
 					},
 					"configurations": {
 						"next": {

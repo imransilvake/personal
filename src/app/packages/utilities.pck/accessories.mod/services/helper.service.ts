@@ -37,6 +37,20 @@ export class HelperService {
 	}
 
 	/**
+	 * stop body scroll
+	 */
+	public stopBodyScroll() {
+		document.body.classList.add('cd-hide-overflow');
+	}
+
+	/**
+	 * reset body scroll
+	 */
+	public resetBodyScroll() {
+		document.body.classList.remove('cd-hide-overflow');
+	}
+
+	/**
 	 * fetch date in human readable format
 	 * @param date
 	 * @param dateFormat

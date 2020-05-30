@@ -5,13 +5,12 @@ import { interval, NEVER, Subject } from 'rxjs';
 
 // app
 import {
-	faChevronLeft,
-	faChevronRight,
+	faArrowLeft,
+	faArrowRight,
 	faDownload,
 	faPauseCircle,
 	faPlayCircle,
-	faSearchMinus,
-	faSearchPlus
+	faTimes
 } from '@fortawesome/free-solid-svg-icons';
 import { AppOptions } from '../../../../../../app.config';
 import { SliderDirectionEnum } from '../../enums/slider-direction.enum';
@@ -24,47 +23,56 @@ import { SliderControlsEnum } from '../../enums/slider-controls.enum';
 })
 
 export class SliderComponent implements OnInit, OnDestroy {
+	@Output() closeSlider: EventEmitter<boolean> = new EventEmitter();
 	@Output() updateActiveSlide: EventEmitter<any> = new EventEmitter();
-	@Output() updateZoom: EventEmitter<number> = new EventEmitter();
 
 	@Input() data;
 	@Input() activeSlide;
-	@Input() totalSlides;
+	@Input() activeSlideIndex = 0;
 	@Input() slideInterval = AppOptions.intervals.default;
-	@Input() showDotsNavigation = true;
+
 	@Input() showSlideCounter = false;
+	@Input() showDotsNavigation = false;
+	@Input() dotsNavigationFixed = false;
+	@Input() showArrowsNavigation = false;
 	@Input() showControls = false;
 
 	public faIcon = [
-		faChevronLeft, faChevronRight, faSearchMinus,
-		faSearchPlus, faDownload, faPlayCircle, faPauseCircle
+		faTimes, faDownload, faPlayCircle,
+		faPauseCircle, faArrowLeft, faArrowRight,
 	];
-	public activeSlideIndex = 0;
+	public totalSlides;
 	public slideCounter;
-	public zoomValue = 1;
 	public isSliderPlay = true;
 
 	private slider: Subject<{ pause?: boolean, counter?: number }> = new Subject();
 	private unSubscribe = new Subject();
 
 	ngOnInit() {
+		// count total slides
+		this.totalSlides = this.data['items'].length;
+
 		// slide counter
-		this.slideCounter = `1 / ${this.totalSlides}`;
+		this.slideCounter = `${this.activeSlideIndex + 1} / ${this.totalSlides}`;
+
+		// set active slide
+		this.activeSlide = this.data['items'][this.activeSlideIndex];
+		this.updateActiveSlide.emit(this.activeSlide);
 
 		// slider
 		this.slider
 			.pipe(
 				takeUntil(this.unSubscribe),
 				startWith({ pause: false, counter: 0 }),
-				switchMap(state =>
-					state.pause ? NEVER :
-						interval(this.slideInterval[0])
-							.pipe(
-								tap(() => {
-									const slideIndex = this.activeSlideIndex < (this.totalSlides - 1) ? this.activeSlideIndex + 1 : 0;
-									this.onClickChangeSlide(slideIndex, false);
-								})
-							)
+				switchMap(state => state.pause ? NEVER :
+					interval(this.slideInterval[0])
+						.pipe(
+							tap(() => {
+								const slideIndex = this.activeSlideIndex < (this.totalSlides - 1) ?
+									this.activeSlideIndex + 1 : 0;
+								this.onClickChangeSlide(slideIndex, false);
+							})
+						)
 				)
 			)
 			.subscribe();
@@ -159,19 +167,14 @@ export class SliderComponent implements OnInit, OnDestroy {
 	 */
 	public onClickTriggerControl(control: SliderControlsEnum) {
 		switch (control) {
+			case SliderControlsEnum.CONTROL_EXIT:
+				this.closeSlider.emit(true);
+				break;
 			case SliderControlsEnum.CONTROL_LEFT:
 				this.onSwipeOrClick(SliderDirectionEnum.DIRECTION_RIGHT);
 				break;
 			case SliderControlsEnum.CONTROL_RIGHT:
 				this.onSwipeOrClick(SliderDirectionEnum.DIRECTION_LEFT);
-				break;
-			case SliderControlsEnum.CONTROL_ZOOM_OUT:
-				this.zoomValue = this.zoomValue !== 1 ? this.zoomValue - 1 : 1;
-				this.updateZoom.emit(this.zoomValue);
-				break;
-			case SliderControlsEnum.CONTROL_ZOOM_IN:
-				this.zoomValue = this.zoomValue + 1;
-				this.updateZoom.emit(this.zoomValue);
 				break;
 			case SliderControlsEnum.CONTROL_DOWNLOAD:
 				window.open(this.activeSlide['photo'], '_blank');

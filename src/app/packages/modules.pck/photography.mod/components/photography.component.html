@@ -3,20 +3,13 @@
 		<!-- Slider Image -->
 		<ng-container *ngIf="sliderList && sliderList['items'] && sliderList['items'].length">
 			<app-slider [data]="sliderList"
-						[activeSlide]="sliderImageActive"
-						[totalSlides]="sliderTotalSlides"
 						[slideInterval]="sliderInterval"
-						[showDotsNavigation]="false"
 						[showSlideCounter]="true"
-						[showControls]="true"
-						(updateActiveSlide)="sliderImageActive = $event"
-						(updateZoom)="sliderImageZoom = $event">
-				<div>
-					<app-card [cardViewType]="cardViewImage"
-							  [imageData]="sliderImageActive"
-							  [imageZoom]="sliderImageZoom">
-					</app-card>
-				</div>
+						(updateActiveSlide)="sliderImageActive = $event">
+				<app-card [cardViewType]="cardViewImage"
+						  [imageData]="sliderImageActive"
+						  [imageAutoHeight]="false">
+				</app-card>
 			</app-slider>
 		</ng-container>
 
@@ -34,11 +27,11 @@
 
 			<!-- Masonry Gallery -->
 			<section class="ik-grid-wrapper">
-				<div class="ik-grid" #gallery>
-					<ng-container *ngFor="let item of galleryList">
+				<div class="ik-grid">
+					<ng-container *ngFor="let item of galleryList; let idx=index;">
 						<div class="ik-item"
 							 @fadeInOut
-							 [attr.data-src]="item['photo']"
+							 (click)="onClickOpenPhotoGallery(item, idx)"
 							 [class.ik-span-1]="!item['portrait']"
 							 [class.ik-span-2]="item['portrait']">
 							<div class="ik-photo">

@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 
 export class CardImageComponent {
 	@Input() imageData;
-	@Input() imageZoom;
+	@Input() imageAutoHeight;
 }
