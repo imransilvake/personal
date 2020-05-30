@@ -15,6 +15,7 @@ import {
 import { AppOptions } from '../../../../../../app.config';
 import { SliderDirectionEnum } from '../../enums/slider-direction.enum';
 import { SliderControlsEnum } from '../../enums/slider-controls.enum';
+import { SliderIntervalEnum } from '../../enums/slider-interval.enum';
 
 @Component({
 	selector: 'app-slider',
@@ -85,29 +86,6 @@ export class SliderComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * change slide based on clicked index
-	 * @param slideIndex
-	 * @param isSwipeOrClick
-	 */
-	public onClickChangeSlide(slideIndex: number, isSwipeOrClick = false) {
-		// on swipe or click
-		if (isSwipeOrClick) {
-			// reset slider interval
-			this.resetSliderIntervalOnSlide();
-		}
-
-		// move to a specific slide
-		this.activeSlide = this.data['items'][slideIndex];
-		this.activeSlideIndex = slideIndex;
-
-		// update active slide
-		this.updateActiveSlide.emit(this.activeSlide);
-
-		// update slide counter
-		this.slideCounter = `${slideIndex + 1} / ${this.totalSlides}`;
-	}
-
-	/**
 	 * on swipe: left and right
 	 * @param direction
 	 */
@@ -127,38 +105,26 @@ export class SliderComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * pause slider interval
+	 * change slide based on clicked index
+	 * @param slideIndex
+	 * @param isSwipeOrClick
 	 */
-	public pauseSliderIntervalOnSlide() {
-		// change icon
-		this.isSliderPlay = false;
-
-		// pause
-		if (this.slider) {
-			this.slider.next({ pause: true });
+	public onClickChangeSlide(slideIndex: number, isSwipeOrClick = false) {
+		// on swipe or click
+		if (isSwipeOrClick) {
+			// restart slider interval
+			this.updateSliderIntervalState(SliderIntervalEnum.INTERVAL_RESTART);
 		}
-	}
 
-	/**
-	 * resume slider interval
-	 */
-	public resumeSliderIntervalOnSlide() {
-		// change icon
-		this.isSliderPlay = true;
+		// move to a specific slide
+		this.activeSlide = this.data['items'][slideIndex];
+		this.activeSlideIndex = slideIndex;
 
-		// resume
-		if (this.slider) {
-			this.slider.next({ pause: false });
-		}
-	}
+		// update active slide
+		this.updateActiveSlide.emit(this.activeSlide);
 
-	/**
-	 * reset slider interval
-	 */
-	public resetSliderIntervalOnSlide() {
-		if (this.slider) {
-			this.slider.next({ counter: 0 });
-		}
+		// update slide counter
+		this.slideCounter = `${slideIndex + 1} / ${this.totalSlides}`;
 	}
 
 	/**
@@ -180,10 +146,30 @@ export class SliderComponent implements OnInit, OnDestroy {
 				window.open(this.activeSlide['photo'], '_blank');
 				break;
 			case SliderControlsEnum.CONTROL_PLAY:
-				this.resumeSliderIntervalOnSlide();
+				this.updateSliderIntervalState(SliderIntervalEnum.INTERVAL_PLAY);
 				break;
 			case SliderControlsEnum.CONTROL_PAUSE:
-				this.pauseSliderIntervalOnSlide();
+				this.updateSliderIntervalState(SliderIntervalEnum.INTERVAL_PAUSE);
+				break;
+		}
+	}
+
+	/**
+	 * update slider interval state
+	 * @param interval
+	 */
+	public updateSliderIntervalState(interval: SliderIntervalEnum) {
+		switch (interval) {
+			case SliderIntervalEnum.INTERVAL_PLAY:
+				this.slider.next({ pause: false });
+				this.isSliderPlay = true;
+				break;
+			case SliderIntervalEnum.INTERVAL_PAUSE:
+				this.slider.next({ pause: true });
+				this.isSliderPlay = false;
+				break;
+			case SliderIntervalEnum.INTERVAL_RESTART:
+				this.slider.next({ counter: 0 });
 				break;
 		}
 	}

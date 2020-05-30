@@ -1,0 +1,41 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://jovial-murdock-f13771.netlify.app/</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://jovial-murdock-f13771.netlify.app/photography</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://jovial-murdock-f13771.netlify.app/profile</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://jovial-murdock-f13771.netlify.app/projects/all</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://jovial-murdock-f13771.netlify.app/projects/angular</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://jovial-murdock-f13771.netlify.app/projects/react</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://jovial-murdock-f13771.netlify.app/projects/scss</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://jovial-murdock-f13771.netlify.app/projects/php</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+</urlset>
