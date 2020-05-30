@@ -16,7 +16,7 @@
 		position: absolute;
 		right: 0;
 		top: 0;
-		transition: .3s ease-out all;
+		transition: all .3s ease-out;
 		width: 50%;
 
 		&.ik-right {
@@ -44,7 +44,7 @@
 		&.ik-on {
 			color: var(--c2);
 			cursor: default;
-			transition: .3s ease color;
+			transition: color .3s ease;
 		}
 	}
 }

@@ -13,103 +13,94 @@
 			right: 0;
 			top: 0;
 		}
+	}
 
-		.ik-slider-counter {
-			display: inline;
-			left: 20px;
-			position: absolute;
-			top: 10px;
-			z-index: cd-zIndex(normal);
-		}
+	.ik-slider-counter {
+		display: inline;
+		left: 20px;
+		position: absolute;
+		top: 10px;
+	}
 
-		.ik-controls {
-			position: absolute;
-			right: 20px;
-			top: 10px;
-			z-index: cd-zIndex(normal);
+	.ik-controls {
+		position: absolute;
+		right: 20px;
+		top: 10px;
 
-			.ik-list {
-				li {
-					background-color: var(--c2);
-					border-radius: 50%;
-					cursor: pointer;
-					height: 35px;
-					text-align: center;
-					width: 35px;
-
-					&:not(:last-child) {
-						margin-bottom: 10px;
-					}
-
-					&:hover {
-						opacity: .9;
-					}
-
-					.ik-icon {
-						color: var(--c1);
-						display: block;
-						font-size: cd-fontSize(s18);
-						padding-top: 5px;
-					}
-				}
-			}
-		}
-
-		.ik-arrows {
-			.ik-left {
-				background-color: var(--o1);
-				left: 20px;
-				position: absolute;
-				top: 50%;
-				z-index: cd-zIndex(normal);
-
-				.ik-icon {
-					font-size: cd-fontSize(s20);
-				}
-			}
-
-			.ik-right {
-				background-color: var(--o1);
-				right: 20px;
-				position: absolute;
-				top: 50%;
-				z-index: cd-zIndex(normal);
-
-				.ik-icon {
-					font-size: cd-fontSize(s20);
-				}
-			}
-		}
-
-		.ik-dots {
-			padding: 5px 0;
-			text-align: center;
-
-			&.ik-over-content {
-				bottom: 20px;
-				left: 0;
-				position: absolute;
-				right: 0;
-				z-index: cd-zIndex(normal);
-			}
-
-			.ik-dot {
-				background-color: var(--c3);
-				border: none;
+		.ik-list {
+			li {
+				background-color: var(--c2);
 				border-radius: 50%;
 				cursor: pointer;
-				display: inline-block;
-				height: 12px;
-				margin: 0 3px;
-				outline: 0;
-				padding: 0;
-				transition: background-color .6s ease;
-				width: 12px;
+				height: 35px;
+				text-align: center;
+				width: 35px;
 
-				&.ik-active {
-					background-color: var(--c4);
-					cursor: default;
+				&:not(:last-child) {
+					margin-bottom: 10px;
 				}
+
+				&:hover {
+					opacity: .9;
+				}
+
+				.ik-icon {
+					color: var(--c1);
+					display: block;
+					font-size: cd-fontSize(s18);
+					padding-top: 5px;
+				}
+			}
+		}
+	}
+
+	.ik-arrows {
+		.ik-arrow {
+			background-color: var(--o1);
+			position: absolute;
+			top: 50%;
+
+			&.ik-left {
+				left: 20px;
+			}
+
+			&.ik-right {
+				right: 20px;
+			}
+
+			.ik-icon {
+				font-size: cd-fontSize(s20);
+			}
+		}
+	}
+
+	.ik-dots {
+		padding: 5px 0;
+		text-align: center;
+
+		&.ik-over-content {
+			bottom: 20px;
+			left: 0;
+			position: absolute;
+			right: 0;
+		}
+
+		.ik-dot {
+			background-color: var(--c3);
+			border: none;
+			border-radius: 50%;
+			cursor: pointer;
+			display: inline-block;
+			height: 12px;
+			margin: 0 3px;
+			outline: 0;
+			padding: 0;
+			transition: background-color .6s ease;
+			width: 12px;
+
+			&.ik-active {
+				background-color: var(--c4);
+				cursor: default;
 			}
 		}
 	}

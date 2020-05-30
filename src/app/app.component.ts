@@ -2,10 +2,10 @@
 import { Component } from '@angular/core';
 
 // app
+import notice from '../assets/data/common/notice';
 import { AppOptions } from '../app.config';
 import { CardViewEnum } from './packages/utilities.pck/widgets.mod/enums/card-view.enum';
 import { AppMetaService } from './packages/utilities.pck/accessories.mod/services/app-meta.service';
-import notice from '../assets/data/common/notice';
 
 @Component({
 	selector: 'app-root',
@@ -34,7 +34,7 @@ import notice from '../assets/data/common/notice';
 
 		<!-- Push Notification -->
 		<app-push-notification></app-push-notification>
-		
+
 		<!-- Photo Gallery -->
 		<app-photo-gallery></app-photo-gallery>
 	`

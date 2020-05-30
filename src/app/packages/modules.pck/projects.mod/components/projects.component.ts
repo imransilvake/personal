@@ -231,7 +231,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		// payload
 		const payload: PhotoGalleryInterface = {
 			show: true,
-			items: items
+			items
 		};
 
 		// trigger photo gallery
