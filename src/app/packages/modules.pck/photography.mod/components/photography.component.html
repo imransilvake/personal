@@ -4,7 +4,6 @@
 		<ng-container *ngIf="sliderList && sliderList['items'] && sliderList['items'].length">
 			<app-slider [data]="sliderList"
 						[slideInterval]="sliderInterval"
-						[showSlideCounter]="true"
 						(updateActiveSlide)="sliderImageActive = $event">
 				<app-card [cardViewType]="cardViewImage"
 						  [imageData]="sliderImageActive"
