@@ -1,6 +1,6 @@
 <div class="ik-photography">
 	<div class="cd-container-fluid">
-		<!-- Slider Image -->
+		<!-- Slider: Photography -->
 		<ng-container *ngIf="sliderList && sliderList['items'] && sliderList['items'].length">
 			<app-slider [data]="sliderList"
 						[slideInterval]="sliderInterval"
@@ -12,7 +12,7 @@
 			</app-slider>
 		</ng-container>
 
-		<!-- Gallery List -->
+		<!-- Gallery Container -->
 		<div class="cd-container ik-gallery" *ngIf="galleryList && galleryList.length">
 			<!-- Excerpt -->
 			<section class="cd-row">
@@ -24,7 +24,7 @@
 				</div>
 			</section>
 
-			<!-- Masonry Gallery -->
+			<!-- Gallery -->
 			<section class="ik-grid-wrapper">
 				<div class="ik-grid">
 					<ng-container *ngFor="let item of galleryList; let idx=index;">
