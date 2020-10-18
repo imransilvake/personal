@@ -4,7 +4,7 @@ import { ElementRef, EventEmitter, Output, Directive, AfterViewInit } from '@ang
 @Directive({ selector: '[LazyLoadImage]' })
 export class LazyLoadImageDirective implements AfterViewInit {
 	@Output() public lazyLoadImage: EventEmitter<any> = new EventEmitter();
-
+	
 	private _intersectionObserver?: IntersectionObserver;
 
 	constructor(private _element: ElementRef) {
