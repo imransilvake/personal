@@ -58,11 +58,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
 
-      - name: Install & Build App
+      - name: Install Dependencies
         if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
-        run: |
-          yarn install
-          yarn build.app.prod
+        run: yarn install
+
+      - name: Build the App
+        run: yarn build.app.prod
 
       - name: Deploy to netlify
         uses: nwtgck/actions-netlify@v1.1
