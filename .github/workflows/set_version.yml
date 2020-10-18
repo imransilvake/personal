@@ -15,4 +15,4 @@ jobs:
           script: |
             return context.payload.ref.replace(/\/refs\/tags\//, '');
       - name: Echo
-        run: echo ${{ steps.tag.outputs.result }}
+        run: echo ${{ github.event.release.tag_name }}
