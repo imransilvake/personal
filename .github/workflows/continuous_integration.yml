@@ -75,7 +75,7 @@ jobs:
     steps:
       - uses: DamianReeves/write-file-action@master
         with:
-          path: ${{ env.home }}/.VERSION
+          path: .VERSION
           contents: |
             echo "Hello World!"
           write-mode: overwrite
