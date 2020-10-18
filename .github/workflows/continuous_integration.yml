@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 14
@@ -39,7 +39,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup Node.js environment
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 14
