@@ -5,6 +5,7 @@ import { Routes } from '@angular/router';
 import { ROUTING } from '../environments/environment';
 import { E404Component } from './packages/frame.pck/components/e404/e404.component';
 
+// routes
 const ROUTES: Routes = [
 	{
 		path: ROUTING.home,
@@ -27,6 +28,4 @@ const ROUTES: Routes = [
 		component: E404Component
 	}
 ];
-
-// routes
 export const APP_ROUTES: Routes = ROUTES;
