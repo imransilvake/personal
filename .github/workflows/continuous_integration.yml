@@ -68,10 +68,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Write Version to File
     steps:
-      - uses: actions/checkout@master
-      - name: Update version
-        id: version
-        uses: brettdorrans/write-version-to-file@master
-        with:
-          path: .VERSION
-          filename: "/.VERSION"
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
