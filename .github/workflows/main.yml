@@ -1,5 +1,4 @@
-name: Semantic release
-
+name: Continuous Integration
 on:
   push:
     branches:
@@ -10,30 +9,49 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 14
+
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        id: yarn-cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-cache-node-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-node-modules-
+
       - name: Install Dependencies
-        run: npm install
+        if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install
+
       - name: Lint Typescript
-        run: npm run lint:ts
+        run: yarn lint:ts
+
       - name: Lint SCSS
-        run: npm run lint:scss
-  publish:
+        run: yarn lint:scss
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node.js
+
+      - name: Setup Node.js environment
         uses: actions/setup-node@v1
         with:
           node-version: 14
+
       - name: Install Dependencies
-        run: npm install
-      - name: Build app
-        run: npm run build
-      - name: Semantic release
+        if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Build the App
+        run: yarn build
+
+      - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
