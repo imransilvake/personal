@@ -58,7 +58,7 @@ jobs:
         run: yarn install
 
       - name: Build the App
-        run: yarn build
+        run: yarn build.app.prod
 
       - name: Semantic Release
         env:
@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to netlify
-        uses: nwtgck/actions-netlify@v1.1.11
+        uses: nwtgck/actions-netlify@v1.1
         with:
           publish-dir: "./dist"
           production-branch: master
