@@ -33,7 +33,7 @@ jobs:
 
       - name: Lint SCSS
         run: yarn lint:scss
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -58,12 +58,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
 
-      - name: Install Dependencies
+      - name: Install & Build App
         if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
-        run: yarn install
-
-      - name: Build the App
-        run: yarn build.app.prod
+        run: |
+          yarn install
+          run: yarn build.app.prod
 
       - name: Deploy to netlify
         uses: nwtgck/actions-netlify@v1.1
