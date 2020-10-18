@@ -67,7 +67,8 @@ jobs:
   addper:
     runs-on: ubuntu-latest
     steps:
-      run: sudo chown -R $USER:$USER ${{ env.home }}/.VERSION
+      - name: asaa
+        run: sudo chown -R $USER:$USER ${{ env.home }}/.VERSION
   write-version:
     needs: addper
     runs-on: ubuntu-latest
