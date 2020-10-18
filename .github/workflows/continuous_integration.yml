@@ -72,4 +72,4 @@ jobs:
           path: .VERSION
           contents: |
             echo "Hello World!"
-          write-mode: overwrite
+          write-mode: append
