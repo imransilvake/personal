@@ -69,7 +69,7 @@ jobs:
     steps:
       - name: asaa
         working-directory: ./
-        run: pwd
+        run: ls -ls
   write-version:
     needs: addper
     runs-on: ubuntu-latest
