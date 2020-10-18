@@ -67,10 +67,15 @@ jobs:
   write-version:
     runs-on: ubuntu-latest
     steps:
-      - name: write to file
-        uses: DamianReeves/write-file-action
+      - name: set .bashrc path
+        shell: pwsh
+        run: echo "::set-env name=BASHRC_PATH::$Env:HOME/.bashrc"
+      - name: echo .bashrc path
+        shell: pwsh
+        run: echo "$env:BASHRC_PATH"
+      - uses: DamianReeves/write-file-action@master
         with:
-          path: ${{ env.home }}/.VERSION
+          path: ${{ env.BASHRC_PATH }}
           contents: |
-            echo "Hallo World!"
+            echo "Hello World!"
           write-mode: append
