@@ -1,0 +1,43 @@
+<section class="ik-push-notification"
+		 *ngIf="validateNotificationsLength">
+	<ng-container *ngFor="let notification of pushNotificationsList">
+		<div @slideFromLeftInOut
+			 (@slideFromLeftInOut.done)="validateNotificationsContainer()"
+			 *ngIf="notification['controls']['show']"
+			 class="ik-message">
+			<!-- Head -->
+			<div class="ik-head">
+				<!-- Icon -->
+				<fa-icon class="ik-icon"
+						 [class.ik-red]="!!notification['controls']['error']"
+						 [class.ik-green]="!notification['controls']['error']"
+						 [icon]="notification['detail']['icon']"
+						 [spin]="notification['controls']['spin']">
+				</fa-icon>
+
+				<!-- Title -->
+				<h5>{{ notification['detail']['title'] | translate }}</h5>
+			</div>
+
+			<!-- Content -->
+			<div class="ik-content">
+				<p>{{ notification['detail']['description'] | translate }}</p>
+			</div>
+
+			<!-- Buttons -->
+			<div class="ik-buttons"
+				 [class.ik-show]="notification['controls']['show']"
+				 *ngIf="notification['controls']['allowClose']">
+				<ng-container *ngFor="let button of notification['buttons']">
+					<button class="ik-button"
+							(click)="!button['disabled'] && updateNotificationList(notification['id'], false)"
+							[class.ik-close]="!button['disabled']"
+							[class.ik-dismiss]="!!button['disabled']"
+							[translate]="button['text']"
+							[translateParams]="{ seconds: counter[notification['id']] }">
+					</button>
+				</ng-container>
+			</div>
+		</div>
+	</ng-container>
+</section>

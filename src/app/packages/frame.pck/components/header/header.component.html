@@ -1,0 +1,58 @@
+<header>
+	<!-- Top -->
+	<section class="cd-container-fluid ik-block">
+		<div class="cd-container">
+			<div class="cd-row">
+				<!-- Left -->
+				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-6">
+					<ul class="ik-items cd-remove-bullets">
+						<li>
+							<app-theme-switch></app-theme-switch>
+						</li>
+						<li>
+							<app-font-switch></app-font-switch>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Right -->
+				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-6 cd-right-align">
+					<ul class="ik-items cd-remove-bullets">
+						<li>
+							<app-language-switch></app-language-switch>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Bottom -->
+	<section class="cd-container-fluid ik-block ik-border-bottom">
+		<div class="cd-container">
+			<div class="cd-row">
+				<!-- Logo -->
+				<div class="cd-col cd-col-pm-s-4">
+					<div class="ik-logo">
+						<a [routerLink]="[routing.home]">
+							<img [src]="'assets/svg/logo.svg'"
+								 [alt]="'iKhan'" />
+						</a>
+					</div>
+				</div>
+
+				<!-- Navigation List -->
+				<div class="cd-col cd-col-pm-m-12 cd-col-pm-s-8 cd-right-align">
+					<ul class="ik-items cd-remove-bullets">
+						<li *ngFor="let item of navigation">
+							<a [routerLink]="item.id ? [item.link, item.id] : item.link"
+							   [class.ik-active]="isActiveRoute(item.link)">
+								{{ item.name | translate }}
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+</header>

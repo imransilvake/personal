@@ -1,0 +1,75 @@
+@import 'scss-methods';
+
+header {
+	.ik-block {
+		background-color: var(--tc2);
+		padding: 10px 0;
+		position: relative;
+
+		&.ik-border-bottom {
+			border-bottom: 1px solid var(--tc7);
+		}
+
+		.cd-row {
+			align-items: center;
+
+			.cd-col {
+				&:first-child {
+					.ik-logo {
+						display: inline-block;
+						position: relative;
+
+						a {
+							display: block;
+
+							img {
+								height: 34px;
+								width: 66px;
+							}
+						}
+					}
+				}
+
+				.ik-items {
+					margin: 0;
+
+					li {
+						display: inline-block;
+						padding: 0 10px;
+						vertical-align: middle;
+
+						&:first-child {
+							padding-left: 0;
+						}
+
+						&:last-child {
+							padding-right: 0;
+						}
+
+						a {
+							&.ik-active {
+								color: var(--c8);
+								cursor: default;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// media
+	@include cd-media(desktop, mini) {
+		.ik-block {
+			.cd-row {
+				.cd-col {
+					text-align: center;
+
+					&:last-child {
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+<div class="ik-list-card">
+	<!-- Title -->
+	<h6 class="ik-title">{{ listData['title'] | translate }}</h6>
+
+	<!-- List -->
+	<ul class="cd-remove-bullets">
+		<li *ngFor="let item of listData['items']">
+			<!-- Title -->
+			<h6 *ngIf="item['controls']['lock'] || !item['actions']['link']">
+				{{ item['title'] }}
+			</h6>
+
+			<!-- Link: Website -->
+			<a *ngIf="!item['controls']['lock'] && item['actions']['link']" (click)="onClickOpenLink(item['actions']['link'])">
+				{{ item['title'] }}
+			</a>
+
+			<!-- Link: Filter -->
+			<a [routerLink]="[filterRoute, item['controls']['filter']]"
+			   class="ik-filter"
+			   [class.ik-scss]="item['controls']['filter'] === 'scss'"
+			   [class.ik-js]="item['controls']['filter'] === 'angular' || item['controls']['filter'] === 'react'"
+			   [class.ik-php]="item['controls']['filter'] === 'php'">
+				{{ item['controls']['filter'] }}
+			</a>
+		</li>
+	</ul>
+</div>

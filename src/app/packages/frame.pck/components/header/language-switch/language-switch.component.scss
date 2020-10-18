@@ -1,0 +1,50 @@
+@import 'scss-methods';
+
+.ik-language-switch {
+	background-color: var(--tc3);
+	cursor: pointer;
+	height: 30px;
+	position: relative;
+	text-align: center;
+	width: 80px;
+
+	.ik-active {
+		background-color: var(--c8);
+		border-radius: 0 15px 15px 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: all .3s ease-out;
+		width: 50%;
+
+		&.ik-right {
+			border-radius: 15px 0 0 15px;
+			left: 50%;
+		}
+	}
+
+	.ik-button {
+		background-color: transparent;
+		border: none;
+		color: var(--tc6);
+		font-size: cd-fontSize(s13);
+		font-weight: cd-fontWeight(500);
+		height: 100%;
+		outline: 0;
+		position: relative;
+		text-transform: uppercase;
+		width: 50%;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&.ik-on {
+			color: var(--c2);
+			cursor: default;
+			transition: color .3s ease;
+		}
+	}
+}

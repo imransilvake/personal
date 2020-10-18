@@ -1,0 +1,28 @@
+<div class="ik-info-card">
+	<!-- Image -->
+	<div class="ik-photo">
+		<img [src]="infoAssetsPath + infoData['photo']"
+			 [alt]="infoData['photo']"/>
+	</div>
+
+	<!-- Detail -->
+	<div class="ik-detail"
+		 [class.ik-card]="infoCardClass"
+		 [class.ik-auto-height]="infoAutoHeight">
+		<ng-container *ngFor="let block of infoData['items']; let l=last;">
+			<h6>{{ block['title'] | translate }}</h6>
+			<ul [class.ik-list-one]="!l">
+				<ng-container *ngFor="let blockItem of block['items']">
+					<li>
+						<p>{{ blockItem['name'] | translate }}</p>
+						<ul *ngIf="!!blockItem['items']">
+							<ng-container *ngFor="let item of blockItem['items']">
+								<li><p>{{ item }}</p></li>
+							</ng-container>
+						</ul>
+					</li>
+				</ng-container>
+			</ul>
+		</ng-container>
+	</div>
+</div>

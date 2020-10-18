@@ -1,0 +1,38 @@
+@import 'scss-methods';
+
+.ik-font-switch {
+	align-items: center;
+	background-color: var(--tc3);
+	display: flex;
+	height: 30px;
+	width: 80px;
+
+	.ik-wrapper {
+		cursor: pointer;
+		text-align: center;
+		width: 50%;
+
+		&.ik-left {
+			.ik-icon {
+				color: var(--tc6);
+				font-size: cd-fontSize(s12);
+			}
+		}
+
+		&.ik-right {
+			border-left: 1px solid var(--tc2);
+
+			.ik-icon {
+				color: var(--tc6);
+			}
+		}
+
+		&.ik-active {
+			cursor: default;
+
+			.ik-icon {
+				color: var(--c8);
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+@import 'scss-methods';
+
+.ik-notice-card {
+	background-color: var(--tc3);
+	padding: 8px 0;
+	text-align: center;
+
+	span {
+		color: var(--tc6);
+		font-weight: cd-fontWeight(500);
+
+		&.ik-label {
+			color: var(--c7);
+			font-size: cd-fontSize(s12);
+			font-weight: cd-fontWeight(700);
+			text-transform: uppercase;
+		}
+	}
+}

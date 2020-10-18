@@ -1,0 +1,16 @@
+<section class="ik-theme-switch">
+	<div class="ik-wrapper"
+		 [class.ik-active]="themeSwitcher"
+		 (click)="onClickChangeTheme()">
+		<!-- Icons -->
+		<fa-icon class="ik-icon ik-moon"
+				 [icon]="faIcon[0]">
+		</fa-icon>
+		<fa-icon class="ik-icon ik-sun"
+				 [icon]="faIcon[1]">
+		</fa-icon>
+
+		<!-- Ball -->
+		<div class="ik-ball"></div>
+	</div>
+</section>

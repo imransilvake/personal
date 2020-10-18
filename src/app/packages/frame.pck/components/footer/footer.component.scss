@@ -1,0 +1,29 @@
+@import 'scss-methods';
+
+footer {
+	background-color: var(--tc2);
+	border-top: 1px solid var(--tc7);
+
+	.cd-row {
+		padding: 10px 0;
+
+		.cd-col {
+			h6 {
+				span {
+					color: var(--tc6);
+
+					&.ik-version {
+						font-size: cd-fontSize(s12);
+						margin-left: 5px;
+						vertical-align: middle;
+					}
+				}
+
+				.ik-angular {
+					margin: 0 5px;
+					width: 18px;
+				}
+			}
+		}
+	}
+}

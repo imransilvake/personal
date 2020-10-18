@@ -1,0 +1,51 @@
+@import 'scss-methods';
+
+.ik-code {
+	border-radius: 5px;
+	margin: 0 auto;
+
+	&.ik-auto {
+		max-width: 100%;
+	}
+
+	&.ik-fixed {
+		max-width: 300px;
+	}
+
+	.cd-col {
+		padding: 0;
+
+		.ik-top {
+			margin-bottom: 15px;
+
+			.ik-circle {
+				border-radius: 50%;
+				display: inline-block;
+				height: 12px;
+				width: 12px;
+
+				&:not(:first-child) {
+					margin-left: 10px;
+				}
+
+				&:nth-of-type(1) {
+					background-color: var(--c7);
+				}
+
+				&:nth-of-type(2) {
+					background-color: var(--c5);
+				}
+
+				&:nth-of-type(3) {
+					background-color: var(--c8);
+				}
+			}
+		}
+
+		.ik-content {
+			p {
+				color: var(--tc6);
+			}
+		}
+	}
+}

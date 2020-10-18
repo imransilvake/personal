@@ -1,0 +1,25 @@
+<section class="ik-photo-gallery ik-bg-loader" *ngIf="showPhotoGallery">
+	<!-- Slider: Photo Gallery -->
+	<div class="ik-slider-wrapper">
+		<app-slider [data]="dataList"
+					[activeSlideIndex]="dataActiveSlideIndex"
+					[slideInterval]="dataInterval"
+					[showSlideCounter]="true"
+					[showControls]="true"
+					[showArrowsNavigation]="true"
+					(updateActiveSlide)="dataActive = $event"
+					(closeSlider)="onClickClosePhotoGallery()">
+			<div class="ik-photo">
+				<!-- Image -->
+				<img (load)="onLoadImage()"
+					 [src]="dataActive['photo']"
+					 [alt]="dataActive['title'] || 'photo'"/>
+
+				<!-- Title -->
+				<h6 class="ik-bg-shadow ik-text ik-title" *ngIf="imageLoaded && dataActive['title']">
+					{{ dataActive['title'] }}
+				</h6>
+			</div>
+		</app-slider>
+	</div>
+</section>

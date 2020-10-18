@@ -1,0 +1,41 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://imransilvake.netlify.app/</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://imransilvake.netlify.app/photography</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://imransilvake.netlify.app/profile</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://imransilvake.netlify.app/projects</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://imransilvake.netlify.app/projects/angular</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://imransilvake.netlify.app/projects/react</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://imransilvake.netlify.app/projects/scss</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://imransilvake.netlify.app/projects/php</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+</urlset>

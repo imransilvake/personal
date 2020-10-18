@@ -1,0 +1,91 @@
+@import 'scss-methods';
+
+.ik-input-field {
+	label {
+		color: var(--c1);
+		display: block;
+		font-size: cd-fontSize(s13);
+		margin-bottom: 5px;
+	}
+
+	.ik-input-wrapper {
+		&.ik-invalid {
+			border: 1px solid var(--c7);
+		}
+
+		.ik-input {
+			direction: ltr;
+			position: relative;
+			width: 100%;
+
+			input {
+				background-color: var(--tc4);
+				border: none;
+				border-radius: 2px;
+				box-shadow: inset 0 2px 3px var(--tc7);
+				color: var(--tc5);
+				cursor: pointer;
+				font-size: cd-fontSize(s14);
+				margin: 0;
+				outline: 0;
+				padding: 12px;
+				width: 100%;
+
+				&.ik-space-left {
+					padding-left: 35px;
+				}
+
+				&.ik-space-right {
+					padding-right: 28px;
+				}
+
+				&:disabled {
+					cursor: default;
+					opacity: .5;
+				}
+
+				&::placeholder {
+					color: var(--tc6);
+					opacity: .6;
+				}
+			}
+
+			// icon
+			.ik-icon {
+				color: var(--tc6);
+				cursor: pointer;
+				position: absolute;
+				top: 10px;
+
+				// icon: left
+				&.ik-left {
+					left: 10px;
+				}
+
+				// icon: right
+				&.ik-right {
+					right: 10px;
+				}
+			}
+		}
+	}
+
+	// error
+	.ik-error {
+		p {
+			background-color: var(--c7);
+			color: var(--c2);
+			font-size: cd-fontSize(s12);
+			margin-top: 0;
+			padding: 2px 6px;
+		}
+	}
+
+	// hint
+	.ik-hint {
+		color: var(--tc6);
+		display: block;
+		font-size: cd-fontSize(s12);
+		margin-top: 4px;
+	}
+}

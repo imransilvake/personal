@@ -1,0 +1,158 @@
+{
+	"Common": {
+		"Terms": {
+			"Developer": "Developer",
+			"Knowledge": "Knowledge",
+			"Learning": "Learning",
+			"Next": "Next",
+			"Playing": "Playing",
+			"Technology": "Technology",
+			"Technologies": "Technologies",
+			"Recent_Projects": "Recent Projects",
+			"All": "All",
+			"Job": "Job",
+			"Working": "Working",
+			"Excerpt": "Excerpt"
+		},
+		"Notice": {
+			"One": "I am currently looking out for a new opportunity"
+		},
+		"Push_Notifications": {
+			"Messages": {
+				"Welcome": {
+					"Title": "Welcome",
+					"Description": "This is my personal website and here you can know all about my career-related activities."
+				},
+				"Network_Connection": {
+					"Title": "Network Connection",
+					"Description": "Your internet connection is currently down. Please check your router."
+				},
+				"Error_General": {
+					"Title": "Unknown Error",
+					"Description": "An unknown error occurred. Please try again after few seconds."
+				}
+			},
+			"Buttons": {
+				"Close": "Close",
+				"Dismiss": "Dismiss in {{ seconds }}s"
+			}
+		},
+		"Navigation": {
+			"Profile": "Profile",
+			"Projects": "Projects",
+			"Photography": "Photography"
+		},
+		"Designations": {
+			"Frontend": "Frontend",
+			"PHP": "PHP",
+			"PHP_WordPress": "PHP & WordPress",
+			"WordPress": "WordPress"
+		},
+		"Companies": {
+			"TS": "TourismusSuite GmbH",
+			"DW": "Denkwerk GmbH",
+			"GT": "Gotechsol",
+			"AS": "Aspire Solution"
+		},
+		"Meta": {
+			"Title": "{{ name }} | {{ page }}",
+			"Keywords": "Resume, Profile, Personal, Angular, React, Javascript, NativeScript, Typescript",
+			"Description": "My Name is {{ name }} and I am a {{ designation }} {{ developer }}."
+		},
+		"Made_With": "Made with"
+	},
+	"Home": {
+		"Profile_Summary": {
+			"Greetings": {
+				"One": "Hello, ",
+				"Two": "I'm {{ name }}"
+			}
+		}
+	},
+	"Profile": {
+		"Intro": {
+			"Sub_Title": "{{ designation }} {{ developer }}"
+		},
+		"Summary": {
+			"Title": "Summary",
+			"Description": {
+				"One": "I am a dedicated {{ designation }} {{ developer }} with my expertise in HTML5, SCSS, Javascript, Typescript, Angular and React. I enjoy designing and developing modern and responsive UX/UI designs that are intuitive and pleasing for the end-users. I really love to build apps from scratch and want to work in an organized team and environment.",
+				"Two": "I like to keep my code clean and well organized. I use indentation and add comments to each part of the code  to make it easy for me and the team to later understand the functionality with ease. Moreover, I try to keep a good folder structure of the app to maintain the overall quality of the project and make it easy to scale the app without any big hurdles and efforts.",
+				"Three": "Currently, I have started learning about Vue Framework and Vuex for state management library."
+			}
+		},
+		"Terms": {
+			"Skills": "Skills",
+			"Education": "Education",
+			"Experience": "Experience",
+			"Languages": "Languages",
+			"Interests": "Interests",
+			"Programming_Languages": "Programming Languages",
+			"Authentication": "Authentication",
+			"Layout_Design": "Layout Designs",
+			"Libraries": "Libraries",
+			"Testing": "Testing",
+			"Database": "Database",
+			"SDK": "SDKs",
+			"Miscellaneous": "Miscellaneous",
+			"Bachelor": "Bachelor's",
+			"Masters": "Master's",
+			"Computer_Science": "Computer Science",
+			"Month": "Month",
+			"Months": "Months",
+			"Year": "Year",
+			"Years": "Years"
+		},
+		"Countries": {
+			"Pakistan": "Pakistan",
+			"Germany": "Germany"
+		},
+		"Education": {
+			"Sub_Title": "I have a {{ type }} degree",
+			"University_Name": "{{ name }} University",
+			"University_Info": "{{ type }}, {{ degree }}, {{ year }}, {{ country }}"
+		},
+		"Experience": {
+			"Sub_Title": "Working at {{ company }}",
+			"Designation_Info": "{{ designation }} {{ developer }}",
+			"Current": "Current"
+		},
+		"Languages": {
+			"Sub_Title": "{{ learning }} {{ language }} A2",
+			"German": "German"
+		},
+		"Interests": {
+			"Travel": "Travel",
+			"Photography": "Photography",
+			"Music": "Music",
+			"Games": "Games",
+			"Cooking": "Cooking"
+		}
+	},
+	"Projects": {
+		"Terms": {
+			"Search": "Search",
+			"Private": "private"
+		},
+		"List": {
+			"SCSS": "SCSS Framework is developed for building responsive, fast, robust, and adaptable web apps.",
+			"HAM": "An admin portal to manage hotel chains by providing features such as User Management, Message Broadcasting, Graphs/Reports and much more.",
+			"HGA": "While on a stay in a hotel, guests can clean a room, send repair messages, view room key number and can do other important things in an instant.",
+			"HSA": "Hotel staff can view guest repair messages, room clean status and other features of a customer without doing any physical effort.",
+			"SAC": "A slack clone (minimal) that provides Firebase Auth Signup & Sign in, Real-time chatting on channels and an option to starred favorite channels.",
+			"IG": "An Imgur based app that allows one to browse the Imgur gallery.",
+			"WF": "A Weather App that shows the current weather and the 5-day forecast of the location users type in the search field.",
+			"CW": "A simple and clean weather application that shows current weather data of a city.",
+			"RFP": "A simple RSS Feed app that takes an XML format data and parses it to a JS object and shows it with the pagination.",
+			"TC": "A single (CPU) and a multiplayer game challenge provided as a code challenge by Lieferando.",
+			"TODO": "A todo application that covers all four aspects of a CRUD: Create, Read, Update, and Delete.",
+			"TTT": "An interactive tic-tac-toe game that allows players to review a game’s history and see previous versions of a game’s board.",
+			"MIS": "An image slider to handle the company's multiple websites from a central place that allows features such as language switch, drag, and drop of items and more."
+		},
+		"Empty_Result": "Empty search result!"
+	},
+	"Photography": {
+		"Excerpt": "Travel is fun",
+		"LoadMore": "Load More"
+	}
+}

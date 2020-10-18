@@ -1,0 +1,67 @@
+@import 'scss-methods';
+
+.ik-push-notification {
+	bottom: 20px;
+	left: 20px;
+	position: fixed;
+	width: 330px;
+	z-index: cd-zIndex(float);
+
+	.ik-message {
+		background-color: var(--tc1);
+		box-shadow: 1px 1px 1px var(--o1);
+		padding: 15px;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+
+		.ik-head {
+			align-items: center;
+			display: flex;
+			margin-bottom: 10px;
+
+			.ik-icon {
+				display: flex;
+				font-size: 1.5rem;
+				margin-right: 10px;
+			}
+
+			h5 {
+				color: var(--tc6);
+			}
+		}
+
+		.ik-content {
+			p {
+				color: var(--tc6);
+			}
+		}
+
+		.ik-buttons {
+			margin-top: 10px;
+
+			button {
+				&:not(:first-child) {
+					margin-left: 5px;
+				}
+
+				&.ik-close {
+					background-color: var(--c8);
+				}
+
+				&.ik-dismiss {
+					background-color: transparent;
+					color: var(--c7);
+					cursor: default;
+				}
+			}
+		}
+	}
+
+	// media
+	@include cd-media(desktop, mini) {
+		right: 20px;
+		width: auto;
+	}
+}

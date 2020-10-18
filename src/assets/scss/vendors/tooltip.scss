@@ -1,0 +1,22 @@
+.cd-tooltip {
+	span {
+		background-color: var(--tc5);
+		color: var(--tc2);
+
+		&.cd-right {
+			&.cd-arrow {
+				&::after {
+					border-right-color: var(--tc5);
+				}
+			}
+		}
+
+		&.cd-bottom {
+			&.cd-arrow {
+				&::after {
+					border-bottom-color: var(--tc5);
+				}
+			}
+		}
+	}
+}

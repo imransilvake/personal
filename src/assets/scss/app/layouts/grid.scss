@@ -1,0 +1,32 @@
+.ik-grid {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+
+	.ik-landscape {
+		grid-column-end: span 2;
+		grid-row-end: span 1;
+	}
+
+	.ik-portrait {
+		grid-column-end: span 2;
+		grid-row-end: span 2;
+	}
+
+	// media
+	@include cd-media(desktop, desktop) {
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+		.ik-landscape {
+			grid-column-end: span 1;
+		}
+
+		.ik-portrait {
+			grid-column-end: span 1;
+		}
+	}
+
+	@include cd-media(desktop, tablet) {
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	}
+}

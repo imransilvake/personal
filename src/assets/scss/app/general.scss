@@ -1,0 +1,17 @@
+html {
+	// when activated: increase font-size for the whole app
+	&.ik-zoom {
+		font-size: cd-fontSize(s18);
+	}
+
+	body {
+		background-color: var(--tc2);
+		font-family: Roboto, sans-serif;
+
+		a {
+			&:visited {
+				color: var(--c6);
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+# unnecessary files & folders
+.DS_Store
+.idea
+yarn.lock
+package-lock.json
+build
+dist
+node_modules

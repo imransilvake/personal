@@ -1,0 +1,158 @@
+{
+	"Common": {
+		"Terms": {
+			"Developer": "Entwickler",
+			"Knowledge": "Wissen",
+			"Learning": "Lernen",
+			"Next": "Nächste",
+			"Playing": "Spielen",
+			"Technology": "Technologie",
+			"Technologies": "Technologien",
+			"Recent_Projects": "Kürzlich Projekte",
+			"All": "Alle",
+			"Job": "Arbeit",
+			"Working": "Arbeiten",
+			"Excerpt": "Auszug"
+		},
+		"Notice": {
+			"One": "Ich suche derzeit nach einer neuen Gelegenheit"
+		},
+		"Push_Notifications": {
+			"Messages": {
+				"Welcome": {
+					"Title": "Herzlich willkommen",
+					"Description": "Dies ist meine persönliche Website und hier können Sie alles über meine beruflichen Aktivitäten erfahren."
+				},
+				"Network_Connection": {
+					"Title": "Netzwerkverbindung",
+					"Description": "Ihre Internetverbindung ist derzeit unterbrochen. Bitte überprüfen Sie Ihren Router."
+				},
+				"Error_General": {
+					"Title": "Unbekannter Fehler",
+					"Description": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es nach einigen Sekunden erneut."
+				}
+			},
+			"Buttons": {
+				"Close": "Schließen",
+				"Dismiss": "In {{ seconds }}s schließen"
+			}
+		},
+		"Navigation": {
+			"Profile": "Profil",
+			"Projects": "Projekte",
+			"Photography": "Fotografie"
+		},
+		"Designations": {
+			"Frontend": "Frontend",
+			"PHP": "PHP",
+			"PHP_WordPress": "PHP & WordPress",
+			"WordPress": "WordPress"
+		},
+		"Companies": {
+			"TS": "TourismusSuite GmbH",
+			"DW": "Denkwerk GmbH",
+			"GT": "Gotechsol",
+			"AS": "Aspire Solution"
+		},
+		"Meta": {
+			"Title": "{{ name }} | {{ page }}",
+			"Keywords": "Lebenslauf, Profil, Persönlich, Angular, React, Javascript, NativeScript, Typescript",
+			"Description": "Ich bin {{ name }} und Ich bin ein {{ designation }} {{ developer }}."
+		},
+		"Made_With": "Gemacht mit"
+	},
+	"Home": {
+		"Profile_Summary": {
+			"Greetings": {
+				"One": "Hallo, ",
+				"Two": "Ich bin {{ name }}"
+			}
+		}
+	},
+	"Profile": {
+		"Intro": {
+			"Sub_Title": "{{ designation }} {{ developer }}"
+		},
+		"Summary": {
+			"Title": "Überblick",
+			"Description": {
+				"One": "Ich bin ein engagierter {{ designation }} {{ developer }} mit meiner Expertise in HTML5, SCSS, Javascript, Typescript, Angular und React. Ich genieße es, moderne und reaktionsschnelle UX / UI-Designs zu entwerfen und zu entwickeln, die für Endbenutzer intuitiv und ansprechend sind. Ich liebe es wirklich, Apps von Grund auf neu zu erstellen und möchte in einem organisierten Team und einer organisierten Umgebung arbeiten.",
+				"Two": "Ich mag es, meinen Code sauber und gut organisiert zu halten. Ich verwende Einrückungen und füge jedem Teil des Codes Kommentare hinzu, um es mir und dem Team zu erleichtern, die Funktionalität später problemlos zu verstehen. Darüber hinaus versuche ich, eine gute Ordnerstruktur der App beizubehalten, um die Gesamtqualität des Projekts aufrechtzuerhalten und die Skalierung der App ohne große Hürden und Anstrengungen zu vereinfachen.",
+				"Three": "Derzeit habe ich angefangen, etwas über Vue Framework und Vuex für die State Management Library zu lernen."
+			}
+		},
+		"Terms": {
+			"Skills": "Kompetenzen",
+			"Education": "Bildung",
+			"Experience": "Erfahrung",
+			"Languages": "Sprachen",
+			"Interests": "Interessen",
+			"Programming_Languages": "Programmiersprachen",
+			"Authentication": "Authentifizierung",
+			"Layout_Design": "Layout-Designs",
+			"Libraries": "Bibliotheken",
+			"Testing": "Testen",
+			"Database": "Datenbank",
+			"SDK": "SDKs",
+			"Miscellaneous": "Sonstiges",
+			"Bachelor": "Bachelor's",
+			"Masters": "Master's",
+			"Computer_Science": "Informatik",
+			"Month": "Monat",
+			"Months": "Monate",
+			"Year": "Jahr",
+			"Years": "Jahre"
+		},
+		"Countries": {
+			"Pakistan": "Pakistan",
+			"Germany": "Deutschland"
+		},
+		"Education": {
+			"Sub_Title": "Ich habe einen {{ type }} Abschluss",
+			"University_Name": "{{ name }} Universität",
+			"University_Info": "{{ type }}, {{ degree }}, {{ year }}, {{ country }}"
+		},
+		"Experience": {
+			"Sub_Title": "Arbeiten bei {{ company }}",
+			"Designation_Info": "{{ designation }} {{ developer }}",
+			"Current": "Aktuell"
+		},
+		"Languages": {
+			"Sub_Title": "{{ learning }} {{ language }} A2",
+			"German": "Deutsch"
+		},
+		"Interests": {
+			"Travel": "Reise",
+			"Photography": "Fotografie",
+			"Music": "Musik",
+			"Games": "Spiele",
+			"Cooking": "Kochen"
+		}
+	},
+	"Projects": {
+		"Terms": {
+			"Search": "Suche",
+			"Private": "privat"
+		},
+		"List": {
+			"SCSS": "SCSS Framework wurde entwickelt, um reaktionsschnelle, schnelle, robuste und anpassungsfähige Web-Apps zu erstellen.",
+			"HAM": "Ein Administrationsportal zur Verwaltung von Hotelketten mit Funktionen wie Benutzerverwaltung, Nachrichtenübertragung, Grafiken / Berichten und vielem mehr.",
+			"HGA": "Während eines Hotelaufenthalts können Gäste ein Zimmer reinigen, Reparaturnachrichten senden, die Schlüsselnummer des Zimmers anzeigen und sofort andere wichtige Dinge erledigen.",
+			"HSA": "Das Hotelpersonal kann Meldungen zur Reparatur von Gästen, den Status der Zimmerreinigung und andere Funktionen eines Kunden ohne körperliche Anstrengung anzeigen.",
+			"SAC": "Ein Slack-Klon (minimal), der Firebase Auth Signup & Sign In, Echtzeit-Chats auf Kanälen und eine Option für markierte Lieblingskanäle bietet.",
+			"IG": "Eine Imgur-basierte App, mit der Sie die Imgur-Galerie durchsuchen können.",
+			"WF": "Eine Wetter-App, die das aktuelle Wetter und die 5-Tage-Vorhersage des Standorts anzeigt, den Benutzer in das Suchfeld eingeben.",
+			"CW": "Eine einfache und saubere Wetteranwendung, die aktuelle Wetterdaten einer Stadt anzeigt.",
+			"RFP": "Eine einfache RSS-Feed-App, die Daten im XML-Format in ein JS-Objekt analysiert und mit der Paginierung anzeigt.",
+			"TC": "Eine Einzel- (CPU) und eine Mehrspieler-Herausforderung, die von Lieferando als Code-Herausforderung bereitgestellt wird.",
+			"TODO": "Eine Aufgabenanwendung, die alle vier Aspekte einer CRUD abdeckt: Erstellen, Lesen, Aktualisieren und Löschen.",
+			"TTT": "Ein interaktives Tic-Tac-Toe-Spiel, mit dem Spieler den Verlauf eines Spiels überprüfen und frühere Versionen des Spielbretts anzeigen können.",
+			"MIS": "Ein Bildschieberegler zum Verwalten der mehreren Websites des Unternehmens von einem zentralen Ort aus, der Funktionen wie das Wechseln der Sprache, das Ziehen und Ablegen von Elementen und mehr ermöglicht."
+		},
+		"Empty_Result": "Suchergebnis leeren!"
+	},
+	"Photography": {
+		"Excerpt": "Reisen macht Spaß",
+		"LoadMore": "Mehr laden"
+	}
+}

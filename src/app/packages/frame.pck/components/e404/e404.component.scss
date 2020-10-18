@@ -1,0 +1,107 @@
+@import 'scss-methods';
+
+.ik-404 {
+	background-color: var(--tc4);
+
+	.cd-row {
+		.cd-col {
+			.ik-box {
+				padding: 50px 0;
+
+				.ik-ghost {
+					$ghost-box: var(--tc4);
+					$ghost: var(--c3);
+					$ghost-left-eye: var(--c7);
+					$ghost-right-eye: var(--c7);
+
+					.ik-ghost-container {
+						animation: up_and_down 3s ease-in-out infinite;
+						background-color: $ghost;
+						border-radius: 100px 100px 0 0;
+						height: 100px;
+						margin: 0 auto;
+						position: relative;
+						width: 100px;
+
+						.ik-ghost-eyes {
+							height: 12px;
+							left: 50%;
+							position: absolute;
+							top: 50%;
+							transform: translate(-50%, -50%);
+							width: 65px;
+
+							.ik-left {
+								background-color: $ghost-left-eye;
+								border-radius: 50%;
+								height: 12px;
+								left: 10px;
+								position: absolute;
+								width: 12px;
+							}
+
+							.ik-right {
+								background-color: $ghost-right-eye;
+								border-radius: 50%;
+								height: 12px;
+								position: absolute;
+								right: 10px;
+								width: 12px;
+							}
+						}
+
+						.ik-ghost-bottom {
+							display: flex;
+							left: 0;
+							position: absolute;
+							right: 0;
+							top: 100%;
+
+							div {
+								background-color: $ghost;
+								border-radius: 50%;
+								flex-grow: 1;
+								height: 20px;
+								position: relative;
+								top: -10px;
+
+								&:nth-child(2n) {
+									background-color: transparent;
+									border-top: 15px solid $ghost-box;
+									top: -12px;
+								}
+							}
+						}
+					}
+
+					// keyframes
+					@keyframes up_and_down {
+						0% { transform: translateY(5px); }
+						50% { transform: translateY(15px); }
+						100% { transform: translateY(5px); }
+					}
+
+					@keyframes shine {
+						0% { opacity: .2; }
+						25% { opacity: .1; }
+						50% { opacity: .2; }
+						100% { opacity: .2; }
+					}
+				}
+			}
+
+			.ik-description {
+				padding-bottom: 50px;
+				text-align: center;
+
+				h1 {
+					color: var(--c7);
+				}
+
+				p {
+					color: var(--tc6);
+				}
+			}
+		}
+	}
+}

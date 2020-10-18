@@ -1,0 +1,8 @@
+export const enum SliderControlsEnum {
+	CONTROL_DOWNLOAD,
+	CONTROL_PLAY,
+	CONTROL_PAUSE,
+	CONTROL_EXIT,
+	CONTROL_LEFT,
+	CONTROL_RIGHT
+}

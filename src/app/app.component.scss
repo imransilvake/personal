@@ -1,0 +1,10 @@
+.ik-app {
+	background-color: var(--tc4);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	.ik-footer {
+		margin-top: auto;
+	}
+}

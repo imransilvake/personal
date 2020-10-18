@@ -1,0 +1,108 @@
+@import 'scss-methods';
+
+.ik-slider {
+	.ik-content {
+		position: relative;
+
+		&::after {
+			background-color: transparent;
+			bottom: 0;
+			content: '';
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	.ik-slider-counter {
+		display: inline;
+		left: 20px;
+		position: absolute;
+		top: 10px;
+	}
+
+	.ik-controls {
+		position: absolute;
+		right: 20px;
+		top: 10px;
+
+		.ik-list {
+			background-color: var(--o3);
+			border-radius: 2px;
+			padding: 1px 6px;
+
+			li {
+				cursor: pointer;
+				display: inline-block;
+
+				&:not(:last-child) {
+					margin-right: 10px;
+				}
+
+				&:hover {
+					opacity: .9;
+				}
+
+				.ik-icon {
+					color: var(--c2);
+					display: block;
+					font-size: cd-fontSize(s18);
+					text-align: center;
+					width: 20px;
+				}
+			}
+		}
+	}
+
+	.ik-arrows {
+		.ik-arrow {
+			background-color: var(--o1);
+			position: absolute;
+			top: 50%;
+
+			&.ik-left {
+				left: 20px;
+			}
+
+			&.ik-right {
+				right: 20px;
+			}
+
+			.ik-icon {
+				font-size: cd-fontSize(s20);
+			}
+		}
+	}
+
+	.ik-dots {
+		padding: 5px 0;
+		text-align: center;
+
+		&.ik-over-content {
+			bottom: 20px;
+			left: 0;
+			position: absolute;
+			right: 0;
+		}
+
+		.ik-dot {
+			background-color: var(--c3);
+			border: none;
+			border-radius: 50%;
+			cursor: pointer;
+			display: inline-block;
+			height: 12px;
+			margin: 0 3px;
+			outline: 0;
+			padding: 0;
+			transition: background-color .6s ease;
+			width: 12px;
+
+			&.ik-active {
+				background-color: var(--c4);
+				cursor: default;
+			}
+		}
+	}
+}

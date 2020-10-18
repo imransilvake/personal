@@ -1,0 +1,211 @@
+<div class="ik-profile">
+	<!-- Header -->
+	<header class="cd-container-fluid">
+		<div class="cd-container">
+			<div class="cd-row cd-center-align">
+				<div class="cd-col">
+					<!-- Avatar -->
+					<div class="ik-profile-logo">
+						<img [src]="'assets/images/profile/' + profileIntro['avatar']"
+							 [alt]="profileIntro['avatar']" />
+					</div>
+
+					<!-- Name -->
+					<h1>{{ profileIntro['name'] }}</h1>
+
+					<!-- Designation -->
+					<h5 [translate]="profileIntro['subTitle']['text']"
+						[translateParams]="{
+							designation: profileIntro['subTitle']['designation'] | translate,
+							developer: profileIntro['subTitle']['developer'] | translate
+						}">
+					</h5>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Content -->
+	<div class="ik-content">
+		<!-- Summary -->
+		<section class="cd-container-fluid ik-summary">
+			<div class="cd-container">
+				<div class="cd-row">
+					<div class="cd-col">
+						<!-- Title -->
+						<h2>{{ profileSummary['title'] | translate }}</h2>
+
+						<!-- Description -->
+						<ng-container *ngFor="let paragraph of profileSummary['description']">
+							<p [translate]="paragraph"
+							   [translateParams]="{
+							   		designation: 'Common.Designations.Frontend' | translate,
+							   		developer: 'Common.Terms.Developer' | translate
+							   }">
+							</p>
+						</ng-container>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content -->
+		<div class="cd-container-fluid ik-detail">
+			<div class="cd-container">
+				<div class="cd-row">
+					<!-- Skills -->
+					<section class="cd-col cd-col-pm-t-5 cd-col-pm-d-4 ik-quick-wrapper">
+						<div class="ik-skills">
+							<!-- Title -->
+							<h2>{{ profileSkills['title'] | translate }}</h2>
+
+							<!-- Logos -->
+							<div class="ik-logo">
+								<span class="cd-tooltip"
+									  *ngFor="let icon of profileSkills['icons']">
+									<img [src]="'assets/svg/profile/expertise/' + icon['id'] + '.svg'"
+										 [alt]="icon['name']" />
+									<span class="cd-arrow cd-bottom">{{ icon['name'] }}</span>
+								</span>
+							</div>
+
+							<!-- Tags -->
+							<div class="ik-tags"
+								 *ngFor="let skill of profileSkills['skills']">
+								<!-- Title -->
+								<h6>{{ skill['title'] | translate }}</h6>
+
+								<!-- List -->
+								<ng-container *ngFor="let item of skill['items']">
+									<span>{{ item }}</span>
+								</ng-container>
+							</div>
+						</div>
+					</section>
+
+					<!-- Education, Experience, Languages and Interest -->
+					<div class="cd-col cd-col-pm-t-7 cd-col-pm-d-8 ik-background-wrapper">
+						<hr class="cd-hide-on-t-up">
+
+						<!-- Education -->
+						<section class="ik-education">
+							<!-- Title & SubTitle -->
+							<h2>{{ profileEducation['title'] | translate }}</h2>
+							<h6 [translate]="profileEducation['subTitle']['text']"
+								[translateParams]="{type: profileEducation['subTitle']['type'] | translate}">
+							</h6>
+
+							<!-- List -->
+							<div class="ik-list-wrapper">
+								<ul class="cd-remove-bullets">
+									<li *ngFor="let education of profileEducation['education']">
+										<div class="ik-left">
+											<div class="ik-logo cd-tooltip">
+												<img [src]="'assets/svg/profile/universities/' + education['logo'] + '.svg'"
+													 [alt]="education['name']" />
+												<span class="cd-arrow cd-bottom">{{ education['name'] }}</span>
+											</div>
+										</div>
+										<div class="ik-right">
+											<h5 [translate]="profileEducation['universityName']"
+												[translateParams]="{name: education['name']}">
+											</h5>
+											<p [translate]="profileEducation['universityInfo']"
+											   [translateParams]="{
+                                                    type: education['type'] | translate,
+                                                    degree: education['degree'] | translate,
+                                                    year: education['year'],
+                                                    country: education['country'] | translate
+                                               }">
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</section>
+
+						<hr>
+
+						<!-- Experience -->
+						<section class="ik-experience">
+							<!-- Title & SubTitle -->
+							<h2>{{ profileExperience['title'] | translate }}</h2>
+							<h6 [translate]="profileExperience['subTitle']['text']"
+								[translateParams]="{
+									company: profileExperience['subTitle']['company'] | translate
+								}">
+							</h6>
+
+							<!-- List -->
+							<div class="ik-list-wrapper">
+								<ul class="cd-remove-bullets">
+									<li *ngFor="let exp of profileExperience['experience']">
+										<div class="ik-left">
+											<div class="cd-tooltip">
+												<p class="ik-number"
+												   [class.ik-current]="exp['period'].length === 1"
+												   [class.ik-year-and-month]="exp['isYearAndMonth']">
+													{{ exp['periodShort'] }}
+												</p>
+												<span class="cd-arrow cd-bottom">
+													{{ exp['periodFull'] }}
+												</span>
+											</div>
+										</div>
+										<div class="ik-right">
+											<h5 [translate]="profileExperience['designationInfo']"
+												[translateParams]="{
+													designation: exp['designation'] | translate,
+                                                    developer: exp['developer'] | translate
+												}">
+											</h5>
+											<p>{{ exp['company'] | translate }}, {{ exp['periodText'] }}
+												<ng-container *ngIf="exp['period'].length === 1">
+													<span> - </span>
+													<span
+														  class="ik-on">{{ profileExperience['current'] | translate }}</span>
+												</ng-container>
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</section>
+
+						<hr>
+
+						<!-- Languages -->
+						<section class="ik-languages">
+							<!-- Title & SubTitle -->
+							<h2>{{ profileLanguage['title'] | translate }}</h2>
+							<h6 [translate]="profileLanguage['subTitle']['text']"
+								[translateParams]="{
+									learning: profileLanguage['subTitle']['learning'] | translate,
+									language: profileLanguage['subTitle']['language'] | translate
+								}">
+							</h6>
+
+							<!-- Tags -->
+							<div class="ik-tags">
+								<span *ngFor="let item of profileLanguage['list']">{{ item | translate }}</span>
+							</div>
+						</section>
+
+						<hr>
+
+						<!-- Interest -->
+						<section class="ik-interest">
+							<!-- Title -->
+							<h2>{{ profileInterest['title'] | translate }}</h2>
+
+							<!-- Tags -->
+							<div class="ik-tags">
+								<span *ngFor="let item of profileInterest['list']">{{ item | translate }}</span>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

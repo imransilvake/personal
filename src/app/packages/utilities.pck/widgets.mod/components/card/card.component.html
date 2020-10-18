@@ -1,0 +1,27 @@
+<div class="ik-card-wrapper">
+	<!-- Info -->
+	<ng-container *ngIf="cardViewType === 0">
+		<app-card-info [infoData]="infoData"
+					   [infoAutoHeight]="infoAutoHeight"
+					   [infoAssetsPath]="infoAssetsPath"
+					   [infoCardClass]="infoCardClass">
+		</app-card-info>
+	</ng-container>
+
+	<!-- Notice -->
+	<ng-container *ngIf="cardViewType === 1">
+		<app-card-notice [noticeData]="noticeData"></app-card-notice>
+	</ng-container>
+
+	<!-- List -->
+	<ng-container *ngIf="cardViewType === 2">
+		<app-card-list [filterRoute]="filterRoute"
+					   [listData]="listData">
+		</app-card-list>
+	</ng-container>
+
+	<!-- Code -->
+	<ng-container *ngIf="cardViewType === 3">
+		<app-card-code [codeData]="codeData"></app-card-code>
+	</ng-container>
+</div>

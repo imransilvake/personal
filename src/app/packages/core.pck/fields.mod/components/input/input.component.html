@@ -1,0 +1,73 @@
+<div class="ik-input-field" *ngIf="control">
+	<!-- Label -->
+	<label *ngIf="showLabel"
+		   [htmlFor]="inputId">
+		{{labelName}}
+	</label>
+
+	<!-- Input & Icons -->
+	<div class="ik-input-wrapper"
+		 [class.ik-invalid]="control.invalid && control.touched"
+		 [class.ik-focused]="inputFocused">
+		<!-- Input -->
+		<div class="ik-input">
+			<!-- Left Icon -->
+			<fa-icon class="ik-icon ik-left"
+					 [icon]="iconLeft">
+			</fa-icon>
+
+			<!-- Input -->
+			<input [formControl]="control"
+				   [id]="inputId"
+				   [name]="inputName"
+				   [type]="hidePassword ? 'password' : inputType"
+				   [value]="control.value"
+				   [placeholder]="inputPlaceHolder"
+				   [autocomplete]="autocomplete"
+				   [maxLength]="maxLength"
+				   [class.ik-space-left]="showIconLeft"
+				   [class.ik-space-right]="control.value"
+				   (focus)="inputFocused=true"
+				   (focusout)="inputFocused=false">
+
+			<!-- Close Icon -->
+			<fa-icon *ngIf="control.value && !control.disabled"
+					 class="ik-icon ik-right"
+					 (click)="control.setValue('')"
+					 [icon]="faIcon[2]">
+			</fa-icon>
+
+			<!-- Password Icon -->
+			<fa-icon *ngIf="showPassword && control.value"
+					 class="ik-icon ik-right"
+					 (click)="hidePassword = !hidePassword"
+					 [icon]="hidePassword ? faIcon[0] : faIcon[1]">
+			</fa-icon>
+		</div>
+	</div>
+
+	<!-- Error -->
+	<div class="ik-error"
+		 *ngIf="control.invalid && control.touched">
+		<ng-container [ngSwitch]="control.errors | FirstKey">
+			<p *ngSwitchCase="'required'">
+				Required field
+			</p>
+			<p *ngSwitchCase="'minlength'">
+				It must have at least {{control.errors['minlength']['requiredLength']}} characters long
+			</p>
+			<p *ngSwitchCase="'maxlength'">
+				It must have at most {{control.errors['maxlength']['requiredLength']}} characters long
+			</p>
+			<p *ngSwitchDefault>
+				Unknown error occurred
+			</p>
+		</ng-container>
+	</div>
+
+	<!-- Hint -->
+	<div class="ik-hint"
+		 *ngIf="showHint && hintText">
+		{{hintText}}
+	</div>
+</div>

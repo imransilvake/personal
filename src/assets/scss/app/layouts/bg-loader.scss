@@ -1,0 +1,9 @@
+.ik-bg-loader {
+	background-image: url('/assets/svg/loader.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+
+	&.ik-theme-mode {
+		background-color: var(--tc1);
+	}
+}

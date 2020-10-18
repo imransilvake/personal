@@ -1,0 +1,59 @@
+$color1: #ffffff;
+$color2: #f2f5fa;
+$color3: #212121;
+$color4: #000000;
+$color5: #6a6c6d;
+$color6: #dddddd;
+
+:root {
+	--c1: #{$color4};
+	--c2: #{$color1};
+	--c3: #{$color6};
+	--c4: #{$color5};
+	--c5: #f0db4f;
+	--c6: #2196f3;
+	--c7: #e74c3c;
+	--c8: #6fb98f;
+	--c9: #e67e22;
+	--c10: #00458e;
+	--c11: #cc6699;
+	--c12: #0e76a8;
+	--o1: rgba(0, 0, 0, .3);
+	--o2: rgba(0, 0, 0, .4);
+	--o3: rgba(0, 0, 0, .6);
+	--o4: rgba(0, 0, 0, .95);
+}
+
+[data-theme='light'] {
+	--tc1: #{$color1};
+	--tc2: #{$color1};
+	--tc3: #{$color2};
+	--tc4: #{$color2};
+	--tc5: #{$color3};
+	--tc6: #{$color3};
+	--tc7: #{$color6};
+}
+
+[data-theme='dark'] {
+	--tc1: #{$color3};
+	--tc2: #{$color4};
+	--tc3: #{$color3};
+	--tc4: #{$color4};
+	--tc5: #{$color1};
+	--tc6: #{$color5};
+	--tc7: #{$color3};
+}
+
+/**
+-------------------------------------------
+color		Light				Dark
+-------------------------------------------
+tc1			white			-> 	black_light
+tc2			white		    -> 	black
+tc3			white_light		-> 	black_light
+tc4			white_light		-> 	black
+tc5			black_light 	-> 	white
+tc6			black_light 	-> 	grey
+tc7			grey 	        -> 	black_light
+-------------------------------------------
+*/

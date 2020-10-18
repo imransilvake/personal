@@ -1,0 +1,20 @@
+<section class="ik-language-switch">
+	<!-- Active -->
+	<span class="ik-active"
+		  [class.ik-right]="!languageSwitcher">
+	</span>
+
+	<!-- Left Side -->
+	<button class="ik-button"
+			[class.ik-on]="languageSwitcher"
+			(click)="!languageSwitcher && onClickChangeLanguage()">
+		{{ appLanguages['en'] }}
+	</button>
+
+	<!-- Right Side -->
+	<button class="ik-button"
+			[class.ik-on]="!languageSwitcher"
+			(click)="languageSwitcher && onClickChangeLanguage()">
+		{{ appLanguages['de'] }}
+	</button>
+</section>

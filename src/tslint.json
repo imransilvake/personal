@@ -1,0 +1,38 @@
+{
+    "extends": "../tslint.json",
+    "rules": {
+		"no-redundant-jsdoc": false,
+		"no-string-literal": false,
+		"one-variable-per-declaration": false,
+		"indent": [
+			true,
+			"tabs",
+			4
+		],
+        "directive-selector": [
+            true,
+            "attribute",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "kebab-case"
+        ],
+		"max-line-length": [
+			true,
+			200
+		],
+		"member-ordering": [
+			true,
+			{
+				"order": [
+					"public-static-field",
+					"protected-static-field",
+					"public-static-method",
+					"protected-static-method"
+				]
+			}
+		]
+	}
+}

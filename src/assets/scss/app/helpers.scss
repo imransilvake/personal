@@ -1,0 +1,32 @@
+// margins
+.ik-margin-top-10 { margin-top: 10px; }
+.ik-margin-top-20 { margin-top: 20px; }
+.ik-margin-top-30 { margin-top: 30px; }
+.ik-margin-bottom-10 { margin-bottom: 10px; }
+.ik-margin-bottom-20 { margin-bottom: 20px; }
+.ik-margin-bottom-30 { margin-bottom: 30px; }
+.ik-margin-left-10 { margin-left: 10px; }
+.ik-margin-left-20 { margin-left: 20px; }
+.ik-margin-left-30 { margin-left: 30px; }
+.ik-margin-left-40 { margin-left: 40px; }
+.ik-margin-left-50 { margin-left: 50px; }
+.ik-margin-left-60 { margin-left: 60px; }
+
+// colors
+.ik-red { color: var(--c7); }
+.ik-green { color: var(--c8); }
+.ik-orange { color: var(--c9); }
+.ik-pink { color: var(--c11); }
+
+// background shadow
+.ik-bg-shadow {
+	background-color: var(--o3);
+	border-radius: 2px;
+	color: var(--c2);
+	padding: 1px 6px;
+}
+
+// touch action
+.ik-touch-action {
+	touch-action: pan-y !important;
+}

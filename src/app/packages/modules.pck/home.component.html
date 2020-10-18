@@ -1,0 +1,110 @@
+<div class="ik-home">
+	<div class="cd-container-fluid">
+		<div class="cd-container">
+			<div class="cd-row ik-row-reverse">
+				<!-- Content -->
+				<div class="cd-col cd-col-pm-s-8 cd-col-pm-d-9">
+					<!-- Profile Summary -->
+					<section class="ik-card ik-block ik-summary">
+						<div class="ik-display">
+							<!-- Cover -->
+							<div class="ik-cover">
+								<div class="ik-content">
+									<h3>{{ profileInfo['summary']['display']['cover'] }}</h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="ik-detail">
+							<!-- Greetings -->
+							<h6>
+								<span>{{ profileInfo['summary']['detail']['greetings']['text']['one'] | translate }}</span>
+								<span [translate]="profileInfo['summary']['detail']['greetings']['text']['two']"
+									  [translateParams]="{name: profileInfo['summary']['detail']['greetings']['name']}">
+								</span>
+							</h6>
+
+							<!-- Designation -->
+							<h4 [translate]="profileInfo['summary']['detail']['subTitle']['text']"
+								[translateParams]="{
+							   		designation: profileInfo['summary']['detail']['subTitle']['designation'] | translate,
+									developer: profileInfo['summary']['detail']['subTitle']['developer'] | translate
+							   }">
+							</h4>
+
+							<!-- Excerpt -->
+							<p [translate]="profileInfo['summary']['detail']['excerpt']"
+							   [translateParams]="{
+							   		designation: 'Common.Designations.Frontend' | translate,
+							   		developer: 'Common.Terms.Developer' | translate
+							   }">
+							</p>
+						</div>
+					</section>
+
+					<!-- Profile Skills -->
+					<section class="ik-block ik-profile-skills"
+							 *ngFor="let block of profileSkills['items']">
+						<h6 class="ik-title">{{ block['title'] }}</h6>
+						<div class="cd-row">
+							<div class="cd-col cd-col-pm-t-6 cd-col-pm-w-4"
+								 *ngFor="let data of block['items']">
+								<app-card [infoData]="data"
+										  [infoAssetsPath]="profileSkills['assetsPath']">
+								</app-card>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<!-- Sidebar -->
+				<div class="cd-col cd-col-pm-s-4 cd-col-pm-d-3 ik-m-bottom-space">
+					<!-- Slider: Info Board -->
+					<section class="ik-card ik-block">
+						<app-slider [data]="infoBoard"
+									[slideInterval]="infoBoardInterval"
+									[showDotsNavigation]="true"
+									(updateActiveSlide)="infoBoardActiveSlide = $event">
+							<app-card [infoData]="infoBoardActiveSlide"
+									  [infoAutoHeight]="true"
+									  [infoAssetsPath]="infoBoard['assetsPath']"
+									  [infoCardClass]="false">
+							</app-card>
+						</app-slider>
+					</section>
+
+					<!-- Recent Projects -->
+					<section class="ik-card ik-card-padding ik-block"
+							 *ngIf="topProjects">
+						<app-card [cardViewType]="cardViewList"
+								  [filterRoute]="routing.projects"
+								  [listData]="topProjects">
+						</app-card>
+					</section>
+
+					<!-- Social Network -->
+					<section class="ik-card ik-card-padding ik-block ik-social">
+						<ng-container *ngFor="let item of socialNetwork['items']">
+							<a class="ik-item cd-tooltip {{item['class']}}"
+							   (click)="onClickOpenWebsite(item['link'], !!item['isMail'])">
+								<!-- Image -->
+								<img *ngIf="!!item['photo']"
+									 [src]="'assets/svg/home/social/' + item['photo'] + '.svg'"
+									 [alt]="item['name']" />
+
+								<!-- Icon -->
+								<fa-icon *ngIf="!!item['icon']"
+										 class="ik-icon"
+										 [icon]="item['icon']">
+								</fa-icon>
+
+								<!-- Name -->
+								<span class="cd-arrow cd-bottom">{{item['name']}}</span>
+							</a>
+						</ng-container>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
