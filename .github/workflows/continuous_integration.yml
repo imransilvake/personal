@@ -75,7 +75,7 @@ jobs:
         run: echo "$env:BASHRC_PATH"
       - uses: DamianReeves/write-file-action@master
         with:
-          path: ${{ env.BASHRC_PATH }}
+          path: ${{ env.home}}/.VERSION
           contents: |
             echo "Hello World!"
           write-mode: append
