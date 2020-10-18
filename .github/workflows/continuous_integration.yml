@@ -65,15 +65,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
   write-version:
-    needs: build
-    runs-on: ubuntu-latest
-    name: Write Version to File
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Update version to file
-        id: version
-        uses: brettdorrans/write-version-to-file@master
-        with:
-          filename: "/.VERSION"
+    uses: DamianReeves/write-file-action
+    with:
+      path: ${{ env.home }}/.VERSION
+      contents: |
+        echo "Hello World!"
+      write-mode: append
