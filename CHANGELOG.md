@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/imransilvake/personal/compare/v1.0.4...v1.0.5) (2020-10-18)
+
+
+### Bug Fixes
+
+* CI/CD ([815a22e](https://github.com/imransilvake/personal/commit/815a22e84ea16c354a73b007710d01e58339a7ff))
+
 ## [1.0.4](https://github.com/imransilvake/personal/compare/v1.0.3...v1.0.4) (2020-10-18)
 
 
