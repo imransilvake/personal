@@ -8,9 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set env
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Test
+      - name: Print slug/short variables
         run: |
-          echo ${GITHUB_REF##*/}
-          echo ${{ env.RELEASE_VERSION }}
+          echo "Slug variables"
+          echo " - ${{ env.GITHUB_REF_SLUG }}"    
+          echo " - ${{ env.GITHUB_HEAD_REF_SLUG }}"
+          echo " - ${{ env.GITHUB_BASE_REF_SLUG }}"
+          echo " - ${{ env.GITHUB_REPOSITORY_SLUG }}"
+          // output e.g. : master feat-new-feature v1.0.0 product-1.0.0-rc.2 new-awesome-product
+          echo "Slug URL variables"
+          echo " - ${{ env.GITHUB_REF_SLUG_URL }}"
+          echo " - ${{ env.GITHUB_HEAD_REF_SLUG_URL }}"
+          echo " - ${{ env.GITHUB_BASE_REF_SLUG_URL }}"
+          echo " - ${{ env.GITHUB_REPOSITORY_SLUG_URL }}"
+          // output e.g. : master feat-new-feature v1-0-0 product-1-0-0-rc-2 new-awesome-product
+          echo "Short SHA variables"
+          echo " - ${{ env.GITHUB_SHA_SHORT }}"
+          // output e.g. : ffac537e
