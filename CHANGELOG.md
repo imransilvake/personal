@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/imransilvake/personal/compare/v1.0.2...v1.0.3) (2020-10-18)
+
+
+### Bug Fixes
+
+* handle automatic version ([90d71e3](https://github.com/imransilvake/personal/commit/90d71e35f7afd473266632bd8010fcd2f51085a9))
+
 ## [1.0.2](https://github.com/imransilvake/personal/compare/v1.0.1...v1.0.2) (2020-10-18)
 
 
