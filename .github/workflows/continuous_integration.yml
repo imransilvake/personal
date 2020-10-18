@@ -69,5 +69,5 @@ jobs:
     with:
       path: ${{ env.home }}/.VERSION
       contents: |
-        echo "Hello World!"
+        echo "Hallo World!"
       write-mode: append
