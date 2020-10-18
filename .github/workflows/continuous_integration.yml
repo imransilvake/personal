@@ -71,7 +71,7 @@ jobs:
       - name: Deploy to netlify
         uses: nwtgck/actions-netlify@v1.1.11
         with:
-          publish-dir: "./public"
+          publish-dir: "./dist"
           production-branch: master
           deploy-message: "${{ github.event.head_commit.message }}"
         env:
