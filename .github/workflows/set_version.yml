@@ -7,12 +7,13 @@ jobs:
   test:
     runs-on: ubuntu-18.04
     steps:
-      - name: Extract tag name
-        id: tag
-        uses: actions/github-script@0.2.0
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          script: |
-            return context.payload.ref.replace(/\/refs\/tags\//, '');
-      - name: Echo
-        run: echo ${{ github.event.release.tag_name }}
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: echo var
+        run: |
+          echo version name is: ${{ github.event.release.tag_name }}
+          echo release title is: ${{ github.event.release.name }}
+          echo release body is: ${{ github.event.release.body }}
+          echo repository is: ${{ github.repository }}
