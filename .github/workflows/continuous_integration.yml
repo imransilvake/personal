@@ -66,10 +66,11 @@ jobs:
         run: npx semantic-release
   write-version:
     runs-on: ubuntu-latest
+    name: Write Version to File
     steps:
-      - uses: DamianReeves/write-file-action@master
+      - uses: actions/checkout@master
+      - name: Update version
+        id: version
+        uses: brettdorrans/write-version-to-file@master
         with:
-          path: .VERSION
-          contents: |
-            echo "Hello World!"
-          write-mode: append
+          filename: "/.VERSION"
