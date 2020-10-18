@@ -64,9 +64,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
-  write-version:
-    runs-on: ubuntu-latest
-    name: Write Version to File
-    steps:
-      - name: tag number
-        run: echo ${{GITHUB_REF##*/}}
