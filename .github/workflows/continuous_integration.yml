@@ -69,4 +69,4 @@ jobs:
     name: Write Version to File
     steps:
       - name: tag number
-        run: echo ${{ github.event.release.tag_name }}
+        run: echo ${{GITHUB_REF##*/}}
