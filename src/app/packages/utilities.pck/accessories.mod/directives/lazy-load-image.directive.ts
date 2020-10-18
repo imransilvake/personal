@@ -28,7 +28,7 @@ export class LazyLoadImageDirective implements AfterViewInit {
 				// emit event
 				this.lazyLoadImage.emit();
 
-				// un-observe
+				// unobserve
 				this._intersectionObserver.unobserve(this._element.nativeElement);
 
 				// disconnect
