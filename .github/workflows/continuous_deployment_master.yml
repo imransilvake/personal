@@ -26,10 +26,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-cache-node-modules-
 
-      - name: Semantic Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
+
 
       - name: Install Dependencies
         if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
