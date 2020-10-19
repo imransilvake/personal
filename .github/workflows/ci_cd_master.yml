@@ -48,11 +48,6 @@ jobs:
         with:
           node-version: 14
 
-      - name: Semantic Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
-
       - name: Cache node_modules
         uses: actions/cache@v1
         id: yarn-cache-node-modules
@@ -68,6 +63,11 @@ jobs:
 
       - name: Build the App
         run: yarn build.app.prod
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx semantic-release
 
       - name: Deploy to netlify
         uses: nwtgck/actions-netlify@v1.1
