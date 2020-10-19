@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  integrate:
+  linting:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,8 +38,3 @@ jobs:
 
       - name: Lint SCSS
         run: yarn lint:scss
-
-      - name: Semantic Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release

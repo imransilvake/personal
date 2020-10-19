@@ -1,11 +1,13 @@
 name: Continuous Deployment
 
 on:
-  repository_dispatch:
-    types: [semantic-release]
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,6 +26,11 @@ jobs:
           key: ${{ runner.os }}-yarn-cache-node-modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-cache-node-modules-
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx semantic-release
 
       - name: Install Dependencies
         if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
