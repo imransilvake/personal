@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/imransilvake/personal/compare/v1.0.10...v1.0.11) (2020-10-19)
+
+
+### Bug Fixes
+
+* update yml ([00ff0a5](https://github.com/imransilvake/personal/commit/00ff0a5999560138376097dcc65ee23595130313))
+
 ## [1.0.10](https://github.com/imransilvake/personal/compare/v1.0.9...v1.0.10) (2020-10-19)
 
 
