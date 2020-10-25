@@ -27,6 +27,7 @@ import { HelperService } from '../../../utilities.pck/accessories.mod/services/h
 export class PhotographyComponent implements OnInit {
 	public faIcon = [faPlane, faExpand, faCircleNotch];
 	public photography = photography;
+	public isPageLoaded = false;
 
 	public sliderList = {};
 	public sliderInterval;
@@ -138,6 +139,9 @@ export class PhotographyComponent implements OnInit {
 
 		// stop loader
 		this.loadMoreLoader = false;
+
+		// page loaded
+		this.isPageLoaded = true;
 	}
 
 	/**

@@ -3,6 +3,15 @@
 .ik-photography {
 	background-color: var(--tc4);
 
+	.ik-page-loader {
+		margin-top: 30px;
+		text-align: center;
+
+		.ik-icon {
+			font-size: cd-fontSize(s40);
+		}
+	}
+
 	.ik-slider-wrapper {
 		.ik-photo {
 			position: relative;

@@ -30,9 +30,9 @@ export class HelperService {
 	}
 
 	/**
-	 * detect: scroll
+	 * detect: window scroll
 	 */
-	public static detectScroll() {
+	public static detectWindowScroll() {
 		return fromEvent(window, 'scroll');
 	}
 

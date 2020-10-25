@@ -21,8 +21,8 @@ export class ScrollTopComponent implements OnInit, OnDestroy {
 	private unSubscribe = new Subject();
 
 	ngOnInit() {
-		// listen: scroll to top
-		HelperService.detectScroll()
+		// listen: window scroll
+		HelperService.detectWindowScroll()
 			.pipe(
 				// we are only interested in the scrollY value of these events
 				// let's create a stream with only these values

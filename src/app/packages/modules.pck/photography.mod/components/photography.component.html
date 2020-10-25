@@ -1,90 +1,98 @@
 <div class="ik-photography">
 	<div class="cd-container-fluid">
-		<!-- Slider: Photography -->
-		<div class="ik-slider-wrapper ik-bg-loader"
-			 [style.height.px]="sliderItem['landscapeHeight']"
-			 *ngIf="sliderList && sliderList['items'] && sliderList['items'].length">
-			<app-slider [data]="sliderList"
-						[slideInterval]="sliderInterval"
-						(updateActiveSlide)="sliderImageActive = $event">
-				<div class="ik-photo"
-					 @fadeInOut>
-					<!-- Image -->
-					<img [style.height.px]="sliderItem['landscapeHeight']"
-						 [src]="sliderImageActive['photo']"
-						 [alt]="sliderImageActive['title'] || 'photo'" />
-
-					<!-- Title -->
-					<h6 class="ik-bg-shadow ik-text ik-title"
-						*ngIf="sliderImageActive['title']">
-						{{ sliderImageActive['title'] }}
-					</h6>
-				</div>
-			</app-slider>
+		<!-- Loader -->
+		<div class="ik-page-loader" *ngIf="!isPageLoaded; else elseContent">
+			<img [src]="'/assets/svg/loader.svg'" [alt]="'loader'" />
 		</div>
 
-		<!-- Gallery Container -->
-		<div class="cd-container ik-gallery"
-			 *ngIf="galleryList && galleryList.length">
-			<!-- Excerpt -->
-			<section class="cd-row">
-				<div class="cd-col">
-					<h4 class="ik-excerpt">
-						{{ photography['excerpt'] | translate }}
-						<fa-icon class="ik-icon"
-								 [icon]="faIcon[0]">
-						</fa-icon>
-					</h4>
-				</div>
-			</section>
+		<!-- Content -->
+		<ng-template #elseContent>
+			<!-- Slider: Photography -->
+			<div class="ik-slider-wrapper ik-bg-loader"
+				 [style.height.px]="sliderItem['landscapeHeight']"
+				 *ngIf="sliderList && sliderList['items'] && sliderList['items'].length">
+				<app-slider [data]="sliderList"
+							[slideInterval]="sliderInterval"
+							(updateActiveSlide)="sliderImageActive = $event">
+					<div class="ik-photo"
+						 @fadeInOut>
+						<!-- Image -->
+						<img [style.height.px]="sliderItem['landscapeHeight']"
+							 [src]="sliderImageActive['photo']"
+							 [alt]="sliderImageActive['title'] || 'photo'" />
 
-			<!-- Gallery -->
-			<section class="ik-grid-wrapper">
-				<div class="ik-grid">
-					<ng-container *ngFor="let item of galleryList; let idx=index;">
-						<div class="ik-item"
-							 @fadeInOut
-							 (click)="onClickOpenPhotoGallery(item, idx)"
-							 [class.ik-landscape]="!item['portrait']"
-							 [class.ik-portrait]="item['portrait']">
-							<div class="ik-photo ik-bg-loader ik-theme-mode"
-								 LazyLoadImage
-								 (lazyLoadImage)="item['show'] = true"
-								 [style.height.px]="item['portrait'] ? gridItem['portraitHeight'] : gridItem['landscapeHeight']"
-								 [style.width.px]="item['portrait'] ? gridItem['portraitWidth'] : gridItem['landscapeWidth']">
-								<!-- Cover -->
-								<img @fadeInOut
-									 *ngIf="item['show']"
-									 [src]="item['thumbPhoto']"
-									 [alt]="item['title']" />
+						<!-- Title -->
+						<h6 class="ik-bg-shadow ik-text ik-title"
+							*ngIf="sliderImageActive['title']">
+							{{ sliderImageActive['title'] }}
+						</h6>
+					</div>
+				</app-slider>
+			</div>
 
-								<!-- Icon -->
-								<fa-icon class="ik-icon"
-										 [icon]="faIcon[1]">
-								</fa-icon>
+			<!-- Gallery Container -->
+			<div class="cd-container ik-gallery"
+				 *ngIf="galleryList && galleryList.length">
+				<!-- Excerpt -->
+				<section class="cd-row">
+					<div class="cd-col">
+						<h4 class="ik-excerpt">
+							{{ photography['excerpt'] | translate }}
+							<fa-icon class="ik-icon"
+									 [icon]="faIcon[0]">
+							</fa-icon>
+						</h4>
+					</div>
+				</section>
 
-								<!-- Title -->
-								<h6 class="ik-bg-shadow">{{ item['title'] }}</h6>
+				<!-- Gallery -->
+				<section class="ik-grid-wrapper">
+					<div class="ik-grid">
+						<ng-container *ngFor="let item of galleryList; let idx=index;">
+							<div class="ik-item"
+								 @fadeInOut
+								 (click)="onClickOpenPhotoGallery(item, idx)"
+								 [class.ik-landscape]="!item['portrait']"
+								 [class.ik-portrait]="item['portrait']">
+								<div class="ik-photo ik-bg-loader ik-theme-mode"
+									 LazyLoadImage
+									 (lazyLoadImage)="item['show'] = true"
+									 [style.height.px]="item['portrait'] ? gridItem['portraitHeight'] : gridItem['landscapeHeight']"
+									 [style.width.px]="item['portrait'] ? gridItem['portraitWidth'] : gridItem['landscapeWidth']">
+									<!-- Cover -->
+									<img @fadeInOut
+										 *ngIf="item['show']"
+										 [src]="item['thumbPhoto']"
+										 [alt]="item['title']" />
+
+									<!-- Icon -->
+									<fa-icon class="ik-icon"
+											 [icon]="faIcon[1]">
+									</fa-icon>
+
+									<!-- Title -->
+									<h6 class="ik-bg-shadow">{{ item['title'] }}</h6>
+								</div>
 							</div>
-						</div>
-					</ng-container>
-				</div>
+						</ng-container>
+					</div>
 
-				<!-- Load More -->
-				<div class="ik-load-more"
-					 *ngIf="isLoadMore">
-					<button class="ik-button"
-							(click)="getPhotographyGallery()"
-							[disabled]="loadMoreLoader">
-						{{ photography['loadMore'] | translate }}
-						<fa-icon class="ik-icon"
-								 *ngIf="loadMoreLoader"
-								 [icon]="faIcon[2]"
-								 [spin]="true">
-						</fa-icon>
-					</button>
-				</div>
-			</section>
-		</div>
+					<!-- Load More -->
+					<div class="ik-load-more"
+						 *ngIf="isLoadMore">
+						<button class="ik-button"
+								(click)="getPhotographyGallery()"
+								[disabled]="loadMoreLoader">
+							{{ photography['loadMore'] | translate }}
+							<fa-icon class="ik-icon"
+									 *ngIf="loadMoreLoader"
+									 [icon]="faIcon[2]"
+									 [spin]="true">
+							</fa-icon>
+						</button>
+					</div>
+				</section>
+			</div>
+		</ng-template>
 	</div>
 </div>
