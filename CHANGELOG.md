@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/imransilvake/personal/compare/v1.1.0...v1.1.1) (2020-10-25)
+
+
+### Bug Fixes
+
+* update ([51620a8](https://github.com/imransilvake/personal/commit/51620a8134c6bae3e48a77113d0764e741125f11))
+
 # [1.1.0](https://github.com/imransilvake/personal/compare/v1.0.11...v1.1.0) (2020-10-25)
 
 
