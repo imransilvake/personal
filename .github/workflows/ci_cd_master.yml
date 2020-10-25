@@ -61,13 +61,13 @@ jobs:
         if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install
 
-      - name: Build the App
-        run: yarn build.app.prod
-
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
+
+      - name: Build the App
+        run: yarn build.app.prod
 
       - name: Deploy to netlify
         uses: nwtgck/actions-netlify@v1.1
