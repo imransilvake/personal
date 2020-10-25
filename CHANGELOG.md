@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/imransilvake/personal/compare/v1.0.11...v1.1.0) (2020-10-25)
+
+
+### Bug Fixes
+
+* update packages.json ([8c98b31](https://github.com/imransilvake/personal/commit/8c98b31cecc82fe202adddc67e2079109e9fda23))
+
+
+### Features
+
+* add loader for better UX ([87c3f09](https://github.com/imransilvake/personal/commit/87c3f091f5140f8bea8957458b4a775a6b0b6cfa))
+
 ## [1.0.11](https://github.com/imransilvake/personal/compare/v1.0.10...v1.0.11) (2020-10-19)
 
 
