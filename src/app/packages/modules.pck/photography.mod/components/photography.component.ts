@@ -175,11 +175,11 @@ export class PhotographyComponent implements OnInit {
 		const filteredData = formattedData.filter(i => !!i.slider);
 
 		// update slider values
-		if (!this.sliderList.items) {
+		if (!this.sliderList['items']) {
 			this.sliderList = { ...photography, items: filteredData };
 			this.sliderInterval = AppOptions.intervals.photography;
 		} else {
-			this.sliderList = { ...photography, items: this.sliderList.items.concat(filteredData) };
+			this.sliderList = { ...photography, items: this.sliderList['items'].concat(filteredData) };
 		}
 	}
 
@@ -221,7 +221,7 @@ export class PhotographyComponent implements OnInit {
 		const itemHeight = (originalLandscapeHeight / originalLandscapeWidth) * itemWidth;
 
 		// assign values
-		this.sliderItem.landscapeHeight = itemHeight < 500 ? itemHeight : 500;
+		this.sliderItem['landscapeHeight'] = itemHeight < 500 ? itemHeight : 500;
 	}
 
 	/**
@@ -269,9 +269,9 @@ export class PhotographyComponent implements OnInit {
 		const itemHeight = (originalLandscapeHeight / originalLandscapeWidth) * itemWidth;
 
 		// assign values
-		this.gridItem.landscapeWidth = itemWidth;
-		this.gridItem.landscapeHeight = itemHeight;
-		this.gridItem.portraitWidth = originalPortraitWidth;
-		this.gridItem.portraitHeight = (itemHeight * 2) + gutterGap;
+		this.gridItem['landscapeWidth'] = itemWidth;
+		this.gridItem['landscapeHeight'] = itemHeight;
+		this.gridItem['portraitWidth'] = originalPortraitWidth;
+		this.gridItem['portraitHeight'] = (itemHeight * 2) + gutterGap;
 	}
 }

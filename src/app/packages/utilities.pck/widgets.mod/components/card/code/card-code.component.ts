@@ -34,7 +34,7 @@ export class CardCodeComponent implements OnInit {
 	 *
 	 * @param object
 	 */
-	public appendClassesInLine(object: string[]) {
+	public appendClassesInLine(object: any) {
 		let text = object.text;
 		const classes = object.classes;
 
