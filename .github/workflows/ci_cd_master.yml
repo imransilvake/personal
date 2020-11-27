@@ -30,8 +30,8 @@ jobs:
         if: steps.yarn-cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install
 
-      - name: Lint Typescript
-        run: yarn lint:ts
+      - name: Lint ESLint
+        run: yarn lint:es
 
       - name: Lint SCSS
         run: yarn lint:scss
