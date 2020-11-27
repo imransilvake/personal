@@ -26,6 +26,7 @@ export class FontSwitchComponent implements OnInit {
 
 	/**
 	 * on change font size
+	 *
 	 * @param init
 	 */
 	public onClickChangeFontSize(init?: boolean) {

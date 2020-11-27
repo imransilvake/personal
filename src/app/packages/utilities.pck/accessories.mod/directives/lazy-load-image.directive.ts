@@ -20,6 +20,7 @@ export class LazyLoadImageDirective implements AfterViewInit {
 
 	/**
 	 * check for element intersection
+	 *
 	 * @param entries
 	 */
 	private checkForIntersection = (entries: Array<IntersectionObserverEntry>) => {
@@ -35,10 +36,11 @@ export class LazyLoadImageDirective implements AfterViewInit {
 				this._intersectionObserver.disconnect();
 			}
 		});
-	}
+	};
 
 	/**
 	 * validate element intersaction on screen
+	 *
 	 * @param entry
 	 */
 	private isElementIntersecting(entry: IntersectionObserverEntry) {

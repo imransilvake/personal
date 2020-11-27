@@ -31,6 +31,7 @@ export class HomeComponent {
 
 	/**
 	 * open (website) external link
+	 *
 	 * @param link
 	 * @param isMail
 	 */

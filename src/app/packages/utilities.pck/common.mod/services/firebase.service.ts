@@ -14,6 +14,7 @@ export class FirebaseService {
 
 	/**
 	 * get specific project gallery from firebase storage
+	 *
 	 * @param galleryId
 	 */
 	public async storageGetProjectGallery(galleryId) {
@@ -29,7 +30,7 @@ export class FirebaseService {
 				.listAll();
 
 			// collect promises of all images
-			const projectUrls = galleryData['items'].map(i =>
+			const projectUrls = galleryData.items.map(i =>
 				this._firebaseDatabase.storage.ref(i.fullPath).getDownloadURL()
 			);
 
@@ -67,7 +68,7 @@ export class FirebaseService {
 			}
 
 			// collect promises of all images
-			const projectUrls = galleryData['items'].map(i =>
+			const projectUrls = galleryData.items.map(i =>
 				this._firebaseDatabase.storage.ref(i.fullPath).getDownloadURL()
 			);
 

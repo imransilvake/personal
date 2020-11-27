@@ -45,7 +45,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		ProjectsFiltersEnum.FILTER_ANGULAR,
 		ProjectsFiltersEnum.FILTER_REACT,
 		ProjectsFiltersEnum.FILTER_PHP
-	]
+	];
 	public infoBlockIndex = -1;
 	public spinnerIndex = -1;
 	public formFields;
@@ -68,17 +68,17 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 			)
 			.subscribe(() => {
 				// set filter based on path-param filter
-				const ppFilter = _route.snapshot.params && _route.snapshot.params['filter'];
-				const index = ppFilter && this.projects['filters'].findIndex(x => x.id === ppFilter);
+				const ppFilter = _route.snapshot.params && _route.snapshot.params.filter;
+				const index = ppFilter && this.projects.filters.findIndex(x => x.id === ppFilter);
 				if (ppFilter && index !== -1) {
-					this.onListenChangeFilter(this.projects['filters'][index]);
+					this.onListenChangeFilter(this.projects.filters[index]);
 				}
 			});
 
 		// form group
 		this.formFields = new FormGroup({
 			search: new FormControl(''),
-			filter: new FormControl(this.projects['filters'][0])
+			filter: new FormControl(this.projects.filters[0])
 		});
 	}
 
@@ -88,10 +88,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 			.pipe(takeUntil(this.unSubscribe))
 			.subscribe(text => {
 				let result;
-				if (this.filter.value.id === projects['filters'][0].id) {
-					result = projects['items'].filter(x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1);
+				if (this.filter.value.id === projects.filters[0].id) {
+					result = projects.items.filter(x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1);
 				} else {
-					result = projects['items']
+					result = projects.items
 						.filter(x =>
 							x.controls.filter === this.filter.value.id &&
 							x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
@@ -120,12 +120,13 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * set selected filter
+	 *
 	 * @param sFilter
 	 */
 	public onListenChangeFilter(sFilter) {
 		// update data
-		if (sFilter && sFilter.id !== projects['filters'][0].id) {
-			const result = projects['items'].filter(x => x.controls.filter === sFilter.id);
+		if (sFilter && sFilter.id !== projects.filters[0].id) {
+			const result = projects.items.filter(x => x.controls.filter === sFilter.id);
 			this.projects = { ...projects, items: result };
 		} else {
 			this.projects = projects;
@@ -140,6 +141,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * download project from github
+	 *
 	 * @param link
 	 */
 	public onClickDownloadProject(link) {
@@ -148,6 +150,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * toggle info block
+	 *
 	 * @param idx
 	 */
 	public onClickToggleInfoBlock(idx) {
@@ -160,6 +163,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * open github external link
+	 *
 	 * @param link
 	 */
 	public onClickOpenGithub(link) {
@@ -168,6 +172,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * open (website) external link
+	 *
 	 * @param link
 	 */
 	public onClickOpenWebsite(link) {
@@ -176,6 +181,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * open specific project gallery
+	 *
 	 * @param galleryId
 	 * @param index
 	 */
@@ -225,6 +231,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	/**
 	 * open photo gallery
+	 *
 	 * @param items
 	 */
 	public openPhotoGallery(items: any) {

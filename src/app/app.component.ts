@@ -50,7 +50,7 @@ import { AppMetaService } from './packages/utilities.pck/accessories.mod/service
 
 export class AppComponent {
 	public cardViewNotice = CardViewEnum.CARD_NOTICE;
-	public noticeList = { items: notice['items'].filter(x => x.show) };
+	public noticeList = { items: notice.items.filter(x => x.show) };
 	public noticeActive;
 	public noticeInterval = AppOptions.intervals.notice;
 

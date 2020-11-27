@@ -49,7 +49,7 @@ export const AppOptions = {
 export const MemoryStorageItems = {
 	projectGalleries: 'ik-pr',
 	photographyGalleries: 'ik-ph'
-}
+};
 
 // local-storage items
 export const LocalStorageItems = {
@@ -118,4 +118,4 @@ export const AppLinks = {
 export const FirebaseStorage = {
 	projects: 'projects',
 	photography: 'photography'
-}
+};

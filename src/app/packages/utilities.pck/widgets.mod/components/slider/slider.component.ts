@@ -52,13 +52,13 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		// count total slides
-		this.totalSlides = this.data['items'].length;
+		this.totalSlides = this.data.items.length;
 
 		// slide counter
 		this.slideCounter = `${this.activeSlideIndex + 1} / ${this.totalSlides}`;
 
 		// set active slide
-		this.activeSlide = this.data['items'][this.activeSlideIndex];
+		this.activeSlide = this.data.items[this.activeSlideIndex];
 		this.updateActiveSlide.emit(this.activeSlide);
 
 		// slider
@@ -88,6 +88,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 	/**
 	 * on swipe: left and right
+	 *
 	 * @param direction
 	 */
 	public onSwipeOrClick(direction) {
@@ -107,6 +108,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 	/**
 	 * change slide based on clicked index
+	 *
 	 * @param slideIndex
 	 * @param isSwipeOrClick
 	 */
@@ -118,7 +120,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 		}
 
 		// move to a specific slide
-		this.activeSlide = this.data['items'][slideIndex];
+		this.activeSlide = this.data.items[slideIndex];
 		this.activeSlideIndex = slideIndex;
 
 		// update active slide
@@ -130,6 +132,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 	/**
 	 * trigger specific control
+	 *
 	 * @param control
 	 */
 	public onClickTriggerControl(control: SliderControlsEnum) {
@@ -141,7 +144,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 				this.onSwipeOrClick(SliderDirectionEnum.DIRECTION_LEFT);
 				break;
 			case SliderControlsEnum.CONTROL_DOWNLOAD:
-				window.open(this.activeSlide['photo'], '_blank');
+				window.open(this.activeSlide.photo, '_blank');
 				break;
 			case SliderControlsEnum.CONTROL_PLAY:
 				this.updateSliderIntervalState(SliderIntervalEnum.INTERVAL_PLAY);
@@ -157,6 +160,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 	/**
 	 * update slider interval state
+	 *
 	 * @param intervalType
 	 */
 	public updateSliderIntervalState(intervalType: SliderIntervalEnum) {

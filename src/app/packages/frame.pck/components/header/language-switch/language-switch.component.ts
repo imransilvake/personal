@@ -30,14 +30,15 @@ export class LanguageSwitchComponent implements OnInit {
 
 	/**
 	 * on language change
+	 *
 	 * @param init
 	 */
 	public onClickChangeLanguage(init?: boolean) {
 		// get languageMode from local storage
-		const languageMode = this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages['en'];
-		const reverse = (languageMode === AppOptions.languages['en']) ? AppOptions.languages['de'] : AppOptions.languages['en'];
+		const languageMode = this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages.en;
+		const reverse = (languageMode === AppOptions.languages.en) ? AppOptions.languages.de : AppOptions.languages.en;
 		const value = init ? languageMode : reverse;
-		this.languageSwitcher = value === AppOptions.languages['en'];
+		this.languageSwitcher = value === AppOptions.languages.en;
 
 		// update app language
 		this._translate.use(value);

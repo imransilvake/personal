@@ -50,7 +50,7 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 				// update push notification list
 				this.updateNotificationList(
 					PushNotificationsTypesEnum.NETWORK_CONNECTION,
-					res && res['type'] === 'offline'
+					res && res.type === 'offline'
 				);
 			});
 
@@ -100,12 +100,13 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 	 * validate notifications container
 	 */
 	public validateNotificationsContainer() {
-		const items = this.pushNotificationsList.filter(f => f.controls['show']);
+		const items = this.pushNotificationsList.filter(f => f.controls.show);
 		this.validateNotificationsLength = !!(items && items.length);
 	}
 
 	/**
 	 * add notification timer
+	 *
 	 * @param type
 	 * @param interval
 	 */
@@ -142,13 +143,14 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 
 	/**
 	 * update notification list
+	 *
 	 * @param type
 	 * @param status
 	 */
 	public updateNotificationList(type: PushNotificationsTypesEnum, status: boolean) {
 		this.pushNotificationsList.map(item => {
 			if (item.id === type) {
-				item['controls']['show'] = status;
+				item.controls.show = status;
 			}
 			return item;
 		});
