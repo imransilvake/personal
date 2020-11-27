@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FirstKeyPipe implements PipeTransform {
 	/**
 	 * get first element key from an object
+	 *
 	 * @param list
 	 * @param args
 	 */

@@ -31,11 +31,12 @@ export class CardCodeComponent implements OnInit {
 
 	/**
 	 * append class(es) in line
+	 *
 	 * @param object
 	 */
-	public appendClassesInLine(object: string[]) {
-		let text = object['text'];
-		const classes = object['classes'];
+	public appendClassesInLine(object: any) {
+		let text = object.text;
+		const classes = object.classes;
 
 		if (classes && classes.length > 0) {
 			classes.forEach(cl => text = text.replace('<span>', `<span class="${cl}">`));
@@ -46,6 +47,7 @@ export class CardCodeComponent implements OnInit {
 
 	/**
 	 * indent code line
+	 *
 	 * @param line
 	 */
 	public indentCodeLine(line) {

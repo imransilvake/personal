@@ -57,6 +57,7 @@ export class AppMetaService {
 
 	/**
 	 * update title on navigation change
+	 *
 	 * @param route
 	 * @param isLanguageChanged
 	 */
@@ -134,6 +135,7 @@ export class AppMetaService {
 
 	/**
 	 * update html lang attribute
+	 *
 	 * @param res
 	 */
 	public updateHtmlLangAttribute(res) {

@@ -34,11 +34,11 @@ export class E404Component implements OnInit, OnDestroy {
 			.subscribe(event => {
 				// event['pageX']: get horizontal coordinates of the mouse
 				// window.innerWidth: browser width
-				const x = event['pageX'] * 100 / window.innerWidth;
+				const x = event && (event['pageX'] * 100 / window.innerWidth);
 
 				// event['pageY']: vertical coordinates of the mouse
 				// window.innerHeight: browser height
-				const y = event['pageY'] * 100 / window.innerHeight;
+				const y = event && (event['pageY'] * 100 / window.innerHeight);
 
 				// left: x > 20
 				// right: x < 80

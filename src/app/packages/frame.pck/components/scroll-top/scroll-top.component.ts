@@ -49,13 +49,13 @@ export class ScrollTopComponent implements OnInit, OnDestroy {
 	 */
 	public onClickScrollToTop() {
 		const scrollDuration = this.scrollDuration / 15;
-		const scrollStep = -window.scrollY / scrollDuration,
-			scrollInterval = setInterval(() => {
-				if (window.scrollY !== 0) {
-					window.scrollBy(0, scrollStep);
-				} else {
-					clearInterval(scrollInterval);
-				}
-			}, 15);
+		const scrollStep = -window.scrollY / scrollDuration;
+		const scrollInterval = setInterval(() => {
+			if (window.scrollY !== 0) {
+				window.scrollBy(0, scrollStep);
+			} else {
+				clearInterval(scrollInterval);
+			}
+		}, 15);
 	}
 }

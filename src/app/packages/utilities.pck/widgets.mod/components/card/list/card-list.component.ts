@@ -13,6 +13,7 @@ export class CardListComponent {
 
 	/**
 	 * open external link
+	 *
 	 * @param link
 	 */
 	public onClickOpenLink(link) {

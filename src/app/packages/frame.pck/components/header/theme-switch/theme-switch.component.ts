@@ -26,6 +26,7 @@ export class ThemeSwitchComponent implements OnInit {
 
 	/**
 	 * on change theme
+	 *
 	 * @param init
 	 */
 	public onClickChangeTheme(init?: boolean) {

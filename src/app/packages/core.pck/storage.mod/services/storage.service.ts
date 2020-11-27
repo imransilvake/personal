@@ -11,9 +11,10 @@ export class StorageService {
 
 	/**
 	 * set item to local or session storage
-	 * @param {string} key
+	 *
+	 * @param key
 	 * @param value
-	 * @param {StorageTypeEnum} storageType
+	 * @param storageType
 	 */
 	public put(key: string, value: any, storageType?: StorageTypeEnum) {
 		switch (storageType) {
@@ -36,8 +37,9 @@ export class StorageService {
 
 	/**
 	 * get item from local or session storage
-	 * @param {string} key
-	 * @param {StorageTypeEnum} storageType
+	 *
+	 * @param key
+	 * @param storageType
 	 */
 	public get(key: string, storageType?: StorageTypeEnum) {
 		switch (storageType) {
@@ -66,9 +68,10 @@ export class StorageService {
 
 	/**
 	 * check if item exist in local or session storage
-	 * @param {string} key
-	 * @param {StorageTypeEnum} storageType
-	 * @returns {boolean}
+	 *
+	 * @param key
+	 * @param storageType
+	 * @returns
 	 */
 	public exist(key: string, storageType?: StorageTypeEnum): boolean {
 		switch (storageType) {

@@ -81,7 +81,7 @@ export class PhotographyComponent implements OnInit {
 
 		// set page token taken from memory
 		if (photographyGalleries) {
-			this._firebaseService.photographyPageToken = photographyGalleries['isNextPageToken'];
+			this._firebaseService.photographyPageToken = photographyGalleries.isNextPageToken;
 		}
 
 		// get photography gallery
@@ -90,6 +90,7 @@ export class PhotographyComponent implements OnInit {
 
 	/**
 	 * get photography gallery
+	 *
 	 * @param photographyGalleries
 	 */
 	public async getPhotographyGallery(photographyGalleries?) {
@@ -101,9 +102,9 @@ export class PhotographyComponent implements OnInit {
 			photographyGalleries : await this._firebaseService.storageGetPhotographyGallery();
 
 		// validate data
-		if (promiseData && promiseData['data']) {
+		if (promiseData && promiseData.data) {
 			// gallery data
-			const galleryData = photographyGalleries ? promiseData['data'] : await promiseData['data'];
+			const galleryData = photographyGalleries ? promiseData.data : await promiseData.data;
 
 			// get photography galleries from memory (if exists)
 			const storedData = this._storageService.get(
@@ -115,8 +116,8 @@ export class PhotographyComponent implements OnInit {
 			this._storageService.put(
 				MemoryStorageItems.photographyGalleries,
 				{
-					data: storedData && !photographyGalleries ? storedData['data'].concat(galleryData) : galleryData,
-					isNextPageToken: promiseData['isNextPageToken']
+					data: storedData && !photographyGalleries ? storedData.data.concat(galleryData) : galleryData,
+					isNextPageToken: promiseData.isNextPageToken
 				},
 				StorageTypeEnum.MEMORY
 			);
@@ -131,7 +132,7 @@ export class PhotographyComponent implements OnInit {
 			this.galleryList.push(...galleryDataFormatted);
 
 			// validate more items
-			this.isLoadMore = !!promiseData['isNextPageToken'];
+			this.isLoadMore = !!promiseData.isNextPageToken;
 		} else {
 			// error: show push message
 			this._triggersService.PushNotificationType.next(PushNotificationsTypesEnum.ERROR_GENERAL);
@@ -146,6 +147,7 @@ export class PhotographyComponent implements OnInit {
 
 	/**
 	 * format gallery data
+	 *
 	 * @param urlData
 	 */
 	public formatGalleryData(urlData) {
@@ -154,7 +156,7 @@ export class PhotographyComponent implements OnInit {
 		const thumbFiles = urlData.filter(i => i.indexOf('_thumb') !== -1);
 
 		// map data according to photoGallery format
-		const content = photography['items'].slice(this.galleryList.length);
+		const content = photography.items.slice(this.galleryList.length);
 		return minFiles.map((url, index) => ({
 			...content[index],
 			photo: url,
@@ -165,11 +167,12 @@ export class PhotographyComponent implements OnInit {
 
 	/**
 	 * update slider
+	 *
 	 * @param formattedData
 	 */
 	public updateSlider(formattedData) {
 		// filter data
-		const filteredData = formattedData.filter(i => !!i['slider']);
+		const filteredData = formattedData.filter(i => !!i.slider);
 
 		// update slider values
 		if (!this.sliderList['items']) {
@@ -182,6 +185,7 @@ export class PhotographyComponent implements OnInit {
 
 	/**
 	 * open photo gallery
+	 *
 	 * @param item
 	 * @param index
 	 */

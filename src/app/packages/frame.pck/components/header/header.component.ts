@@ -21,6 +21,7 @@ export class HeaderComponent {
 
 	/**
 	 * check active route
+	 *
 	 * @param link
 	 */
 	public isActiveRoute(link) {

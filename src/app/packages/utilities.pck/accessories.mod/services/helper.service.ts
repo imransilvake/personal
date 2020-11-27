@@ -45,6 +45,7 @@ export class HelperService {
 
 	/**
 	 * prevent default
+	 *
 	 * @param e
 	 */
 	public preventDefault(e) {
@@ -71,14 +72,15 @@ export class HelperService {
 
 	/**
 	 * fetch date in human readable format
+	 *
 	 * @param date
 	 * @param dateFormat
 	 * @param isLocale
 	 */
 	public getDate(date: any, dateFormat?: string, isLocale = true) {
 		const format = dateFormat ? dateFormat : 'MMMM YYYY';
-		const language = this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages['en'];
-		const locale = isLocale ? language : AppOptions.languages['en'];
+		const language = this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages.en;
+		const locale = isLocale ? language : AppOptions.languages.en;
 		return moment(date, 'MM-YYYY').locale(locale).format(format);
 	}
 }

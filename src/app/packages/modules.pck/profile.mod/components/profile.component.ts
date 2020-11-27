@@ -58,9 +58,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
 	 * init experience
 	 */
 	public initExperience() {
-		this.profileExperience['experience'] = this.profileExperience['experience'].map(item => {
-			const timePeriod = this.getTP(item['period']);
-			const timeDifference = this.getTD(item['period']);
+		this.profileExperience.experience = this.profileExperience.experience.map(item => {
+			const timePeriod = this.getTP(item.period);
+			const timeDifference = this.getTD(item.period);
 			return {
 				...item,
 				periodText: timePeriod,
@@ -73,6 +73,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
 	/**
 	 * get time period
+	 *
 	 * @param period
 	 */
 	public getTP(period) {
@@ -83,6 +84,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
 	/**
 	 * get time difference
+	 *
 	 * @param period
 	 */
 	public getTD(period) {
@@ -105,6 +107,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
 	/**
 	 * display period
+	 *
 	 * @param period
 	 * @param shortForm
 	 */
@@ -113,17 +116,18 @@ export class ProfileComponent implements OnInit, OnDestroy {
 		const month = period[1];
 		if (year > 0 && month > 0) {
 			return shortForm ? `${year}Y ${month}M` :
-				`${this.doPluralize(year, this.profileExperience['period']['year'])}
-				${this.doPluralize(month, this.profileExperience['period']['month'])}`;
+				`${this.doPluralize(year, this.profileExperience.period.year)}
+				${this.doPluralize(month, this.profileExperience.period.month)}`;
 		} else if (year > 0 && month === 0) {
-			return shortForm ? `${year}Y` : `${this.doPluralize(year, this.profileExperience['period']['year'])}`;
+			return shortForm ? `${year}Y` : `${this.doPluralize(year, this.profileExperience.period.year)}`;
 		} else {
-			return shortForm ? `${month}M` : `${this.doPluralize(month, this.profileExperience['period']['month'])}`;
+			return shortForm ? `${month}M` : `${this.doPluralize(month, this.profileExperience.period.month)}`;
 		}
 	}
 
 	/**
 	 * pluralize the given name based on counts
+	 *
 	 * @param count
 	 * @param noun
 	 * @param suffix

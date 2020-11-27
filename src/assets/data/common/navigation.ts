@@ -10,7 +10,7 @@ const navigation = [
 	{
 		name: 'Common.Navigation.Projects',
 		link: ROUTING.projects,
-		id: projects['filters'][0].id
+		id: projects.filters[0].id
 	},
 	{
 		name: 'Common.Navigation.Photography',
