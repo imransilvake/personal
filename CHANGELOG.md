@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/imransilvake/personal/compare/v1.1.2...v1.2.0) (2020-12-14)
+
+
+### Features
+
+* update project deps ([d3126e4](https://github.com/imransilvake/personal/commit/d3126e4f6f3064f9a2965e5ed67838e3f0ef1551))
+
 ## [1.1.2](https://github.com/imransilvake/personal/compare/v1.1.1...v1.1.2) (2020-11-27)
 
 
