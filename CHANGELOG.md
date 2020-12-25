@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/imransilvake/personal/compare/v1.3.0...v1.3.1) (2020-12-25)
+
+
+### Bug Fixes
+
+* update deps ([bc78125](https://github.com/imransilvake/personal/commit/bc7812592c92721f776ceafa7ea2dc5c5dff402e))
+
 # [1.3.0](https://github.com/imransilvake/personal/compare/v1.2.0...v1.3.0) (2020-12-25)
 
 
