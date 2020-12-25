@@ -1,8 +1,8 @@
 <div class="ik-photography">
 	<div class="cd-container-fluid">
 		<!-- Loader -->
-		<div class="ik-page-loader" *ngIf="!isPageLoaded; else elseContent">
-			<img [src]="'/assets/svg/loader.svg'" [alt]="'loader'" />
+		<div *ngIf="!isPageLoaded; else elseContent">
+			<app-loader></app-loader>
 		</div>
 
 		<!-- Content -->

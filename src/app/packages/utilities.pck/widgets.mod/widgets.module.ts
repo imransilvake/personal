@@ -10,6 +10,7 @@ import { CardInfoComponent } from './components/card/info/card-info.component';
 import { CardNoticeComponent } from './components/card/notice/card-notice.component';
 import { CardListComponent } from './components/card/list/card-list.component';
 import { CardCodeComponent } from './components/card/code/card-code.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
 	imports: [
@@ -22,12 +23,14 @@ import { CardCodeComponent } from './components/card/code/card-code.component';
 		CardInfoComponent,
 		CardNoticeComponent,
 		CardListComponent,
-		CardCodeComponent
+		CardCodeComponent,
+		LoaderComponent
 	],
 	exports: [
 		PhotoGalleryComponent,
 		SliderComponent,
-		CardComponent
+		CardComponent,
+		LoaderComponent
 	]
 })
 

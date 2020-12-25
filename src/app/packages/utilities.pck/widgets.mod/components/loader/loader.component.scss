@@ -1,0 +1,27 @@
+.ik-loader {
+	height: 3px;
+	margin: 20px auto;
+	overflow: hidden;
+	position: relative;
+	width: 200px;
+
+	.ik-loader-bar {
+		animation: sideToside 2s ease-in-out infinite;
+		background-color: var(--c8);
+		border-radius: 5px;
+		height: 100%;
+		position: absolute;
+		width: 50%;
+	}
+}
+
+@keyframes sideToside {
+	0%,
+	100% {
+		transform: translateX(-50%);
+	}
+
+	50% {
+		transform: translateX(150%);
+	}
+}

@@ -22,7 +22,7 @@
 		"string-no-newline": true,
 		"string-quotes": "single",
 
-		"unit-blacklist": ["em"],
+		"unit-disallowed-list": ["em"],
 		"unit-case": "lower",
 		"unit-no-unknown": true,
 
