@@ -49,6 +49,7 @@
 			"WordPress": "WordPress"
 		},
 		"Companies": {
+			"RT": "Robotise GmbH",
 			"TS": "TourismusSuite GmbH",
 			"DW": "Denkwerk GmbH",
 			"GT": "Gotechsol",
@@ -88,8 +89,7 @@
 			"Languages": "Languages",
 			"Interests": "Interests",
 			"Programming_Languages": "Programming Languages",
-			"Authentication": "Authentication",
-			"Layout_Design": "Layout Designs",
+			"State_Management": "State Management",
 			"Libraries": "Libraries",
 			"Testing": "Testing",
 			"Database": "Database",

@@ -14,8 +14,14 @@ const profileExperience = {
 		{
 			designation: 'Common.Designations.Frontend',
 			developer: 'Common.Terms.Developer',
+			company: 'Common.Companies.RT',
+			period: ['01-2021']
+		},
+		{
+			designation: 'Common.Designations.Frontend',
+			developer: 'Common.Terms.Developer',
 			company: 'Common.Companies.TS',
-			period: ['06-2016']
+			period: ['06-2016', '12-2020']
 		},
 		{
 			designation: 'Common.Designations.PHP',

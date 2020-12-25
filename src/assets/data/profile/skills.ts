@@ -10,10 +10,6 @@ const profileSkills = {
 			name: 'TypeScript'
 		},
 		{
-			id: 'dart',
-			name: 'Dart'
-		},
-		{
 			id: 'angular',
 			name: 'Angular'
 		},
@@ -24,10 +20,6 @@ const profileSkills = {
 		{
 			id: 'vue',
 			name: 'VueJs'
-		},
-		{
-			id: 'flutter',
-			name: 'Flutter'
 		},
 		{
 			id: 'nativescript',
@@ -50,8 +42,16 @@ const profileSkills = {
 			name: 'Sass'
 		},
 		{
+			id: 'bootstrap',
+			name: 'Bootstrap'
+		},
+		{
 			id: 'material-design',
 			name: 'Material Design'
+		},
+		{
+			id: 'tailwind-css',
+			name: 'Tailwind CSS'
 		},
 		{
 			id: 'npm',
@@ -64,6 +64,10 @@ const profileSkills = {
 		{
 			id: 'git',
 			name: 'Git'
+		},
+		{
+			id: 'vscode',
+			name: 'Visual Code Studio'
 		},
 		{
 			id: 'webstorm',
@@ -88,12 +92,16 @@ const profileSkills = {
 			items: ['Angular', 'React', 'Vue', 'NativeScript', 'Flutter']
 		},
 		{
-			title: 'Profile.Terms.Authentication',
-			items: ['AWS Amplify', 'Firebase', 'Auth0', 'JSON Web Token']
+			title: 'Profile.Terms.State_Management',
+			items: ['Redux + Toolkit', 'NGXS', 'NgRx', 'Vuex']
 		},
 		{
-			title: 'Profile.Terms.Layout_Design',
-			items: ['HTML5', 'SCSS', 'BEM Pattern', 'Material-UI', 'Ant Design', 'Custom SCSS Framework', 'Responsive Design', 'Cross-Browser Compatibility']
+			title: 'UI Frameworks',
+			items: ['Material-UI', 'Ant Design', 'Angular Material']
+		},
+		{
+			title: 'Layout',
+			items: ['HTML5', 'CSS3', 'SCSS', 'BEM Pattern', 'Bootstrap', 'Tailwind CSS', 'Responsive Design', 'Cross-Browser Compatibility']
 		},
 		{
 			title: 'Profile.Terms.Libraries',
@@ -113,7 +121,7 @@ const profileSkills = {
 		},
 		{
 			title: 'Profile.Terms.Miscellaneous',
-			items: ['Yarn', 'NPM', 'Node', 'Git', 'Jira', 'Confluence', 'WebStorm', 'Xcode', 'Android Studio', 'macOS']
+			items: ['Yarn', 'NPM', 'Node', 'Git', 'Jira', 'Confluence', 'VSCode', 'WebStorm', 'Xcode', 'Android Studio', 'macOS', 'Ubuntu']
 		}
 	]
 };

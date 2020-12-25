@@ -195,37 +195,6 @@ const profileSkills = {
 			title: 'Mobile Frameworks',
 			items: [
 				{
-					photo: 'flutter.svg',
-					items: [
-						{
-							title: 'Common.Terms.Knowledge',
-							items: [
-								{
-									name: 'Widgets',
-									items: [
-										'Stateful / Stateless',
-										'Row',
-										'Column',
-										'Expanded',
-										'Padding',
-										'Margin',
-										'Center'
-									]
-								},
-								{
-									name: 'Dart Basics',
-									items: [
-										'Functions',
-										'List',
-										'If/Else',
-										'Classes & Objects'
-									]
-								}
-							]
-						}
-					]
-				},
-				{
 					photo: 'nativescript.svg',
 					items: [
 						{
@@ -265,6 +234,37 @@ const profileSkills = {
 										'ScrollView',
 										'RadSideDrawer',
 										'RadListView'
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					photo: 'flutter.svg',
+					items: [
+						{
+							title: 'Common.Terms.Knowledge',
+							items: [
+								{
+									name: 'Widgets',
+									items: [
+										'Stateful / Stateless',
+										'Row',
+										'Column',
+										'Expanded',
+										'Padding',
+										'Margin',
+										'Center'
+									]
+								},
+								{
+									name: 'Dart Basics',
+									items: [
+										'Functions',
+										'List',
+										'If/Else',
+										'Classes & Objects'
 									]
 								}
 							]
