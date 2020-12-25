@@ -11,7 +11,6 @@ import { LanguageSwitchComponent } from './components/header/language-switch/lan
 import { ThemeSwitchComponent } from './components/header/theme-switch/theme-switch.component';
 import { FontSwitchComponent } from './components/header/font-switch/font-switch.component';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
-import { PushNotificationComponent } from './components/push-notification/push-notification.component';
 
 @NgModule({
 	imports: [
@@ -25,14 +24,12 @@ import { PushNotificationComponent } from './components/push-notification/push-n
 		LanguageSwitchComponent,
 		ThemeSwitchComponent,
 		FontSwitchComponent,
-		ScrollTopComponent,
-		PushNotificationComponent
+		ScrollTopComponent
 	],
 	exports: [
 		HeaderComponent,
 		FooterComponent,
-		ScrollTopComponent,
-		PushNotificationComponent
+		ScrollTopComponent
 	]
 })
 

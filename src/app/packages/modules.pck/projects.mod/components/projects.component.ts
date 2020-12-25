@@ -16,14 +16,14 @@ import codeBlock from '../../../../../assets/data/projects/code-block';
 import { ROUTING } from '../../../../../environments/environment';
 import { MemoryStorageItems } from '../../../../../app.config';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
-import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
-import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifications-types.enum';
-import { CardViewEnum } from '../../../utilities.pck/widgets.mod/enums/card-view.enum';
 import { FirebaseService } from '../../../utilities.pck/common.mod/services/firebase.service';
-import { TriggersService } from '../../../utilities.pck/common.mod/services/triggers.service';
 import { PhotoGalleryInterface } from '../../../utilities.pck/widgets.mod/interfaces/photo-gallery.interface';
 import { PhotoGalleryService } from '../../../utilities.pck/widgets.mod/services/photo-gallery.service';
+import { PushNotificationService } from 'src/app/packages/utilities.pck/widgets.mod/services/push-notification.service';
 import { ProjectsFiltersEnum } from '../enums/projects-filters.enum';
+import { CardViewEnum } from '../../../utilities.pck/widgets.mod/enums/card-view.enum';
+import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
+import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifications-types.enum';
 
 @Component({
 	selector: 'app-projects',
@@ -57,7 +57,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		private _router: Router,
 		private _firebaseService: FirebaseService,
 		private _storageService: StorageService,
-		private _triggersService: TriggersService,
+		private _pushNotificationService: PushNotificationService,
 		private _photoGalleryService: PhotoGalleryService
 	) {
 		// listen: router events
@@ -224,7 +224,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 			this.openPhotoGallery(galleryMapped);
 		} else {
 			// error: show push message
-			this._triggersService.PushNotificationType
+			this._pushNotificationService.PushNotificationType
 				.next(PushNotificationsTypesEnum.ERROR_GENERAL);
 		}
 	}

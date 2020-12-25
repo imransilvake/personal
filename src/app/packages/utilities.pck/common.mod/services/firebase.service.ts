@@ -7,7 +7,7 @@ import { FirebaseStorage } from '../../../../../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class FirebaseService {
-	public photographyPageToken;
+	public photographyPageToken: string;
 
 	constructor(private _firebaseDatabase: AngularFireStorage) {
 	}
@@ -17,7 +17,7 @@ export class FirebaseService {
 	 *
 	 * @param galleryId
 	 */
-	public async storageGetProjectGallery(galleryId) {
+	public async storageGetProjectGallery(galleryId: string) {
 		// Wait for the result of listAll() to settle,
 		// and assign the fulfilled value to galleryData.
 		// If the result of listAll() rejects, our code

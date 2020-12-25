@@ -4,14 +4,14 @@ import { of, Subject, timer } from 'rxjs';
 import { delay, takeUntil } from 'rxjs/operators';
 
 // app
-import pushNotifications from '../../../../../assets/data/common/push-notifications';
-import { slideFromLeftInOut } from '../../../utilities.pck/accessories.mod/animations/slide-from-left-in-out.animation';
-import { AppOptions, LocalStorageItems } from '../../../../../app.config';
-import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
-import { PushNotificationsTypesEnum } from '../../enums/push-notifications-types.enum';
-import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
-import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
-import { TriggersService } from '../../../utilities.pck/common.mod/services/triggers.service';
+import pushNotifications from '../../../../../../assets/data/common/push-notifications';
+import { slideFromLeftInOut } from '../../../accessories.mod/animations/slide-from-left-in-out.animation';
+import { AppOptions, LocalStorageItems } from '../../../../../../app.config';
+import { HelperService } from '../../../accessories.mod/services/helper.service';
+import { StorageService } from '../../../../core.pck/storage.mod/services/storage.service';
+import { PushNotificationService } from '../../services/push-notification.service';
+import { PushNotificationsTypesEnum } from '../../../../frame.pck/enums/push-notifications-types.enum';
+import { StorageTypeEnum } from '../../../../core.pck/storage.mod/enums/storage-type.enum';
 
 @Component({
 	selector: 'app-push-notification',
@@ -30,7 +30,7 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private _storageService: StorageService,
-		private _triggersService: TriggersService
+		private _pushNotificationService: PushNotificationService
 	) {
 	}
 
@@ -55,7 +55,7 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 			});
 
 		// listen: handle errors
-		this._triggersService.PushNotificationType
+		this._pushNotificationService.PushNotificationType
 			.pipe(takeUntil(this.unSubscribe))
 			.subscribe((type: PushNotificationsTypesEnum) => {
 				// set active

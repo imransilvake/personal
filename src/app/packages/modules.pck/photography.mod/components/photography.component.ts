@@ -9,13 +9,13 @@ import { faCircleNotch, faExpand, faPlane } from '@fortawesome/free-solid-svg-ic
 import { AppOptions, MemoryStorageItems } from '../../../../../app.config';
 import { fadeInOut } from '../../../utilities.pck/accessories.mod/animations/fade-in-out.animation';
 import { FirebaseService } from '../../../utilities.pck/common.mod/services/firebase.service';
-import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
 import { StorageService } from '../../../core.pck/storage.mod/services/storage.service';
-import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifications-types.enum';
-import { TriggersService } from '../../../utilities.pck/common.mod/services/triggers.service';
 import { PhotoGalleryService } from '../../../utilities.pck/widgets.mod/services/photo-gallery.service';
 import { PhotoGalleryInterface } from '../../../utilities.pck/widgets.mod/interfaces/photo-gallery.interface';
 import { HelperService } from '../../../utilities.pck/accessories.mod/services/helper.service';
+import { PushNotificationService } from 'src/app/packages/utilities.pck/widgets.mod/services/push-notification.service';
+import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifications-types.enum';
+import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-type.enum';
 
 @Component({
 	selector: 'app-photography',
@@ -45,7 +45,7 @@ export class PhotographyComponent implements OnInit {
 	constructor(
 		private _firebaseService: FirebaseService,
 		private _storageService: StorageService,
-		private _triggersService: TriggersService,
+		private _pushNotificationService: PushNotificationService,
 		private _photoGalleryService: PhotoGalleryService
 	) {
 	}
@@ -135,7 +135,7 @@ export class PhotographyComponent implements OnInit {
 			this.isLoadMore = !!promiseData.isNextPageToken;
 		} else {
 			// error: show push message
-			this._triggersService.PushNotificationType.next(PushNotificationsTypesEnum.ERROR_GENERAL);
+			this._pushNotificationService.PushNotificationType.next(PushNotificationsTypesEnum.ERROR_GENERAL);
 		}
 
 		// stop loader

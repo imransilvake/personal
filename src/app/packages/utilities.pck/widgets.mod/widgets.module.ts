@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 // app
 import { SharedModule } from '../../../shared.module';
+import { PushNotificationComponent } from './components/push-notification/push-notification.component';
 import { PhotoGalleryComponent } from './components/photo-gallery/photo-gallery.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CardComponent } from './components/card/card.component';
@@ -17,6 +18,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 		SharedModule
 	],
 	declarations: [
+		PushNotificationComponent,
 		PhotoGalleryComponent,
 		SliderComponent,
 		CardComponent,
@@ -27,6 +29,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 		LoaderComponent
 	],
 	exports: [
+		PushNotificationComponent,
 		PhotoGalleryComponent,
 		SliderComponent,
 		CardComponent,
