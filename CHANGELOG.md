@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/imransilvake/personal/compare/v1.2.0...v1.3.0) (2020-12-25)
+
+
+### Bug Fixes
+
+* change html tag section to div ([b49405f](https://github.com/imransilvake/personal/commit/b49405f38a4019a01b5839eb0a40e2d8f6bd0ace))
+
+
+### Features
+
+* add new loader ([c5ad1b2](https://github.com/imransilvake/personal/commit/c5ad1b278a7493b24364a962d0bb296738efc9af))
+
 # [1.2.0](https://github.com/imransilvake/personal/compare/v1.1.2...v1.2.0) (2020-12-14)
 
 
