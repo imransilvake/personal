@@ -62,10 +62,10 @@ const infoBoard = {
 					title: 'Common.Terms.Playing',
 					items: [
 						{
-							name: 'Horizon Zero Dawn'
+							name: 'PUBG'
 						},
 						{
-							name: 'God of War'
+							name: 'Metal Slug'
 						}
 					]
 				},
@@ -73,10 +73,10 @@ const infoBoard = {
 					title: 'Common.Terms.Next',
 					items: [
 						{
-							name: 'Cyberpunk 2077'
+							name: 'Legend of Zelda'
 						},
 						{
-							name: 'Read Dead Redemption 2'
+							name: 'Luigi\'s Mansion 3'
 						}
 					]
 				}

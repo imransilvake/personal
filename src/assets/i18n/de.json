@@ -76,7 +76,7 @@
 		"Summary": {
 			"Title": "Überblick",
 			"Description": {
-				"One": "Ich bin ein engagierter {{ designation }} {{ developer }} mit meiner Expertise in HTML5, SCSS, Javascript, Typescript, Angular und React. Ich genieße es, moderne und reaktionsschnelle UX / UI-Designs zu entwerfen und zu entwickeln, die für Endbenutzer intuitiv und ansprechend sind. Ich liebe es wirklich, Apps von Grund auf neu zu erstellen und möchte in einem organisierten Team und einer organisierten Umgebung arbeiten.",
+				"One": "Ich bin ein engagierter {{ designation }} {{ developer }} mit meiner Expertise in HTML5, SCSS, Javascript, Typescript, Angular, React und Vue. Ich genieße es, moderne und reaktionsschnelle UX / UI-Designs zu entwerfen und zu entwickeln, die für Endbenutzer intuitiv und ansprechend sind. Ich liebe es wirklich, Apps von Grund auf neu zu erstellen und möchte in einem organisierten Team und einer organisierten Umgebung arbeiten.",
 				"Two": "Ich mag es, meinen Code sauber und gut organisiert zu halten. Ich verwende Einrückungen und füge jedem Teil des Codes Kommentare hinzu, um es mir und dem Team zu erleichtern, die Funktionalität später problemlos zu verstehen. Darüber hinaus versuche ich, eine gute Ordnerstruktur der App beizubehalten, um die Gesamtqualität des Projekts aufrechtzuerhalten und die Skalierung der App ohne große Hürden und Anstrengungen zu vereinfachen.",
 				"Three": "Derzeit habe ich angefangen, etwas über Vue Framework und Vuex für die State Management Library zu lernen."
 			}
