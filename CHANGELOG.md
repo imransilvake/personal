@@ -1,3 +1,13 @@
+## [1.3.2](https://github.com/imransilvake/personal/compare/v1.3.1...v1.3.2) (2020-12-26)
+
+
+### Bug Fixes
+
+* add loader background color ([4d839ff](https://github.com/imransilvake/personal/commit/4d839ff3106f6a6ade18e31c02b3005cd470f03d))
+* adjust yellow cover height ([b22b9ea](https://github.com/imransilvake/personal/commit/b22b9ea6e9a1d23619a26881c9f4cdd21375b044))
+* footer jumping ([895ca16](https://github.com/imransilvake/personal/commit/895ca16c5a170743a74a7967c37fe817f595164f))
+* work at current company added ([014bafd](https://github.com/imransilvake/personal/commit/014bafd89a6bac28d221f96d482caff612e01712))
+
 ## [1.3.1](https://github.com/imransilvake/personal/compare/v1.3.0...v1.3.1) (2020-12-25)
 
 
