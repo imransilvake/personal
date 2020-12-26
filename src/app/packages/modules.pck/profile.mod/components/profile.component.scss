@@ -230,11 +230,11 @@
 													font-weight: cd-fontWeight(300);
 
 													.ik-on {
-														background-color: var(--c7);
-														border-radius: 3px;
-														color: var(--c2);
+														border: 1px solid var(--c7);
+														border-radius: 10px;
+														color: var(--c7);
 														font-size: cd-fontSize(s12);
-														padding: 2px 4px;
+														padding: 1px 4px;
 														vertical-align: text-bottom;
 													}
 												}
@@ -306,7 +306,7 @@
 	@include cd-media(desktop, smartphone) {
 		header {
 			.cd-container {
-				> .cd-row {
+				>.cd-row {
 					.cd-col {
 						.ik-profile-logo {
 							margin-bottom: 10px;
@@ -343,7 +343,7 @@
 		.ik-content {
 			.ik-detail {
 				.cd-container {
-					> .cd-row {
+					>.cd-row {
 						.cd-col {
 							&.ik-background-wrapper {
 								.ik-education {

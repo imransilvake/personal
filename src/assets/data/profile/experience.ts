@@ -2,7 +2,7 @@ const profileExperience = {
 	title: 'Profile.Terms.Experience',
 	subTitle: {
 		text: 'Profile.Experience.Sub_Title',
-		company: 'Common.Companies.TS'
+		company: 'Common.Companies.RT'
 	},
 	current: 'Profile.Experience.Current',
 	period: {
