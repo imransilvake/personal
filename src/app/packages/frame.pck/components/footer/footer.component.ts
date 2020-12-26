@@ -14,8 +14,16 @@ import footer from '../../../../../assets/data/common/footer';
 export class FooterComponent {
 	public footer = footer;
 	public appVersion;
+	public imageLoaded = false;
 
 	constructor(private _appVersionService: AppVersionService) {
-		this.appVersion = _appVersionService.getAppVersion;
+		this.appVersion = this._appVersionService.getAppVersion;
+	}
+
+	/**
+	 * on image loaded
+	 */
+	public onLoadImage() {
+		this.imageLoaded = true;
 	}
 }

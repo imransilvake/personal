@@ -4,6 +4,10 @@ footer {
 	background-color: var(--tc2);
 	border-top: 1px solid var(--tc7);
 
+	&.ik-hide {
+		display: none;
+	}
+
 	.cd-row {
 		padding: 10px 0;
 

@@ -1,16 +1,19 @@
-<footer class="cd-container-fluid">
-	<div class="cd-container">
-		<section class="cd-row cd-center-align">
-			<div class="cd-col">
-				<h6>
-					<span>{{ footer['title'] | translate }}</span>
-					<img class="ik-angular"
-						 [src]="'assets/svg/profile/expertise/angular.svg'"
-						 [alt]="'angular'" />
-					<span>•</span>
-					<span class="ik-version">({{ appVersion }})</span>
-				</h6>
-			</div>
-		</section>
+<footer [class.ik-hide]="!imageLoaded">
+	<div class="cd-container-fluid">
+		<div class="cd-container">
+			<section class="cd-row cd-center-align">
+				<div class="cd-col">
+					<h6>
+						<span>{{ footer['title'] | translate }}</span>
+						<img (load)="onLoadImage()"
+							 class="ik-angular"
+							 [src]="'assets/svg/profile/expertise/angular.svg'"
+							 [alt]="'angular'" />
+						<span>•</span>
+						<span class="ik-version">({{ appVersion }})</span>
+					</h6>
+				</div>
+			</section>
+		</div>
 	</div>
 </footer>
