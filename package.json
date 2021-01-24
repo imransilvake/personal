@@ -72,7 +72,7 @@
 		}
 	},
 	"lint-staged": {
-		"*.{html,ts,json}": "prettier --write",
+		"*.{ts,json}": "prettier --write",
 		"*.ts": "eslint --fix",
 		"*.scss": "stylelint --fix"
 	}
