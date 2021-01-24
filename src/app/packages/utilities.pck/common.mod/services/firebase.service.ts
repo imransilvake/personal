@@ -9,8 +9,7 @@ import { FirebaseStorage } from '../../../../../app.config';
 export class FirebaseService {
 	public photographyPageToken: string;
 
-	constructor(private _firebaseDatabase: AngularFireStorage) {
-	}
+	constructor(private _firebaseDatabase: AngularFireStorage) {}
 
 	/**
 	 * get specific project gallery from firebase storage
@@ -30,14 +29,16 @@ export class FirebaseService {
 				.listAll();
 
 			// collect promises of all images
-			const projectUrls = galleryData.items.map(i =>
+			const projectUrls = galleryData.items.map((i) =>
 				this._firebaseDatabase.storage.ref(i.fullPath).getDownloadURL()
 			);
 
 			// return all promises
 			return Promise.all(projectUrls);
 		} catch (e) {
-			return new Promise((resolve) => { resolve([]); });
+			return new Promise((resolve) => {
+				resolve([]);
+			});
 		}
 	}
 
@@ -53,9 +54,9 @@ export class FirebaseService {
 		try {
 			// payload
 			// 60 = 20 (hq) + 20 (compressed) + 20 (thumbnail)
-			const payload = this.photographyPageToken ?
-				{ maxResults: 60, pageToken: this.photographyPageToken } :
-				{ maxResults: 60 };
+			const payload = this.photographyPageToken
+				? { maxResults: 60, pageToken: this.photographyPageToken }
+				: { maxResults: 60 };
 
 			// get gallery data from firebase
 			const galleryData = await this._firebaseDatabase.storage
@@ -68,7 +69,7 @@ export class FirebaseService {
 			}
 
 			// collect promises of all images
-			const projectUrls = galleryData.items.map(i =>
+			const projectUrls = galleryData.items.map((i) =>
 				this._firebaseDatabase.storage.ref(i.fullPath).getDownloadURL()
 			);
 
@@ -78,7 +79,9 @@ export class FirebaseService {
 				isNextPageToken: galleryData.nextPageToken
 			};
 		} catch (e) {
-			return new Promise((resolve) => { resolve([]); });
+			return new Promise((resolve) => {
+				resolve([]);
+			});
 		}
 	}
 }

@@ -19,7 +19,6 @@ import { StorageTypeEnum } from '../../../../core.pck/storage.mod/enums/storage-
 	styleUrls: ['./push-notification.component.scss'],
 	animations: [slideFromLeftInOut]
 })
-
 export class PushNotificationComponent implements OnInit, OnDestroy {
 	public validateNotificationsLength = true;
 	public counter = [];
@@ -31,8 +30,7 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 	constructor(
 		private _storageService: StorageService,
 		private _pushNotificationService: PushNotificationService
-	) {
-	}
+	) {}
 
 	ngOnInit() {
 		// welcome message
@@ -43,7 +41,7 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 		// listen: network connection
 		HelperService.detectNetworkConnection()
 			.pipe(takeUntil(this.unSubscribe))
-			.subscribe(res => {
+			.subscribe((res) => {
 				// set active
 				this.validateNotificationsLength = true;
 
@@ -55,18 +53,18 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 			});
 
 		// listen: handle errors
-		this._pushNotificationService.PushNotificationType
-			.pipe(takeUntil(this.unSubscribe))
-			.subscribe((type: PushNotificationsTypesEnum) => {
-				// set active
-				this.validateNotificationsLength = true;
+		this._pushNotificationService.PushNotificationType.pipe(
+			takeUntil(this.unSubscribe)
+		).subscribe((type: PushNotificationsTypesEnum) => {
+			// set active
+			this.validateNotificationsLength = true;
 
-				// update push notification list
-				this.updateNotificationList(type, true);
+			// update push notification list
+			this.updateNotificationList(type, true);
 
-				// add notification timer
-				this.addNotificationTimer(type, AppOptions.intervals.welcome[2]);
-			});
+			// add notification timer
+			this.addNotificationTimer(type, AppOptions.intervals.welcome[2]);
+		});
 	}
 
 	ngOnDestroy() {
@@ -80,16 +78,26 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 	 */
 	public welcomeMessage() {
 		// get welcomePushNotification from local storage
-		const welcome = this._storageService.get(LocalStorageItems.welcomePN, StorageTypeEnum.PERSISTANT);
+		const welcome = this._storageService.get(
+			LocalStorageItems.welcomePN,
+			StorageTypeEnum.PERSISTANT
+		);
 		if (!welcome) {
 			// update push notification list
 			this.updateNotificationList(PushNotificationsTypesEnum.WELCOME, true);
 
 			// add notification timer
-			this.addNotificationTimer(PushNotificationsTypesEnum.WELCOME, AppOptions.intervals.welcome[2]);
+			this.addNotificationTimer(
+				PushNotificationsTypesEnum.WELCOME,
+				AppOptions.intervals.welcome[2]
+			);
 
 			// update to local storage
-			this._storageService.put(LocalStorageItems.welcomePN, 'true', StorageTypeEnum.PERSISTANT);
+			this._storageService.put(
+				LocalStorageItems.welcomePN,
+				'true',
+				StorageTypeEnum.PERSISTANT
+			);
 		} else {
 			// validate notifications container
 			this.validateNotificationsContainer();
@@ -100,7 +108,7 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 	 * validate notifications container
 	 */
 	public validateNotificationsContainer() {
-		const items = this.pushNotificationsList.filter(f => f.controls.show);
+		const items = this.pushNotificationsList.filter((f) => f.controls.show);
 		this.validateNotificationsLength = !!(items && items.length);
 	}
 
@@ -148,7 +156,7 @@ export class PushNotificationComponent implements OnInit, OnDestroy {
 	 * @param status
 	 */
 	public updateNotificationList(type: PushNotificationsTypesEnum, status: boolean) {
-		this.pushNotificationsList.map(item => {
+		this.pushNotificationsList.map((item) => {
 			if (item.id === type) {
 				item.controls.show = status;
 			}

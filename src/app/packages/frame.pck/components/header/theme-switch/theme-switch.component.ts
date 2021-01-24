@@ -11,13 +11,11 @@ import { StorageService } from '../../../../core.pck/storage.mod/services/storag
 	templateUrl: './theme-switch.component.html',
 	styleUrls: ['./theme-switch.component.scss']
 })
-
 export class ThemeSwitchComponent implements OnInit {
 	public faIcon = [faStarAndCrescent, faSun];
 	public themeSwitcher = true;
 
-	constructor(private _storageService: StorageService) {
-	}
+	constructor(private _storageService: StorageService) {}
 
 	ngOnInit() {
 		// setup theme mode
@@ -31,8 +29,9 @@ export class ThemeSwitchComponent implements OnInit {
 	 */
 	public onClickChangeTheme(init?: boolean) {
 		// get themeColorMode from local storage
-		const themeColorMode = this._storageService.get(LocalStorageItems.themeColorMode) || 'light';
-		const reverse = (themeColorMode === 'light') ? 'dark' : 'light';
+		const themeColorMode =
+			this._storageService.get(LocalStorageItems.themeColorMode) || 'light';
+		const reverse = themeColorMode === 'light' ? 'dark' : 'light';
 		const value = init ? themeColorMode : reverse;
 		this.themeSwitcher = value === 'dark';
 

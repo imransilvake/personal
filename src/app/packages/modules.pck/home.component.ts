@@ -16,7 +16,6 @@ import { CardViewEnum } from '../utilities.pck/widgets.mod/enums/card-view.enum'
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss']
 })
-
 export class HomeComponent {
 	public routing = ROUTING;
 	public profileInfo = profileInfo;

@@ -6,7 +6,5 @@ export const slideFromLeftInOut = trigger('slideFromLeftInOut', [
 		style({ transform: 'translateX(-100%)' }),
 		animate(500, style({ transform: 'translateX(0)' }))
 	]),
-	transition(':leave', [
-		animate(500, style({ transform: 'translateX(-100%)' }))
-	])
+	transition(':leave', [animate(500, style({ transform: 'translateX(-100%)' }))])
 ]);

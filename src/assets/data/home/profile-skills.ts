@@ -33,11 +33,7 @@ const profileSkills = {
 								},
 								{
 									name: 'Forms',
-									items: [
-										'Reactive Forms',
-										'Validations',
-										'Dynamic Forms'
-									]
+									items: ['Reactive Forms', 'Validations', 'Dynamic Forms']
 								},
 								{
 									name: 'HttpClient',
@@ -63,11 +59,7 @@ const profileSkills = {
 								},
 								{
 									name: 'App Deployment',
-									items: [
-										'AWS',
-										'Firebase',
-										'Netlify'
-									]
+									items: ['AWS', 'Firebase', 'Netlify']
 								}
 							]
 						}
@@ -130,11 +122,7 @@ const profileSkills = {
 								},
 								{
 									name: 'App Deployment',
-									items: [
-										'AWS',
-										'Firebase',
-										'Netlify'
-									]
+									items: ['AWS', 'Firebase', 'Netlify']
 								}
 							]
 						},
@@ -165,11 +153,7 @@ const profileSkills = {
 								},
 								{
 									name: 'App Deployment',
-									items: [
-										'AWS',
-										'Firebase',
-										'Netlify'
-									]
+									items: ['AWS', 'Firebase', 'Netlify']
 								}
 							]
 						},
@@ -260,12 +244,7 @@ const profileSkills = {
 								},
 								{
 									name: 'Dart Basics',
-									items: [
-										'Functions',
-										'List',
-										'If/Else',
-										'Classes & Objects'
-									]
+									items: ['Functions', 'List', 'If/Else', 'Classes & Objects']
 								}
 							]
 						}

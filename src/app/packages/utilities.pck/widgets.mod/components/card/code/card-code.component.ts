@@ -9,7 +9,6 @@ import { CodeBlockEnum } from '../../../enums/code-block.enum';
 	templateUrl: './card-code.component.html',
 	styleUrls: ['./card-code.component.scss']
 })
-
 export class CardCodeComponent implements OnInit {
 	@Input() codeData = [];
 	@Input() codeBlockSize = CodeBlockEnum.FIXED;
@@ -20,7 +19,7 @@ export class CardCodeComponent implements OnInit {
 
 	ngOnInit() {
 		// map data
-		this.codeData = this.codeData.map(object => {
+		this.codeData = this.codeData.map((object) => {
 			// append class(es) in line
 			const line = this.appendClassesInLine(object);
 
@@ -39,7 +38,7 @@ export class CardCodeComponent implements OnInit {
 		const classes = object.classes;
 
 		if (classes && classes.length > 0) {
-			classes.forEach(cl => text = text.replace('<span>', `<span class="${cl}">`));
+			classes.forEach((cl) => (text = text.replace('<span>', `<span class="${cl}">`)));
 		}
 
 		return text;
@@ -71,7 +70,10 @@ export class CardCodeComponent implements OnInit {
 			if (this.curlyBrackets.length > 1 && (leftBracket || rightBracket)) {
 				// case: { } <-- together
 				// case: { or }
-				const marginLeft = ((leftBracket && rightBracket) ? this.curlyBrackets.length - 1 : this.curlyBrackets.length) - 1;
+				const marginLeft =
+					(leftBracket && rightBracket
+						? this.curlyBrackets.length - 1
+						: this.curlyBrackets.length) - 1;
 
 				// }
 				if (rightBracket) {
@@ -79,8 +81,11 @@ export class CardCodeComponent implements OnInit {
 				}
 
 				return `<span class="ik-margin-left-${marginLeft * 20}">${line}</span>`;
-			} else if (!leftBracket && !rightBracket) { // single
-				return `<span class="ik-margin-left-${this.curlyBrackets.length * 20}">${line}</span>`;
+			} else if (!leftBracket && !rightBracket) {
+				// single
+				return `<span class="ik-margin-left-${
+					this.curlyBrackets.length * 20
+				}">${line}</span>`;
 			}
 		} else if (!conditionIfOrElse && this.conditionIfOrElseNext) {
 			this.conditionIfOrElseNext = false;

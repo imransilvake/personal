@@ -38,7 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
-				useFactory: (createTranslateLoader),
+				useFactory: createTranslateLoader,
 				deps: [HttpClient]
 			}
 		}),
@@ -50,6 +50,4 @@ export function createTranslateLoader(http: HttpClient) {
 	declarations: [AppComponent],
 	bootstrap: [AppComponent]
 })
-
-export class AppModule {
-}
+export class AppModule {}

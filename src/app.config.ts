@@ -23,7 +23,8 @@ export const AppOptions = {
 				originalPortraitWidth: 533,
 				originalPortraitHeight: 738
 			},
-			container: { // scss framework
+			container: {
+				// scss framework
 				widescreen: {
 					limit: 1201,
 					width: 1200 - 30
@@ -33,7 +34,8 @@ export const AppOptions = {
 					width: 992 - 30
 				}
 			},
-			breakPoints: { // grid layout
+			breakPoints: {
+				// grid layout
 				columns3: 800,
 				columns2: 550
 			},

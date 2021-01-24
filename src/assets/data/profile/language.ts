@@ -5,10 +5,6 @@ const profileLanguage = {
 		learning: 'Common.Terms.Learning',
 		language: 'Profile.Languages.German'
 	},
-	list: [
-		'Urdu',
-		'English',
-		'Profile.Languages.German',
-	]
+	list: ['Urdu', 'English', 'Profile.Languages.German']
 };
 export default profileLanguage;

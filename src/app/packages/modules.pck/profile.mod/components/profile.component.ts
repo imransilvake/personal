@@ -20,7 +20,6 @@ import profileInterest from '../../../../../assets/data/profile/interest';
 	templateUrl: './profile.component.html',
 	styleUrls: ['./profile.component.scss']
 })
-
 export class ProfileComponent implements OnInit, OnDestroy {
 	public profileIntro = profileIntro;
 	public profileSummary = profileSummary;
@@ -32,19 +31,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
 	private unSubscribe = new Subject();
 
-	constructor(
-		private _helperService: HelperService,
-		private _translate: TranslateService
-	) {
-	}
+	constructor(private _helperService: HelperService, private _translate: TranslateService) {}
 
 	ngOnInit() {
 		// listen: language change
 		this._translate.onLangChange
-			.pipe(
-				startWith(0),
-				takeUntil(this.unSubscribe)
-			)
+			.pipe(startWith(0), takeUntil(this.unSubscribe))
 			.subscribe(() => this.initExperience());
 	}
 
@@ -58,7 +50,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 	 * init experience
 	 */
 	public initExperience() {
-		this.profileExperience.experience = this.profileExperience.experience.map(item => {
+		this.profileExperience.experience = this.profileExperience.experience.map((item) => {
 			const timePeriod = this.getTP(item.period);
 			const timeDifference = this.getTD(item.period);
 			return {
@@ -90,7 +82,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
 	public getTD(period) {
 		// dates
 		const start = this._helperService.getDate(period[0], null, false);
-		const end = period.length === 1 ? moment() : this._helperService.getDate(period[1], null, false);
+		const end =
+			period.length === 1 ? moment() : this._helperService.getDate(period[1], null, false);
 		const startM = moment(start, 'MMMM-YYYY');
 		const endM = moment(end, 'MMMM-YYYY');
 
@@ -115,13 +108,18 @@ export class ProfileComponent implements OnInit, OnDestroy {
 		const year = period[0];
 		const month = period[1];
 		if (year > 0 && month > 0) {
-			return shortForm ? `${year}Y ${month}M` :
-				`${this.doPluralize(year, this.profileExperience.period.year)}
+			return shortForm
+				? `${year}Y ${month}M`
+				: `${this.doPluralize(year, this.profileExperience.period.year)}
 				${this.doPluralize(month, this.profileExperience.period.month)}`;
 		} else if (year > 0 && month === 0) {
-			return shortForm ? `${year}Y` : `${this.doPluralize(year, this.profileExperience.period.year)}`;
+			return shortForm
+				? `${year}Y`
+				: `${this.doPluralize(year, this.profileExperience.period.year)}`;
 		} else {
-			return shortForm ? `${month}M` : `${this.doPluralize(month, this.profileExperience.period.month)}`;
+			return shortForm
+				? `${month}M`
+				: `${this.doPluralize(month, this.profileExperience.period.month)}`;
 		}
 	}
 

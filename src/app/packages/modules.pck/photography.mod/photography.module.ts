@@ -9,15 +9,7 @@ import { SharedModule } from '../../../shared.module';
 import { PhotographyComponent } from './components/photography.component';
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(PHOTOGRAPHY_ROUTES),
-		SharedModule,
-		WidgetsModule
-	],
-	declarations: [
-		PhotographyComponent
-	]
+	imports: [RouterModule.forChild(PHOTOGRAPHY_ROUTES), SharedModule, WidgetsModule],
+	declarations: [PhotographyComponent]
 })
-
-export class PhotographyModule {
-}
+export class PhotographyModule {}

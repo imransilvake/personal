@@ -76,7 +76,7 @@ const infoBoard = {
 							name: 'Legend of Zelda'
 						},
 						{
-							name: 'Luigi\'s Mansion 3'
+							name: "Luigi's Mansion 3"
 						}
 					]
 				}

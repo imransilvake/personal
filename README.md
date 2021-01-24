@@ -2,8 +2,8 @@
 My personal website built using Angular to keep track of my projects and to showcase my work to the public.
 
 <p align="center">
-  <img src="preview-01.png" width="194" />
-  <img src="preview-02.png" width="600" /> 
+  <img src="src/assets/extra/preview-01.png" width="194" />
+  <img src="src/assets/extra/preview-02.png" width="600" /> 
 </p>
 
 
@@ -69,10 +69,18 @@ My personal website built using Angular to keep track of my projects and to show
 |Production|`yarn build.app.prod`|Build the application to `./dist` directory|
 
 
-## Linting
+## Prettier & Linting
+
+#### Prettier
 |Script|Description|
 |---|---|
-|`yarn lint:ts`|Lint Typescript|
+|`yarn pretty:check`|Check Typescript and Json|
+|`yarn pretty:apply`|Apply Typescript and Json|
+
+#### Linting
+|Script|Description|
+|---|---|
+|`yarn lint:es`|Lint Typescript and Json|
 |`yarn lint:scss`|Lint SCSS|
 
 
@@ -80,4 +88,52 @@ My personal website built using Angular to keep track of my projects and to show
 Include the following import in each component to get access to [SCSS helpers and methods](https://github.com/imransilvake/SCSS-Framework/blob/master/documentation/guide.md).
 ```
 @import 'scss-methods';
+```
+
+
+## Tools Configuration
+
+#### Prettier & Linting
+Prettier and Eslint
+
+#### Pre-commit & Commitlint
+- `pre-commit`: Husky and lint-staged
+- `commit-msg`: commitlint checks if your commit messages meet the conventional commit format.
+
+#### Automate Versioning
+commitizen and standard-version
+
+#### Continuous integration (CI) & continuous delivery (CD)
+Husky and lint-staged
+
+
+## Releasing
+A summary of development workflow with standard-version involving multiple git branches.
+
+<p align="center">
+  <img src="src/assets/extra/development-workflow.png" width="600" />
+</p>
+
+#### 1. **[feature-branch]** Stage modified files using:
+```
+git add .
+```
+
+#### 2. **[feature-branch]** Commit the files using git-cz package:
+```
+npm run commit
+```
+
+#### 3. **[feature-branch]** Now that all files have been committed, they are ready to be pushed to the remote:
+```
+git push origin <feature-branch>
+```
+
+#### 4. **[Bitbucket]** Create a Pull Request to master branch.
+
+#### 5. **[master]** After it is merged, the following steps are done within the master branch:
+- Run the command npm run release (which will bump versions based on commit types, add commit descriptions to CHANGELOG.md, and create git tags according to the current version).
+- Push changes and git tags to master branch using:
+```
+git push --follow-tags origin master
 ```

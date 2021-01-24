@@ -26,33 +26,31 @@ export class AppMetaService {
 	) {
 		// listen: router events
 		this._router.events
-			.pipe(filter(event => event instanceof NavigationEnd))
+			.pipe(filter((event) => event instanceof NavigationEnd))
 			.subscribe((route) => this.updateTitleOnNavigationChange(route));
 
 		// listen: language change
-		this._translate.onLangChange
-			.subscribe((res) => {
-				// update title
-				if (this.currentRoute) {
-					this.updateTitleOnNavigationChange(this.currentRoute, true);
-				}
+		this._translate.onLangChange.subscribe((res) => {
+			// update title
+			if (this.currentRoute) {
+				this.updateTitleOnNavigationChange(this.currentRoute, true);
+			}
 
-				// update meta information
-				this.updateMetaInformationOnLanguageChange();
+			// update meta information
+			this.updateMetaInformationOnLanguageChange();
 
-				// update html lang attribute
-				this.updateHtmlLangAttribute(res);
-			});
+			// update html lang attribute
+			this.updateHtmlLangAttribute(res);
+		});
 
 		// listen: 404 page
-		this.event404
-			.subscribe((isAllow) => {
-				// robots
-				this._meta.updateTag({
-					name: 'robots',
-					content: isAllow ? 'index, follow' : 'noindex, nofollow'
-				});
+		this.event404.subscribe((isAllow) => {
+			// robots
+			this._meta.updateTag({
+				name: 'robots',
+				content: isAllow ? 'index, follow' : 'noindex, nofollow'
 			});
+		});
 	}
 
 	/**
@@ -74,30 +72,24 @@ export class AppMetaService {
 			// condition
 			switch (newRoute) {
 				case this.routing.profile:
-					const profile = this._translate.instant('Common.Meta.Title',
-						{
-							name: this.authorName,
-							page: this._translate.instant('Common.Navigation.Profile')
-						}
-					);
+					const profile = this._translate.instant('Common.Meta.Title', {
+						name: this.authorName,
+						page: this._translate.instant('Common.Navigation.Profile')
+					});
 					this._title.setTitle(profile);
 					break;
 				case this.routing.projects:
-					const projects = this._translate.instant('Common.Meta.Title',
-						{
-							name: this.authorName,
-							page: this._translate.instant('Common.Navigation.Projects')
-						}
-					);
+					const projects = this._translate.instant('Common.Meta.Title', {
+						name: this.authorName,
+						page: this._translate.instant('Common.Navigation.Projects')
+					});
 					this._title.setTitle(projects);
 					break;
 				case this.routing.photography:
-					const photography = this._translate.instant('Common.Meta.Title',
-						{
-							name: this.authorName,
-							page: this._translate.instant('Common.Navigation.Photography')
-						}
-					);
+					const photography = this._translate.instant('Common.Meta.Title', {
+						name: this.authorName,
+						page: this._translate.instant('Common.Navigation.Photography')
+					});
 					this._title.setTitle(photography);
 					break;
 				default:

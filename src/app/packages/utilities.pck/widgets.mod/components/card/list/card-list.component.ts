@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
 	templateUrl: './card-list.component.html',
 	styleUrls: ['./card-list.component.scss']
 })
-
 export class CardListComponent {
 	@Input() listData;
 	@Input() filterRoute;

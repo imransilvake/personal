@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
 	templateUrl: './card-notice.component.html',
 	styleUrls: ['./card-notice.component.scss']
 })
-
 export class CardNoticeComponent {
 	@Input() noticeData;
 }

@@ -13,10 +13,7 @@ import { FontSwitchComponent } from './components/header/font-switch/font-switch
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 
 @NgModule({
-	imports: [
-		SharedModule,
-		WidgetsModule
-	],
+	imports: [SharedModule, WidgetsModule],
 	declarations: [
 		E404Component,
 		HeaderComponent,
@@ -26,12 +23,6 @@ import { ScrollTopComponent } from './components/scroll-top/scroll-top.component
 		FontSwitchComponent,
 		ScrollTopComponent
 	],
-	exports: [
-		HeaderComponent,
-		FooterComponent,
-		ScrollTopComponent
-	]
+	exports: [HeaderComponent, FooterComponent, ScrollTopComponent]
 })
-
-export class FrameModule {
-}
+export class FrameModule {}

@@ -20,6 +20,4 @@ import { AccessoriesModule } from './packages/utilities.pck/accessories.mod/acce
 		TranslateModule
 	]
 })
-
-export class SharedModule {
-}
+export class SharedModule {}

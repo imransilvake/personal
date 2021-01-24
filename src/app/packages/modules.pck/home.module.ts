@@ -9,15 +9,7 @@ import { HomeComponent } from './home.component';
 import { WidgetsModule } from '../utilities.pck/widgets.mod/widgets.module';
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(HOME_ROUTE),
-		SharedModule,
-		WidgetsModule
-	],
-	declarations: [
-		HomeComponent
-	]
+	imports: [RouterModule.forChild(HOME_ROUTE), SharedModule, WidgetsModule],
+	declarations: [HomeComponent]
 })
-
-export class HomeModule {
-}
+export class HomeModule {}

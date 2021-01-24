@@ -65,7 +65,16 @@ const projects = {
 				},
 				tech: {
 					label: 'Common.Terms.Technologies',
-					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'Angular Material', 'MomentJs', 'RxJs', 'Store']
+					text: [
+						'HTML5',
+						'SCSS',
+						'TypeScript',
+						'Angular',
+						'Angular Material',
+						'MomentJs',
+						'RxJs',
+						'Store'
+					]
 				}
 			},
 			badges: {
@@ -91,7 +100,16 @@ const projects = {
 				},
 				tech: {
 					label: 'Common.Terms.Technologies',
-					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'Angular Material', 'MomentJs', 'RxJs', 'Store']
+					text: [
+						'HTML5',
+						'SCSS',
+						'TypeScript',
+						'Angular',
+						'Angular Material',
+						'MomentJs',
+						'RxJs',
+						'Store'
+					]
 				}
 			},
 			badges: {
@@ -117,7 +135,17 @@ const projects = {
 				},
 				tech: {
 					label: 'Common.Terms.Technologies',
-					text: ['HTML5', 'SCSS', 'TypeScript', 'Angular', 'NativeScript', 'Angular Material', 'MomentJs', 'RxJs', 'Store']
+					text: [
+						'HTML5',
+						'SCSS',
+						'TypeScript',
+						'Angular',
+						'NativeScript',
+						'Angular Material',
+						'MomentJs',
+						'RxJs',
+						'Store'
+					]
 				}
 			},
 			badges: {
@@ -143,7 +171,17 @@ const projects = {
 				},
 				tech: {
 					label: 'Common.Terms.Technologies',
-					text: ['HTML5', 'SCSS', 'React', 'Material-UI', 'Firebase', 'Redux', 'MomentJs', 'i18next', 'React Color']
+					text: [
+						'HTML5',
+						'SCSS',
+						'React',
+						'Material-UI',
+						'Firebase',
+						'Redux',
+						'MomentJs',
+						'i18next',
+						'React Color'
+					]
 				}
 			},
 			badges: {
@@ -170,7 +208,17 @@ const projects = {
 				},
 				tech: {
 					label: 'Common.Terms.Technologies',
-					text: ['HTML5', 'SCSS', 'React', 'Material-UI', 'Firebase', 'Redux', 'MomentJs', 'i18next', 'React Color']
+					text: [
+						'HTML5',
+						'SCSS',
+						'React',
+						'Material-UI',
+						'Firebase',
+						'Redux',
+						'MomentJs',
+						'i18next',
+						'React Color'
+					]
 				}
 			},
 			badges: {
@@ -278,7 +326,16 @@ const projects = {
 				},
 				tech: {
 					label: 'Common.Terms.Technologies',
-					text: ['HTML5', 'SCSS', 'React', 'Material-UI', 'Firebase', 'Redux', 'MomentJs', 'i18next']
+					text: [
+						'HTML5',
+						'SCSS',
+						'React',
+						'Material-UI',
+						'Firebase',
+						'Redux',
+						'MomentJs',
+						'i18next'
+					]
 				}
 			},
 			badges: {

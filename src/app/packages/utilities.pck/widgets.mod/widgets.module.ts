@@ -14,9 +14,7 @@ import { CardCodeComponent } from './components/card/code/card-code.component';
 import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
-	imports: [
-		SharedModule
-	],
+	imports: [SharedModule],
 	declarations: [
 		PushNotificationComponent,
 		PhotoGalleryComponent,
@@ -36,6 +34,4 @@ import { LoaderComponent } from './components/loader/loader.component';
 		LoaderComponent
 	]
 })
-
-export class WidgetsModule {
-}
+export class WidgetsModule {}
