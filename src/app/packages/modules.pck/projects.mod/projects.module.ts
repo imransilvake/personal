@@ -10,16 +10,7 @@ import { WidgetsModule } from '../../utilities.pck/widgets.mod/widgets.module';
 import { ProjectsComponent } from './components/projects.component';
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(PROJECTS_ROUTES),
-		SharedModule,
-		FieldsModule,
-		WidgetsModule
-	],
-	declarations: [
-		ProjectsComponent
-	]
+	imports: [RouterModule.forChild(PROJECTS_ROUTES), SharedModule, FieldsModule, WidgetsModule],
+	declarations: [ProjectsComponent]
 })
-
-export class ProjectsModule {
-}
+export class ProjectsModule {}

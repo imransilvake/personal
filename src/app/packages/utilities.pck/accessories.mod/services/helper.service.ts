@@ -9,17 +9,13 @@ import { AppOptions, LocalStorageItems } from '../../../../../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class HelperService {
-	constructor(private _storageService: StorageService) {
-	}
+	constructor(private _storageService: StorageService) {}
 
 	/**
 	 * detect: network connection
 	 */
 	public static detectNetworkConnection() {
-		return merge(
-			fromEvent(window, 'offline'),
-			fromEvent(window, 'online')
-		);
+		return merge(fromEvent(window, 'offline'), fromEvent(window, 'online'));
 	}
 
 	/**
@@ -58,7 +54,9 @@ export class HelperService {
 	public stopHtmlAndBodyScroll() {
 		document.documentElement.classList.add('cd-hide-overflow');
 		document.body.classList.add('cd-hide-overflow');
-		document.body.addEventListener('touchmove', this.preventDefault, { passive: false });
+		document.body.addEventListener('touchmove', this.preventDefault, {
+			passive: false
+		});
 	}
 
 	/**
@@ -79,7 +77,8 @@ export class HelperService {
 	 */
 	public getDate(date: any, dateFormat?: string, isLocale = true) {
 		const format = dateFormat ? dateFormat : 'MMMM YYYY';
-		const language = this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages.en;
+		const language =
+			this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages.en;
 		const locale = isLocale ? language : AppOptions.languages.en;
 		return moment(date, 'MM-YYYY').locale(locale).format(format);
 	}

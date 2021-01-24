@@ -23,7 +23,6 @@ import { SliderInterface } from '../../interfaces/slider.interface';
 	templateUrl: './slider.component.html',
 	styleUrls: ['./slider.component.scss']
 })
-
 export class SliderComponent implements OnInit, OnDestroy {
 	@Output() closeSlider: EventEmitter<boolean> = new EventEmitter();
 	@Output() updateActiveSlide: EventEmitter<any> = new EventEmitter();
@@ -39,10 +38,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 	@Input() showArrowsNavigation = false;
 	@Input() showControls = false;
 
-	public faIcon = [
-		faDownload, faPlayCircle, faPauseCircle,
-		faTimes, faArrowLeft, faArrowRight,
-	];
+	public faIcon = [faDownload, faPlayCircle, faPauseCircle, faTimes, faArrowLeft, faArrowRight];
 	public totalSlides;
 	public slideCounter;
 	public isSliderPlay = true;
@@ -66,15 +62,18 @@ export class SliderComponent implements OnInit, OnDestroy {
 			.pipe(
 				takeUntil(this.unSubscribe),
 				startWith({ pause: false, counter: 0 }),
-				switchMap(state => state.pause ? NEVER :
-					interval(this.slideInterval[0])
-						.pipe(
-							tap(() => {
-								const slideIndex = this.activeSlideIndex < (this.totalSlides - 1) ?
-									this.activeSlideIndex + 1 : 0;
-								this.onClickChangeSlide(slideIndex, false);
-							})
-						)
+				switchMap((state) =>
+					state.pause
+						? NEVER
+						: interval(this.slideInterval[0]).pipe(
+								tap(() => {
+									const slideIndex =
+										this.activeSlideIndex < this.totalSlides - 1
+											? this.activeSlideIndex + 1
+											: 0;
+									this.onClickChangeSlide(slideIndex, false);
+								})
+						  )
 				)
 			)
 			.subscribe();
@@ -95,10 +94,12 @@ export class SliderComponent implements OnInit, OnDestroy {
 		let slideIndex;
 		switch (direction) {
 			case SliderDirectionEnum.DIRECTION_LEFT:
-				slideIndex = this.activeSlideIndex < (this.totalSlides - 1) ? this.activeSlideIndex + 1 : 0;
+				slideIndex =
+					this.activeSlideIndex < this.totalSlides - 1 ? this.activeSlideIndex + 1 : 0;
 				break;
 			case SliderDirectionEnum.DIRECTION_RIGHT:
-				slideIndex = this.activeSlideIndex === 0 ? (this.totalSlides - 1) : (this.activeSlideIndex - 1);
+				slideIndex =
+					this.activeSlideIndex === 0 ? this.totalSlides - 1 : this.activeSlideIndex - 1;
 				break;
 		}
 

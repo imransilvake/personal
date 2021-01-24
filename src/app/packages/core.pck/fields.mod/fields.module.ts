@@ -6,16 +6,8 @@ import { SharedModule } from '../../../shared.module';
 import { InputComponent } from './components/input/input.component';
 
 @NgModule({
-	imports: [
-		SharedModule
-	],
-	declarations: [
-		InputComponent
-	],
-	exports: [
-		InputComponent
-	]
+	imports: [SharedModule],
+	declarations: [InputComponent],
+	exports: [InputComponent]
 })
-
-export class FieldsModule {
-}
+export class FieldsModule {}

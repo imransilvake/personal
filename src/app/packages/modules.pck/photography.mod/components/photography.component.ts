@@ -23,7 +23,6 @@ import { StorageTypeEnum } from '../../../core.pck/storage.mod/enums/storage-typ
 	styleUrls: ['./photography.component.scss'],
 	animations: [fadeInOut]
 })
-
 export class PhotographyComponent implements OnInit {
 	public faIcon = [faPlane, faExpand, faCircleNotch];
 	public photography = photography;
@@ -47,8 +46,7 @@ export class PhotographyComponent implements OnInit {
 		private _storageService: StorageService,
 		private _pushNotificationService: PushNotificationService,
 		private _photoGalleryService: PhotoGalleryService
-	) {
-	}
+	) {}
 
 	ngOnInit() {
 		// get photograhy slider and items list
@@ -56,11 +54,7 @@ export class PhotographyComponent implements OnInit {
 
 		// listen: window resize
 		HelperService.detectWindowResize()
-			.pipe(
-				startWith(0),
-				debounceTime(100),
-				takeUntil(this.unSubscribe)
-			)
+			.pipe(startWith(0), debounceTime(100), takeUntil(this.unSubscribe))
 			.subscribe(() => {
 				// calculate slider items properties
 				this.calculateSliderItemsProperties();
@@ -76,7 +70,8 @@ export class PhotographyComponent implements OnInit {
 	public getCachedPhotographyGallery() {
 		// get photography galleries from memory (if exists)
 		const photographyGalleries = this._storageService.get(
-			MemoryStorageItems.photographyGalleries, StorageTypeEnum.MEMORY
+			MemoryStorageItems.photographyGalleries,
+			StorageTypeEnum.MEMORY
 		);
 
 		// set page token taken from memory
@@ -98,8 +93,9 @@ export class PhotographyComponent implements OnInit {
 		this.loadMoreLoader = true;
 
 		// fetch data from memory or firebase
-		const promiseData = photographyGalleries ?
-			photographyGalleries : await this._firebaseService.storageGetPhotographyGallery();
+		const promiseData = photographyGalleries
+			? photographyGalleries
+			: await this._firebaseService.storageGetPhotographyGallery();
 
 		// validate data
 		if (promiseData && promiseData.data) {
@@ -108,7 +104,8 @@ export class PhotographyComponent implements OnInit {
 
 			// get photography galleries from memory (if exists)
 			const storedData = this._storageService.get(
-				MemoryStorageItems.photographyGalleries, StorageTypeEnum.MEMORY
+				MemoryStorageItems.photographyGalleries,
+				StorageTypeEnum.MEMORY
 			);
 
 			// save to memory
@@ -116,7 +113,10 @@ export class PhotographyComponent implements OnInit {
 			this._storageService.put(
 				MemoryStorageItems.photographyGalleries,
 				{
-					data: storedData && !photographyGalleries ? storedData.data.concat(galleryData) : galleryData,
+					data:
+						storedData && !photographyGalleries
+							? storedData.data.concat(galleryData)
+							: galleryData,
 					isNextPageToken: promiseData.isNextPageToken
 				},
 				StorageTypeEnum.MEMORY
@@ -135,7 +135,9 @@ export class PhotographyComponent implements OnInit {
 			this.isLoadMore = !!promiseData.isNextPageToken;
 		} else {
 			// error: show push message
-			this._pushNotificationService.PushNotificationType.next(PushNotificationsTypesEnum.ERROR_GENERAL);
+			this._pushNotificationService.PushNotificationType.next(
+				PushNotificationsTypesEnum.ERROR_GENERAL
+			);
 		}
 
 		// stop loader
@@ -152,8 +154,8 @@ export class PhotographyComponent implements OnInit {
 	 */
 	public formatGalleryData(urlData) {
 		// split different sizes images
-		const minFiles = urlData.filter(i => i.indexOf('_min') !== -1);
-		const thumbFiles = urlData.filter(i => i.indexOf('_thumb') !== -1);
+		const minFiles = urlData.filter((i) => i.indexOf('_min') !== -1);
+		const thumbFiles = urlData.filter((i) => i.indexOf('_thumb') !== -1);
 
 		// map data according to photoGallery format
 		const content = photography.items.slice(this.galleryList.length);
@@ -172,14 +174,17 @@ export class PhotographyComponent implements OnInit {
 	 */
 	public updateSlider(formattedData) {
 		// filter data
-		const filteredData = formattedData.filter(i => !!i.slider);
+		const filteredData = formattedData.filter((i) => !!i.slider);
 
 		// update slider values
 		if (!this.sliderList['items']) {
 			this.sliderList = { ...photography, items: filteredData };
 			this.sliderInterval = AppOptions.intervals.photography;
 		} else {
-			this.sliderList = { ...photography, items: this.sliderList['items'].concat(filteredData) };
+			this.sliderList = {
+				...photography,
+				items: this.sliderList['items'].concat(filteredData)
+			};
 		}
 	}
 
@@ -257,7 +262,7 @@ export class PhotographyComponent implements OnInit {
 		// 1 column:  0 < 550
 		const col2 = config.breakPoints.columns2;
 		const col3 = config.breakPoints.columns3;
-		const totalItems = screenWidth >= col3 ? 3 : (screenWidth >= col2 ? 2 : 1);
+		const totalItems = screenWidth >= col3 ? 3 : screenWidth >= col2 ? 2 : 1;
 
 		// padding && gutter_gap
 		const padding = config.extra.padding;
@@ -272,6 +277,6 @@ export class PhotographyComponent implements OnInit {
 		this.gridItem['landscapeWidth'] = itemWidth;
 		this.gridItem['landscapeHeight'] = itemHeight;
 		this.gridItem['portraitWidth'] = originalPortraitWidth;
-		this.gridItem['portraitHeight'] = (itemHeight * 2) + gutterGap;
+		this.gridItem['portraitHeight'] = itemHeight * 2 + gutterGap;
 	}
 }

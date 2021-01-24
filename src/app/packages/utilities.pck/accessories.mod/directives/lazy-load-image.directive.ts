@@ -7,12 +7,14 @@ export class LazyLoadImageDirective implements AfterViewInit {
 
 	private _intersectionObserver?: IntersectionObserver;
 
-	constructor(private _element: ElementRef) {
-	}
+	constructor(private _element: ElementRef) {}
 
 	public ngAfterViewInit() {
 		// intersection observer API
-		this._intersectionObserver = new IntersectionObserver(entries => this.checkForIntersection(entries), {});
+		this._intersectionObserver = new IntersectionObserver(
+			(entries) => this.checkForIntersection(entries),
+			{}
+		);
 
 		// observe element
 		this._intersectionObserver.observe(this._element.nativeElement);

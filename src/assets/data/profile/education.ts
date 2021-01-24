@@ -2,7 +2,7 @@ const profileEducation = {
 	title: 'Profile.Terms.Education',
 	subTitle: {
 		text: 'Profile.Education.Sub_Title',
-		type: 'Profile.Terms.Masters',
+		type: 'Profile.Terms.Masters'
 	},
 	universityName: 'Profile.Education.University_Name',
 	universityInfo: 'Profile.Education.University_Info',

@@ -13,7 +13,6 @@ import page404 from '../../../../../assets/data/common/404';
 	templateUrl: './e404.component.html',
 	styleUrls: ['./e404.component.scss']
 })
-
 export class E404Component implements OnInit, OnDestroy {
 	public page404 = page404;
 	public x = '50%';
@@ -21,8 +20,7 @@ export class E404Component implements OnInit, OnDestroy {
 
 	private unSubscribe = new Subject();
 
-	constructor(private _appMetaService: AppMetaService) {
-	}
+	constructor(private _appMetaService: AppMetaService) {}
 
 	ngOnInit() {
 		// robots disallow
@@ -31,14 +29,14 @@ export class E404Component implements OnInit, OnDestroy {
 		// listen: mouse movement
 		HelperService.detectMouseMove()
 			.pipe(takeUntil(this.unSubscribe))
-			.subscribe(event => {
+			.subscribe((event) => {
 				// event['pageX']: get horizontal coordinates of the mouse
 				// window.innerWidth: browser width
-				const x = event && (event['pageX'] * 100 / window.innerWidth);
+				const x = event && (event['pageX'] * 100) / window.innerWidth;
 
 				// event['pageY']: vertical coordinates of the mouse
 				// window.innerHeight: browser height
-				const y = event && (event['pageY'] * 100 / window.innerHeight);
+				const y = event && (event['pageY'] * 100) / window.innerHeight;
 
 				// left: x > 20
 				// right: x < 80
@@ -53,10 +51,10 @@ export class E404Component implements OnInit, OnDestroy {
 				}
 
 				// outside of view scope
-				this.x = (x <= 20) ? `21%` : this.x;
-				this.x = (x >= 80) ? `79%` : this.x;
-				this.y = (y <= 30) ? `31%` : this.y;
-				this.y = (y >= 60) ? `59%` : this.y;
+				this.x = x <= 20 ? `21%` : this.x;
+				this.x = x >= 80 ? `79%` : this.x;
+				this.y = y <= 30 ? `31%` : this.y;
+				this.y = y >= 60 ? `59%` : this.y;
 			});
 	}
 

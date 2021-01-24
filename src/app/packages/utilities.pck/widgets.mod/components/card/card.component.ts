@@ -8,7 +8,6 @@ import { CardViewEnum } from '../../enums/card-view.enum';
 	selector: 'app-card',
 	templateUrl: './card.component.html'
 })
-
 export class CardComponent {
 	@Input() cardViewType = CardViewEnum.CARD_INFO;
 

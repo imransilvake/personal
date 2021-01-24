@@ -11,13 +11,11 @@ import { StorageService } from '../../../../core.pck/storage.mod/services/storag
 	templateUrl: './font-switch.component.html',
 	styleUrls: ['./font-switch.component.scss']
 })
-
 export class FontSwitchComponent implements OnInit {
 	public faIcon = [faFont];
 	public fontSizeSwitcher = true;
 
-	constructor(private _storageService: StorageService) {
-	}
+	constructor(private _storageService: StorageService) {}
 
 	ngOnInit() {
 		// setup font size
@@ -32,7 +30,7 @@ export class FontSwitchComponent implements OnInit {
 	public onClickChangeFontSize(init?: boolean) {
 		// get fontSizeMode from local storage
 		const fontSizeMode = this._storageService.get(LocalStorageItems.fontSizeMode) || 'normal';
-		const reverse = (fontSizeMode === 'normal') ? 'ik-zoom' : 'normal';
+		const reverse = fontSizeMode === 'normal' ? 'ik-zoom' : 'normal';
 		const value = init ? fontSizeMode : reverse;
 		this.fontSizeSwitcher = value === 'ik-zoom';
 

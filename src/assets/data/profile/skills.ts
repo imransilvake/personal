@@ -101,11 +101,30 @@ const profileSkills = {
 		},
 		{
 			title: 'Layout',
-			items: ['HTML5', 'CSS3', 'SCSS', 'BEM Pattern', 'Bootstrap', 'Tailwind CSS', 'Responsive Design', 'Cross-Browser Compatibility']
+			items: [
+				'HTML5',
+				'CSS3',
+				'SCSS',
+				'BEM Pattern',
+				'Bootstrap',
+				'Tailwind CSS',
+				'Responsive Design',
+				'Cross-Browser Compatibility'
+			]
 		},
 		{
 			title: 'Profile.Terms.Libraries',
-			items: ['RxJs', 'Axios', 'Formik', 'Moment.js', 'Chart.js', 'Hammer.js', 'Lodash.js', 'Numeral.js', 'Passport.js']
+			items: [
+				'RxJs',
+				'Axios',
+				'Formik',
+				'Moment.js',
+				'Chart.js',
+				'Hammer.js',
+				'Lodash.js',
+				'Numeral.js',
+				'Passport.js'
+			]
 		},
 		{
 			title: 'Profile.Terms.Testing',
@@ -121,7 +140,20 @@ const profileSkills = {
 		},
 		{
 			title: 'Profile.Terms.Miscellaneous',
-			items: ['Yarn', 'NPM', 'Node', 'Git', 'Jira', 'Confluence', 'VSCode', 'WebStorm', 'Xcode', 'Android Studio', 'macOS', 'Ubuntu']
+			items: [
+				'Yarn',
+				'NPM',
+				'Node',
+				'Git',
+				'Jira',
+				'Confluence',
+				'VSCode',
+				'WebStorm',
+				'Xcode',
+				'Android Studio',
+				'macOS',
+				'Ubuntu'
+			]
 		}
 	]
 };

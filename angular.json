@@ -46,13 +46,9 @@
 							"src/assets/i18n",
 							"src/_redirects"
 						],
-						"styles": [
-							"src/styles.scss"
-						],
+						"styles": ["src/styles.scss"],
 						"stylePreprocessorOptions": {
-							"includePaths": [
-								"src/assets/scss/"
-							]
+							"includePaths": ["src/assets/scss/"]
 						},
 						"allowedCommonJsDependencies": [
 							"@firebase/app",
@@ -112,10 +108,7 @@
 				"lint": {
 					"builder": "@angular-eslint/builder:lint",
 					"options": {
-						"lintFilePatterns": [
-							"src/**/*.ts",
-							"src/**/*.html"
-						]
+						"lintFilePatterns": ["src/**/*.ts", "src/**/*.json"]
 					}
 				}
 			}

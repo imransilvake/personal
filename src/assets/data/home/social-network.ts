@@ -20,7 +20,7 @@ const socialNetwork = {
 		{
 			name: 'Email',
 			icon: faEnvelope,
-			link: `mailto:${ AppLinks.social.email }`,
+			link: `mailto:${AppLinks.social.email}`,
 			class: 'ik-email',
 			isMail: true
 		}

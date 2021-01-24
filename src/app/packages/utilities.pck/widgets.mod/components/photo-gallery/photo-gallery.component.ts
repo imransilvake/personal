@@ -14,7 +14,6 @@ import { PhotoGalleryInterface } from '../../interfaces/photo-gallery.interface'
 	templateUrl: './photo-gallery.component.html',
 	styleUrls: ['./photo-gallery.component.scss']
 })
-
 export class PhotoGalleryComponent implements OnInit, OnDestroy {
 	public showPhotoGallery = false;
 	public imageLoaded = false;
@@ -28,8 +27,7 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
 	constructor(
 		private _helperService: HelperService,
 		private _photoGalleryService: PhotoGalleryService
-	) {
-	}
+	) {}
 
 	ngOnInit() {
 		// listen: trigger photo gallery

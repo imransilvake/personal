@@ -11,13 +11,11 @@ import navigation from 'src/assets/data/common/navigation';
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.scss']
 })
-
 export class HeaderComponent {
 	public routing = ROUTING;
 	public navigation = navigation;
 
-	constructor(private _router: Router) {
-	}
+	constructor(private _router: Router) {}
 
 	/**
 	 * check active route

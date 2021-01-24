@@ -8,14 +8,7 @@ import { SharedModule } from '../../../shared.module';
 import { ProfileComponent } from './components/profile.component';
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(PROFILE_ROUTES),
-		SharedModule
-	],
-	declarations: [
-		ProfileComponent
-	]
+	imports: [RouterModule.forChild(PROFILE_ROUTES), SharedModule],
+	declarations: [ProfileComponent]
 })
-
-export class ProfileModule {
-}
+export class ProfileModule {}

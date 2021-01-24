@@ -12,16 +12,11 @@ import { StorageTypeEnum } from '../../../../core.pck/storage.mod/enums/storage-
 	templateUrl: './language-switch.component.html',
 	styleUrls: ['./language-switch.component.scss']
 })
-
 export class LanguageSwitchComponent implements OnInit {
 	public appLanguages = AppOptions.languages;
 	public languageSwitcher = true;
 
-	constructor(
-		private _storageService: StorageService,
-		private _translate: TranslateService
-	) {
-	}
+	constructor(private _storageService: StorageService, private _translate: TranslateService) {}
 
 	ngOnInit() {
 		// setup language mode
@@ -35,8 +30,12 @@ export class LanguageSwitchComponent implements OnInit {
 	 */
 	public onClickChangeLanguage(init?: boolean) {
 		// get languageMode from local storage
-		const languageMode = this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages.en;
-		const reverse = (languageMode === AppOptions.languages.en) ? AppOptions.languages.de : AppOptions.languages.en;
+		const languageMode =
+			this._storageService.get(LocalStorageItems.languageMode) || AppOptions.languages.en;
+		const reverse =
+			languageMode === AppOptions.languages.en
+				? AppOptions.languages.de
+				: AppOptions.languages.en;
 		const value = init ? languageMode : reverse;
 		this.languageSwitcher = value === AppOptions.languages.en;
 

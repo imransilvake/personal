@@ -12,7 +12,6 @@ import { HelperService } from '../../../utilities.pck/accessories.mod/services/h
 	templateUrl: './scroll-top.component.html',
 	styleUrls: ['./scroll-top.component.scss']
 })
-
 export class ScrollTopComponent implements OnInit, OnDestroy {
 	public faIcon = faArrowAltCircleUp;
 	public showScroll = false;

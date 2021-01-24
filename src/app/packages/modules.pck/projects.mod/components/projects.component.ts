@@ -7,8 +7,15 @@ import { filter, takeUntil } from 'rxjs/operators';
 
 // app
 import {
-	faCamera, faCircleNotch, faCode, faDownload,
-	faExternalLinkSquareAlt, faInfoCircle, faLock, faSearch, faTimesCircle
+	faCamera,
+	faCircleNotch,
+	faCode,
+	faDownload,
+	faExternalLinkSquareAlt,
+	faInfoCircle,
+	faLock,
+	faSearch,
+	faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import projects from 'src/assets/data/projects/projects';
@@ -30,11 +37,18 @@ import { PushNotificationsTypesEnum } from '../../../frame.pck/enums/push-notifi
 	templateUrl: './projects.component.html',
 	styleUrls: ['./projects.component.scss']
 })
-
 export class ProjectsComponent implements OnInit, OnDestroy {
 	public faIcon = [
-		faCode, faDownload, faLock, faInfoCircle, faGithub, faCamera,
-		faTimesCircle, faExternalLinkSquareAlt, faSearch, faCircleNotch
+		faCode,
+		faDownload,
+		faLock,
+		faInfoCircle,
+		faGithub,
+		faCamera,
+		faTimesCircle,
+		faExternalLinkSquareAlt,
+		faSearch,
+		faCircleNotch
 	];
 	public routing = ROUTING;
 	public cardViewList = CardViewEnum.CARD_CODE;
@@ -64,12 +78,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		this._router.events
 			.pipe(
 				takeUntil(this.unSubscribe),
-				filter(event => event instanceof NavigationEnd)
+				filter((event) => event instanceof NavigationEnd)
 			)
 			.subscribe(() => {
 				// set filter based on path-param filter
 				const ppFilter = _route.snapshot.params && _route.snapshot.params.filter;
-				const index = ppFilter && this.projects.filters.findIndex(x => x.id === ppFilter);
+				const index = ppFilter && this.projects.filters.findIndex((x) => x.id === ppFilter);
 				if (ppFilter && index !== -1) {
 					this.onListenChangeFilter(this.projects.filters[index]);
 				}
@@ -84,21 +98,21 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		// listen: search
-		this.search.valueChanges
-			.pipe(takeUntil(this.unSubscribe))
-			.subscribe(text => {
-				let result;
-				if (this.filter.value.id === projects.filters[0].id) {
-					result = projects.items.filter(x => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1);
-				} else {
-					result = projects.items
-						.filter(x =>
-							x.controls.filter === this.filter.value.id &&
-							x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
-						);
-				}
-				this.projects = { ...projects, items: result };
-			});
+		this.search.valueChanges.pipe(takeUntil(this.unSubscribe)).subscribe((text) => {
+			let result;
+			if (this.filter.value.id === projects.filters[0].id) {
+				result = projects.items.filter(
+					(x) => x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
+				);
+			} else {
+				result = projects.items.filter(
+					(x) =>
+						x.controls.filter === this.filter.value.id &&
+						x.title.toLowerCase().indexOf(text && text.toLowerCase()) !== -1
+				);
+			}
+			this.projects = { ...projects, items: result };
+		});
 	}
 
 	ngOnDestroy() {
@@ -126,7 +140,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	public onListenChangeFilter(sFilter) {
 		// update data
 		if (sFilter && sFilter.id !== projects.filters[0].id) {
-			const result = projects.items.filter(x => x.controls.filter === sFilter.id);
+			const result = projects.items.filter((x) => x.controls.filter === sFilter.id);
 			this.projects = { ...projects, items: result };
 		} else {
 			this.projects = projects;
@@ -155,7 +169,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	 */
 	public onClickToggleInfoBlock(idx) {
 		if (this.infoBlockIndex === idx) {
-			this.infoBlockIndex = (this.infoBlockIndex === -1) ? idx : -1;
+			this.infoBlockIndex = this.infoBlockIndex === -1 ? idx : -1;
 		} else {
 			this.infoBlockIndex = idx;
 		}
@@ -191,12 +205,15 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 		// get project galleries from memory (if exists)
 		const projectGalleries = this._storageService.get(
-			MemoryStorageItems.projectGalleries, StorageTypeEnum.MEMORY
+			MemoryStorageItems.projectGalleries,
+			StorageTypeEnum.MEMORY
 		);
 
 		// get gallery list from firebase
-		const galleryList = projectGalleries && projectGalleries[galleryId] ?
-			projectGalleries[galleryId] : await this._firebaseService.storageGetProjectGallery(galleryId);
+		const galleryList =
+			projectGalleries && projectGalleries[galleryId]
+				? projectGalleries[galleryId]
+				: await this._firebaseService.storageGetProjectGallery(galleryId);
 
 		// update project galleries in memory
 		if (!(projectGalleries && projectGalleries[galleryId])) {
@@ -218,14 +235,15 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		// check if gallery list contains data
 		if (galleryList && galleryList.length > 0) {
 			// map data according to photoGallery format
-			const galleryMapped = galleryList.map(item => ({ photo: item }));
+			const galleryMapped = galleryList.map((item) => ({ photo: item }));
 
 			// open photo gallery
 			this.openPhotoGallery(galleryMapped);
 		} else {
 			// error: show push message
-			this._pushNotificationService.PushNotificationType
-				.next(PushNotificationsTypesEnum.ERROR_GENERAL);
+			this._pushNotificationService.PushNotificationType.next(
+				PushNotificationsTypesEnum.ERROR_GENERAL
+			);
 		}
 	}
 

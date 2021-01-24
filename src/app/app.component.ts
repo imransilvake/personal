@@ -14,13 +14,16 @@ import { AppMetaService } from './packages/utilities.pck/accessories.mod/service
 			<!-- Content -->
 			<div class="ik-content">
 				<!-- Notice Board -->
-				<app-slider [data]="noticeList"
-							[slideInterval]="noticeInterval"
-							[showDotsNavigation]="false"
-							(updateActiveSlide)="noticeActive = $event">
-					<app-card [cardViewType]="cardViewNotice"
-							  [noticeData]="noticeActive">
-					</app-card>
+				<app-slider
+					[data]="noticeList"
+					[slideInterval]="noticeInterval"
+					[showDotsNavigation]="false"
+					(updateActiveSlide)="noticeActive = $event"
+				>
+					<app-card
+						[cardViewType]="cardViewNotice"
+						[noticeData]="noticeActive"
+					></app-card>
 				</app-slider>
 
 				<!-- Header -->
@@ -47,13 +50,11 @@ import { AppMetaService } from './packages/utilities.pck/accessories.mod/service
 	`,
 	styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
 	public cardViewNotice = CardViewEnum.CARD_NOTICE;
-	public noticeList = { items: notice.items.filter(x => x.show) };
+	public noticeList = { items: notice.items.filter((x) => x.show) };
 	public noticeActive;
 	public noticeInterval = AppOptions.intervals.notice;
 
-	constructor(private _appMetaService: AppMetaService) {
-	}
+	constructor(private _appMetaService: AppMetaService) {}
 }
