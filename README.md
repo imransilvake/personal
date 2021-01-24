@@ -100,8 +100,8 @@ Include the following import in each component to get access to [SCSS helpers an
 Prettier and Eslint
 
 #### Pre-commit & Commitlint
-`pre-commit`: Husky and lint-staged
-`commit-msg`: commitlint checks if your commit messages meet the conventional commit format.
+- `pre-commit`: Husky and lint-staged
+- `commit-msg`: commitlint checks if your commit messages meet the conventional commit format.
 
 #### Automate Versioning
 commitizen and standard-version
@@ -113,24 +113,24 @@ Husky and lint-staged
 ## Releasing
 A summary of development workflow with standard-version involving multiple git branches.
 
-#### **[[feature-branch]**[ Stage modified files using:
+#### 1. **[feature-branch]** Stage modified files using:
 ```
 git add .
 ```
 
-#### **[feature-branch]** Commit the files using git-cz package:
+#### 2. **[feature-branch]** Commit the files using git-cz package:
 ```
 npm run commit
 ```
 
-#### **[feature-branch]** Now that all files have been committed, they are ready to be pushed to the remote:
+#### 3. **[feature-branch]** Now that all files have been committed, they are ready to be pushed to the remote:
 ```
 git push origin <feature-branch>
 ```
 
-#### **[Bitbucket]** Create a Pull Request to master branch.
+#### 4. **[Bitbucket]** Create a Pull Request to master branch.
 
-#### **[master]** After it is merged, the following steps are done within the master branch:
+#### 5. **[master]** After it is merged, the following steps are done within the master branch:
 - Run the command npm run release (which will bump versions based on commit types, add commit descriptions to CHANGELOG.md, and create git tags according to the current version).
 - Push changes and git tags to master branch using:
 ```
