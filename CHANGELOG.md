@@ -1,3 +1,29 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.3.3](https://github.com/imransilvake/personal/compare/v1.3.2...v1.3.3) (2021-01-24)
+
+
+### Bug Fixes
+
+* add prettier for ts and json extentions and merge eslint with prettier ([37ebbba](https://github.com/imransilvake/personal/commit/37ebbbabfd0dc3cbcf13dd1468cfb77f0e66a7a9))
+* github ci/cd ([de718bf](https://github.com/imransilvake/personal/commit/de718bf0987200ab45218c114a7379aa4001565a))
+* remove html formatter ([f63a89f](https://github.com/imransilvake/personal/commit/f63a89f44f7230a8e5c3ebee4cc7ce24f582904c))
+
+
+### Others
+
+* automate versioning with commitizen and standard-version ([83f5d12](https://github.com/imransilvake/personal/commit/83f5d1253a827d0473f305a8ef54914eeaf74a87))
+
+
+### Docs
+
+* add commitlint ([95db34f](https://github.com/imransilvake/personal/commit/95db34f42cf898ea4e3ad3905d9ff6734330fc23))
+* update readme ([33ffaba](https://github.com/imransilvake/personal/commit/33ffaba6f6607e90e4a8210eab84ad46d34c695f))
+* update readme ([16ec3b0](https://github.com/imransilvake/personal/commit/16ec3b0272417c2c2a683498926e54a88d087f38))
+* update readme ([4771ea3](https://github.com/imransilvake/personal/commit/4771ea3f74644d2977b09b95d734bb476f2e8916))
+
 ## [1.3.2](https://github.com/imransilvake/personal/compare/v1.3.1...v1.3.2) (2020-12-26)
 
 
