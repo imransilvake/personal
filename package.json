@@ -15,7 +15,9 @@
 		"lint:es": "eslint 'src/**/*.ts' --quiet --fix",
 		"lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
 		"pretty:check": "prettier --check 'src/**/*.{ts,json}'",
-		"pretty:apply": "prettier --write 'src/**/*.{ts,json}'"
+		"pretty:apply": "prettier --write 'src/**/*.{ts,json}'",
+		"commit": "git-cz",
+		"release": "standard-version"
 	},
 	"dependencies": {
 		"@angular/animations": "^11.1.0",
@@ -56,11 +58,14 @@
 		"@typescript-eslint/eslint-plugin": "4.14.0",
 		"@typescript-eslint/parser": "4.14.0",
 		"codelyzer": "^6.0.1",
+		"commitizen": "^4.2.3",
+		"cz-conventional-changelog": "^3.2.0",
 		"eslint": "^7.18.0",
 		"eslint-plugin-prettier": "^3.3.1",
 		"husky": ">=4",
 		"lint-staged": ">=10",
 		"prettier": "2.2.1",
+		"standard-version": "^9.1.0",
 		"stylelint": "^13.9.0",
 		"stylelint-order": "^4.1.0",
 		"ts-node": "~9.1.1",
@@ -75,5 +80,10 @@
 		"*.{ts,json}": "prettier --write",
 		"*.ts": "eslint --fix",
 		"*.scss": "stylelint --fix"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
 	}
 }

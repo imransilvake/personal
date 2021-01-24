@@ -69,10 +69,16 @@ My personal website built using Angular to keep track of my projects and to show
 |Production|`yarn build.app.prod`|Build the application to `./dist` directory|
 
 
+## Pretty
+|Script|Description|
+|---|---|
+|`yarn pretty:check`|Check Typescript and Json|
+|`yarn pretty:apply`|Apply Typescript and Json|
+
 ## Linting
 |Script|Description|
 |---|---|
-|`yarn lint:ts`|Lint Typescript|
+|`yarn lint:es`|Lint Typescript and Json|
 |`yarn lint:scss`|Lint SCSS|
 
 
@@ -81,3 +87,10 @@ Include the following import in each component to get access to [SCSS helpers an
 ```
 @import 'scss-methods';
 ```
+
+
+## TODO
+add proper documentation of each part:
+1. Prettier and Eslint
+2. Husky and lint-staged
+3. commitizen and standard-version
