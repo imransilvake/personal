@@ -92,9 +92,6 @@ Include the following import in each component to get access to [SCSS helpers an
 
 
 ## Tools Configuration
-<p align="center">
-  <img src="src/assets/extra/development-workflow.png" width="600" />
-</p>
 
 #### Prettier & Linting
 Prettier and Eslint
@@ -112,6 +109,10 @@ Husky and lint-staged
 
 ## Releasing
 A summary of development workflow with standard-version involving multiple git branches.
+
+<p align="center">
+  <img src="src/assets/extra/development-workflow.png" width="600" />
+</p>
 
 #### 1. **[feature-branch]** Stage modified files using:
 ```
